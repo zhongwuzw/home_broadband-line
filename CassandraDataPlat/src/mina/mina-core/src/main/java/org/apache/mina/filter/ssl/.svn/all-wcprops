@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/ssl
+END
+SslHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/ssl/SslHandler.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/ssl/package.html
+END
+BogusTrustManagerFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/ssl/BogusTrustManagerFactory.java
+END
+KeyStoreFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/ssl/KeyStoreFactory.java
+END
+SslContextFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/ssl/SslContextFactory.java
+END
+SslFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/ssl/SslFilter.java
+END

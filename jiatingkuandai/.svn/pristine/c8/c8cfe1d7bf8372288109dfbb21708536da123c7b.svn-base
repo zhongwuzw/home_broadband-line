@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="sysUseraction" namespace="/sysUser" extends="abstract_struts">
+		<action name="validLogin" class="sysUseraction" method="validLogin"></action>
+		<action name="logout" class="sysUseraction" method="logout"></action>
+	</package>
+
+	<package name="networkTyperAction" namespace="/qualitymap"
+		extends="abstract_struts">
+		<action name="getNetTypeData" class="networkTyperAction"
+			method="getNetTypeData"></action>
+	</package>
+
+	<!-- <package name="overviewServicequalityAction" namespace="/overviewServicequality" 
+		extends="abstract_struts"> </package> -->
+
+	<package name="terminalOsAction" namespace="/terminalOs"
+		extends="abstract_struts">
+		<action name="getMonthPlatTesttimeProportion" class="terminalOsAction"
+			method="getMonthPlatTesttimeProportion"></action>
+		<action name="getPlatData" class="terminalOsAction" method="getPlatData"></action>
+		<action name="getPlatformDistribution" class="terminalOsAction"
+			method="getPlatformDistribution"></action>
+		<action name="getPlatformDetailData" class="terminalOsAction"
+			method="getPlatformDetailData"></action>
+		<action name="getPlatformList" class="terminalOsAction" method="getPlatformList"></action>
+		
+	</package>
+
+	<package name="provinceAction" namespace="/provincequalitymap"
+		extends="abstract_struts">
+		<action name="findByMonth" class="provinceAction" method="findByMonth">
+		</action>
+		<action name="findAll" class="provinceAction" method="findAll">
+		</action>
+		<action name="getBroadbandData" class="provinceAction" method="getBroadbandData">
+		</action>
+		<action name="getProvinceUserPercent" class="provinceAction"
+			method="getProvinceUserPercent">
+		</action>
+		<action name="getBroadbandTypeData" class="provinceAction"
+			method="getBroadbandTypeData">
+		</action>
+		<action name="getTotalSampleNum" class="provinceAction" method="getTotalSampleNum">
+		</action>
+		<action name="getValidSampleNum" class="provinceAction"
+			method="getValidSampleNum"></action>
+		
+		<action name="getUsernumByGroupId" class="provinceAction"
+			method="getUsernumByGroupId"></action>
+		<action name="getTerminalnumByGroupId" class="provinceAction"
+			method="getTerminalnumByGroupId"></action>
+		<action name="getReportItem" class="provinceAction"
+			method="getReportItem"></action>
+		<action name="getProbetypeReportItem" class="provinceAction"
+			method="getProbetypeReportItem"></action>
+	</package>
+
+	<package name="kpiAction" namespace="/kpiqualitymap" extends="abstract_struts">
+		<action name="getAccumulativnum" class="kpiAction" method="getAccumulativnum">
+		</action>
+		<action name="getProvincenum" class="kpiAction" method="getProvincenum">
+		</action>
+		<action name="getOrgnum" class="kpiAction" method="getOrgnum">
+		</action>
+	    <!-- 概览中累计注册用户数 
+		<action name="getRegusernameNum" class="kpiAction" method="getRegusernameNum">
+		</action>
+		概览中累计使用用户数
+		<action name="getCustomersNum" class="kpiAction" method="getCustomersNum">
+		</action> -->
+		<action name="getChannelnum" class="kpiAction" method="getChannelnum">
+		</action>
+		<action name="getTerminalNum" class="kpiAction" method="getTerminalNum">
+		</action>
+		
+		<action name="getNewlyIncreaseNum" class="kpiAction" method="getNewlyIncreaseNum">
+		</action>
+		<action name="getUserTendencyData" class="kpiAction" method="getUserTendencyData">
+		</action>
+		<!-- <action name="getThismonthTesttimes" class="kpiAction"
+			method="getThismonthTesttimes"> -->
+		<action name="getTesttimes" class="kpiAction" method="getTesttimes">  
+		</action>
+		
+	</package>
+
+	<package name="networkOperatorAction" namespace="/operatorqualitymap"
+		extends="abstract_struts">
+		<action name="getOperatorDatas" class="networkOperatorAction"
+			method="getOperatorDatas">
+		</action>
+		<action name="getDetailData" class="networkOperatorAction"
+			method="getDetailData">
+		</action>
+
+	</package>
+
+	<!-- <package name="overviewServicequalityProvinceAction" namespace="/servicequalityprovincemap" 
+		extends="abstract_struts"> <action name="getAvgdelayData" class="overviewServicequalityProvinceAction" 
+		method="getAvgdelayData"> </action> <action name="getAvgdelayOrder" class="overviewServicequalityProvinceAction" 
+		method="getAvgdelayOrder"> </action> <action name="getPageSuccessData" class="overviewServicequalityProvinceAction" 
+		method="getPageSuccessData"> </action> <action name="getPageSuccessOrder" 
+		class="overviewServicequalityProvinceAction" method="getPageSuccessOrder"> 
+		</action> </package> -->
+
+	<package name="terminalModelAction" namespace="/terminalmodelmap"
+		extends="abstract_struts">
+		<action name="getTerminalModelData" class="terminalModelAction"
+			method="getTerminalModelData">
+		</action>
+	</package>
+	<!-- 测试报告servicequality_orgid_ping表 -->
+	<package name="servicequalityOrgidPingAction" namespace="/servicequalityorgidpingmap"
+		extends="abstract_struts">
+		<action name="getCityList" class="servicequalityOrgidPingAction"
+			method="getCityList"></action>
+		
+		<action name="getPingReportItem" class="servicequalityOrgidPingAction"
+			method="getPingReportItem">
+		</action>
+		<!-- 获取测试报告中的地区 即根据指定的groupid获取orgid数量 -->
+		<action name="getOrgnumByGroupId" class="servicequalityOrgidPingAction" method="getOrgnumByGroupId">
+		</action>
+	</package>
+
+	<!-- 测试报告servicequality_groupid_ping表 -->
+	<package name="groupidPingAction" namespace="/groupidpingmap"
+		extends="abstract_struts">
+		
+		<!-- 平均ping时延(MS) -->
+		<action name="getAvgPingDelay" class="groupidPingAction"
+			method="getAvgPingDelay"></action>
+		<!-- 90%用户ping时延 -->
+		<action name="getTop90PingDelay" class="groupidPingAction"
+			method="getTop90PingDelay"></action>
+		<!-- ping丢包率 -->
+		<action name="getPingLossRate" class="groupidPingAction"
+			method="getPingLossRate"></action>
+		<!-- 90%用户ping丢包率 -->
+		<action name="getTop90PingLossRate" class="groupidPingAction"
+			method="getTop90PingLossRate"></action>
+		<action name="getAvgdelayData" class="groupidPingAction"
+			method="getAvgdelayData">
+		</action>
+		<action name="getAvgdelayOrder" class="groupidPingAction"
+			method="getAvgdelayOrder">
+		</action>
+		<action name="getPageSuccessData" class="groupidPingAction"
+			method="getPageSuccessData">
+		</action>
+		<action name="getPageSuccessOrder" class="groupidPingAction"
+			method="getPageSuccessOrder">
+		</action>
+		<action name="getPingServiceQualityCompare" class="groupidPingAction"
+			method="getPingServiceQualityCompare">
+		</action>
+		<action name="getPingKPIbyGroupid" class="groupidPingAction"
+			method="getPingKPIbyGroupid">
+		</action>
+	</package>
+
+
+	<package name="ssoAction" namespace="/sso" extends="abstract_struts">
+		<action name="getSSOConfig" class="ssoAction" method="getSSOConfig">
+		</action>
+	</package>
+
+	<package name="orgidWebbrowsingAction" namespace="/orgidwebbrowsing"
+		extends="abstract_struts">
+		<action name="getPingReportItem" class="orgidWebbrowsingAction"
+			method="getPingReportItem">
+		</action>
+		<action name="getCityList" class="orgidWebbrowsingAction"
+			method="getCityList"></action>
+		<action name="getValidSampleNum" class="orgidWebbrowsingAction"
+			method="getValidSampleNum"></action>
+		<!-- 获取测试报告中的地区 即根据指定的groupid获取orgid数量 -->
+		<action name="getOrgnumByGroupId" class="orgidWebbrowsingAction" method="getOrgnumByGroupId">
+		</action>
+	</package>
+
+	<package name="groupidWebbrowsingAction" namespace="/groupidwebbrowsing"
+		extends="abstract_struts">
+		<action name="getAvgDelay" class="groupidWebbrowsingAction"
+			method="getAvgDelay"></action>
+		<action name="getDelayStandardRate" class="groupidWebbrowsingAction"
+			method="getDelayStandardRate"></action>
+		<action name="getAvgPageSuccessRate" class="groupidWebbrowsingAction"
+			method="getAvgPageSuccessRate"></action>
+		<action name="getPageStandardRate" class="groupidWebbrowsingAction"
+			method="getPageStandardRate"></action>
+
+		<!-- 90%用户页面时延 -->
+		<action name="getTop90PageDelay" class="groupidWebbrowsingAction"
+			method="getTop90PageDelay"></action>
+		<!-- 90%用户页面元素打开成功率 -->
+		<action name="getTop90PageSuccessRate" class="groupidWebbrowsingAction"
+			method="getTop90PageSuccessRate"></action>
+
+		<action name="getPageSuccessData" class="groupidWebbrowsingAction"
+			method="getPageSuccessData">
+		</action>
+		<action name="getPageSuccessOrder" class="groupidWebbrowsingAction"
+			method="getPageSuccessOrder">
+		</action>
+		<action name="getWebbrowsingServiceQualityCompare" class="groupidWebbrowsingAction"
+			method="getWebbrowsingServiceQualityCompare">
+		</action>
+		<action name="getWebbrowsingKPIbyGroupid" class="groupidWebbrowsingAction"
+			method="getWebbrowsingKPIbyGroupid">
+		</action>
+	</package>
+	<package name="kpiApiAction" namespace="/kpiapiqualitymap"
+		extends="abstract_struts">
+		<!-- 概览中累计注册用户数 -->
+		<action name="getRegusernameNum" class="kpiApiAction" method="getRegusernameNum">
+		</action>
+		<!-- 概览中累计使用用户数 -->
+		<action name="getCustomersNum" class="kpiApiAction" method="getCustomersNum">
+		</action>
+	</package>
+	
+	<!-- groupidvideo数据 -->
+	<package name="groupidVideoAction" namespace="/groupidvideomap"
+		extends="abstract_struts">
+		<!-- 视频平均时延上下月-->
+		<action name="getVideoDelay" class="groupidVideoAction" method="getVideoDelay">
+		</action>
+		<!-- 视频卡顿次数上下月 -->
+		<action name="getCacheCount" class="groupidVideoAction" method="getCacheCount">
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/buffer
+END
+IoBufferWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/buffer/IoBufferWrapper.java
+END
+CachedBufferAllocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/buffer/CachedBufferAllocator.java
+END
+SimpleBufferAllocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/buffer/SimpleBufferAllocator.java
+END
+AbstractIoBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/buffer/AbstractIoBuffer.java
+END
+IoBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/buffer/IoBuffer.java
+END
+IoBufferHexDumper.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/buffer/IoBufferHexDumper.java
+END
+BufferDataException.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/buffer/BufferDataException.java
+END
+IoBufferAllocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/buffer/IoBufferAllocator.java
+END

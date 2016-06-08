@@ -1,0 +1,270 @@
+package com.qualitymap.service.impl;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.ServicequalityOrgidPingDao;
+import com.qualitymap.service.ServicequalityOrgidPingService;
+import com.qualitymap.utils.UtilDate;
+
+public class ServicequalityOrgidPingServiceImpl implements ServicequalityOrgidPingService{
+
+	@Resource
+	ServicequalityOrgidPingDao servicequalityOrgidPingDao;
+	static Format fm = new DecimalFormat("#.##");
+
+	/**
+	 * 获取宽带品质监测报告详情
+	 */
+	@Override
+	public String getPingReportItem(String groupid, String month, String broadband_type) {
+		JSONObject dataJSON = new JSONObject();
+		JSONArray dataarray = new JSONArray();
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> queryList = servicequalityOrgidPingDao.getPingReportItem(groupid, month, broadband_type);
+			dataarray = JSONArray.fromObject(queryList);
+		}
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+	
+
+
+	
+	
+	/**
+	 * 获取平台list
+	 */
+	@Override
+	public String getCityList(String month, String groupid,String broadType) {
+		JSONObject dataJSON = new JSONObject();
+		JSONArray dataarray = new JSONArray();
+		if (!"".equals(groupid)) {
+			List<Map<String, Object>> queryList = servicequalityOrgidPingDao.getCityList(month, groupid,broadType);
+
+			dataarray = JSONArray.fromObject(queryList);
+		}
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+	
+	/**
+	 * 根据groupid获取有效样本
+	 */
+	@Override
+	public String getValidSampleNum(String month, String groupid,String broadType) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		if (!"".equals(groupid)) {
+			String ping_test_times = servicequalityOrgidPingDao.getValidSampleNum(month, groupid,broadType);
+			dataJSON.put("ping_test_times", ping_test_times);
+		} else {
+			dataJSON.put("ping_test_times", "");
+		}
+		return dataJSON.toString();
+	}
+
+
+
+
+	@Override
+	public String getAvgDelay(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+
+		double monthAvgDelay = 0;
+		double preAvgDelay = 0;
+
+		if (!"".equals(groupid)) {
+			List<Map<String, Object>> avgDelayList = servicequalityOrgidPingDao.getAvgDelay(yearMonth, lastMonth, groupid);
+
+			for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (yearMonth.equals(map.get("month"))) {
+					monthAvgDelay = Double.parseDouble(map.get("avg_delay").toString());
+				} else {
+					preAvgDelay = Double.parseDouble(map.get("avg_delay").toString());
+				}
+			}
+		}
+		avgJson.put("thismonth", fm.format(monthAvgDelay));
+		avgJson.put("lastmonth", fm.format(preAvgDelay));
+
+		return avgJson.toString();
+	}
+
+
+	/**
+	 * 平均ping时延(MS)
+	 */
+	@Override
+	public String getAvgPingDelay(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+		double monthAvg = 0;
+		double preAvg = 0;
+
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> avgDelayList = servicequalityOrgidPingDao.getAvgPingDelay(yearMonth, lastMonth, groupid);
+
+			for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (yearMonth.equals(map.get("month"))) {
+					monthAvg = Double.parseDouble(map.get("avg_ping_delay").toString());
+				} else {
+					preAvg = Double.parseDouble(map.get("avg_ping_delay").toString());
+				}
+			}
+		}
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+
+		return avgJson.toString();
+	}
+
+
+
+
+
+	@Override
+	public String getDelayStandardRate(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+		double monthAvg = 0;
+		double preAvg = 0;
+		if (!"".equals(groupid)) {
+			List<Map<String, Object>> avgDelayList = servicequalityOrgidPingDao.getDelayStandardRate(yearMonth, lastMonth, groupid);
+
+			for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (yearMonth.equals(map.get("month"))) {
+					monthAvg = Double.parseDouble(map.get("delay_standard_rate").toString());
+				} else {
+					preAvg = Double.parseDouble(map.get("delay_standard_rate").toString());
+				}
+			}
+		}
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+
+		return avgJson.toString();
+	}
+
+
+
+
+	/**
+	 * ping丢包率
+	 */
+	@Override
+	public String getPingLossRate(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+		double monthAvg = 0;
+		double preAvg = 0;
+
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> avgDelayList = servicequalityOrgidPingDao.getPingLossRate(yearMonth, lastMonth, groupid);
+
+			for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (yearMonth.equals(map.get("month"))) {
+					monthAvg = Double.parseDouble(map.get("ping_loss_rate").toString());
+				} else {
+					preAvg = Double.parseDouble(map.get("ping_loss_rate").toString());
+				}
+			}
+		}
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+
+		return avgJson.toString();
+	}
+
+
+
+	/**
+	 * 90%用户ping时延
+	 */
+	@Override
+	public String getTop90PingDelay(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+		double monthAvg = 0;
+		double preAvg = 0;
+
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> avgDelayList = servicequalityOrgidPingDao.getTop90PingDelay(yearMonth, lastMonth, groupid);
+
+			for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (yearMonth.equals(map.get("month"))) {
+					monthAvg = Double.parseDouble(map.get("top90_ping_delay").toString());
+				} else {
+					preAvg = Double.parseDouble(map.get("top90_ping_delay").toString());
+				}
+			}
+		}
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+
+		return avgJson.toString();
+	}
+
+
+	/**
+	 * 90%用户ping丢包率
+	 */
+	@Override
+	public String getTop90PingLossRate(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+		double monthAvg = 0;
+		double preAvg = 0;
+
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> avgDelayList = servicequalityOrgidPingDao.getTop90PingLossRate(yearMonth, lastMonth, groupid);
+
+			for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (yearMonth.equals(map.get("month"))) {
+					monthAvg = Double.parseDouble(map.get("top90_ping_loss_rate").toString());
+				} else {
+					preAvg = Double.parseDouble(map.get("top90_ping_loss_rate").toString());
+				}
+			}
+		}
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+
+		return avgJson.toString();
+	}
+
+
+}

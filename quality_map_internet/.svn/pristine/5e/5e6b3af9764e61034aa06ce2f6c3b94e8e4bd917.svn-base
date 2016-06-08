@@ -1,0 +1,17 @@
+package com.qualitymap.service;
+
+import com.qualitymap.vo.OverviewServicequality;
+
+
+/**
+ * Description:  OTS统计平台业务质量
+ * @author zqh
+ * 2016-4-7: PM 03:29:11
+ */
+public interface OverviewServicequalityService {
+	
+	String getAvgDelay(String yearMonth);
+	void getDelayStandardRate(OverviewServicequality overviewServicequality);
+	void getAvgPageSuccessRate(OverviewServicequality overviewServicequality);
+	void getPageStandardRate(OverviewServicequality overviewServicequality);
+}

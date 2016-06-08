@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/reqres
+END
+Request.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/reqres/Request.java
+END
+RequestTimeoutException.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/reqres/RequestTimeoutException.java
+END
+ResponseType.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/reqres/ResponseType.java
+END
+RequestResponseFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/reqres/RequestResponseFilter.java
+END
+ResponseInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/reqres/ResponseInspector.java
+END
+ResponseInspectorFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/reqres/ResponseInspectorFactory.java
+END
+Response.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/reqres/Response.java
+END

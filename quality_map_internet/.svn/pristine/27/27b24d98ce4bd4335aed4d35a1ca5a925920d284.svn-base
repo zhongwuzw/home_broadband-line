@@ -1,0 +1,15 @@
+package com.qualitymap.dao;
+
+import java.util.List;
+
+import com.qualitymap.vo.OverviewKpi;
+
+public interface OverviewKpiDao {
+	void saveType(OverviewKpi kpi);
+
+	void deletType(OverviewKpi kpi);
+
+	List<OverviewKpi> find();
+
+	void updateType(OverviewKpi kpi);
+}

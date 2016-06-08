@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/cmcc-mina-app/core/src/main/java/com/chinamobile/httpserver/data
+END
+MessageQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/cmcc-mina-app/core/src/main/java/com/chinamobile/httpserver/data/MessageQueue.java
+END
+OttMessageQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/cmcc-mina-app/core/src/main/java/com/chinamobile/httpserver/data/OttMessageQueue.java
+END
+DataParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/cmcc-mina-app/core/src/main/java/com/chinamobile/httpserver/data/DataParser.java
+END
+TestMessageBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/cmcc-mina-app/core/src/main/java/com/chinamobile/httpserver/data/TestMessageBean.java
+END
+GlobalPara.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/cmcc-mina-app/core/src/main/java/com/chinamobile/httpserver/data/GlobalPara.java
+END
+XMLEdit.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/cmcc-mina-app/core/src/main/java/com/chinamobile/httpserver/data/XMLEdit.java
+END

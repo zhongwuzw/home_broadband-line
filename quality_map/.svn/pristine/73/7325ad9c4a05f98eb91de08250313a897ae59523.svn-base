@@ -1,0 +1,45 @@
+package com.qualitymap.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import com.qualitymap.vo.TerminalOs;
+
+/**
+ * 终端数据统计
+ * @author：kxc
+ * @date：Apr 11, 2016
+ */
+public interface TerminalOsDao {
+	
+	/**
+	 * 获取特定月份平台测试次数占比
+	 * @param month
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getPlatformPercent(String month,String groupid);
+	
+	
+	List<Map<String, Object>> getPlatData(String month,String groupid);
+	
+	/**
+	 * 获取平台分布数据
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getPlatformDistribution(String month,String groupid);
+
+	void saveOs(TerminalOs terminalOs);
+
+	void deleteOs(TerminalOs terminalOs);
+
+	List<TerminalOs> findOs();
+
+	void updateOs(TerminalOs terminalOs);
+	
+	
+
+}

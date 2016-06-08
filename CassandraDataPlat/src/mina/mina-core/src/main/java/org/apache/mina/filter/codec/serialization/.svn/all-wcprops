@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/serialization
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/serialization/package.html
+END
+ObjectSerializationEncoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/serialization/ObjectSerializationEncoder.java
+END
+ObjectSerializationInputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/serialization/ObjectSerializationInputStream.java
+END
+ObjectSerializationCodecFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/serialization/ObjectSerializationCodecFactory.java
+END
+ObjectSerializationDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/serialization/ObjectSerializationDecoder.java
+END
+ObjectSerializationOutputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/serialization/ObjectSerializationOutputStream.java
+END

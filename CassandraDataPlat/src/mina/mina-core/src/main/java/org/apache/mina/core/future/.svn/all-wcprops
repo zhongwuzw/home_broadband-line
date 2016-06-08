@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future
+END
+CompositeIoFuture.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/CompositeIoFuture.java
+END
+ConnectFuture.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/ConnectFuture.java
+END
+IoFutureListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/IoFutureListener.java
+END
+DefaultConnectFuture.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/DefaultConnectFuture.java
+END
+CloseFuture.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/CloseFuture.java
+END
+DefaultReadFuture.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/DefaultReadFuture.java
+END
+DefaultCloseFuture.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/DefaultCloseFuture.java
+END
+DefaultIoFuture.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/DefaultIoFuture.java
+END
+IoFuture.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/IoFuture.java
+END
+ReadFuture.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/ReadFuture.java
+END
+WriteFuture.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/WriteFuture.java
+END
+DefaultWriteFuture.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/future/DefaultWriteFuture.java
+END

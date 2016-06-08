@@ -1,0 +1,18 @@
+package com.qualitymap.service;
+
+
+/**
+ * 终端分析
+ * @author：kxc
+ * @date：Apr 8, 2016
+ */
+public interface TerminalOsService {
+
+	/**
+	 * 获取特定月份平台测试次数占比
+	 * @param month
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	String getPlatformPercent(String month);
+}

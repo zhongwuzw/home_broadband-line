@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/http/digest
+END
+HttpDigestAuthLogicHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/http/digest/HttpDigestAuthLogicHandler.java
+END
+DigestUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/http/digest/DigestUtilities.java
+END

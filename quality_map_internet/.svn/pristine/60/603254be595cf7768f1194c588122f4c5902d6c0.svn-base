@@ -1,0 +1,49 @@
+package com.qualitymap.dao.impl;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.qualitymap.dao.OverviewProvinceDao;
+import com.qualitymap.vo.OverviewProvince;
+
+public class OverviewProvinceDaoImpl implements OverviewProvinceDao {
+
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public Session getSession() {
+		return sessionFactory.getCurrentSession();
+	}
+	@Override
+	public void saveProvice(OverviewProvince viewPro) {
+		// TODO Auto-generated method stub
+		getSession().save(viewPro);
+	}
+
+	@Override
+	public void deletProvice(OverviewProvince viewPro) {
+		// TODO Auto-generated method stub
+		getSession().delete(viewPro);
+	}
+
+	@Override
+	public List<OverviewProvince> findProvice() {
+		// TODO Auto-generated method stub
+		List<OverviewProvince> proList = getSession().createQuery("from OverviewProvince").list();
+		return proList;
+	}
+
+	@Override
+	public void updateProvice(OverviewProvince viewPro) {
+		// TODO Auto-generated method stub
+		getSession().update(viewPro);
+		
+	}
+
+	
+}

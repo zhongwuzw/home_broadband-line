@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/LTE_E2E_analyse/!svn/ver/2707/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/jiakuan/jiakuan_servicequality/dao
+END
+ServicequalityorgidHttpdownloadDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/svn/LTE_E2E_analyse/!svn/ver/2757/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/jiakuan/jiakuan_servicequality/dao/ServicequalityorgidHttpdownloadDao.java
+END
+ServicequalityOrgidWebbrowsingDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/LTE_E2E_analyse/!svn/ver/2754/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/jiakuan/jiakuan_servicequality/dao/ServicequalityOrgidWebbrowsingDao.java
+END
+ServicequalityOrgidVideoDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/LTE_E2E_analyse/!svn/ver/2778/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/jiakuan/jiakuan_servicequality/dao/ServicequalityOrgidVideoDao.java
+END
+ServicequalityGroupidHttpuploadDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/svn/LTE_E2E_analyse/!svn/ver/2754/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/jiakuan/jiakuan_servicequality/dao/ServicequalityGroupidHttpuploadDao.java
+END
+ServicequalityGroupidWebbrowsingDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/LTE_E2E_analyse/!svn/ver/2754/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/jiakuan/jiakuan_servicequality/dao/ServicequalityGroupidWebbrowsingDao.java
+END
+ServicequalityGroupidVideoDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/LTE_E2E_analyse/!svn/ver/2778/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/jiakuan/jiakuan_servicequality/dao/ServicequalityGroupidVideoDao.java
+END
+ServicequalityorgidHttpuploadDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/LTE_E2E_analyse/!svn/ver/2754/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/jiakuan/jiakuan_servicequality/dao/ServicequalityorgidHttpuploadDao.java
+END
+ServicequalityGroupidHttpdownloadDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/LTE_E2E_analyse/!svn/ver/2754/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/jiakuan/jiakuan_servicequality/dao/ServicequalityGroupidHttpdownloadDao.java
+END

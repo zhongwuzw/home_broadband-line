@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session
+END
+DefaultIoSessionDataStructureFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/DefaultIoSessionDataStructureFactory.java
+END
+AbstractIoSessionConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/AbstractIoSessionConfig.java
+END
+IoSessionAttributeMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/IoSessionAttributeMap.java
+END
+IoSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/IoSession.java
+END
+IoSessionRecycler.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/IoSessionRecycler.java
+END
+IdleStatusChecker.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/IdleStatusChecker.java
+END
+AbstractIoSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/AbstractIoSession.java
+END
+DummySession.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/DummySession.java
+END
+IoEventType.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/IoEventType.java
+END
+IdleStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/IdleStatus.java
+END
+AttributeKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/AttributeKey.java
+END
+IoSessionInitializationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/IoSessionInitializationException.java
+END
+SessionState.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/SessionState.java
+END
+ExpiringSessionRecycler.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/ExpiringSessionRecycler.java
+END
+UnknownMessageTypeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/UnknownMessageTypeException.java
+END
+IoEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/IoEvent.java
+END
+IoSessionInitializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/IoSessionInitializer.java
+END
+IoSessionConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/IoSessionConfig.java
+END
+IoSessionDataStructureFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/session/IoSessionDataStructureFactory.java
+END

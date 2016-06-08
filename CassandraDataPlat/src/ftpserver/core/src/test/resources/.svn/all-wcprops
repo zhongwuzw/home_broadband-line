@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/test/resources
+END
+dbusermanagertest-cleartext-hsql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/test/resources/dbusermanagertest-cleartext-hsql.sql
+END
+keymanager-test.jks
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/test/resources/keymanager-test.jks
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/test/resources/log4j.properties
+END
+users.properties
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/test/resources/users.properties
+END
+ftpserver.jks
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/test/resources/ftpserver.jks
+END
+dbusermanagertest-hsql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/test/resources/dbusermanagertest-hsql.sql
+END
+client.jks
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/test/resources/client.jks
+END

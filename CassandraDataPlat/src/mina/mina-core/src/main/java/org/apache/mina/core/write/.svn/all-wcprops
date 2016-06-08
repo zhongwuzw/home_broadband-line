@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/write
+END
+WriteRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/write/WriteRequest.java
+END
+WriteException.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/write/WriteException.java
+END
+WriteToClosedSessionException.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/write/WriteToClosedSessionException.java
+END
+WriteTimeoutException.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/write/WriteTimeoutException.java
+END
+NothingWrittenException.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/write/NothingWrittenException.java
+END
+WriteRequestWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/write/WriteRequestWrapper.java
+END
+DefaultWriteRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/write/DefaultWriteRequest.java
+END
+WriteRequestQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/write/WriteRequestQueue.java
+END

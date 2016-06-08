@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/test/java/org/apache/mina/example/echoserver
+END
+ConnectorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/test/java/org/apache/mina/example/echoserver/ConnectorTest.java
+END
+AcceptorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/test/java/org/apache/mina/example/echoserver/AcceptorTest.java
+END
+AbstractTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/test/java/org/apache/mina/example/echoserver/AbstractTest.java
+END

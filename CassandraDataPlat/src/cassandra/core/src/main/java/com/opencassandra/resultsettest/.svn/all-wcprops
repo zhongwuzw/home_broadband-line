@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/LTE_E2E_analyse/!svn/ver/2487/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/resultsettest
+END
+ResultsetTestDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/2571/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/resultsettest/ResultsetTestDao.java
+END
+ResultsetTestData.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/LTE_E2E_analyse/!svn/ver/2571/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/resultsettest/ResultsetTestData.java
+END

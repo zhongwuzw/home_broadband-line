@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/http/ntlm
+END
+NTLMResponses.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/http/ntlm/NTLMResponses.java
+END
+NTLMConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/http/ntlm/NTLMConstants.java
+END
+HttpNTLMAuthLogicHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/http/ntlm/HttpNTLMAuthLogicHandler.java
+END
+NTLMUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/http/ntlm/NTLMUtilities.java
+END

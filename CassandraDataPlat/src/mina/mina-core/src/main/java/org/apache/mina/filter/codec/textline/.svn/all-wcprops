@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/textline
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/textline/package.html
+END
+TextLineEncoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/textline/TextLineEncoder.java
+END
+TextLineCodecFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/textline/TextLineCodecFactory.java
+END
+TextLineDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/textline/TextLineDecoder.java
+END
+LineDelimiter.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/codec/textline/LineDelimiter.java
+END

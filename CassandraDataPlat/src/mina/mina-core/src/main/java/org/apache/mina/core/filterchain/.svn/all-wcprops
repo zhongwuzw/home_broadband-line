@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/filterchain
+END
+IoFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/filterchain/IoFilter.java
+END
+IoFilterEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/filterchain/IoFilterEvent.java
+END
+DefaultIoFilterChainBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/filterchain/DefaultIoFilterChainBuilder.java
+END
+IoFilterChainBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/filterchain/IoFilterChainBuilder.java
+END
+IoFilterLifeCycleException.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/filterchain/IoFilterLifeCycleException.java
+END
+IoFilterChain.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/filterchain/IoFilterChain.java
+END
+DefaultIoFilterChain.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/filterchain/DefaultIoFilterChain.java
+END
+IoFilterAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/core/filterchain/IoFilterAdapter.java
+END

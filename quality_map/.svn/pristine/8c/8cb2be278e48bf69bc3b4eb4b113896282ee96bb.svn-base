@@ -1,0 +1,57 @@
+package com.qualitymap.action;
+
+import javax.annotation.Resource;
+
+import com.qualitymap.base.BaseAction;
+import com.qualitymap.service.ServicequalityOrgidPingService;
+
+/**
+ * 测试报告ping
+ * 
+ * @author：zqh  
+ * @date：2016 5.4 
+ */
+public class ServicequalityOrgidPingAction extends BaseAction {
+
+	/**
+	 * serialVersionUID long OverviewKpiAction.java
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Resource
+	private ServicequalityOrgidPingService servicequalityOrgidPingService;
+
+	/**
+	 * 获取城市list
+	 * 
+	 * @return void
+	 */
+	public void getCityList() {
+		try {
+			String groupid = this.servletRequest.getParameter("groupid");
+			String month = this.servletRequest.getParameter("month");
+			String tendencyData = servicequalityOrgidPingService.getCityList(month,groupid);
+			printWriter(tendencyData);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * 根据groupid获取有效样本
+	 * 
+	 * @return void
+	 */
+	public void getValidSampleNum() {
+		try {
+			String month = this.servletRequest.getParameter("month");
+			String groupid = this.servletRequest.getParameter("groupid");  //页面获取指定groupid
+			String ping_test_times = servicequalityOrgidPingService.getValidSampleNum(month, groupid);
+			printWriter(ping_test_times);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+
+}

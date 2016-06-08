@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess
+END
+IoAbsoluteWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/IoAbsoluteWriter.java
+END
+ByteArrayList.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/ByteArrayList.java
+END
+AbstractByteArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/AbstractByteArray.java
+END
+ByteArrayPool.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/ByteArrayPool.java
+END
+SimpleByteArrayFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/SimpleByteArrayFactory.java
+END
+CompositeByteArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/CompositeByteArray.java
+END
+CompositeByteArrayRelativeWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/CompositeByteArrayRelativeWriter.java
+END
+CompositeByteArrayRelativeBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/CompositeByteArrayRelativeBase.java
+END
+IoRelativeWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/IoRelativeWriter.java
+END
+IoAbsoluteReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/IoAbsoluteReader.java
+END
+ByteArrayFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/ByteArrayFactory.java
+END
+CompositeByteArrayRelativeReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/CompositeByteArrayRelativeReader.java
+END
+IoRelativeReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/IoRelativeReader.java
+END
+BufferByteArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/BufferByteArray.java
+END
+ByteArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/util/byteaccess/ByteArray.java
+END

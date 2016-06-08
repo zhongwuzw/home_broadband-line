@@ -1,0 +1,63 @@
+package com.qualitymap.dao.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import org.hibernate.Hibernate;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.transform.Transformers;
+
+import com.qualitymap.dao.OverviewServicequalityProvinceDao;
+import com.qualitymap.service.OverviewServicequalityProvinceService;
+import com.qualitymap.vo.OverviewServicequalityProvince;
+
+/**
+ * 业务质量数据统计
+ * @author：kxc
+ * @date：Apr 11, 2016
+ */
+public class OverviewServicequalityProvinceDaoImpl implements OverviewServicequalityProvinceDao {
+
+	private SessionFactory sessionFactory;
+
+	
+	@Override
+	public void saveQualityProvince(OverviewServicequalityProvince serqualityprovince) {
+		// TODO Auto-generated method stub
+		getSession().save(serqualityprovince);
+	}
+
+	@Override
+	public void deleteqQualityProvinc(OverviewServicequalityProvince serqualityprovince) {
+		// TODO Auto-generated method stub
+		getSession().delete(serqualityprovince);
+	}
+
+	@Override
+	public List<OverviewServicequalityProvince> findQualityProvinc() {
+		// TODO Auto-generated method stub
+		List<OverviewServicequalityProvince> qualityProvinceList = getSession().createQuery("from OverviewServicequalityProvince").list();
+		return qualityProvinceList;
+	}
+
+	@Override
+	public void updateQualityProvinc(OverviewServicequalityProvince serqualityprovince) {
+		// TODO Auto-generated method stub
+		getSession().update(serqualityprovince);
+		
+	}
+
+	
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public Session getSession() {
+		return sessionFactory.getCurrentSession();
+	}
+
+	
+	
+}

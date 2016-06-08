@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/distribution/bin
+END
+ftpd.sh
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/distribution/bin/ftpd.sh
+END
+ftpd.exe
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/distribution/bin/ftpd.exe
+END
+ftpd.bat
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/distribution/bin/ftpd.bat
+END
+ftpdw.exe
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/distribution/bin/ftpdw.exe
+END
+service.bat
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/distribution/bin/service.bat
+END
+appendcp.bat
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/distribution/bin/appendcp.bat
+END

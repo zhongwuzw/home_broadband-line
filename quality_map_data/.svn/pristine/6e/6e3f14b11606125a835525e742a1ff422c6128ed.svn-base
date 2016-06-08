@@ -1,0 +1,7 @@
+redis.onoff=on
+redis.password=
+redis.maxactive=500
+redis.maxidle=5
+redis.maxwait=60
+redis.ip=218.206.179.233
+redis.port=6379

@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon Oct 15 16:58:03 CST 2012
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=C\:\\Users\\CMCC-BY\\Desktop\\cmcc-mina_fat.jar
+manifest.mergeall=true
+manifest.mainclass=com.chinamobile.lab.httpserver.HttpServerTest
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=
+includes=

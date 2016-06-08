@@ -1,0 +1,182 @@
+package com.qualitymap.service.impl;
+
+import java.security.acl.Group;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.OverviewProvinceDao;
+import com.qualitymap.service.OverviewProvinceService;
+import com.qualitymap.vo.OverviewProvince;
+
+/**
+ * 省级纬度数据分析
+ * 
+ * @author：kxc
+ * @date：Apr 12, 2016
+ */
+public class OverviewProvinceServiceImpl implements OverviewProvinceService {
+
+	@Resource
+	private OverviewProvinceDao provinceDao;
+
+	@Override
+	public String findByMonth(String month, String group) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+		JSONArray dataarray = new JSONArray();
+		if (!"".equals(group)) {
+
+			List<OverviewProvince> provinceList = provinceDao.findByMonth(month, group);
+
+			dataarray = JSONArray.fromObject(provinceList);
+			dataJSON.put("data", dataarray);
+		} else {
+			dataJSON.put("data", dataarray);
+		}
+
+		return dataJSON.toString();
+	}
+
+	/**
+	 * 查询所有的数据
+	 */
+	@Override
+	public String findProvice(String groupid) {
+
+		JSONObject datajson = new JSONObject();
+		JSONArray dataarray = new JSONArray();
+
+		if(!"".equals(groupid)){
+			
+			List<OverviewProvince> provinceList = provinceDao.findProvice(groupid);
+			
+			 dataarray = JSONArray.fromObject(provinceList);
+		}
+		datajson.put("data", dataarray);
+
+		return datajson.toString();
+	}
+
+	/**
+	 * 获取签约带宽占比
+	 * 
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	@Override
+	public String getBroadbandData(String month, String groupid) {
+
+		JSONObject dataJSON = new JSONObject();
+		JSONArray dataarray = new JSONArray();
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> provinceList = provinceDao.getBroadbandData(month, groupid);
+
+			dataarray = JSONArray.fromObject(provinceList);
+			dataJSON.put("data", dataarray);
+		} else {
+			dataJSON.put("data", dataarray);
+		}
+
+		return dataJSON.toString();
+	}
+
+	/**
+	 * 获取各省用户占比
+	 */
+	@Override
+	public String getProvinceUserPercent(String month, String groupid) {
+
+		JSONObject dataJSON = new JSONObject();
+		JSONArray newuserNumarray = new JSONArray();
+		JSONArray provincearray = new JSONArray();
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> provinceList = provinceDao.getProvinceUserPercent(month, groupid);
+
+			for (Iterator iterator = provinceList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+				
+				String userNum = map.get("new_user_num").toString();
+				String province = map.get("province").toString();
+				newuserNumarray.add(userNum);
+				provincearray.add(province);
+			}
+		} 
+		
+		dataJSON.put("lables",provincearray);
+		dataJSON.put("data", newuserNumarray);
+		return dataJSON.toString();
+	}
+
+	/**
+	 * 获取宽带类型累计和本月用户数
+	 */
+	@Override
+	public String getBroadbandTypeData(String month, String groupid) {
+		JSONObject dataJSON = new JSONObject();
+		JSONArray dataarray = new JSONArray();
+		if (!"".equals(groupid)) {
+			List<Map<String, Object>> queryList = provinceDao.getBroadbandTypeData(month, groupid);
+			dataarray = JSONArray.fromObject(queryList);
+		}
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+	/**
+	 * 根据groupid，month获取样本总数
+	 */
+	@Override
+	public String getTotalSampleNum(String month, String groupid,String broadType) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		if (!"".equals(groupid)) {
+			String new_sample_num = provinceDao.getTotalSampleNum(month, groupid,broadType);
+			dataJSON.put("new_sample_num", new_sample_num);
+		} else {
+			dataJSON.put("new_sample_num", "");
+		}
+		return dataJSON.toString();
+	}
+	/**
+	 * 根据groupid获取用户(报告中的用户字段)
+	 */
+	@Override
+	public String getUsernumByGroupId(String month, String groupid,String broadType) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		if (!"".equals(groupid)) {
+			String new_user_num = provinceDao.getUsernumByGroupId(month, groupid,broadType);
+			dataJSON.put("new_user_num", new_user_num);
+		} else {
+			dataJSON.put("new_user_num", "");
+		}
+		return dataJSON.toString();
+	}
+	/**
+	 * 根据groupid获取终端(报告中的终端字段)
+	 */
+	@Override
+	public String getTerminalnumByGroupId(String month, String groupid,String broadType) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		if (!"".equals(groupid)) {
+			String new_terminal_num = provinceDao.getTerminalnumByGroupId(month, groupid,broadType);
+			dataJSON.put("new_terminal_num", new_terminal_num);
+		} else {
+			dataJSON.put("new_terminal_num", "");
+		}
+		return dataJSON.toString();
+	}
+}

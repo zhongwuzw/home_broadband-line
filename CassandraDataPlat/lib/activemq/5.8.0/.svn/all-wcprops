@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0
+END
+activemq-pool-5.8.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/activemq-pool-5.8.0.jar
+END
+geronimo-jms_1.1_spec-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/geronimo-jms_1.1_spec-1.1.1.jar
+END
+activemq-spring-5.8.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/activemq-spring-5.8.0.jar
+END
+slf4j-api-1.7.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/slf4j-api-1.7.5.jar
+END
+slf4j-log4j12-1.7.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/slf4j-log4j12-1.7.5.jar
+END
+activemq-web-5.8.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/activemq-web-5.8.0.jar
+END
+activemq-protobuf-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/activemq-protobuf-1.1.jar
+END
+activemq-camel-5.8.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/activemq-camel-5.8.0.jar
+END
+activemq-console-5.8.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/activemq-console-5.8.0.jar
+END
+camel-spring-2.10.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/camel-spring-2.10.3.jar
+END
+geronimo-j2ee-management_1.1_spec-1.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/geronimo-j2ee-management_1.1_spec-1.0.1.jar
+END
+activemq-jaas-5.8.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/activemq-jaas-5.8.0.jar
+END
+activemq-client-5.8.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/activemq/5.8.0/activemq-client-5.8.0.jar
+END

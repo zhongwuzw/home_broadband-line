@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="networkTyperAction" namespace="/qualitymap" extends="abstract_struts">
+		<action name="saves" class="networkTyperAction" method="saves">
+		</action>
+	</package>
+
+	<package name="overviewServicequalityAction" namespace="/" extends="abstract_struts">
+		<action name="getAvgDelay" class="com.qualitymap.action.OverviewServicequalityAction" method="getAvgDelay"></action>
+		<action name="getDelayStandardRate" class="com.qualitymap.action.OverviewServicequalityAction" method="getDelayStandardRate"></action>
+		<action name="getAvgPageSuccessRate" class="com.qualitymap.action.OverviewServicequalityAction" method="getAvgPageSuccessRate"></action>
+		<action name="getPageStandardRate" class="com.qualitymap.action.OverviewServicequalityAction" method="getPageStandardRate"></action>
+	</package>
+	<package name="terminalOsAction" namespace="/" extends="abstract_struts">
+		<action name="getMonthPlatTesttimeProportion" class="com.qualitymap.action.TerminalOsAction" method="getMonthPlatTesttimeProportion"></action>
+		<action name="getPlatData" class="com.qualitymap.action.TerminalOsAction" method="getPlatData"></action>
+	</package>
+
+	<package name="provinceAction" namespace="/provincequalitymap" extends="abstract_struts">
+		<action name="findByMonth" class="provinceAction" method="findByMonth">
+		</action>
+		<action name="findAll" class="provinceAction" method="findAll">
+		</action>
+	</package>
+
+</struts>

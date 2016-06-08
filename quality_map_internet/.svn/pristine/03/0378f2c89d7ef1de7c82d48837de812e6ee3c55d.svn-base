@@ -1,0 +1,30 @@
+package com.qualitymap.service;
+
+/**
+ * 省级纬度数据分析
+ * @author：kxc
+ * @date：Apr 12, 2016
+ */
+public interface OverviewProvinceService {
+
+	/**
+	 * 获取签约带宽占比
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getBroadbandData(String month,String groupid);
+	
+	/**
+	 * 获取各省用户占比
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getProvinceUserPercent(String month,String groupid );
+	
+	String findByMonth(String month,String group);
+	String findProvice(String groupid);
+}

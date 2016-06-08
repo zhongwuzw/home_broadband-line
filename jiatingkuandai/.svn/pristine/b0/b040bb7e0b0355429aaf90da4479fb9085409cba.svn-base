@@ -1,0 +1,20 @@
+package com.qualitymap.dao;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * 
+ * @author kongxiangchun
+ *
+ */
+public interface ServicequalityGroupidHttpDownloadDao {
+
+	
+	/**
+	 * 获取上下月的下载速率
+	 */
+	public List<Map<String, Object>> getHttpDownloadRate(String yearMonth, String lastMonth, String groupid);
+	
+	
+}

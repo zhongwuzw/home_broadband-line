@@ -1,0 +1,88 @@
+package com.qualitymap.dao.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.transform.Transformers;
+
+import com.qualitymap.dao.TerminalOsDao;
+import com.qualitymap.vo.TerminalOs;
+
+public class TerminalOsDaoImpl implements TerminalOsDao {
+
+	private SessionFactory sessionFactory;
+
+	@Override
+	public void saveOs(TerminalOs terminalOs) {
+		// TODO Auto-generated method stub
+		getSession().save(terminalOs);
+	}
+
+	@Override
+	public void deleteOs(TerminalOs terminalOs) {
+		// TODO Auto-generated method stub
+		getSession().delete(terminalOs);
+	}
+
+	@Override
+	public List<TerminalOs> findOs() {
+		// TODO Auto-generated method stub
+		List<TerminalOs> osList = getSession().createQuery("from TerminalOs").list();
+		return osList;
+	}
+
+	@Override
+	public void updateOs(TerminalOs terminalOs) {
+		// TODO Auto-generated method stub
+		getSession().update(terminalOs);
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public Session getSession() {
+		return sessionFactory.getCurrentSession();
+	}
+
+	@Override
+	public List<Map<String, Object>> getPlatformPercent(String month,String groupid) {
+		String sql = " SELECT sum(testtimes) value, platform lable FROM terminal_os WHERE `month` ='" + month + "' and groupid in ("+groupid+")  GROUP BY lable ";
+
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+
+	@Override
+	public List<Map<String, Object>> getPlatData(String month,String groupid) {
+		String sql = " SELECT sum(new_user_num) thisMonth,sum(accumulativ_num) accumulat ,platform type FROM terminal_os WHERE `month` ='" + month + "' and groupid in ("+groupid+")  GROUP BY type ";
+
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+
+	/**
+	 * 获取平台分布数据
+	 */
+	@Override
+	public List<Map<String, Object>> getPlatformDistribution(String month,String groupid) {
+		String sql = " SELECT sum(testtimes) testtimes,platform type FROM terminal_os WHERE `month` ='" + month + "'  and groupid in ("+groupid+")  GROUP BY platform ";
+
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+
+	/**
+	 * 获取平台数据详细信息
+	 */
+	@Override
+	public List<Map<String, Object>> getPlatformDetailData(String groupid) {
+		String sql = " SELECT sum(testtimes) testtimes,platform,new_user_num,accumulativ_num, new_user_num/accumulativ_num newuserpercent,new_terminal_num,accumulativ_terminal_num,new_terminal_num/accumulativ_terminal_num  newterminalpercent ,month FROM terminal_os WHERE  groupid in ("+groupid+") group by platform ";
+
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+
+}

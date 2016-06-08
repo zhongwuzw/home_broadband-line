@@ -1,0 +1,57 @@
+package com.qualitymap.service.impl;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.ServicequalityGroupidVideoDao;
+import com.qualitymap.service.ServicequalityGroupidVideoService;
+import com.qualitymap.utils.UtilDate;
+
+public class ServicequalityGroupidVideoServiceImpl implements ServicequalityGroupidVideoService {
+
+	@Resource
+	ServicequalityGroupidVideoDao groupidVideoDao;
+	static Format fm = new DecimalFormat("#.##");
+
+	
+	@Override
+	public String getVideoDelay(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+
+		List<Map<String, Object>> avgDelayList = new ArrayList<Map<String,Object>>();
+
+		if (!"".equals(groupid)) {
+			 avgDelayList = groupidVideoDao.getVideoDelay(yearMonth, lastMonth, groupid);
+		}	
+		avgJson.put("data",avgDelayList);
+
+		return avgJson.toString();
+	}
+
+	
+
+	@Override
+	public String getCacheCount(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+		List<Map<String, Object>> avgDelayList = new ArrayList<Map<String,Object>>();
+		if (!"".equals(groupid)) {
+			avgDelayList = groupidVideoDao.getCacheCount(yearMonth, lastMonth, groupid);
+		}
+		avgJson.put("data", avgDelayList);
+
+		return avgJson.toString();
+	}
+
+
+}

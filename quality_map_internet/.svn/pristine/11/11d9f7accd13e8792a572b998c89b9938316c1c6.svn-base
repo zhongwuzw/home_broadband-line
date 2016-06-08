@@ -1,0 +1,18 @@
+package com.qualitymap.dao;
+
+import java.util.List;
+
+import com.qualitymap.vo.TerminalModel;
+import com.qualitymap.vo.TerminalOs;
+
+public interface TerminalOsDao {
+
+	void saveOs(TerminalOs terminalOs);
+
+	void deleteOs(TerminalOs terminalOs);
+
+	List<TerminalOs> findOs();
+
+	void updateOs(TerminalOs terminalOs);
+
+}

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-statemachine/src/test/java/org/apache/mina/statemachine
+END
+StateMachineTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-statemachine/src/test/java/org/apache/mina/statemachine/StateMachineTest.java
+END
+StateMachineFactoryTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-statemachine/src/test/java/org/apache/mina/statemachine/StateMachineFactoryTest.java
+END
+StateMachineProxyBuilderTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-statemachine/src/test/java/org/apache/mina/statemachine/StateMachineProxyBuilderTest.java
+END
+StateTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-statemachine/src/test/java/org/apache/mina/statemachine/StateTest.java
+END

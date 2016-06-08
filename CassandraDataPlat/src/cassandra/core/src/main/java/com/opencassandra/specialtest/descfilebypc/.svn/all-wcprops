@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/LTE_E2E_analyse/!svn/ver/2820/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/specialtest/descfilebypc
+END
+GetPostTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/LTE_E2E_analyse/!svn/ver/2820/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/specialtest/descfilebypc/GetPostTest.java
+END
+DescFileByPc.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/LTE_E2E_analyse/!svn/ver/2820/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/specialtest/descfilebypc/DescFileByPc.java
+END
+InsertMysqlDaoByPc.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/LTE_E2E_analyse/!svn/ver/2820/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/specialtest/descfilebypc/InsertMysqlDaoByPc.java
+END

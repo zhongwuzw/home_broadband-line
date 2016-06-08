@@ -1,0 +1,163 @@
+package com.qualitymap.service.impl;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSON;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.OverviewServicequalityProvinceDao;
+import com.qualitymap.service.OverviewServicequalityProvinceService;
+import com.qualitymap.utils.UtilDate;
+
+/**
+ * 业务质量数据统计
+ * 
+ * @author：kxc
+ * @date：Apr 11, 2016
+ */
+public class OverviewServicequalityProvinceServiceImpl implements OverviewServicequalityProvinceService {
+
+	@Resource
+	private OverviewServicequalityProvinceDao servicequalityDao;
+	static Format fm = new DecimalFormat("#.##");
+
+	/**
+	 * 获取平均时延趋势
+	 */
+	@Override
+	public String getAvgDelayDatas(String groupid) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+
+		List<Map<String, Object>> queryList = servicequalityDao.getAvgDelayData(groupid);
+
+		JSONArray dataarray = JSONArray.fromObject(queryList);
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+
+	/**
+	 * 获取平均时延排名
+	 */
+	@Override
+	public String getAvgdelayOrder(String month, String groupid) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		JSONArray dataArray = new JSONArray();
+
+		String prmonth = UtilDate.getPreviousMonth(month);
+		List<Map<String, Object>> monList = servicequalityDao.getAvgDelayOrder(month, prmonth, groupid);
+
+		List<Map<String, Object>> mapList = new ArrayList<Map<String, Object>>();
+
+		double previousNum = 0;
+		double toNum = 0;
+		String percent = "";
+
+		for (Iterator iterator = monList.iterator(); iterator.hasNext();) {
+			Map<String, Object> map = (Map<String, Object>) iterator.next();
+			Map datamap = new HashMap();
+
+			String province = (String) map.get("province");
+
+			toNum = Double.valueOf(map.get("avg_delay").toString());
+			previousNum = Double.valueOf(map.get("preavg").toString());
+
+			if (previousNum != 0) {
+				double difValue = toNum - previousNum;
+				percent = fm.format(difValue / previousNum * 100) + "%";
+			} else {
+				percent = "N/A";
+			}
+
+			datamap.put("province", province);
+			datamap.put("thisdata", toNum);
+			datamap.put("predata", previousNum);
+			datamap.put("percent", percent);
+
+			mapList.add(datamap);
+		}
+
+		dataArray = JSONArray.fromObject(mapList);
+
+		dataJSON.put("data", dataArray);
+
+		return dataJSON.toString();
+	}
+
+	/**
+	 * 获取页面打开成功趋势
+	 */
+	@Override
+	public String getPageSuccessData(String groupid) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+
+		List<Map<String, Object>> queryList = servicequalityDao.getPageSuccessData(groupid);
+
+		JSONArray dataarray = JSONArray.fromObject(queryList);
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+
+	/**
+	 * 获取页面元素打开成功率排名
+	 */
+	@Override
+	public String getPageSuccessOrder(String month, String groupid) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		JSONArray dataArray = new JSONArray();
+
+		String prmonth = UtilDate.getPreviousMonth(month);
+		List<Map<String, Object>> monList = servicequalityDao.getPageSuccessOrder(month, prmonth, groupid);
+
+		List<Map<String, Object>> mapList = new ArrayList<Map<String, Object>>();
+
+		double previousNum = 0;
+		double toNum = 0;
+		String percent = "";
+
+		for (Iterator iterator = monList.iterator(); iterator.hasNext();) {
+			Map<String, Object> map = (Map<String, Object>) iterator.next();
+			Map datamap = new HashMap();
+
+			String province = (String) map.get("province");
+
+			toNum = Double.valueOf(map.get("page_success_rate").toString());
+			previousNum = Double.valueOf(map.get("pre_page_success_rate").toString());
+
+			if (previousNum != 0) {
+				double difValue = toNum - previousNum;
+				percent = fm.format(difValue / previousNum * 100) + "%";
+			} else {
+				percent = "N/A";
+			}
+
+			datamap.put("province", province);
+			datamap.put("thisdata", toNum);
+			datamap.put("predata", previousNum);
+			datamap.put("percent", percent);
+
+			mapList.add(datamap);
+		}
+
+		dataArray = JSONArray.fromObject(mapList);
+
+		dataJSON.put("data", dataArray);
+
+		return dataJSON.toString();
+	}
+
+}

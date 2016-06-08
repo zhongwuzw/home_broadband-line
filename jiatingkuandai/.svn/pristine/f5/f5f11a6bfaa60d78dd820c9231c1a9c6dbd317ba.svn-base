@@ -1,0 +1,32 @@
+package com.qualitymap.service;
+
+/**
+ * 
+ * @author kongxiangchun
+ *
+ */
+public interface ServicequalityGroupidVideoService {
+	
+	
+	/**
+	 * 获取上下月的平均时延
+	 * @param yearMonth
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getVideoDelay(String yearMonth,String groupid);
+	
+
+	/**
+	/**
+	 * 视频卡顿次数上下月数据
+	 * @param yearMonth
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getCacheCount(String yearMonth,String groupid);
+
+
+}

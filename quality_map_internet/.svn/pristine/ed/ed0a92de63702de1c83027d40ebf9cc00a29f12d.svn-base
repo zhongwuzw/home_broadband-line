@@ -1,0 +1,81 @@
+package com.qualitymap.dao.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.transform.Transformers;
+
+import com.qualitymap.dao.OverviewProvinceDao;
+import com.qualitymap.vo.OverviewProvince;
+
+/**
+ * 省级纬度数据分析
+ * @author：kxc
+ * @date：Apr 12, 2016
+ */
+public class OverviewProvinceDaoImpl implements OverviewProvinceDao {
+
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public Session getSession() {
+		return sessionFactory.getCurrentSession();
+	}
+	@Override
+	public void saveProvice(OverviewProvince viewPro) {
+		// TODO Auto-generated method stub
+		getSession().save(viewPro);
+	}
+
+	@Override
+	public void deletProvice(OverviewProvince viewPro) {
+		// TODO Auto-generated method stub
+		getSession().delete(viewPro);
+	}
+
+	@Override
+	public List<OverviewProvince> findProvice(String groupid) {
+		// TODO Auto-generated method stub
+		SQLQuery query = getSession().createSQLQuery("select * from overview_province where groupid in ("+groupid+")  order by month desc");
+		List<OverviewProvince> proList = query.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return proList;
+	}
+
+	@Override
+	public void updateProvice(OverviewProvince viewPro) {
+		// TODO Auto-generated method stub
+		getSession().update(viewPro);
+		
+	}
+
+	@Override
+	public List<OverviewProvince> findByMonth(String month,String group) {
+		String sql = "select sum(testtimes) testtimes ,province  from overview_province where month='"+month+"' and groupid in ("+group+") group by groupid";
+		List<OverviewProvince> proList = getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+				//getSession().createSQLQuery(sql).list();
+		return proList;
+	}
+
+	@Override
+	public List<Map<String, Object>> getBroadbandData(String month, String groupid) {
+		String sql = "select sum(new_user_num) new_user_num ,broadband_type from overview_province where month='"+month+"' and groupid in ("+groupid+") group by broadband_type";
+		List<Map<String, Object>> proList = getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+				//getSession().createSQLQuery(sql).list();
+		return proList;
+	}
+
+	@Override
+	public List<Map<String, Object>> getProvinceUserPercent(String month, String groupid) {
+		String sql = "select ifnull(sum(new_user_num),0) new_user_num ,province from overview_province where month='"+month+"' and groupid in ("+groupid+") group by groupid order by new_user_num DESC limit 0,10";
+		List<Map<String, Object>> proList = getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return proList;
+	}
+
+	
+}

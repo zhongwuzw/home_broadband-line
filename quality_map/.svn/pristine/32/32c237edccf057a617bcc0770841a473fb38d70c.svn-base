@@ -1,0 +1,32 @@
+package com.qualitymap.dao.impl;
+
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.qualitymap.dao.OverviewKPIOrgidBandwidthDao;
+
+public class OverviewKPIOrgidBandwidthDaoImpl implements
+		OverviewKPIOrgidBandwidthDao {
+
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public Session getSession() {
+		return sessionFactory.getCurrentSession();
+	}
+	
+	/**
+	 * 根据groupid，month获取样本总数
+	 */
+	@Override
+	public String getTotalSampleNum(String month, String groupid) {
+		String sql = "select IFNULL(sum(new_sample_num),0) new_sample_num from overview_kpi_orgid_bandwidth where  month= '"+month+"' and groupid = '"+groupid+"'";
+		SQLQuery query = this.getSession().createSQLQuery(sql);    
+	    String new_sample_num = query.uniqueResult().toString(); 
+		return new_sample_num;
+	}
+}

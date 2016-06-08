@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="shortcut icon" href="favo.png" type="image/x-icon" />
+		<title>登录-家庭宽带品质数据平台</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<style type="text/css">
+		</style>
+		<script type="text/javascript" src="./common/jquery.min.js"></script>
+	</head>
+
+	<body style="margin:0px; background:#FFFFFF" onload="initPageLayout()" onkeydown="keydownOperate(event)" onresize="initPageLayout()">
+	<script>
+		var suffix = "login_proxy.html";
+		var baseJump = 'loginPage_sso.html';
+		var baseUrl = window.location.href;
+		var service,jump;
+		if(baseUrl.indexOf(baseJump) >= 0) {
+			baseUrl = baseUrl.replace(baseJump,'');
+		}
+    	if(baseUrl.indexOf(suffix) < 0 ) {
+    		baseUrl = baseUrl + suffix;
+    	}
+    	$.ajax({
+    		url:'sso/getSSOConfig',
+    		dataType:'json',
+    		type:'POST',
+    		async:false,
+    		success:function(msg) {
+    			service = msg.service;
+    			jump = msg.jump;
+    		},
+    		error:function(msg) {
+    			alert('请求sso配置信息失败');
+    		}
+    	});
+		//打开第三方登录窗口
+		function openOtherLoginWindow(){
+			
+			document.body.innerHTML="";//此行只是清空body内的元素，使用者自行调整
+			var height = document.documentElement.clientHeight;//浏览器可见区域高度
+	    	var paddingTop = (height-280)/4;
+			var div = document.createElement('div');
+			div.id = "otherlogindiv";
+			//div.style.paddingTop = paddingTop+"px";
+			div.style.height=height+"px";
+			div.align = 'center';
+			var otherloginframe = document.createElement('iframe');
+			otherloginframe.id = 'otherloginframe';
+			otherloginframe.width="100%";
+			otherloginframe.height="100%";
+			otherloginframe.style.border = "0px";
+			//http\://192.168.204.11:8181/ctp/otherloginPage_Ch.html地址为单点登录服务地址，ip地址和端口会改动
+			//domainstr=http\://192.168.25.83:8484/ctp_demo/other_login_proxy.html  使用方创建的本地跨域代理html地址，要传给单点登录服务，进行添加隐藏iframe，使其域和使用方的域相同。
+			otherloginframe.src = service + '?d='+new Date().getMilliseconds()+'#domainstr='+baseUrl+'';
+			otherloginframe.frameborder = "0";
+			otherloginframe.scrolling="no";
+			div.appendChild(otherloginframe);
+			document.body.appendChild(div);
+					
+		}
+		
+		/**初始化页面布局*/
+	    function initPageLayout(){
+		    openOtherLoginWindow();
+	    }
+
+
+		//获取到从单点登录返回的key,然后查找redis服务器获取此key对应用户，保存为sessionuser,并进行页面跳转
+		function redirectToHome(userinfo){
+			if(userinfo.success){//为true登录成功
+				var key = userinfo.key;
+				location.href= jump + "?key="+key+"&apiKey="+userinfo.apiKey+"";
+				//location.href='http\://www.baidu.com';
+				
+			}else{
+				alert("登录失败");
+				return;
+			}
+		}
+		function keydownOperate(e){
+			var pressCode;
+			if(window.event) // IE
+			{
+				pressCode = e.keyCode;
+			}
+			else if(e.which) // Netscape/Firefox/Opera
+			{
+				pressCode = e.which;
+			}
+			//if(window.event.keyCode == 13){
+			if(pressCode == 13){
+				login();
+			}
+		}
+	</script>
+</html>

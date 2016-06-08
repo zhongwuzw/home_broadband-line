@@ -1,0 +1,18 @@
+package com.qualitymap.service;
+
+/**
+ * 
+ * @author kongxiangchun
+ *
+ */
+public interface ServicequalityOrgidWebbrowsingService {
+
+	/**
+	 * 获取宽带品质监测报告详情
+	 * @param groupid
+	 * @param month
+	 * @param broadband_type
+	 * @return
+	 */
+	String getPingReportItem(String groupid,String month,String broadband_type);
+}

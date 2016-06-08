@@ -1,0 +1,33 @@
+package com.qualitymap.action;
+
+import javax.annotation.Resource;
+
+import com.qualitymap.base.BaseAction;
+import com.qualitymap.service.NetworkOperatorService;
+
+/**
+ * 网络分析数据统计
+ * @author：kxc
+ * @date：Apr 11, 2016
+ */
+public class NetworkOperatorAction extends BaseAction{
+	
+	@Resource
+	private NetworkOperatorService operatorService;
+
+	public void getOperatorDatas(){
+		String month = this.servletRequest.getParameter("month");
+		String groupid = "12,13";
+		
+		String operatorData = operatorService.getOperatorData(month, groupid);
+		printWriter(operatorData);
+	}
+	
+	public void getDetailData(){
+		String month = this.servletRequest.getParameter("month");
+		String groupid = "12,13";
+		
+		String operatorData = operatorService.getDetailData(month, groupid);
+		printWriter(operatorData);
+	}
+}

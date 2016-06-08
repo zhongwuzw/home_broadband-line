@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/httpclient
+END
+httpclient-cache-4.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/httpclient/httpclient-cache-4.2.jar
+END
+commons-logging-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/httpclient/commons-logging-1.1.1.jar
+END
+fluent-hc-4.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/httpclient/fluent-hc-4.2.jar
+END
+httpmime-4.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/httpclient/httpmime-4.2.jar
+END
+httpcore-nio-4.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/httpclient/httpcore-nio-4.2.jar
+END
+commons-codec-1.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/httpclient/commons-codec-1.6.jar
+END
+httpclient-4.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/httpclient/httpclient-4.2.jar
+END
+httpcore-4.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/httpclient/httpcore-4.2.jar
+END
+httpcore-ab-4.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/httpclient/httpcore-ab-4.2.jar
+END

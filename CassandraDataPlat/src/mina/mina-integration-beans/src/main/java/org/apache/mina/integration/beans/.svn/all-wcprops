@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans
+END
+SetEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/SetEditor.java
+END
+EnumEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/EnumEditor.java
+END
+InetAddressEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/InetAddressEditor.java
+END
+CollectionEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/CollectionEditor.java
+END
+IntegerEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/IntegerEditor.java
+END
+ListEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/ListEditor.java
+END
+ShortEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/ShortEditor.java
+END
+LongEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/LongEditor.java
+END
+FloatEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/FloatEditor.java
+END
+MapEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/MapEditor.java
+END
+FileEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/FileEditor.java
+END
+PropertyEditorFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/PropertyEditorFactory.java
+END
+ArrayEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/ArrayEditor.java
+END
+ClassEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/ClassEditor.java
+END
+AbstractPropertyEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/AbstractPropertyEditor.java
+END
+PropertiesEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/PropertiesEditor.java
+END
+StringEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/StringEditor.java
+END
+DoubleEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/DoubleEditor.java
+END
+PatternEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/PatternEditor.java
+END
+URLEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/URLEditor.java
+END
+VmPipeAddressEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/VmPipeAddressEditor.java
+END
+DateEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/DateEditor.java
+END
+InetSocketAddressEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/InetSocketAddressEditor.java
+END
+URIEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/URIEditor.java
+END
+NumberEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/NumberEditor.java
+END
+CharacterEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/CharacterEditor.java
+END
+ByteEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/ByteEditor.java
+END
+BooleanEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/BooleanEditor.java
+END
+NullEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/main/java/org/apache/mina/integration/beans/NullEditor.java
+END

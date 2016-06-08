@@ -1,0 +1,36 @@
+package com.qualitymap.service.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import com.qualitymap.dao.NetworkTypeDao;
+import com.qualitymap.dao.impl.NetworkTypeDaoImpl;
+import com.qualitymap.service.NetworkTypeService;
+import com.qualitymap.vo.NetworkType;
+
+public class NetworkTypeServiceImpl implements NetworkTypeService{
+
+	@Resource
+	NetworkTypeDao typeDao;
+
+	@Override
+	public List<NetworkType> savetype() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void save(NetworkType networkType) {
+		// TODO Auto-generated method stub
+		typeDao.saveType(networkType);
+	}
+
+	@Override
+	public void deletenet(NetworkType networkType) {
+		// TODO Auto-generated method stub
+		typeDao.deleteType(networkType);
+	}
+	
+
+}

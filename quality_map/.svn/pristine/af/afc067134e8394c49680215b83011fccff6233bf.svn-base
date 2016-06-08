@@ -1,0 +1,31 @@
+package com.qualitymap.action;
+
+import javax.annotation.Resource;
+
+import com.qualitymap.base.BaseAction;
+import com.qualitymap.service.ServicequalityOrgidPingService;
+
+public class ServicequalityOrgidPingAction extends BaseAction {
+
+	@Resource
+	ServicequalityOrgidPingService servicequalityOrgidPingService;
+
+	/**
+	 * 获取城市list
+	 * 
+	 * @return void
+	 */
+	public void getCityList() {
+		try {
+			String groupid = this.servletRequest.getParameter("groupid");
+			String month = this.servletRequest.getParameter("month");
+			String broadType = this.servletRequest.getParameter("broadType");//宽带类型
+			String tendencyData = servicequalityOrgidPingService.getCityList(month,groupid,broadType);
+			printWriter(tendencyData);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	
+}

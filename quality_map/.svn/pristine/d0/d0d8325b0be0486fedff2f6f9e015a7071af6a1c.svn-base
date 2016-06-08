@@ -1,0 +1,36 @@
+package com.qualitymap.service.impl;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.OverviewKPIOrgidBandwidthDao;
+import com.qualitymap.service.OverviewKPIOrgidBandwidthService;
+
+public class OverviewKPIOrgidBandwidthServiceImpl implements
+		OverviewKPIOrgidBandwidthService {
+
+	@Resource
+	private OverviewKPIOrgidBandwidthDao overviewKPIOrgidBandwidthDao;
+	static Format fm = new DecimalFormat("#.##");
+	
+	/**
+	 * 根据groupid，month获取样本总数
+	 */
+	@Override
+	public String getTotalSampleNum(String month, String groupid) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		if (!"".equals(groupid)) {
+			String new_sample_num = overviewKPIOrgidBandwidthDao.getTotalSampleNum(month, groupid);
+			dataJSON.put("new_sample_num", new_sample_num);
+		} else {
+			dataJSON.put("new_sample_num", "");
+		}
+		return dataJSON.toString();
+	}
+}

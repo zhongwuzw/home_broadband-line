@@ -1,0 +1,13 @@
+package com.qualitymap.dao;
+
+public interface OverviewKPIOrgidBandwidthDao {
+
+	/**
+	 * 根据groupid，month获取样本总数
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getTotalSampleNum(String month,String groupid);
+}

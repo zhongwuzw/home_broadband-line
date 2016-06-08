@@ -1,0 +1,20 @@
+package com.qualitymap.dao;
+
+import java.util.List;
+
+import com.qualitymap.vo.OverviewProvince;
+
+public interface OverviewProvinceDao {
+
+	void saveProvice(OverviewProvince viewPro);
+
+	void deletProvice(OverviewProvince viewPro);
+
+	List<OverviewProvince> findProvice();
+
+	void updateProvice(OverviewProvince viewPro);
+	
+	List<OverviewProvince> findByMonth(String month,String group);
+
+	
+}

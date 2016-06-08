@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/ssl
+END
+SslConfigurationFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/ssl/SslConfigurationFactory.java
+END
+SslConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/ssl/SslConfiguration.java
+END
+ClientAuth.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/ssl/ClientAuth.java
+END

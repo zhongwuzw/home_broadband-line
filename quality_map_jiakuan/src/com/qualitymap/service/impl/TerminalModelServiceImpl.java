@@ -1,0 +1,53 @@
+package com.qualitymap.service.impl;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.TerminalModelDao;
+import com.qualitymap.service.TerminalModelService;
+
+/**
+ * 终端分析
+ * 
+ * @author：kxc
+ * @date：Apr 12, 2016
+ */
+public class TerminalModelServiceImpl implements TerminalModelService {
+
+	@Resource
+	private TerminalModelDao modelDao;
+
+	/**
+	 * 获取终端统计数据
+	 */
+	@Override
+	public String getTerminalModelData(String month, String groupid, String terminalType) {
+		JSONObject dataJSON = new JSONObject();
+		
+		JSONArray modelarray = new JSONArray();
+		JSONArray timesarray = new JSONArray();
+		
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> queryList = modelDao.getTerminalModelData(month, groupid, terminalType);
+			
+			if(queryList.size()>0){
+				for (Iterator iterator = queryList.iterator(); iterator.hasNext();) {
+					Map<String, Object> map = (Map<String, Object>) iterator.next();
+					modelarray.add(map.get("terminal_model"));
+					timesarray.add(map.get("testtimes"));
+				}
+			}
+		}
+		dataJSON.put("data", timesarray);
+		dataJSON.put("lables", modelarray);
+		return dataJSON.toString();
+	}
+
+}

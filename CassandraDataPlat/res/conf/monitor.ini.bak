@@ -1,0 +1,10 @@
+[All]
+[MonitorPath]
+srcurl=jdbc:mysql://192.168.16.96:5050/
+srcuser=z2jHC2u=
+srcpassword=z2jHC2uYmdeXmduZmq==
+dsturl=jdbc:mysql://192.168.16.96:5050/
+dstuser=z2jHC2u=
+dstpassword=z2jHC2uYmdeXmduZmq==
+caseinfo=http://192.168.204.11:8091/OTSPortal/caseinfo.do
+[OTHER]

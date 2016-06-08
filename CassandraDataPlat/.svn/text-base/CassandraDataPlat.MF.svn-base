@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: LocalThread.Mythread
+Class-Path: ./ ./lib/commons-collections.jar ./lib/commons-pool.jar ./lib/jedis-2.0.0.jar ./lib/mysql-connector-java-5.1.6-bin.jar ./lib/commons-lang-2.1.jar
+

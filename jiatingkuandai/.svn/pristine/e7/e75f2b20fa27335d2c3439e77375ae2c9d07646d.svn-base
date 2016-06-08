@@ -1,0 +1,84 @@
+package com.qualitymap.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import com.qualitymap.vo.OverviewProvince;
+
+/**
+ * 省级纬度数据分析
+ * @author：kxc
+ * @date：Apr 12, 2016
+ */
+public interface OverviewProvinceDao {
+	
+	
+	/**
+	 * 获取签约带宽占比
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	List<Map<String, Object>> getBroadbandData(String month,String groupid);
+	
+	/**
+	 * 获取各省用户占比
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getProvinceUserPercent(String month,String groupid );
+
+	void saveProvice(OverviewProvince viewPro);
+
+	void deletProvice(OverviewProvince viewPro);
+
+	List<OverviewProvince> findProvice(String groupid,String month);
+
+	void updateProvice(OverviewProvince viewPro);
+	
+	List<OverviewProvince> findByMonth(String month,String group);
+
+	/**
+	 * 获取宽带类型累计和本月用户数
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getBroadbandTypeData(String month,String groupid);
+	/**
+	 * 根据groupid，month获取样本总数
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getTotalSampleNum(String month,String groupid,String broadType);
+	/**
+	 * 根据groupid获取用户(报告中的用户字段) 
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getUsernumByGroupId(String month,String groupid,String broadType);
+	/**
+	 * 根据groupid获取终端(报告中的终端字段) 
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getTerminalnumByGroupId(String month,String groupid,String broadType);
+	
+	
+	List<Map<String, Object>> getwebdelaydata(String groupid,String month,String broadband_type);
+	List<Map<String, Object>> getvideodelaydata(String groupid,String month,String broadband_type);
+	List<Map<String, Object>> getwebratedata(String groupid,String month,String broadband_type);
+	List<Map<String, Object>> getvideocachedata(String groupid,String month,String broadband_type);
+	List<Map<String, Object>> gethttpuploaddata(String groupid,String month,String broadband_type);
+	List<Map<String, Object>> gethttpdownloaddata(String groupid,String month,String broadband_type);
+}

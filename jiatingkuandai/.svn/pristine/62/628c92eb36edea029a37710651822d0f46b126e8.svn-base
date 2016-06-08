@@ -1,0 +1,233 @@
+package com.qualitymap.dao.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.transform.Transformers;
+
+import com.qualitymap.dao.OverviewProvinceDao;
+import com.qualitymap.vo.OverviewProvince;
+
+/**
+ * 省级纬度数据分析
+ * @author：kxc
+ * @date：Apr 12, 2016
+ */
+public class OverviewProvinceDaoImpl implements OverviewProvinceDao {
+
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public Session getSession() {
+		return sessionFactory.getCurrentSession();
+	}
+	@Override
+	public void saveProvice(OverviewProvince viewPro) {
+		// TODO Auto-generated method stub
+		getSession().save(viewPro);
+	}
+
+	@Override
+	public void deletProvice(OverviewProvince viewPro) {
+		// TODO Auto-generated method stub
+		getSession().delete(viewPro);
+	}
+
+	@Override
+	public List<OverviewProvince> findProvice(String groupid,String month) {
+		// TODO Auto-generated method stub
+		SQLQuery query = getSession().createSQLQuery("select * from overview_province where groupid in ("+groupid+") and month<='"+month+"'  order by month desc");
+		List<OverviewProvince> proList = query.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return proList;
+	}
+
+	@Override
+	public void updateProvice(OverviewProvince viewPro) {
+		// TODO Auto-generated method stub
+		getSession().update(viewPro);
+		
+	}
+
+	@Override
+	public List<OverviewProvince> findByMonth(String month,String group) {
+		String sql = "select sum(testtimes) testtimes ,province  from overview_province where month='"+month+"' and groupid in ("+group+") group by groupid ORDER BY testtimes desc";
+		List<OverviewProvince> proList = getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+				//getSession().createSQLQuery(sql).list();
+		return proList;
+	}
+
+	@Override
+	public List<Map<String, Object>> getBroadbandData(String month, String groupid) {
+		String sql = "select sum(new_user_num) new_user_num ,broadband_type from overview_province where month='"+month+"' and groupid in ("+groupid+") group by broadband_type order by sum(new_user_num) desc";
+		List<Map<String, Object>> proList = getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+				//getSession().createSQLQuery(sql).list();
+		return proList;
+	}
+
+	@Override
+	public List<Map<String, Object>> getProvinceUserPercent(String month, String groupid) {
+		String sql = "select ifnull(sum(new_user_num),0) new_user_num ,province from overview_province where month='"+month+"' and groupid in ("+groupid+") group by groupid order by new_user_num DESC limit 0,10";
+		List<Map<String, Object>> proList = getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return proList;
+	}
+
+	/**
+	 * 获取宽带类型累计和本月用户数
+	 */
+	@Override
+	public List<Map<String, Object>> getBroadbandTypeData(String month,String groupid) {
+		String sql = " SELECT sum(new_user_num) thisMonth,sum(accumulativ_num) accumulat ,probetype type FROM overview_province WHERE `month` ='" + month + "' and groupid in ("+groupid+")  GROUP BY probetype order by sum(new_user_num) desc";
+
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	/**
+	 * 根据groupid，month获取样本总数
+	 */
+	@Override
+	public String getTotalSampleNum(String month, String groupid,String broadType) {
+		String sql = "select IFNULL(sum(new_sample_num),0) new_sample_num from overview_province where  month= '"+month+"' and groupid = '"+groupid+"' and broadband_type = '"+broadType+"' ";
+		SQLQuery query = this.getSession().createSQLQuery(sql);    
+	    String new_sample_num = query.uniqueResult().toString(); 
+		return new_sample_num;
+	}
+	/**
+	 * 根据groupid获取用户(报告中的用户字段)
+	 */
+	@Override
+	public String getUsernumByGroupId(String month, String groupid,String broadType) {
+		String sql = "select IFNULL(sum(new_user_num),0) new_user_num from overview_province where  month= '"+month+"' and groupid = '"+groupid+"' and broadband_type = '"+broadType+"' ";
+		SQLQuery query = this.getSession().createSQLQuery(sql);    
+	    String new_user_num = query.uniqueResult().toString(); 
+		return new_user_num;
+	}
+	/**
+	 * 根据groupid获取终端(报告中的终端字段)
+	 */
+	@Override
+	public String getTerminalnumByGroupId(String month, String groupid,String broadType) {
+		String sql = "select IFNULL(sum(terminal_num),0) new_terminal_num from overview_province where  month= '"+month+"' and groupid = '"+groupid+"' and broadband_type = '"+broadType+"' ";
+		SQLQuery query = this.getSession().createSQLQuery(sql);    
+	    String new_terminal_num = query.uniqueResult().toString(); 
+		return new_terminal_num;
+	}
+	/**
+	 * 下面6个接口为查询测试报告结果需要
+	 * @param groupid
+	 * @param month
+	 * @param broadband_type
+	 * @return
+	 */
+	@Override
+	public List<Map<String, Object>> getwebratedata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"页面元素打开成功率\" typename, orgname, CONCAT( ROUND(SUM(page_success_rate*page_test_times)/SUM(page_test_times),2),\"%\") value,probetype type ,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num FROM servicequality_orgid_webbrowsing WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype,orgname ";
+
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	@Override
+	public List<Map<String, Object>> getwebdelaydata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"页面显示时延\" typename, orgname,CONCAT( ROUND(SUM(page_avg_delay*page_test_times)/SUM(page_test_times),2),\"ms\") value,probetype type,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num FROM servicequality_orgid_webbrowsing WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype ,orgname";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+
+	@Override
+	public List<Map<String, Object>> getvideocachedata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"视频单位时间卡顿次数\" typename, orgname,CONCAT( ROUND( SUM(video_cache_count*video_test_times)/SUM(video_test_times),2),\"次\") value ,probetype type,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num FROM servicequality_orgid_video WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype ,orgname";
+
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	@Override
+	public List<Map<String, Object>> getvideodelaydata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"视频加载时长\" typename, orgname, CONCAT( ROUND( SUM(avg_video_delay*video_test_times)/SUM(video_test_times),2),\"ms\") value,probetype type ,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num FROM servicequality_orgid_video WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype ,orgname";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	@Override
+	public List<Map<String, Object>> gethttpuploaddata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"上传速率\" typename, orgname, CONCAT( ROUND( SUM(avg_upload_rate*upload_test_times)/SUM(upload_test_times),2),\"Mpbs\") value ,probetype type,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num FROM servicequality_orgid_httpupload WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype,orgname ";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	@Override
+	public List<Map<String, Object>> gethttpdownloaddata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"下载速率\" typename, orgname, CONCAT( ROUND(SUM(avg_download_rate*download_test_times)/SUM(download_test_times),2),\"Mpbs\") value,probetype type ,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num FROM servicequality_orgid_httpdownload  WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype ,orgname";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	
+	//--------------------------------------------------------------------------------------------------------------
+	/**
+	 * 下面6个接口为查询测试报告中获取探针类型维度数据需要
+	 * @param groupid
+	 * @param month
+	 * @param broadband_type
+	 * @return
+	 */
+	@Override
+	public List<Map<String, Object>> getratewebdata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"页面元素打开成功率\" typename ,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num,  CONCAT( ROUND(SUM(page_success_rate*page_test_times)/SUM(page_test_times),2),\"%\") value,probetype type  FROM servicequality_orgid_webbrowsing WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype ";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	@Override
+	public List<Map<String, Object>> getdelaywebdata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"页面显示时延\" typename,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num, CONCAT( ROUND(SUM(page_avg_delay*page_test_times)/SUM(page_test_times),2),\"ms\") value,probetype type FROM servicequality_orgid_webbrowsing WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype ";
+		 
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	
+	@Override
+	public List<Map<String, Object>> getcachevideodata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"视频单位时间卡顿次数\" typename ,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num, CONCAT( ROUND( SUM(video_cache_count*video_test_times)/SUM(video_test_times),2),\"次\") value ,probetype type FROM servicequality_orgid_video WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype ";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	@Override
+	public List<Map<String, Object>> getdelayvideodata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"视频加载时长\" typename ,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num, CONCAT( ROUND( SUM(avg_video_delay*video_test_times)/SUM(video_test_times),2),\"ms\") value,probetype type  FROM servicequality_orgid_video WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype ";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	@Override
+	public List<Map<String, Object>> getuploadhttpdata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"上传速率\" typename ,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num, CONCAT( ROUND( SUM(avg_upload_rate*upload_test_times)/SUM(upload_test_times),2),\"Mpbs\") value ,probetype type FROM servicequality_orgid_httpupload WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype ";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	@Override
+	public List<Map<String, Object>> getdownloadhttpdata(String groupid, String month, String broadband_type) {
+		String sql = " SELECT \"下载速率\" typename ,ifnull(sum(new_sample_num),0) new_sample_num ,ifnull(sum(case_num),0) case_num, CONCAT( ROUND(SUM(avg_download_rate*download_test_times)/SUM(download_test_times),2),\"Mpbs\") value,probetype type  FROM servicequality_orgid_httpdownload  WHERE `month` ='" + month + "' and groupid in ("+groupid+") and broadband_type='"+broadband_type+"'  GROUP BY probetype ";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	//-----------------------------------------------------------------------------------------------------------------------------------------
+	/**
+	 * 根据groupid获取有效样本
+	 */
+	@Override
+	public String getValidSampleNum(String month, String groupid,String broadType) {
+		String sql = "select IFNULL(sum(testtimes),0) ping_test_times from overview_province where  month= '"+month+"' and groupid = '"+groupid+"' and broadband_type = '"+broadType+"' ";
+		SQLQuery query = this.getSession().createSQLQuery(sql);    
+	    String ping_test_times = query.uniqueResult().toString(); 
+		return ping_test_times;
+	}
+}

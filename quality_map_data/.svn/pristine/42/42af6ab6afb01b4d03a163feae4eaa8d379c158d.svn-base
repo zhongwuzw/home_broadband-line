@@ -1,0 +1,70 @@
+package com.qualitymap.action;
+
+import javax.annotation.Resource;
+
+import com.qualitymap.base.BaseAction;
+import com.qualitymap.service.OverviewProvinceService;
+
+/**
+ * 省级纬度数据分析
+ * @author：kxc
+ * @date：Apr 12, 2016
+ */
+public class OverviewProvinceAction extends BaseAction{
+
+	/**
+	 * serialVersionUID
+	 * long
+	 * OverviewProvinceAction.java
+	 */
+	private static final long serialVersionUID = 1L;
+	@Resource
+	private OverviewProvinceService provinceService;
+	
+	/**
+	 * 根据时间查询本月的测试次数
+	 * 
+	 * @return void
+	 */
+	public void findByMonth(){
+		String month = this.servletRequest.getParameter("month");
+		String group = "12,23";
+		String datajson = provinceService.findByMonth(month,group);
+	//	System.out.println(ss+"  ::::::");
+		printWriter(datajson);
+	}
+	
+	/**
+	 * 查询所有的数据
+	 * 
+	 * @return void
+	 */
+	public void findAll(){
+		String datajson = provinceService.findAll();
+		printWriter(datajson);
+	}
+	
+	/**
+	 * 获取签约带宽占比
+	 * 
+	 * @return void
+	 */
+	public void getBroadbandData(){
+		String month = this.servletRequest.getParameter("month");
+		String groupid = "12,23";
+		String broadbandData = provinceService.getBroadbandData(month, groupid);
+		printWriter(broadbandData);
+	}
+	
+	/**
+	 * 获取各省用户占比
+	 * 
+	 * @return void
+	 */
+	public void getProvinceUserPercent(){
+		String month = this.servletRequest.getParameter("month");
+		String groupid = "12,23";
+		String provinceUserData = provinceService.getProvinceUserPercent(month, groupid);
+		printWriter(provinceUserData);
+	}
+}

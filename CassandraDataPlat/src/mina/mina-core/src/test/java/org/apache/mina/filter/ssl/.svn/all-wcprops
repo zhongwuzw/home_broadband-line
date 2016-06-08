@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/filter/ssl
+END
+SslTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/filter/ssl/SslTest.java
+END
+KeyStoreFactoryTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/filter/ssl/KeyStoreFactoryTest.java
+END

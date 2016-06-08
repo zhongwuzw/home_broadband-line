@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/main/java/org/apache/mina/example/netcat
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/main/java/org/apache/mina/example/netcat/package.html
+END
+Main.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/main/java/org/apache/mina/example/netcat/Main.java
+END
+NetCatProtocolHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/main/java/org/apache/mina/example/netcat/NetCatProtocolHandler.java
+END

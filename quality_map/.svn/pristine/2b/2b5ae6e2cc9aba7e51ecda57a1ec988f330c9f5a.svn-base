@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="sysUseraction" namespace="/sysUser" extends="abstract_struts">
+		<action name="validLogin" class="sysUseraction" method="validLogin" ></action>
+		<action name="logout" class="sysUseraction" method="logout" ></action>
+	</package>
+	
+	<package name="networkTyperAction" namespace="/qualitymap" extends="abstract_struts">
+		<action name="getNetTypeData" class="networkTyperAction" method="getNetTypeData"></action>
+	</package>
+	
+	<package name="overviewServicequalityAction" namespace="/overviewServicequality"
+		extends="abstract_struts">
+		<action name="getAvgDelay" class="overviewServicequalityAction"
+			method="getAvgDelay"></action>
+		<action name="getDelayStandardRate" class="overviewServicequalityAction"
+			method="getDelayStandardRate"></action>
+		<action name="getAvgPageSuccessRate" class="overviewServicequalityAction"
+			method="getAvgPageSuccessRate"></action>
+		<action name="getPageStandardRate" class="overviewServicequalityAction"
+			method="getPageStandardRate"></action>
+			
+		<!-- 90%用户页面时延 -->
+		<action name="getTop90PageDelay" class="overviewServicequalityAction"
+			method="getTop90PageDelay"></action>
+		<!-- 90%用户页面元素打开成功率 -->	
+		<action name="getTop90PageSuccessRate" class="overviewServicequalityAction"
+			method="getTop90PageSuccessRate"></action>
+		
+		<!-- 平均ping时延(MS) -->
+		<action name="getAvgPingDelay" class="overviewServicequalityAction"
+			method="getAvgPingDelay"></action>
+		<!-- 90%用户ping时延 -->	
+		<action name="getTop90PingDelay" class="overviewServicequalityAction"
+			method="getTop90PingDelay"></action>
+		<!-- ping丢包率 -->
+		<action name="getPingLossRate" class="overviewServicequalityAction"
+			method="getPingLossRate"></action>
+		<!-- 90%用户ping丢包率 -->	
+		<action name="getTop90PingLossRate" class="overviewServicequalityAction"
+			method="getTop90PingLossRate"></action>	
+	</package>
+	
+	<package name="terminalOsAction" namespace="/terminalOs"
+		extends="abstract_struts">
+		<action name="getMonthPlatTesttimeProportion" class="terminalOsAction"
+			method="getMonthPlatTesttimeProportion"></action>
+		<action name="getPlatData" class="terminalOsAction" method="getPlatData"></action>
+		<action name="getPlatformDistribution" class="terminalOsAction"
+			method="getPlatformDistribution"></action>
+		<action name="getPlatformDetailData" class="terminalOsAction"
+			method="getPlatformDetailData"></action>
+	</package>
+
+	<package name="provinceAction" namespace="/provincequalitymap"
+		extends="abstract_struts">
+		<action name="findByMonth" class="provinceAction" method="findByMonth">
+		</action>
+		<action name="findAll" class="provinceAction" method="findAll">
+		</action>
+		<action name="getBroadbandData" class="provinceAction" method="getBroadbandData">
+		</action>
+		<action name="getProvinceUserPercent" class="provinceAction"
+			method="getProvinceUserPercent">
+		</action>
+		<action name="getBroadbandTypeData" class="provinceAction" method="getBroadbandTypeData">
+		</action>
+	</package>
+	
+	<package name="kpiAction" namespace="/kpiqualitymap" extends="abstract_struts">
+		<action name="getAccumulativnum" class="kpiAction" method="getAccumulativnum">
+		</action>
+		<action name="getProvincenum" class="kpiAction" method="getProvincenum">
+		</action>
+		<action name="getOrgnum" class="kpiAction" method="getOrgnum">
+		</action>
+		<action name="getChannelnum" class="kpiAction" method="getChannelnum">
+		</action>
+		<action name="getTerminalNum" class="kpiAction" method="getTerminalNum">
+		</action>
+		<action name="getRegusernameNum" class="kpiAction" method="getRegusernameNum">
+		</action>
+		<action name="getCustomersNum" class="kpiAction" method="getCustomersNum">
+		</action>
+		<action name="getNewlyIncreaseNum" class="kpiAction" method="getNewlyIncreaseNum">
+		</action>
+		<action name="getUserTendencyData" class="kpiAction" method="getUserTendencyData">
+		</action>
+		<action name="getThismonthTesttimes" class="kpiAction" method="getThismonthTesttimes">
+		</action>
+	</package>
+
+	<package name="networkOperatorAction" namespace="/operatorqualitymap"
+		extends="abstract_struts">
+		<action name="getOperatorDatas" class="networkOperatorAction"
+			method="getOperatorDatas">
+		</action>
+		<action name="getDetailData" class="networkOperatorAction"
+			method="getDetailData">
+		</action>
+
+	</package>
+
+	<package name="overviewServicequalityProvinceAction" namespace="/servicequalityprovincemap"
+		extends="abstract_struts">
+		<action name="getAvgdelayData" class="overviewServicequalityProvinceAction"
+			method="getAvgdelayData">
+		</action>
+		<action name="getAvgdelayOrder" class="overviewServicequalityProvinceAction"
+			method="getAvgdelayOrder">
+		</action>
+		<action name="getPageSuccessData" class="overviewServicequalityProvinceAction"
+			method="getPageSuccessData">
+		</action>
+		<action name="getPageSuccessOrder" class="overviewServicequalityProvinceAction"
+			method="getPageSuccessOrder">
+		</action>
+	</package>
+
+	<package name="terminalModelAction" namespace="/terminalmodelmap"
+		extends="abstract_struts">
+		<action name="getTerminalModelData" class="terminalModelAction"
+			method="getTerminalModelData">
+		</action>
+	</package>
+
+	<package name="ssoAction" namespace="/sso" extends="abstract_struts">
+		<action name="getSSOConfig" class="ssoAction" method="getSSOConfig">
+		</action>
+	</package>
+
+</struts>

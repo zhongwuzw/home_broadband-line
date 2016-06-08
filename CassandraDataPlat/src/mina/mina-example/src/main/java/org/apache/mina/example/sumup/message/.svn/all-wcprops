@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/main/java/org/apache/mina/example/sumup/message
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/main/java/org/apache/mina/example/sumup/message/package.html
+END
+ResultMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/main/java/org/apache/mina/example/sumup/message/ResultMessage.java
+END
+AddMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/main/java/org/apache/mina/example/sumup/message/AddMessage.java
+END
+AbstractMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-example/src/main/java/org/apache/mina/example/sumup/message/AbstractMessage.java
+END

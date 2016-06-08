@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/examples/resources/spring-config
+END
+config-full.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/examples/resources/spring-config/config-full.xml
+END
+config-ftplets.xml
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/examples/resources/spring-config/config-ftplets.xml
+END
+config-typical.xml
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/examples/resources/spring-config/config-typical.xml
+END
+config-minimal.xml
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/examples/resources/spring-config/config-minimal.xml
+END

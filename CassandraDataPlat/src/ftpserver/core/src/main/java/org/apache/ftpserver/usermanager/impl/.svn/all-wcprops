@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl
+END
+AbstractUserManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl/AbstractUserManager.java
+END
+WriteRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl/WriteRequest.java
+END
+PropertiesUserManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl/PropertiesUserManager.java
+END
+WritePermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl/WritePermission.java
+END
+ConcurrentLoginRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl/ConcurrentLoginRequest.java
+END
+BaseUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl/BaseUser.java
+END
+TransferRatePermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl/TransferRatePermission.java
+END
+UserMetadata.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl/UserMetadata.java
+END
+TransferRateRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl/TransferRateRequest.java
+END
+DbUserManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl/DbUserManager.java
+END
+ConcurrentLoginPermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/usermanager/impl/ConcurrentLoginPermission.java
+END

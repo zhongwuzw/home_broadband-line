@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+	<!-- Spring管理Struts2的Action -->
+	<bean name="userMainAction" class="com.opensymphony.xwork2.ActionSupport"
+		scope="prototype"></bean>
+	<bean name="provinceAction" class="com.qualitymap.action.OverviewProvinceAction"
+		scope="prototype"></bean>
+	<bean name="kpiAction" class="com.qualitymap.action.OverviewKpiAction"
+		scope="prototype"></bean>
+	<bean name="terminalOsAction" class="com.qualitymap.action.TerminalOsAction"
+		scope="prototype"></bean>
+	<!-- <bean name="overviewServicequalityAction" class="com.qualitymap.action.OverviewServicequalityAction"
+		scope="prototype"></bean> -->
+	<bean name="networkOperatorAction" class="com.qualitymap.action.NetworkOperatorAction"
+		scope="prototype"></bean>
+	<bean name="networkTyperAction" class="com.qualitymap.action.NetworkTypeAction"
+		scope="prototype"></bean>
+	<!-- <bean name="overviewServicequalityProvinceAction"
+		class="com.qualitymap.action.OverviewServicequalityProvinceAction"
+		scope="prototype"></bean> -->
+	<bean name="terminalModelAction" class="com.qualitymap.action.TerminalModelAction"
+		scope="prototype"></bean>
+	<bean name="ssoAction" class="com.cmri.ctp.action.SSOAction"
+		scope="prototype"></bean>
+	<bean name="sysUseraction" class="com.cmri.ctp.action.SysuserAction"
+		scope="prototype"></bean>
+	<bean name="orgidWebbrowsingAction" class="com.qualitymap.action.ServicequalityOrgidWebbrowsingAction"
+		scope="prototype"></bean>
+	<bean name="servicequalityOrgidPingAction" class="com.qualitymap.action.ServicequalityOrgidPingAction"
+		scope="prototype"></bean>
+	<bean name="groupidWebbrowsingAction" class="com.qualitymap.action.ServicequalityGroupidWebbrowsingAction"
+		scope="prototype"></bean>
+	<bean name="groupidPingAction" class="com.qualitymap.action.ServicequalityGroupidPingAction"
+		scope="prototype"></bean>
+	<bean name="kpiApiAction" class="com.qualitymap.action.OverviewKpiApiAction"
+		scope="prototype"></bean>
+	
+	<bean name="groupidVideoAction" class="com.qualitymap.action.ServicequalityGroupidVideoAction"
+		scope="prototype"></bean>
+	<bean name="groupidHttpDownloadAction" class="com.qualitymap.action.ServicequalityGroupidHttpDownloadAction"
+		scope="prototype"></bean>
+		<bean name="groupidHttpUploadAction" class="com.qualitymap.action.ServicequalityGroupidHttpUploadAction"
+		scope="prototype"></bean>
+		
+	<!-- Spring管理Struts2的Interceptor -->
+
+	<!-- <bean name="overviewServicequalityService"
+		class="com.qualitymap.service.impl.OverviewServicequalityServiceImpl">
+	</bean> -->
+	<bean name="provinceService"
+		class="com.qualitymap.service.impl.OverviewProvinceServiceImpl">
+	</bean>
+	<bean name="kpiService" class="com.qualitymap.service.impl.OverviewKpiServiceImpl">
+	</bean>
+	<bean name="terminalOsService" class="com.qualitymap.service.impl.TerminalOsServiceImpl">
+	</bean>
+	<bean name="operatorService"
+		class="com.qualitymap.service.impl.NetworkOperatorServiceImpl">
+	</bean>
+	<bean name="typeService" class="com.qualitymap.service.impl.NetworkTypeServiceImpl">
+	</bean>
+	<!-- <bean name="overviewServicequalityProvinceService"
+		class="com.qualitymap.service.impl.OverviewServicequalityProvinceServiceImpl">
+	</bean> -->
+	<bean name="terminalModelService" class="com.qualitymap.service.impl.TerminalModelServiceImpl">
+	</bean>
+	<bean name="orgidWebbrowsingService" class="com.qualitymap.service.impl.ServicequalityOrgidWebbrowsingServiceImpl">
+	</bean>
+	<bean name="servicequalityOrgidPingService" class="com.qualitymap.service.impl.ServicequalityOrgidPingServiceImpl"
+		scope="prototype"></bean>
+	<bean name="groupidWebbrowsingService" class="com.qualitymap.service.impl.ServicequalityGroupidWebbrowsingServiceImpl">
+	</bean>
+	<bean name="groupidPingService" class="com.qualitymap.service.impl.ServicequalityGroupidPingServiceImpl"
+		scope="prototype"></bean>
+	<bean name="kpiApiService" class="com.qualitymap.service.impl.OverviewKpiApiServiceImpl">
+	</bean>
+	<bean name="groupidVideoService" class="com.qualitymap.service.impl.ServicequalityGroupidVideoServiceImpl"
+		scope="prototype"></bean>
+	<bean name="groupidHttpDownloadService" class="com.qualitymap.service.impl.ServicequalityGroupidHttpDownloadServiceImpl"
+		scope="prototype"></bean>
+	<bean name="groupidHttpUploadService" class="com.qualitymap.service.impl.ServicequalityGroupidHttpUploadServiceImpl"
+		scope="prototype"></bean>
+
+	<!-- dao管理 -->
+	<bean name="operatorDao" class="com.qualitymap.dao.impl.NetworkOperatorDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="typeDao" class="com.qualitymap.dao.impl.NetworkTypeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="kpiDao" class="com.qualitymap.dao.impl.OverviewKpiDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="provinceDao" class="com.qualitymap.dao.impl.OverviewProvinceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- <bean name="overviewServicequalityDao" class="com.qualitymap.dao.impl.OverviewServicequalityDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> -->
+	<!-- <bean name="servicequalityDao"
+		class="com.qualitymap.dao.impl.OverviewServicequalityProvinceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> -->
+	<bean name="modelDao" class="com.qualitymap.dao.impl.TerminalModelDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="osDao" class="com.qualitymap.dao.impl.TerminalOsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="servicequalityOrgidPingDao" class="com.qualitymap.dao.impl.ServicequalityOrgidPingDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="orgidWebbrowsingDao" class="com.qualitymap.dao.impl.ServicequalityOrgidWebbrowsingDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="groupidWebbrowsingDao" class="com.qualitymap.dao.impl.ServicequalityGroupidWebbrowsingDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean name="groupidPingDao" class="com.qualitymap.dao.impl.ServicequalityGroupidPingDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="kpiApiDao" class="com.qualitymap.dao.impl.OverviewKpiApiDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="groupidVideoDao" class="com.qualitymap.dao.impl.ServicequalityGroupidVideoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="groupidHttpDownloadDao" class="com.qualitymap.dao.impl.ServicequalityGroupidHttpDownloadDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="groupidHttpUploadDao" class="com.qualitymap.dao.impl.ServicequalityGroupidHttpUploadDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

@@ -1,0 +1,22 @@
+package com.qualitymap.dao;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * 
+ * @author kongxiangchun
+ *
+ */
+public interface ServicequalityOrgidWebbrowsingDao {
+
+	/**
+	 * 获取宽带品质监测报告详情
+	 * @param groupid
+	 * @param month
+	 * @param broadband_type
+	 * @return
+	 */
+	List<Map<String, Object>> getPingReportItem(String groupid,String month,String broadband_type);
+	
+}

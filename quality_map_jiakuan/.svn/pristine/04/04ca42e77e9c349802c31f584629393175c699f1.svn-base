@@ -1,0 +1,54 @@
+package com.qualitymap.service.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.NetworkOperatorDao;
+import com.qualitymap.service.NetworkOperatorService;
+
+/**
+ * 网络分析数据统计
+ * @author：kxc
+ * @date：Apr 12, 2016
+ */
+public class NetworkOperatorServiceImpl implements NetworkOperatorService{
+
+	@Resource
+	private NetworkOperatorDao operatorDao;
+	
+	/**
+	 * 获取运营商占比信息
+	 */
+	@Override
+	public String getOperatorData(String month, String groupid) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+		
+		List<Map<String, Object>> queryList = operatorDao.getOperatorData(month, groupid);
+		
+		JSONArray dataarray = JSONArray.fromObject(queryList);
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+	
+	/**
+	 * 获取运营商详细信息
+	 */
+	@Override
+	public String getDetailData(String month, String groupid) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+		
+		List<Map<String, Object>> queryList = operatorDao.getDetailData(month, groupid);
+		
+		JSONArray dataarray = JSONArray.fromObject(queryList);
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+
+}

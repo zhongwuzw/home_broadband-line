@@ -1,0 +1,55 @@
+package com.qualitymap.service.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+
+import com.qualitymap.dao.TerminalOsDao;
+import com.qualitymap.service.TerminalOsService;
+
+/**
+ * 终端分析
+ * @author：kxc
+ * @date：Apr 8, 2016
+ */
+public class TerminalOsServiceImpl implements TerminalOsService{
+
+	@Resource
+	private TerminalOsDao osDao;
+	
+	@Override
+	public String getPlatformPercent(String month) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+		
+		List<Map<String, Object>> queryList = osDao.getPlatformPercent(month);
+		
+		/*JsonConfig config = new JsonConfig();
+		config.setExcludes(new String[] { "" });*/
+		
+		JSONArray dataarray = JSONArray.fromObject(queryList);
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+
+	@Override
+	public String getPlatData(String month) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+		
+		List<Map<String, Object>> queryList = osDao.getPlatData(month);
+		
+		/*JsonConfig config = new JsonConfig();
+		config.setExcludes(new String[] { "" });*/
+		
+		JSONArray dataarray = JSONArray.fromObject(queryList);
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+
+}

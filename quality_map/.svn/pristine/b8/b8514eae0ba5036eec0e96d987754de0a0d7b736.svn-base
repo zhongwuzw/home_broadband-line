@@ -1,0 +1,74 @@
+package com.qualitymap.dao.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.transform.Transformers;
+
+import com.qualitymap.dao.NetworkOperatorDao;
+import com.qualitymap.vo.NetworkOperator;
+
+public class NetworkOperatorDaoImpl implements NetworkOperatorDao {
+
+
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public Session getSession() {
+		return sessionFactory.getCurrentSession();
+	}
+	
+	@Override
+	public void save(NetworkOperator netopt) {
+		// TODO Auto-generated method stub
+		getSession().save(netopt);
+		
+	}
+	
+	@Override
+	public void deletOper(NetworkOperator operator) {
+		// TODO Auto-generated method stub
+		getSession().delete(operator);
+	}
+
+	@Override
+	public List<NetworkOperator> findById() {
+		// TODO Auto-generated method stub
+		List<NetworkOperator> operatorList = getSession().createQuery("from NetworkOperator").list();
+		return operatorList;
+	}
+
+	@Override
+	public void update(NetworkOperator nOperator) {
+
+        Transaction trans = getSession().beginTransaction();
+
+        getSession().update(nOperator);
+        trans.commit();
+	}
+
+	@Override
+	public List<Map<String, Object>> getOperatorData(String month, String groupid) {
+		String sql = " SELECT operator,sum(new_user_num) newUserNum from network_operator WHERE `month` ='" + month + "' and groupid in ("+groupid+") GROUP BY operator ";
+
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+
+	@Override
+	public List<Map<String, Object>> getDetailData(String month, String groupid) {
+		String sql = " SELECT operator,sum(new_user_num) newUserNum,sum(accumulativ_num) accumulativ_num ,sum(newly_increase_num) newly_increase_num," +
+				"province ,proportion  " +
+				"from network_operator WHERE `month` ='" + month + "' and groupid in ("+groupid+") GROUP BY operator ";
+
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+
+}

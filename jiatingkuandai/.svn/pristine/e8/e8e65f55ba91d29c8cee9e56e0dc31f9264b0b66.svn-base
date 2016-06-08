@@ -1,0 +1,25 @@
+package com.qualitymap.dao;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * 
+ * @author kongxiangchun
+ *
+ */
+public interface ServicequalityGroupidVideoDao {
+
+	
+	/**
+	 * 获取上下月的平均时延
+	 */
+	public List<Map<String, Object>> getVideoDelay(String yearMonth, String lastMonth, String groupid);
+	
+	
+	/**
+	 * 视频卡顿次数上下月数据
+	 */
+	public List<Map<String, Object>> getCacheCount(String yearMonth, String lastMonth, String groupid);
+	
+}

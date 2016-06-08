@@ -1,0 +1,32 @@
+package com.qualitymap.service;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * 测试报告ping 
+ * @author：zqh
+ * @date：2016.5.4
+ */
+public interface ServicequalityOrgidPingService {
+
+	
+	String getPingReportItem(String month,String groupid,String band);
+	/**
+	 * 获取城市list
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getCityList(String month,String groupid,String broadType);
+	
+	/**
+	 * 根据groupid获取有效样本
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getValidSampleNum(String month,String groupid,String broadType);
+}

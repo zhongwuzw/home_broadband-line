@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/ftpserver
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/ftpserver/README.txt
+END
+spring-beans-2.5.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/ftpserver/spring-beans-2.5.5.jar
+END
+log4j-1.2.14.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/ftpserver/log4j-1.2.14.jar
+END
+aopalliance-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/ftpserver/aopalliance-1.0.jar
+END
+spring-core-2.5.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/ftpserver/spring-core-2.5.5.jar
+END
+spring-context-2.5.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/ftpserver/spring-context-2.5.5.jar
+END

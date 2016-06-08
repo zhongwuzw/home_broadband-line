@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-transport-apr/src/main/java/org/apache/mina/transport/socket/apr
+END
+AprSocketSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-transport-apr/src/main/java/org/apache/mina/transport/socket/apr/AprSocketSession.java
+END
+AprIoProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-transport-apr/src/main/java/org/apache/mina/transport/socket/apr/AprIoProcessor.java
+END
+AprLibrary.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-transport-apr/src/main/java/org/apache/mina/transport/socket/apr/AprLibrary.java
+END
+AprSocketConnector.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-transport-apr/src/main/java/org/apache/mina/transport/socket/apr/AprSocketConnector.java
+END
+AprSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-transport-apr/src/main/java/org/apache/mina/transport/socket/apr/AprSession.java
+END
+AprDatagramSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-transport-apr/src/main/java/org/apache/mina/transport/socket/apr/AprDatagramSession.java
+END
+AprSocketAcceptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-transport-apr/src/main/java/org/apache/mina/transport/socket/apr/AprSocketAcceptor.java
+END

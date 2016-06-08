@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina
+END
+jcl-over-slf4j-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina/jcl-over-slf4j-1.6.1.jar
+END
+jzlib-1.0.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina/jzlib-1.0.7.jar
+END
+javassist-3.11.0.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina/javassist-3.11.0.GA.jar
+END
+tomcat-apr-5.5.23.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina/tomcat-apr-5.5.23.jar
+END
+RXTXcomm.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina/RXTXcomm.jar
+END
+slf4j-jdk14-1.6.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina/slf4j-jdk14-1.6.4.jar
+END
+slf4j-api-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina/slf4j-api-1.6.1.jar
+END
+javassist-3.7.ga.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina/javassist-3.7.ga.jar
+END
+xbean-spring-3.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina/xbean-spring-3.7.jar
+END
+spring-2.5.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina/spring-2.5.6.jar
+END
+ognl-3.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/mina/ognl-3.0.1.jar
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/firewall
+END
+ConnectionThrottleFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/firewall/ConnectionThrottleFilter.java
+END
+Subnet.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/firewall/Subnet.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/firewall/package.html
+END
+BlacklistFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/filter/firewall/BlacklistFilter.java
+END

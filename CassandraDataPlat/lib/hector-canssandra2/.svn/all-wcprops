@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2
+END
+metrics-core-2.2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/metrics-core-2.2.0.jar
+END
+antlr-3.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/antlr-3.2.jar
+END
+reporter-config-2.1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/reporter-config-2.1.0.jar
+END
+commons-codec-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/commons-codec-1.2.jar
+END
+jackson-mapper-asl-1.9.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/jackson-mapper-asl-1.9.2.jar
+END
+super-csv-2.1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/super-csv-2.1.0.jar
+END
+json-simple-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/json-simple-1.1.jar
+END
+commons-lang-2.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/commons-lang-2.4.jar
+END
+compress-lzf-0.8.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/compress-lzf-0.8.4.jar
+END
+slf4j-api-1.7.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/slf4j-api-1.7.2.jar
+END
+commons-cli-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/commons-cli-1.1.jar
+END
+slf4j-log4j12-1.7.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/slf4j-log4j12-1.7.2.jar
+END
+snakeyaml-1.11.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/snakeyaml-1.11.jar
+END
+disruptor-3.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/disruptor-3.0.1.jar
+END
+uuid-3.2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/uuid-3.2.0.jar
+END
+hector-core-1.1-2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/hector-core-1.1-2.jar
+END
+speed4j-0.9.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/speed4j-0.9.jar
+END
+apache-cassandra-thrift-2.0.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/apache-cassandra-thrift-2.0.7.jar
+END
+libthrift-0.9.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/libthrift-0.9.1.jar
+END
+log4j-1.2.16.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/log4j-1.2.16.jar
+END
+guava-15.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/guava-15.0.jar
+END
+servlet-api-2.5-20081211.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/servlet-api-2.5-20081211.jar
+END
+jackson-core-asl-1.9.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/jackson-core-asl-1.9.2.jar
+END
+apache-cassandra-2.0.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/apache-cassandra-2.0.7.jar
+END
+netty-3.6.6.Final.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/netty-3.6.6.Final.jar
+END
+apache-cassandra-clientutil-2.0.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/apache-cassandra-clientutil-2.0.7.jar
+END
+high-scale-lib-1.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/high-scale-lib-1.1.2.jar
+END
+jline-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/jline-1.0.jar
+END
+thrift-server-0.3.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/thrift-server-0.3.3.jar
+END
+FastInfoset-1.2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/FastInfoset-1.2.2.jar
+END
+jamm-0.2.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/jamm-0.2.5.jar
+END
+concurrentlinkedhashmap-lru-1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/concurrentlinkedhashmap-lru-1.3.jar
+END
+commons-lang3-3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/commons-lang3-3.1.jar
+END
+snappy-java-1.0.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/snappy-java-1.0.5.jar
+END
+snaptree-0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/snaptree-0.1.jar
+END
+jbcrypt-0.3m.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/jbcrypt-0.3m.jar
+END
+lz4-1.2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/lz4-1.2.0.jar
+END
+hector-core-sources-1.1-2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/hector-canssandra2/hector-core-sources-1.1-2.jar
+END

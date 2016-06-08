@@ -1,0 +1,153 @@
+package com.qualitymap.service.impl;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.ServicequalityOrgidPingDao;
+import com.qualitymap.dao.ServicequalityOrgidWebbrowsingDao;
+import com.qualitymap.service.ServicequalityOrgidPingService;
+import com.qualitymap.service.ServicequalityOrgidWebbrowsingService;
+import com.qualitymap.utils.UtilDate;
+
+public class ServicequalityOrgidWebbrowsingServiceImpl implements ServicequalityOrgidWebbrowsingService{
+
+	@Resource
+	ServicequalityOrgidWebbrowsingDao orgidWebbrowsingDao;
+	static Format fm = new DecimalFormat("#.##");
+	/**
+	 * 获取宽带品质监测报告详情
+	 */
+	@Override
+	public String getPingReportItem(String groupid, String month, String broadband_type) {
+		JSONObject dataJSON = new JSONObject();
+		JSONArray dataarray = new JSONArray();
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> queryList = orgidWebbrowsingDao.getPingReportItem(groupid, month, broadband_type);
+			dataarray = JSONArray.fromObject(queryList);
+		}
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+
+	@Override
+	public String getAvgPageSuccessRate(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+		double monthAvg = 0;
+		double preAvg = 0;
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> avgDelayList = orgidWebbrowsingDao.getAvgPageSuccessRate(yearMonth, lastMonth, groupid);
+
+			for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (yearMonth.equals(map.get("month"))) {
+					monthAvg = Double.parseDouble(map.get("avg_page_success_rate").toString());
+				} else {
+					preAvg = Double.parseDouble(map.get("avg_page_success_rate").toString());
+				}
+			}
+		}
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+
+		return avgJson.toString();
+	}
+
+	@Override
+	public String getPageStandardRate(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+		double monthAvg = 0;
+		double preAvg = 0;
+
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> avgDelayList = orgidWebbrowsingDao.getPageStandardRate(yearMonth, lastMonth, groupid);
+
+			for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (yearMonth.equals(map.get("month"))) {
+					monthAvg = Double.parseDouble(map.get("page_standard_rate").toString());
+				} else {
+					preAvg = Double.parseDouble(map.get("page_standard_rate").toString());
+				}
+			}
+		}
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+
+		return avgJson.toString();
+	}
+	/**
+	 * 90%用户页面时延
+	 */
+	@Override
+	public String getTop90PageDelay(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+		double monthAvg = 0;
+		double preAvg = 0;
+		if (!"".equals(groupid)) {
+			List<Map<String, Object>> avgDelayList = orgidWebbrowsingDao.getTop90PageDelay(yearMonth, lastMonth, groupid);
+
+			for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (yearMonth.equals(map.get("month"))) {
+					monthAvg = Double.parseDouble(map.get("top90_page_delay").toString());
+				} else {
+					preAvg = Double.parseDouble(map.get("top90_page_delay").toString());
+				}
+			}
+		}
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+
+		return avgJson.toString();
+	}
+	/**
+	 * 90%用户页面元素打开成功率
+	 */
+	@Override
+	public String getTop90PageSuccessRate(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+		double monthAvg = 0;
+		double preAvg = 0;
+
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> avgDelayList = orgidWebbrowsingDao.getTop90PageSuccessRate(yearMonth, lastMonth, groupid);
+
+			for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (yearMonth.equals(map.get("month"))) {
+					monthAvg = Double.parseDouble(map.get("top90_page_success_rate").toString());
+				} else {
+					preAvg = Double.parseDouble(map.get("top90_page_success_rate").toString());
+				}
+			}
+		}
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+
+		return avgJson.toString();
+	}
+}

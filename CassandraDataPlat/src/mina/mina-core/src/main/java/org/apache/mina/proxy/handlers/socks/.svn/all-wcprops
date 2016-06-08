@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/socks
+END
+SocksProxyRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/socks/SocksProxyRequest.java
+END
+SocksProxyConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/socks/SocksProxyConstants.java
+END
+AbstractSocksLogicHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/socks/AbstractSocksLogicHandler.java
+END
+Socks5LogicHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/socks/Socks5LogicHandler.java
+END
+Socks4LogicHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/main/java/org/apache/mina/proxy/handlers/socks/Socks4LogicHandler.java
+END

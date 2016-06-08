@@ -1,0 +1,46 @@
+package com.qualitymap.service.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.OverviewProvinceDao;
+import com.qualitymap.service.OverviewProvinceService;
+import com.qualitymap.vo.OverviewProvince;
+
+public class OverviewProvinceServiceImpl implements OverviewProvinceService{
+
+	@Resource
+	private OverviewProvinceDao provinceDao;
+	@Override
+	public String findByMonth(String month,String group) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+		
+		List<OverviewProvince> provinceList = provinceDao.findByMonth(month,group);
+		
+		JSONArray dataarray = JSONArray.fromObject(provinceList);
+		dataJSON.put("data", dataarray);
+		
+		return dataJSON.toString();
+	}
+	/**
+	 * 查询所有的数据
+	 */
+	@Override
+	public String findAll() {
+
+		JSONObject datajson = new JSONObject();
+		
+		List<OverviewProvince> provinceList = provinceDao.findProvice();
+		
+		JSONArray dataarray = JSONArray.fromObject(provinceList);
+		datajson.put("data", dataarray);
+
+		return datajson.toString();
+	}
+
+}

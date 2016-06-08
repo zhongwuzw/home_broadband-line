@@ -1,0 +1,78 @@
+package com.qualitymap.base;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+/**
+ * 
+ * @author：kxc
+ * @date：Mar 30, 2016
+ */
+public abstract class BaseAction extends BaseActionSupport {
+
+	private static final long serialVersionUID = 100000000000L;
+
+
+	protected void printWriter(StringBuilder outJsonStr) {
+		this.printWriter(outJsonStr.toString());
+	}
+
+	protected void printWriter(String outJsonStr) {
+		boolean jsonP = false;
+		String cb = null;
+		cb = servletRequest.getParameter("callback");
+		if (cb != null) {
+		    jsonP = true;
+		}
+		if(jsonP){
+			printWriter(outJsonStr,cb);
+		}else{
+			PrintWriter printWriter = null;
+			try {
+				servletRequest.setCharacterEncoding("UTF-8");
+				servletResponse.setCharacterEncoding("UTF-8");
+				servletResponse.setContentType("application/json;charset=UTF-8");
+				printWriter = servletResponse.getWriter();
+
+				printWriter.write(outJsonStr);
+				printWriter.flush();
+			} catch (IOException e) {
+				// e.printStackTrace();
+				//logger.error("error" + e.getMessage());
+			} finally {
+				if (printWriter != null) {
+					printWriter.close();
+				}
+			}
+		}
+	}
+	
+	protected void printWriter(String outJsonStr,String callback) {
+		PrintWriter printWriter = null;
+		try {
+			servletRequest.setCharacterEncoding("UTF-8");
+			servletResponse.setCharacterEncoding("UTF-8");
+			servletResponse.setContentType("application/x-json");
+			printWriter = servletResponse.getWriter();
+
+			printWriter.write(callback + "(");
+			printWriter.write(outJsonStr);
+			printWriter.write(");");
+			printWriter.flush();
+		} catch (IOException e) {
+			// e.printStackTrace();
+			//logger.error("error" + e.getMessage());
+		} finally {
+			if (printWriter != null) {
+				printWriter.close();
+			}
+		}
+
+	}
+	
+
+	/*protected String toJsonString(Object object) {
+		return JSON.toJSONString(object);
+	}*/
+
+}

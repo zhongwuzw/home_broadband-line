@@ -1,0 +1,23 @@
+[All]
+[MonitorPath]
+ak=2b866a6daac9014292432d81fe9b47e3
+srcurl=jdbc:mysql://192.168.16.96:5050/testdataanalyse_static
+srcuser=z2jHC2u=
+srcpassword=z2jHC2uYmdeXmduZmq==
+dsturl=jdbc:mysql://192.168.16.96:5050/servicequalitymap_static
+dstuser=z2jHC2u=
+dstpassword=z2jHC2uYmdeXmduZmq==
+code=501
+maplevel=1,2,5,10,40,150,2500
+testdate=201401,201402,201403,201404,201405,201406,201407,201408,201409,201410,201411,201412,201501,201502,201503,201504,201505,201506,201507,201508
+pointertype=http|avg_rate
+getCodePath=http://192.168.16.72:8181/ctp/action/getSubOrgsByCode.do
+baiduSwitch=onplat
+[OTHER]
+
+注释：1、pointertype[ping|avg_rtt,2Gsignalstrength|signal_strength,3Gsignalstrength|signal_strength,http|avg_rate,speed_test_up|avg_up,speed_test_down|avg_down
+					ping_2G|avg_rtt,ping_3G|avg_rtt,ping_4G|avg_rtt,ping_WIFI|avg_rtt
+				   ]
+	2、baiduSwitch 该字段是控制是否连接百度接口 onplat 表示打开，需从百度接口获取相应的地址信息，offplat或者不配值则表明是不连接百度接口
+	
+	3、src开头的是为数据源ip ，ds开头的是为 数据入库的ip地址

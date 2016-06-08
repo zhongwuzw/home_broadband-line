@@ -1,0 +1,90 @@
+package com.qualitymap.action;
+
+import javax.annotation.Resource;
+
+import com.qualitymap.base.BaseAction;
+import com.qualitymap.service.ServicequalityOrgidPingService;
+import com.qualitymap.service.ServicequalityOrgidWebbrowsingService;
+
+public class ServicequalityOrgidWebbrowsingAction extends BaseAction {
+
+	@Resource
+	ServicequalityOrgidWebbrowsingService orgidWebbrowsingService;
+
+	/**
+	 * 获取宽带品质监测报告详情
+	 */
+	
+	public void getPingReportItem() {
+		String month = this.servletRequest.getParameter("month");
+		String groupid = this.servletRequest.getParameter("groupid");
+		String broadband_type = this.servletRequest.getParameter("broadband_type");
+
+		String datajson = orgidWebbrowsingService.getPingReportItem(groupid, month, broadband_type);
+		printWriter(datajson);
+	}
+	
+	
+	/**
+	 * 平均页面元素打开成功率上下月数据
+	 */
+	public void getAvgPageSuccessRate() {
+		try {
+			String yearMonth = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			String msg = orgidWebbrowsingService.getAvgPageSuccessRate(yearMonth, groupid);
+			printWriter(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 页面元素打开达标率上下月数据
+	 */
+	public void getPageStandardRate() {
+
+		try {
+			String yearMonth = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			String msg = orgidWebbrowsingService.getPageStandardRate(yearMonth, groupid);
+			printWriter(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 获取90%用户页面时延上下月数据
+	 */
+	public void getTop90PageDelay() {
+
+		try {
+			String yearMonth = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			String msg = orgidWebbrowsingService.getTop90PageDelay(yearMonth, groupid);
+			printWriter(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 90%用户页面元素打开成功率上下月数据
+	 */
+	public void getTop90PageSuccessRate() {
+
+		try {
+			String yearMonth = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			String msg = orgidWebbrowsingService.getTop90PageSuccessRate(yearMonth, groupid);
+			printWriter(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

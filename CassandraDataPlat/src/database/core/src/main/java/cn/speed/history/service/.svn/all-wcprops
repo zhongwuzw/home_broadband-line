@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/database/core/src/main/java/cn/speed/history/service
+END
+UploadFiletInsert.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/database/core/src/main/java/cn/speed/history/service/UploadFiletInsert.java
+END
+MySelectService.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/database/core/src/main/java/cn/speed/history/service/MySelectService.java
+END
+DeviceStatusLogService.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/database/core/src/main/java/cn/speed/history/service/DeviceStatusLogService.java
+END
+ResultUploadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/database/core/src/main/java/cn/speed/history/service/ResultUploadService.java
+END
+DeviceSelectService.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/database/core/src/main/java/cn/speed/history/service/DeviceSelectService.java
+END
+DeviceInfoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/database/core/src/main/java/cn/speed/history/service/DeviceInfoService.java
+END

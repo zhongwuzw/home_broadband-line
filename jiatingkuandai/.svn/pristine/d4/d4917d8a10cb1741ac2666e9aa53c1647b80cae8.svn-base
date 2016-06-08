@@ -1,0 +1,44 @@
+package com.qualitymap.service.impl;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.ServicequalityGroupidHttpUploadDao;
+import com.qualitymap.dao.ServicequalityGroupidVideoDao;
+import com.qualitymap.service.ServicequalityGroupidHttpUploadService;
+import com.qualitymap.utils.UtilDate;
+
+public class ServicequalityGroupidHttpUploadServiceImpl implements ServicequalityGroupidHttpUploadService {
+
+	@Resource
+	ServicequalityGroupidHttpUploadDao groupidHttpUploadDao;
+	static Format fm = new DecimalFormat("#.##");
+
+	
+	@Override
+	public String getHttpUploadRate(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+
+		List<Map<String, Object>> avgDelayList = new ArrayList<Map<String,Object>>();
+
+		if (!"".equals(groupid)) {
+			 avgDelayList = groupidHttpUploadDao.getHttpUploadRate(yearMonth, lastMonth, groupid);
+		}	
+		avgJson.put("data",avgDelayList);
+
+		return avgJson.toString();
+	}
+
+	
+
+
+}

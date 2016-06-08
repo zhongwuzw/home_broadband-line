@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-xbean/src/main/java/org/apache/mina/integration/xbean
+END
+MinaPropertyEditorRegistrar.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-xbean/src/main/java/org/apache/mina/integration/xbean/MinaPropertyEditorRegistrar.java
+END
+SocketAddressFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-xbean/src/main/java/org/apache/mina/integration/xbean/SocketAddressFactory.java
+END
+StandardThreadPool.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-xbean/src/main/java/org/apache/mina/integration/xbean/StandardThreadPool.java
+END

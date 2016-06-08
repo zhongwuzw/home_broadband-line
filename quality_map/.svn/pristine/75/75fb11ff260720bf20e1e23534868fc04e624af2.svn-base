@@ -1,0 +1,41 @@
+package com.qualitymap.service.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.NetworkOperatorDao;
+import com.qualitymap.service.NetworkOperatorService;
+
+public class NetworkOperatorServiceImpl implements NetworkOperatorService{
+
+	@Resource
+	private NetworkOperatorDao operatorDao;
+	@Override
+	public String getOperatorData(String month, String groupid) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+		
+		List<Map<String, Object>> queryList = operatorDao.getOperatorData(month, groupid);
+		
+		JSONArray dataarray = JSONArray.fromObject(queryList);
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+	@Override
+	public String getDetailData(String month, String groupid) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+		
+		List<Map<String, Object>> queryList = operatorDao.getDetailData(month, groupid);
+		
+		JSONArray dataarray = JSONArray.fromObject(queryList);
+		dataJSON.put("data", dataarray);
+		return dataJSON.toString();
+	}
+
+}

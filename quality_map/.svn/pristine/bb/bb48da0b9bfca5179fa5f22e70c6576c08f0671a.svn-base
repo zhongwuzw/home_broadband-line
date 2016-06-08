@@ -1,0 +1,33 @@
+package com.qualitymap.service.impl;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.OverviewServicequalityProvinceDao;
+import com.qualitymap.service.OverviewServicequalityProvinceService;
+import com.qualitymap.utils.UtilDate;
+import com.qualitymap.vo.OverviewServicequalityProvince;
+
+/**
+ * 业务质量数据统计
+ * 
+ * @author：kxc
+ * @date：Apr 11, 2016
+ */
+public class OverviewServicequalityProvinceServiceImpl {
+
+//	@Resource
+//	private OverviewServicequalityProvinceDao servicequalityDao;
+//	static Format fm = new DecimalFormat("#.##");
+
+}

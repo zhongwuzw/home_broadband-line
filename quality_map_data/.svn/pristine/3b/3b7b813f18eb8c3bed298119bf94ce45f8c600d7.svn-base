@@ -1,0 +1,40 @@
+package com.qualitymap.action;
+
+import javax.annotation.Resource;
+
+import com.qualitymap.base.BaseAction;
+import com.qualitymap.service.TerminalModelService;
+
+/**
+ * 终端数据分布统计
+ * 
+ * @author：kxc
+ * @date：Apr 12, 2016
+ */
+public class TerminalModelAction extends BaseAction {
+
+	@Resource
+	private TerminalModelService terminalModelService;
+
+	/**
+	 * 终端数据分布统计
+	 * 
+	 * @return void
+	 */
+	public void getTerminalModelData() {
+
+		try {
+			String month = this.servletRequest.getParameter("month");
+			String terminalType = this.servletRequest.getParameter("terminalType");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+
+			String terminalModelData = terminalModelService.getTerminalModelData(month, groupid, terminalType);
+
+			printWriter(terminalModelData);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

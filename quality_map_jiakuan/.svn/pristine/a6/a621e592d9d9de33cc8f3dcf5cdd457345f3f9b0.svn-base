@@ -1,0 +1,30 @@
+package com.qualitymap.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import com.qualitymap.vo.TerminalOs;
+
+public interface TerminalOsDao {
+	
+	/**
+	 * 获取特定月份平台测试次数占比
+	 * @param month
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getPlatformPercent(String month);
+	
+	List<Map<String, Object>> getPlatData(String month);
+
+	void saveOs(TerminalOs terminalOs);
+
+	void deleteOs(TerminalOs terminalOs);
+
+	List<TerminalOs> findOs();
+
+	void updateOs(TerminalOs terminalOs);
+	
+	
+
+}

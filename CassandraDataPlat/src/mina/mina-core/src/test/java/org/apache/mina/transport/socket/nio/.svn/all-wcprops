@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio
+END
+DatagramBindTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/DatagramBindTest.java
+END
+DatagramConnectorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/DatagramConnectorTest.java
+END
+SocketConnectorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/SocketConnectorTest.java
+END
+DatagramSessionIdleTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/DatagramSessionIdleTest.java
+END
+PollingIoProcessorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/PollingIoProcessorTest.java
+END
+NioFileRegionTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/NioFileRegionTest.java
+END
+DatagramConfigTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/DatagramConfigTest.java
+END
+SocketTrafficControlTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/SocketTrafficControlTest.java
+END
+DatagramPortUnreachableTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/DatagramPortUnreachableTest.java
+END
+DatagramTrafficControlTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/DatagramTrafficControlTest.java
+END
+SocketBindTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/SocketBindTest.java
+END
+DatagramRecyclerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-core/src/test/java/org/apache/mina/transport/socket/nio/DatagramRecyclerTest.java
+END

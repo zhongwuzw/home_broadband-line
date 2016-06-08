@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+  <title>OTS | 概览</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="adminLTE_zx/bootstrap/css/bootstrap.min.css">
+  <!-- jvectormap 
+  <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css"> -->
+   <link rel="stylesheet" href="adminLTE_zx/bootstrap/css/font-awesome.min.css">
+  <link rel="stylesheet" href="adminLTE_zx/bootstrap/css/ionicons.min.css"> 
+  
+  <link rel="stylesheet" href="adminLTE_zx/plugins/jvectormap/jquery.vector-map.css">
+  <link rel="stylesheet" href="adminLTE_zx/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="adminLTE_zx/dist/css/skins/_all-skins.min.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <header class="main-header">
+    <a href="index2.html" class="logo">
+      <span class="logo-mini"><b>O</b>TS</span>
+      <span class="logo-lg"><img src="images/logo.png"> &nbsp;<b>OTS</b>统计平台</span>
+    </a>
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown user user-menu">
+            <a class="" data-toggle="">
+              <img src="adminLTE_zx/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="user-header">
+                <img src="adminLTE_zx/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+              </li>
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>
+             <a href="" onclick="loginout()">退出</a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      <ul class="sidebar-menu">
+        <li class="header">导航栏</li>
+        <li class="active">
+          <a onclick="targetFunc('index2.html','indexOver')" id="indexOver" href="">
+            <i><img src="images/dashboard.png"></i> <span>概览</span> <i class=""></i>
+          </a>
+          <!--<ul class="treeview-menu">
+            <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li> 
+            <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> 概览</a></li>
+          </ul>-->
+        </li>
+        
+        <li>
+          <a onclick="targetFunc('chartjs.html','yhAnaly')" id="yhAnaly" href="">
+            <i><img src="images/useranalysis.png"></i> <span>用户分析</span>
+          </a>
+        </li>
+        <li>
+          <a onclick="targetFunc('chartjs_zd.html','zdAnaly')" href="" id="zdAnaly">
+            <i><img src="images/terminalanalysis.png"></i> <span>终端分析</span>
+          </a>
+        </li>
+        <li>
+          <a onclick="targetFunc('chartjs_yw.html','ywAnaly')" href="" id="ywAnaly">
+            <i><img src="images/biz.png"></i> <span>业务质量</span>
+          </a>
+        </li>
+        <li>
+          <a onclick="targetFunc('chartjs_wl.html','wlAnaly')" href="" id="wlAnaly">
+            <i><img src="images/netanalysis.png"></i> <span>网络分析</span>
+          </a>
+        </li>
+        <!--<li>
+          <a href="pages/charts/chartjs_yyong.html">
+            <i class="fa fa-table"></i> <span>应用分析</span>
+            <!--<small class="label pull-right bg-green">new</small> 
+          </a>
+        </li>-->
+        <!--<li>
+          <a href="#">
+            <i class="fa fa-folder"></i> <span>用户行为</span>
+            <!--<small class="label pull-right bg-green">new</small> 
+          </a>
+        </li>-->
+        
+      </ul>
+    </section>
+  </aside>
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        概览
+        <small></small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">概览</li>
+      </ol>
+    </section>
+
+    <section class="content">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i><img src="images/accumulativnum.png"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">累计用户数</span>
+              <span class="info-box-number" id="accumulativnum">0<small></small></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-red"><i><img src="images/provincenum.png"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">本月参测省份数</span>
+              <span class="info-box-number" id="provincenum">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-green"><i><img src="images/orgnum.png"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">账户总数</span>
+              <span class="info-box-number" id="orgnum">0</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><i><img src="images/thismonthTesttimes.png"></i></span>
+
+            <div class="info-box-content">
+              <!-- <span class="info-box-text">渠道数</span>
+              <span class="info-box-number" id="channelnum">0</span> -->
+              <span class="info-box-text">本月测试次数</span>
+              <span class="info-box-number" id="thismonthTesttimes">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">用户数趋势</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-wrench"></i></button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-8">
+                  <p class="text-center">
+                    <strong></strong>
+                  </p>
+                  <div class="chart">
+                    <canvas id="userTendencyChart" style="height: 180px;"></canvas>
+                  </div>
+                </div>
+                <div class="col-md-4" id="broadbandType">
+                  <!-- <div class="progress-group" id="pc">
+                    <span class="progress-text">PC</span>
+                    <span class="progress-number">0/0</span>
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: 0%"></div>
+                    </div>
+                  </div>
+                  <div class="progress-group" id="android">
+                    <span class="progress-text">Android</span>
+                    <span class="progress-number">0/0</span>
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-red" style="width: 0%"></div>
+                    </div>
+                  </div>
+                  <div class="progress-group" id="ios">
+                    <span class="progress-text">ios</span>
+                    <span class="progress-number">0/0</span>
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-green" style="width: 0%"></div>
+                    </div>
+                  </div>
+                  <div class="progress-group" id="embedded">
+                    <span class="progress-text">嵌入式</span>
+                    <span class="progress-number">0/0</span>
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-yellow" style="width: 0%"></div>
+                    </div>
+                  </div>
+                   <div class="progress-group" id="softprobe">
+                    <span class="progress-text">软探针</span>
+                    <span class="progress-number">0/0</span>
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-qianzifen" style="width: 0%"></div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div class="box-footer">
+              <div class="row">
+                <div class="col-sm-3 col-xs-6">
+                  <div class="description-block border-right" id="terminal_num">
+                    <span class="description-percentage"></span>
+                    <h5 class="description-header">0</h5>
+                    <span class="description-text">终端总数</span>
+                  </div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                  <div class="description-block border-right" id="regusername_num">
+                    <span class="description-percentage"></span>
+                    <h5 class="description-header">0</h5>
+                    <span class="description-text">累计注册用户数</span>
+                  </div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                  <div class="description-block border-right" id="customers_num">
+                    <span class="description-percentage"></span>
+                    <h5 class="description-header">0</h5>
+                    <span class="description-text">累计使用用户数</span>
+                  </div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                  <div class="description-block" id="newlyincrease_num">
+                    <span class="description-percentage"></span>
+                    <h5 class="description-header">0</h5>
+                    <span class="description-text">上月测试次数</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">本月各省测试次数</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body no-padding">
+              <div class="row">
+                <div class="col-md-9 col-sm-8">
+                  <div class="pad">
+                    <div id="world-map-markers" style="height: 325px;"></div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                  <div class="pad box-pane-right bg-green" style="min-height: 280px">
+                    <div class="description-block margin-bottom" id="top1">
+                      <div><img src="images/top1.png"></div>
+                      <h5 class="description-header"></h5>
+                      <span class="description-text"></span>
+                    </div>
+                    <div class="description-block margin-bottom" id="top2">
+                      <div><img src="images/top2.png"></div>
+                      <h5 class="description-header"></h5>
+                      <span class="description-text"></span>
+                    </div>
+                    <div class="description-block" id="top3">
+                      <div><img src="images/top3.png"></div>
+                      <h5 class="description-header"></h5>
+                      <span class="description-text"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">测试报告</h3>
+            </div>
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>时间</th>
+                  <th>省份</th>
+                  <th>宽带种类</th>
+                  <th>测试次数</th>
+                  <th>详情</th>
+                </tr>
+                </thead>
+                <tbody>
+                
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="info-box bg-yellow">
+            <span class="info-box-icon"><i><img src="images/avgDelay.png"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text" style="text-transform:Lowercase">平均时延(ms)</span>
+              <span class="progress-text">本月</span>
+              <span class="progress-number" style="float: right" id="avgDelayThis">52</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+			  <span class="progress-text">上月</span>
+              <span class="progress-number" style="float: right" id="avgDelayLast">45</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+                  
+            </div>
+          </div>
+          <div class="info-box bg-green">
+            <span class="info-box-icon"><i><img src="images/delayStandardRate.png"></i></span>
+
+            <div class="info-box-content">
+              <!-- <span class="info-box-text">时延达标率</span> -->
+              <span class="info-box-text">90%用户页面时延</span>
+              <span class="progress-text">本月</span>
+              <span class="progress-number" style="float: right" id="delayStandardRateThis">85</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+			  <span class="progress-text">上月</span>
+              <span class="progress-number" style="float: right" id="delayStandardRateLast">92</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="info-box bg-red">
+            <span class="info-box-icon"><i><img src="images/avgPageSuccessRate.png"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">平均页面元素打开成功率</span>
+              <span class="progress-text">本月</span>
+              <span class="progress-number" style="float: right" id="avgPageSuccessRateThis">95</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+			  <span class="progress-text">上月</span>
+              <span class="progress-number" style="float: right" id="avgPageSuccessRateLast">90</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="info-box bg-aqua">
+            <span class="info-box-icon"><i><img src="images/pageStandardRate.png"></i></span>
+
+            <div class="info-box-content">
+              <!-- <span class="info-box-text">页面元素打开达标率</span> --> 
+              <span class="info-box-text">90%用户页面元素打开成功率</span>
+              <span class="progress-text">本月</span>
+              <span class="progress-number" style="float: right" id="pageStandardRateThis">90</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+			  <span class="progress-text">上月</span>
+              <span class="progress-number" style="float: right" id="pageStandardRateLast">89</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">本月平台测试次数占比</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="chart-responsive">
+                    <canvas id="pieChart" height="150"></canvas>
+                  </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-md-4">
+                  <ul class="chart-legend clearfix">
+                    <!-- <li><i class="fa fa-circle-o text-red"></i> PC</li>
+                    <li><i class="fa fa-circle-o text-green"></i> Android</li>
+                    <li><i class="fa fa-circle-o text-yellow"></i> ios</li>
+                    <li><i class="fa fa-circle-o text-aqua"></i> 嵌入式</li>
+                    <li><i class="fa fa-circle-o text-light-blue"></i> 软探针</li> -->
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b></b> 
+    </div>
+    <strong></strong> 
+    
+  </footer>
+
+  <aside class="control-sidebar control-sidebar-dark">
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                <p>Will be 23 on April 24th</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-user bg-yellow"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+                <p>New phone +1(800)555-1234</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                <p>nora@example.com</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                <p>Execution time 5 seconds</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="label label-danger pull-right">70%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Update Resume
+                <span class="label label-success pull-right">95%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Laravel Integration
+                <span class="label label-warning pull-right">50%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Back End Framework
+                <span class="label label-primary pull-right">68%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Allow mail redirect
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Other sets of options are available
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Expose author name in posts
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Allow the user to show his name in blog posts
+            </p>
+          </div>
+
+          <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Show me as online
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Turn off notifications
+              <input type="checkbox" class="pull-right">
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Delete chat history
+              <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </aside>
+  <div class="control-sidebar-bg"></div>
+
+</div>
+
+<script src="adminLTE_zx/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="adminLTE_zx/bootstrap/js/bootstrap.min.js"></script>
+<script src="adminLTE_zx/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="adminLTE_zx/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="adminLTE_zx/plugins/fastclick/fastclick.js"></script>
+<script src="adminLTE_zx/dist/js/app.min.js"></script>
+<script src="adminLTE_zx/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="adminLTE_zx/plugins/jvectormap/jquery.vector-map.js"></script>
+<script src="adminLTE_zx/plugins/jvectormap/china-zh.js"></script> 
+
+<!--<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>-->
+<script src="adminLTE_zx/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="adminLTE_zx/plugins/chartjs/Chart.min.js"></script>
+<script src="common/common.js"></script> 
+<script src="adminLTE_zx/dist/js/pages/dashboard2.js"></script>
+<script src="adminLTE_zx/dist/js/demo.js"></script>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+    
+  });
+  
+ 
+</script>
+</body>
+</html>

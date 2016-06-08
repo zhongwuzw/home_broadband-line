@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/config/spring
+END
+SpringUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/config/spring/SpringUtil.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/config/spring/package.html
+END
+FileSystemBeanDefinitionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/config/spring/FileSystemBeanDefinitionParser.java
+END
+ListenerBeanDefinitionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/config/spring/ListenerBeanDefinitionParser.java
+END
+ServerBeanDefinitionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/config/spring/ServerBeanDefinitionParser.java
+END
+UserManagerBeanDefinitionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/config/spring/UserManagerBeanDefinitionParser.java
+END
+FtpServerNamespaceHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/config/spring/FtpServerNamespaceHandler.java
+END
+CommandFactoryBeanDefinitionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/config/spring/CommandFactoryBeanDefinitionParser.java
+END

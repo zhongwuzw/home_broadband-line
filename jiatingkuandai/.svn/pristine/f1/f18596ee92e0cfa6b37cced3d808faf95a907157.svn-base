@@ -1,0 +1,117 @@
+package com.qualitymap.service.impl;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.OverviewKpiApiDao;
+import com.qualitymap.service.OverviewKpiApiService;
+import com.qualitymap.utils.UtilDate;
+
+/**
+ * 概览数据统计分析
+ * 
+ * @author：kxc
+ * @date：Apr 12, 2016
+ */
+public class OverviewKpiApiServiceImpl implements OverviewKpiApiService {
+
+	@Resource
+	private OverviewKpiApiDao kpiApiDao;
+	static Format fm = new DecimalFormat("#.##");
+
+
+	/**
+	 * 累计注册用户数及增长比
+	 */
+	@Override
+	public String getRegusernameNum(String month, String userName) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		if (!"".equals(userName)) {
+			String prmonth = UtilDate.getPreviousMonth(month);
+			List<Map<String, Object>> terList = kpiApiDao.getRegusernameNum(prmonth, month, userName);
+			double previousNum = 0;
+			double toNum = 0;
+
+			for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (month.equals(map.get("month"))) {
+					toNum = Double.valueOf(map.get("regusername_num").toString());
+				} else if (prmonth.equals(map.get("month"))) {
+					previousNum = Double.valueOf(map.get("regusername_num").toString());
+				}
+			}
+
+			String percent = "";
+			if (previousNum != 0) {
+				double difValue = toNum - previousNum;
+				percent = fm.format(difValue / previousNum * 100) + "%";
+			} else {
+				percent = "N/A";
+			}
+
+			dataJSON.put("percent", percent);
+			dataJSON.put("regusername_num", toNum);
+		} else {
+			dataJSON.put("percent", "");
+			dataJSON.put("regusername_num", "");
+		}
+
+		return dataJSON.toString();
+	}
+
+	/**
+	 * 累计用户数及增长比
+	 */
+	@Override
+	public String getCustomersNum(String month, String userName) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		if (!"".equals(userName)) {
+			String prmonth = UtilDate.getPreviousMonth(month);
+			// month = month+","+prmonth;
+			List<Map<String, Object>> terList = kpiApiDao.getCustomersNum(prmonth, month, userName);
+
+			double previousNum = 0;
+			double toNum = 0;
+
+			for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+				if (month.equals(map.get("month"))) {
+					toNum = Double.valueOf(map.get("customers_num").toString());
+				} else if (prmonth.equals(map.get("month"))) {
+					previousNum = Double.valueOf(map.get("customers_num").toString());
+				}
+			}
+
+			String percent = "";
+			if (previousNum != 0) {
+				double difValue = toNum - previousNum;
+				percent = fm.format(difValue / previousNum * 100) + "%";
+			} else {
+				percent = "N/A";
+			}
+
+			dataJSON.put("percent", percent);
+			dataJSON.put("customers_num", toNum);
+		} else {
+			dataJSON.put("percent", "");
+			dataJSON.put("customers_num", "");
+		}
+
+		return dataJSON.toString();
+	}
+
+}

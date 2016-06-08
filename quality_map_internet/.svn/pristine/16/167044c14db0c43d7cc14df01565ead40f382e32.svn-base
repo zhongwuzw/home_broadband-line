@@ -1,0 +1,141 @@
+package com.qualitymap.service.impl;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.OverviewServicequalityDao;
+import com.qualitymap.service.OverviewServicequalityService;
+import com.qualitymap.utils.UtilDate;
+
+/**
+ * Description:  OTS统计平台业务质量
+ * @author zqh
+ * 2016-4-7: PM 04:15:11
+ */
+public class OverviewServicequalityServiceImpl implements OverviewServicequalityService{
+
+	@Resource
+	OverviewServicequalityDao overviewServicequalityDao;
+	static Format fm = new DecimalFormat("#.##");
+	
+	@Override
+	public String getAvgDelay(String yearMonth,String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+		
+		JSONObject avgJson = new JSONObject();
+		
+		List<Map<String, Object>> avgDelayList = overviewServicequalityDao.getAvgDelay(yearMonth,lastMonth,groupid);
+		
+		double monthAvgDelay = 0;
+		double preAvgDelay = 0;
+		
+		for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+			Map<String, Object> map = (Map<String, Object>) iterator.next();
+			
+			if(yearMonth.equals(map.get("month"))){
+				monthAvgDelay = Double.parseDouble(map.get("avg_delay").toString());
+			}else{
+				preAvgDelay =Double.parseDouble(map.get("avg_delay").toString());
+			}
+		}
+		
+		avgJson.put("thismonth", fm.format(monthAvgDelay));
+		avgJson.put("lastmonth", fm.format(preAvgDelay));
+		
+		
+		return avgJson.toString();
+	}
+
+	@Override
+	public String getDelayStandardRate(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+		
+		JSONObject avgJson = new JSONObject();
+		
+		List<Map<String, Object>> avgDelayList = overviewServicequalityDao.getDelayStandardRate(yearMonth, lastMonth, groupid);
+		
+		double monthAvg = 0;
+		double preAvg = 0;
+		
+		for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+			Map<String, Object> map = (Map<String, Object>) iterator.next();
+			
+			if(yearMonth.equals(map.get("month"))){
+				monthAvg = Double.parseDouble(map.get("delay_standard_rate").toString());
+			}else{
+				preAvg = Double.parseDouble(map.get("delay_standard_rate").toString());
+			}
+		}
+		
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+		
+		
+		return avgJson.toString();
+	}
+
+	@Override
+	public String getAvgPageSuccessRate(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+		
+		JSONObject avgJson = new JSONObject();
+		
+		List<Map<String, Object>> avgDelayList = overviewServicequalityDao.getAvgPageSuccessRate(yearMonth, lastMonth, groupid);
+		
+		double monthAvg = 0;
+		double preAvg = 0;
+		
+		for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+			Map<String, Object> map = (Map<String, Object>) iterator.next();
+			
+			if(yearMonth.equals(map.get("month"))){
+				monthAvg = Double.parseDouble(map.get("avg_page_success_rate").toString());
+			}else{
+				preAvg = Double.parseDouble(map.get("avg_page_success_rate").toString());
+			}
+		}
+		
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+		
+		
+		return avgJson.toString();
+	}
+
+	@Override
+	public String getPageStandardRate(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+		
+		JSONObject avgJson = new JSONObject();
+		
+		List<Map<String, Object>> avgDelayList = overviewServicequalityDao.getPageStandardRate(yearMonth, lastMonth, groupid);
+		
+		double monthAvg = 0;
+		double preAvg = 0;
+		
+		for (Iterator iterator = avgDelayList.iterator(); iterator.hasNext();) {
+			Map<String, Object> map = (Map<String, Object>) iterator.next();
+			
+			if(yearMonth.equals(map.get("month"))){
+				monthAvg =Double.parseDouble(map.get("page_standard_rate").toString());
+			}else{
+				preAvg = Double.parseDouble(map.get("page_standard_rate").toString());
+			}
+		}
+		
+		avgJson.put("thismonth", fm.format(monthAvg));
+		avgJson.put("lastmonth", fm.format(preAvg));
+		
+		
+		return avgJson.toString();
+	}
+
+	
+}

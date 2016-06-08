@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl
+END
+DefaultFtpRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/DefaultFtpRequest.java
+END
+IODataConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/IODataConnection.java
+END
+FtpIoSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/FtpIoSession.java
+END
+DefaultDataConnectionConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/DefaultDataConnectionConfiguration.java
+END
+DefaultFtpServerContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/DefaultFtpServerContext.java
+END
+PassivePorts.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/PassivePorts.java
+END
+FtpServerContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/FtpServerContext.java
+END
+DefaultFtpHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/DefaultFtpHandler.java
+END
+FtpHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/FtpHandler.java
+END
+DefaultFtpStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/DefaultFtpStatistics.java
+END
+DefaultFtpServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/DefaultFtpServer.java
+END
+LocalizedFtpReply.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/LocalizedFtpReply.java
+END
+ServerFtpStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/ServerFtpStatistics.java
+END
+DefaultConnectionConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/DefaultConnectionConfig.java
+END
+ServerDataConnectionFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/ServerDataConnectionFactory.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/package.html
+END
+IODataConnectionFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/IODataConnectionFactory.java
+END
+StatisticsObserver.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/StatisticsObserver.java
+END
+DefaultFtpSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/DefaultFtpSession.java
+END
+FileObserver.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/ftpserver/core/src/main/java/org/apache/ftpserver/impl/FileObserver.java
+END

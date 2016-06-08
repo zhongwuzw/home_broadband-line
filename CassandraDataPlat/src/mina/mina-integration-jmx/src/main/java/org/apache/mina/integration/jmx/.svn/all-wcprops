@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-jmx/src/main/java/org/apache/mina/integration/jmx
+END
+IoFilterMBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-jmx/src/main/java/org/apache/mina/integration/jmx/IoFilterMBean.java
+END
+ObjectMBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-jmx/src/main/java/org/apache/mina/integration/jmx/ObjectMBean.java
+END
+IoServiceMBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-jmx/src/main/java/org/apache/mina/integration/jmx/IoServiceMBean.java
+END
+IoSessionMBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-jmx/src/main/java/org/apache/mina/integration/jmx/IoSessionMBean.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-jmx/src/main/java/org/apache/mina/integration/jmx/package.html
+END

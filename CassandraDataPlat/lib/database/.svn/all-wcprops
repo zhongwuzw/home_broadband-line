@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/database
+END
+javacsv.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/database/javacsv.jar
+END
+c3p0-0.9.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/database/c3p0-0.9.1.2.jar
+END
+mysql-connector-java-5.0.8-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/database/mysql-connector-java-5.0.8-bin.jar
+END
+c3p0-0.9.1.2-jdk1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/lib/database/c3p0-0.9.1.2-jdk1.3.jar
+END

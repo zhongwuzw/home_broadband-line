@@ -1,0 +1,128 @@
+package com.qualitymap.action;
+
+import javax.annotation.Resource;
+
+import com.qualitymap.base.BaseAction;
+import com.qualitymap.service.ServicequalityGroupidVideoService;
+
+public class ServicequalityGroupidVideoAction extends BaseAction {
+
+	@Resource
+	ServicequalityGroupidVideoService groupidVideoService;
+
+	
+	/**
+	 * 获取平均时延上下月数据
+	 */
+	public void getVideoDelay() {
+
+		try {
+			String yearMonth = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50091,50067";
+			String avgdata = groupidVideoService.getVideoDelay(yearMonth, groupid);
+			printWriter(avgdata);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+
+
+	/**
+	 * 视频卡顿次数上下月数据
+	 */
+	public void getCacheCount() {
+
+		try {
+			String yearMonth = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50091,50067";
+			String msg = groupidVideoService.getCacheCount(yearMonth, groupid);
+			printWriter(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 获取视频加载时长趋势数据
+	 * 
+	 * @return void
+	 */
+	public void getVideoDelayData() {
+
+		try {
+			String probetype = this.servletRequest.getParameter("probetype");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50071,50074,50067";
+			String avgdelayData = groupidVideoService.getVideoDelayData(groupid, probetype);
+			printWriter(avgdelayData);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 获取视频加载时长的排名
+	 * 
+	 * @return void
+	 */
+	public void getVideoDelayOrder() {
+
+		try {
+			String probetype = this.servletRequest.getParameter("probetype");
+			String month = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50071,50074,50067";
+			String delayOrder = groupidVideoService.getVideoDelayOrder(month, groupid, probetype);
+			printWriter(delayOrder);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * 获取视频卡顿次数数据
+	 * 
+	 * @return void
+	 */
+	public void getVideoCacheCountData() {
+		
+		try {
+			String probetype = this.servletRequest.getParameter("probetype");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50071,50074,50067";
+			String avgdelayData = groupidVideoService.getVideoCacheCountData(groupid, probetype);
+			printWriter(avgdelayData);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 获取视频卡顿次数的排名
+	 * 
+	 * @return void
+	 */
+	public void getVideoCacheCountOrder() {
+		
+		try {
+			String probetype = this.servletRequest.getParameter("probetype");
+			String month = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50071,50074,50067";
+			String delayOrder = groupidVideoService.getVideoCacheCountOrder(month, groupid, probetype);
+			printWriter(delayOrder);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

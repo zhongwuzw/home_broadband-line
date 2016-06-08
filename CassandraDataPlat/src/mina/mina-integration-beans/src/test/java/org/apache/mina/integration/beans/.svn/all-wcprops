@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/test/java/org/apache/mina/integration/beans
+END
+InetAddressEditorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/test/java/org/apache/mina/integration/beans/InetAddressEditorTest.java
+END
+VmPipeAddressEditorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/test/java/org/apache/mina/integration/beans/VmPipeAddressEditorTest.java
+END
+InetSocketAddressEditorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/LTE_E2E_analyse/!svn/ver/1061/trunk/CassandraDataPlat/src/mina/mina-integration-beans/src/test/java/org/apache/mina/integration/beans/InetSocketAddressEditorTest.java
+END

@@ -1,0 +1,34 @@
+10
+
+dir
+2219
+http://192.168.85.240:3690/svn/LTE_E2E_analyse/trunk/CassandraDataPlat/src/ftpserver/examples/ftpserver-osgi-spring-service/src/main/resources
+http://192.168.85.240:3690/svn/LTE_E2E_analyse
+
+
+
+2015-02-11T09:31:03.370245Z
+1061
+wangzhen
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4fa04b59-7810-44d7-b29f-f71709df9fc3
+
+META-INF
+dir
+
+org
+dir
+

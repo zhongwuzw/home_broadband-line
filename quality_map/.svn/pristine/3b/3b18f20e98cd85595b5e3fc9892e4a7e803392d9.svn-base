@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>OTS | 测试报告</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../bootstrap/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../bootstrap/css/ionicons.min.css"> 
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+
+</head> 
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <a href="../../../index2.html" class="logo">
+      <span class="logo-mini"><b>O</b>TS</span>
+      <span class="logo-lg"><img src="../../../images/logo.png"> &nbsp;<b>OTS</b>统计平台</span>
+    </a>
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          
+          <li class="dropdown user user-menu">
+            <a  class="" data-toggle="">
+              <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small> 
+                </p>
+              </li>
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+              </li>
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="" onclick="loginout()">退出</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      
+      <ul class="sidebar-menu">
+        <li class="header">导航栏</li>
+        <li class="treeview">
+          <!-- <a href="../../../index2.html"> -->
+          <a onclick="targetFunc('../../../index2.html','indexOver')" id="indexOver" href="">
+            <i><img src="../../../images/dashboard.png"></i> <span>概览</span> <i class=""></i>
+          </a>
+          
+        </li>
+        <li>
+          <!-- <a href="../charts/chartjs.html"> -->
+          <a onclick="targetFunc('../../../chartjs.html','yhAnaly')" id="yhAnaly" href="">
+            <i><img src="../../../images/useranalysis.png"></i> <span>用户分析</span>
+          </a>
+        </li>
+        <li>
+          <!-- <a href="../charts/chartjs_zd.html"> -->
+          <a onclick="targetFunc('../../../chartjs_zd.html','zdAnaly')" href="" id="zdAnaly">
+            <i><img src="../../../images/terminalanalysis.png"></i> <span>终端分析</span>
+          </a>
+        </li>
+        <li>
+          <!-- <a href="../charts/chartjs_yw.html"> -->
+          <a onclick="targetFunc('../../../chartjs_yw.html','ywAnaly')" href="" id="ywAnaly">
+            <i><img src="../../../images/biz.png"></i> <span>业务质量</span>
+          </a>
+        </li>
+        <li>
+          <!-- <a href="../charts/chartjs_wl.html"> -->
+          <a onclick="targetFunc('../../../chartjs_wl.html','wlAnaly')" href="" id="wlAnaly">
+            <i><img src="../../../images/netanalysis.png"></i> <span>网络分析</span>
+          </a>
+        </li>
+        <!--<li>
+          <a href="../charts/chartjs_yyong.html">
+            <i class="fa fa-table"></i> <span>应用分析</span>
+            <small class="label pull-right bg-green">new</small> 
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <!--<i class="fa fa-folder"></i> <span>用户行为</span>
+            <!--<small class="label pull-right bg-green">new</small> 
+          </a>
+        </li>-->
+      </ul>
+    </section>
+  </aside>
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        测试报告
+        <small></small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        
+        <li class="active">测试报告</li>
+      </ol>
+    </section>
+
+    <div class="pad margin no-print">
+      <div class="callout callout-info" style="margin-bottom: 0!important;">
+        <h4><i class="fa fa-info"></i> Note:</h4>
+        This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+      </div>
+    </div>
+
+    <section class="invoice">
+      <!-- title row -->
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header">
+            <!-- <i class="fa fa-globe"></i> 
+            <small class="pull-right">Date: 2016/3/30</small> -->
+          </h2>
+        </div>
+      </div>
+      <div class="row invoice-info">
+         <div class="col-sm-4 invoice-col">
+          <!-- 范围
+          <address>
+            <strong>50M家庭宽带</strong><br>
+            区域: 浙江省<br>
+            地区: 10个<br>
+            周期: 2016/1/1 --- 2016/1/31<br>
+            城市: 杭州、嘉兴、金华、宁波
+          </address> -->
+        </div>
+        <div class="col-sm-4 invoice-col">
+         <!--  样本
+          <address>
+            <strong>有效样本:95 </strong><br>
+            用户: 50<br>
+            终端: 18<br>
+            样本有效率: 95%<br>
+            上月样本数: 90
+          </address> -->
+        </div>
+        <div class="col-sm-4 invoice-col">
+          <!-- <b> </b><br>
+          <br>
+          <b>编号:</b> #007612<br>
+          <b>发布日期:</b> 2016/2/5<br>
+          <b>数据来源:</b> PC 、手机 、嵌入式 -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 table-responsive">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th></th>
+              <th>城市</th>
+			  <!-- <th>数据来源</th> -->
+              <th>样本数</th>
+              <th>用例数</th>
+              <th>测试结果</th>
+			  <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6">
+          <p class="lead">质量分析:</p>
+          
+          <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+            与上月相比，下载速率提高0.3mbps,平均页面元素打开成功率降低3%。
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p class="lead">本月指标情况</p>
+
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th style="width:25%">指标名称</th>
+				<th style="width:25%">本省结果</th>
+				<th style="width:25%">全国排名</th>
+				<th style="width:25%">本期最优结果</th>
+              </tr>
+              <tr>
+                <td>平均下载速率</td>
+                <td>10.34</td>
+				<td>1</td>
+                <td>10.34</td>
+              </tr>
+              <tr>
+                <td>平均网页成功率</td>
+                <td>5.80</td>
+				<td>2</td>
+                <td>10.34</td>
+              </tr>
+              <tr>
+                <td>平均时延</td>
+                <td>265.24</td>
+				<td>3</td>
+                <td>10.34</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row no-print">
+        <div class="col-xs-12">
+          <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+          
+          </button>
+          <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+            <i class="fa fa-download"></i> 下载
+          </button>
+        </div>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+  </div>
+  <footer class="main-footer no-print">
+    <div class="pull-right hidden-xs">
+      
+    </div>
+    
+  </footer>
+
+  <aside class="control-sidebar control-sidebar-dark">
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                <p>Will be 23 on April 24th</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-user bg-yellow"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                <p>New phone +1(800)555-1234</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                <p>nora@example.com</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                <p>Execution time 5 seconds</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="label label-danger pull-right">70%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Update Resume
+                <span class="label label-success pull-right">95%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Laravel Integration
+                <span class="label label-warning pull-right">50%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Back End Framework
+                <span class="label label-primary pull-right">68%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Allow mail redirect
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Other sets of options are available
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Expose author name in posts
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Allow the user to show his name in blog posts
+            </p>
+          </div>
+
+          <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Show me as online
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Turn off notifications
+              <input type="checkbox" class="pull-right">
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Delete chat history
+              <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </aside>
+  <div class="control-sidebar-bg"></div>
+</div>
+
+<script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<script src="../../dist/js/app.min.js"></script>
+<script src="../../dist/js/demo.js"></script>
+<!--  <script src="../../../common/common.js"></script>   -->
+
+<script>
+//增加正则表达式
+String.prototype.getQueryString = function(name){
+   var reg = new RegExp("(^|&|\\?)"+ name +"=([^&]*)(&|$)"), r;
+   if (r=this.match(reg)) return unescape(r[2]); 
+   return null;
+};
+
+_authkey = location.search.getQueryString("key");
+apiKey = location.search.getQueryString("apiKey");
+reportDate = location.search.getQueryString("reportDate");  //报告日期
+reportProvinceName = location.search.getQueryString("reportProvinceName"); //报告省份
+reportProvinceName = decodeURI(reportProvinceName,"UTF-8");
+
+reportBroadType = location.search.getQueryString("reportBroadType"); //报告宽带类型
+reportBroadType = decodeURI(reportBroadType,"UTF-8");
+
+groupid = location.search.getQueryString("groupid"); //groupid
+//  
+//personName;
+//判断用户是否登陆 
+if(_authkey==null || _authkey=="null" || _authkey=="" || _authkey=="undefined" || _authkey==undefined){
+	  location.href="../../../loginPage_sso.html";
+}
+$.ajax({
+	  type : "post",  
+    async : false, //同步执行  
+    url:'../../../sysUser/validLogin',
+    data : {key:_authkey,apiKey:apiKey},  
+    dataType : "json", //返回数据形式为json  
+    success : function(res) { 
+  	  if (res && res.status != 2) {
+  		  //alert(res.username);
+				//alert("success");
+  		  personName=res.personName;
+		  }else {
+				location.href="../../../loginPage_sso.html";
+				//alert("user为null");
+		  }
+    },  
+    error : function(errorMsg) {  
+  	  location.href="../../../loginPage_sso.html";
+  	  //alert("返回json格式出错");
+    }  
+	});
+$("span[class='hidden-xs']").html(personName);
+//导航栏页面跳转url定位，并附加key和apikey
+function targetFunc(url,id){
+    url = (url + "?key=" + _authkey + "&apiKey=" + apiKey);
+	$("#"+id).attr('href', url);
+	$("#"+id).click();
+}
+
+/**
+ * 点击用户名时退出
+ */
+function loginout(){
+	if(confirm("确定要退出系统吗？")){
+		$.ajax({
+			  type : "post",  
+		      async : false, //同步执行  
+		      url:'../../../sysUser/logout',
+		      data : {key:_authkey,apiKey:apiKey},  
+		      dataType : "json", //返回数据形式为json  
+		      success : function(res) { 
+		    	  setTimeout(function() {
+						location.href="../../../loginPage_sso.html";
+				  }, 1000);
+		      },  
+		      error : function(errorMsg) {  
+		    	  location.href="../../../loginPage_sso.html";
+		    	  //alert("返回json格式出错");
+		      }  
+		});
+    }else{
+    	
+    }
+}
+</script>
+
+<!-- 页面数据源接口 begin -->
+<script type="text/javascript">
+var myDate = new Date();
+var year = myDate.getFullYear().toString();
+var monthh = myDate.getMonth()+1;  
+var dayy = myDate.getDate();
+var thisDate = year+"/"+monthh+"/"+dayy;//Date:当前年月
+
+//reportBroadType = reportBroadType.substring(0,reportBroadType.length-3);
+
+var month = reportDate.substr(4,6); //获取当前日期的月份
+var year2 = reportDate.substr(0,4);//获取当前日期的年份
+var firstdate = year2 + '/' + month + '/01'; 
+var daydate = new Date(year,month,0);   
+var lastdate = year2 + '/' + month + '/'+daydate.getDate(); 
+var nextmonth = parseInt(month) + 1;
+if (nextmonth == 13) {
+    year2 = parseInt(year2) + 1;
+    nextmonth = 1;
+}
+var nextYMonth = year2.toString()+"/"+nextmonth.toString()+"/1"; //发布日期:下个月的第一天
+
+var lastmonth = parseInt(month) - 1;
+var yearlast = reportDate.substr(0,4);//获取当前日期的年份
+if (lastmonth == 0) {
+	yearlast = parseInt(yearlast) - 1;
+	lastmonth = 12;
+}
+if (lastmonth < 10 && lastmonth != 0) {
+	lastmonth = '0' + lastmonth;
+}
+var preYMonth = yearlast.toString()+lastmonth.toString();
+
+var regionNum ="";  //地区数量
+var cityList=""    ;    //城市列表
+var validSampleNum = ""; //有效样本数
+var thisMonthSample = ""; //本月样本总数
+var validSampleRate =""; //样本有效率：有效率=有效样本数/本月样本总数
+var lastMonthSample = ""; //上月样本总数
+var userNumByGroupid = ""; //用户
+var terminalNumByGroupid = ""; //终端
+var rpDatasource = "";  //报告的数据来源
+
+$("h2[class='page-header']").append(
+		" <i class='fa fa-globe'></i> "+reportProvinceName+"省"+reportBroadType+"M家庭宽带品质监测报告("+reportDate+")"+
+		" <small class='pull-right'>Date: "+thisDate+"</small>"
+);
+
+//地区
+  $.ajax({  
+   type : "post",  
+   async : false, //同步执行  
+   url:'../../../kpiqualitymap/getOrgnumByGroupId',
+   data : {month:reportDate,groupid:groupid},  
+   dataType : "json", //返回数据形式为json  
+   success : function(result) {  
+	   regionNum = result.org_num;
+   },  
+   error : function(errorMsg) {  
+       alert("地区--返回数据出错");  
+   }  
+});   
+
+//城市
+   $.ajax({  
+    type : "post",  
+    async : false, //同步执行  
+    url:'../../../servicequalityorgidpingmap/getCityList',
+    data : {month:reportDate,groupid:groupid,broadType:reportBroadType},  
+    dataType : "json", //返回数据形式为json  
+    success : function(result) {  
+    	if(result.data.length>0){
+  			for(var i=0;i<result.data.length;i++){
+  				cityList = cityList+result.data[i].orgname+" 、";
+  			}
+  			cityList = cityList.substring(0,cityList.length-1);
+  		}else{
+  			cityList="";
+  		}
+    },  
+    error : function(errorMsg) {  
+        alert("城市--返回数据出错");  
+    }  
+});   
+   
+//有效样本
+ $.ajax({  
+    type : "post",  
+    async : false, //同步执行  
+    url:'../../../servicequalityorgidpingmap/getValidSampleNum',
+    data : {month:reportDate,groupid:groupid,broadType:reportBroadType},  
+    dataType : "json", //返回数据形式为json  
+    success : function(result) {  
+    	validSampleNum = parseInt(result.ping_test_times);
+    },  
+    error : function(errorMsg) {  
+        alert("有效样本--返回数据出错");  
+    }  
+}); 
+
+//样本有效率
+ $.ajax({  
+    type : "post",  
+    async : false, //同步执行  
+    url:'../../../kpiqualitymap/getTotalSampleNum',
+    data : {month:reportDate,groupid:groupid},  
+    dataType : "json", //返回数据形式为json  
+    success : function(result) {  
+    	thisMonthSample = parseInt(result.new_sample_num);
+    	if(thisMonthSample !=0 && thisMonthSample!="0"){
+    		validSampleRate = (validSampleNum/thisMonthSample*100).toFixed(2)+"%";
+    	}else{
+    		validSampleRate=0;
+    	}
+    },  
+    error : function(errorMsg) {  
+        alert("样本有效率--返回数据出错");  
+    }  
+});  
+
+//上月样本数
+ $.ajax({  
+    type : "post",  
+    async : false, //同步执行  
+    url:'../../../kpiqualitymap/getTotalSampleNum',
+    data : {month:preYMonth,groupid:groupid},  
+    dataType : "json", //返回数据形式为json  
+    success : function(result) {  
+    	lastMonthSample = parseInt(result.new_sample_num);
+    },  
+    error : function(errorMsg) {  
+        alert("上月样本数--返回数据出错");  
+    }  
+});   
+ 
+//用户
+ $.ajax({  
+    type : "post",  
+    async : false, //同步执行  
+    url:'../../../terminalOs/getUsernumByGroupId',
+    data : {month:reportDate,groupid:groupid},  
+    dataType : "json", //返回数据形式为json  
+    success : function(result) {  
+    	userNumByGroupid = result.new_user_num;
+    },  
+    error : function(errorMsg) {  
+        alert("用户--返回数据出错");  
+    }  
+ });
+  //终端数
+    $.ajax({  
+       type : "post",  
+       async : false, //同步执行  
+       url:'../../../terminalOs/getTerminalnumByGroupId',
+       data : {month:reportDate,groupid:groupid},  
+       dataType : "json", //返回数据形式为json  
+       success : function(result) {  
+    	   terminalNumByGroupid = result.new_terminal_num;
+       },  
+       error : function(errorMsg) {  
+           alert("终端--返回数据出错");  
+       }  
+    });
+//数据来源
+ $.ajax({  
+    type : "post",  
+    async : false, //同步执行  
+    url:'../../../terminalOs/getPlatformList',
+    data : {month:reportDate,groupid:groupid},  
+    dataType : "json", //返回数据形式为json  
+    success : function(result) {  
+  		if(result.data.length>0){
+  			for(var i=0;i<result.data.length;i++){
+  				rpDatasource = rpDatasource+result.data[i].type+" 、";
+  			}
+  			rpDatasource = rpDatasource.substring(0,rpDatasource.length-1);
+  		}else{
+  			rpDatasource="";
+  		}
+    },  
+    error : function(errorMsg) {  
+        alert("数据来源列表--返回数据出错");  
+    }  
+});    
+
+ 
+$("div[class='row invoice-info']").children("div").eq(0).html(
+			"范围<address><strong>"+reportBroadType+"M家庭宽带</strong><br>区域: "+reportProvinceName+"省<br>地区: "+regionNum+"个<br>周期: "+firstdate+" --- "+lastdate+"<br>城市: "+cityList+"</address>");
+
+$("div[class='row invoice-info']").children("div").eq(1).html(
+		" 样本<address><strong>有效样本:"+validSampleNum+" </strong><br>用户: "+userNumByGroupid+"<br>终端: "+terminalNumByGroupid+"<br>样本有效率: "+validSampleRate+"<br>上月样本数: "+lastMonthSample+"</address>");
+
+$("div[class='row invoice-info']").children("div").eq(2).html(
+			" <b> </b><br><br><b>编号:</b> #"+groupid+reportBroadType+reportDate+"<br><b>发布日期:</b> "+nextYMonth+"<br><b>数据来源:</b> "+rpDatasource
+			);
+
+//拼tableBody
+function appendTable(result){
+	  for(var i=0;i<result.data.length;i++){
+		  $("table[class='table table-striped'] tbody").append(
+				  "<tr>"+
+				    "<td>"+parseInt(i)+1+"</td>"+
+				  	"<td>"+result.data[i].orgname+"</td>"+
+				  	"<td>"+result.data[i].new_sample_num+"</td>"+
+				  	"<td>"+result.data[i].case_num+"</td>"+
+				  	"<td>平均ping时延为"+result.data[i].ping_delay+"ms, 其中95%样本超过"+result.data[i].top95_ping_delay+"ms, 85%样本超过"+result.data[i].top85_ping_delay+"ms, 75%样本超过"+result.data[i].top75_ping_delay+"ms。<br>平均ping丢包率为"+result.data[i].ping_loss_rate+"%, 其中95%样本超过"+result.data[i].top95_ping_loss_rate+"%, 85%样本超过"+result.data[i].top85_ping_loss_rate+"%, 75%样本超过"+result.data[i].top75_ping_loss_rate+"%。</td>"+
+				  	"<td><a href='#'>查看</a></td>"+
+				  "</tr>"
+		  );
+	  }
+}
+//ping报告明细
+$.ajax({  
+   type : "post",  
+   async : false, //同步执行  
+   url:'../../../servicequalityorgidpingmap/getPingReportItem',
+   data : {month:reportDate,groupid:groupid,broadband_type:reportBroadType},  
+   dataType : "json", //返回数据形式为json  
+   success : function(result) {  
+	   if(result.data.length>0){
+ 		  appendTable(result);
+ 	  }else{
+ 		  alert("ping报告明细--没有数据记录！");
+ 	  }
+   },  
+   error : function(errorMsg) {  
+       alert("ping报告明细--返回数据出错");  
+   }  
+}); 
+
+//质量分析
+/* $.ajax({  
+   type : "post",  
+   async : false, //同步执行  
+   url:'../../../servicequalityorgidpingmap/getPingServiceQualityCompare',
+   data : {month:reportDate,groupid:groupid,broadType:reportBroadType},  
+   dataType : "json", //返回数据形式为json  
+   success : function(result) {  
+   		//alert();
+   },  
+   error : function(errorMsg) {  
+       alert("质量分析--返回数据出错");  
+   }  
+}); 
+
+
+//拼本月指标情况tableBody
+function appendTable2(result){
+	  for(var i=0;i<result.data.length;i++){
+		  $("table[class='table'] tbody").append(
+				  "<tr>"+
+				    "<td>"+parseInt(i)+1+"</td>"+
+				  	"<td>"+result.data[i].orgname+"</td>"+
+				  	"<td>"+result.data[i].province+"</td>"+
+				  	"<td>"+result.data[i].broadband_type+"</td>"+
+				  "</tr>"
+		  );
+	  }
+}
+
+//本月指标情况
+$.ajax({  
+   type : "post",  
+   async : false, //同步执行  
+   url:'../../../servicequalityorgidpingmap/getPingKPIbyGroupid',
+   data : {month:reportDate,groupid:groupid,broadType:reportBroadType},  
+   dataType : "json", //返回数据形式为json  
+   success : function(result) {  
+	   if(result.data.length>0){
+ 		  appendTable2(result);
+ 	  }else{
+ 		  alert("本月指标情况--没有数据记录！");
+ 	  }
+   },  
+   error : function(errorMsg) {  
+       alert("本月指标情况--返回数据出错");  
+   }  
+}); */
+
+
+</script>
+
+</body>
+</html>

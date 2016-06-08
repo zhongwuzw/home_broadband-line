@@ -1,0 +1,47 @@
+package com.qualitymap.service.impl;
+
+import java.util.Calendar;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import com.qualitymap.dao.OverviewServicequalityDao;
+import com.qualitymap.service.OverviewServicequalityService;
+import com.qualitymap.vo.OverviewServicequality;
+
+/**
+ * Description:  OTS统计平台业务质量
+ * @author zqh
+ * 2016-4-7: PM 04:15:11
+ */
+public class OverviewServicequalityServiceImpl implements OverviewServicequalityService{
+
+	@Resource
+	OverviewServicequalityDao overviewServicequalityDao;
+	
+	@Override
+	public String getAvgDelay(String yearMonth) {
+		Calendar c = Calendar.getInstance();
+		c.add(Calendar.MONTH, -1);
+		String lastMonth = String.valueOf(c.get(Calendar.YEAR))+String.valueOf(c.get(Calendar.MONTH)+1);
+		List<OverviewServicequality> avgDelayList = overviewServicequalityDao.getAvgDelay(yearMonth,lastMonth);
+		
+		return "";
+	}
+
+	@Override
+	public void getDelayStandardRate(OverviewServicequality overviewServicequality) {
+		// TODO Auto-generated method stub
+		overviewServicequalityDao.getDelayStandardRate();
+	}
+	@Override
+	public void getAvgPageSuccessRate(OverviewServicequality overviewServicequality) {
+		// TODO Auto-generated method stub
+		overviewServicequalityDao.getAvgPageSuccessRate();
+	}
+	@Override
+	public void getPageStandardRate(OverviewServicequality overviewServicequality) {
+		// TODO Auto-generated method stub
+		overviewServicequalityDao.getPageStandardRate();
+	}
+}

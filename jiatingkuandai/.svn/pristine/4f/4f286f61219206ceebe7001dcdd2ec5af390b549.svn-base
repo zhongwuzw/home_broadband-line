@@ -1,0 +1,22 @@
+package com.qualitymap.service;
+
+/**
+ * 
+ * @author kongxiangchun
+ *
+ */
+public interface ServicequalityGroupidHttpUploadService {
+	
+	
+	/**
+	 * 获取上下月的上传速率
+	 * @param yearMonth
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getHttpUploadRate(String yearMonth,String groupid);
+	
+
+
+}

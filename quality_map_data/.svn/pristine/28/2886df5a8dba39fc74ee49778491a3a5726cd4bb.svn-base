@@ -1,0 +1,47 @@
+package com.qualitymap.dao.impl;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.qualitymap.dao.TerminalOsDao;
+import com.qualitymap.vo.TerminalOs;
+
+public class TerminalOsDaoImpl implements TerminalOsDao{
+
+	private SessionFactory sessionFactory;
+	@Override
+	public void saveOs(TerminalOs terminalOs) {
+		// TODO Auto-generated method stub
+		getSession().save(terminalOs);
+	}
+
+	@Override
+	public void deleteOs(TerminalOs terminalOs) {
+		// TODO Auto-generated method stub
+		getSession().delete(terminalOs);
+	}
+
+	@Override
+	public List<TerminalOs> findOs() {
+		// TODO Auto-generated method stub
+		List<TerminalOs> osList = getSession().createQuery("from TerminalOs").list();
+		return osList;
+	}
+
+	@Override
+	public void updateOs(TerminalOs terminalOs) {
+		// TODO Auto-generated method stub
+		getSession().update(terminalOs);
+	}
+
+	
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public Session getSession() {
+		return sessionFactory.getCurrentSession();
+	}
+}
