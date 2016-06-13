@@ -4,6 +4,7 @@ import os
 import datetime
 import time
 
+#转时间戳
 def datetime_timestamp(dt):
     # dt为字符串
     # 中间过程，一般都需要将字符串转化为时间数组
@@ -13,7 +14,7 @@ def datetime_timestamp(dt):
     s = time.mktime(time.strptime(dt, '%Y-%m-%d %H:%M:%S'))
     return int(s)
 
-
+#判断某个类型是否完成
 def isAppFeatureComplete(planid, case_type_name):
     connection = pymysql.connect(host='192.168.16.113', port=3306, user='zhangbin', password='zhangbin', db='terminal',
                                  charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
@@ -29,7 +30,7 @@ def isAppFeatureComplete(planid, case_type_name):
     finally:
         connection.close()
 
-
+#获取APP的测试数据
 def getAppTestData(planid):
     internetDownload = isAppFeatureComplete(planid, u"互联网下载测试")
     videoTencentNum = isAppFeatureComplete(planid, u"视频测试-腾讯电影")
@@ -47,36 +48,41 @@ def getAppTestData(planid):
     return (totalTestNum, internetDownload, videoTestNum, webBrowsing)
 
 
-connection = pymysql.connect(host='192.168.16.113',port=3306,user='zhangbin',password='zhangbin',db='terminal',charset='utf8mb4',cursorclass=pymysql.cursors.DictCursor)
+#根据手机号获取测试数据
+def getAppDataWithPhoneNum(phoneNum):
+    # 执行主函数
+    connection = pymysql.connect(host='192.168.16.113', port=3306, user='zhangbin', password='zhangbin', db='terminal',
+                                 charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
-try:
-    with connection.cursor() as cursor:
-        addr = u'北京市西城区西便门内大街甲53号'
-        d = datetime_timestamp('2016-05-19 00:00:00')
-        d1 = datetime_timestamp('2016-05-20 00:00:00')
-        date = datetime.datetime(2016,05,19,00,00,00)
-        date1 = datetime.datetime(2016,05,19,23,59, 59)
-        today = datetime.date.today()
-        yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
-        timestamp = int(time.mktime(yesterday.timetuple()))
-        haha = time.strftime("%Y-%m-%d 00:00:00",yesterday.timetuple())
-        haah1 = datetime_timestamp(haha)
+    try:
+        with connection.cursor() as cursor:
+            addr = u'北京市西城区西便门内大街甲53号'
+            d = datetime_timestamp('2016-05-19 00:00:00')
+            d1 = datetime_timestamp('2016-05-20 00:00:00')
+            date = datetime.datetime(2016, 05, 19, 00, 00, 00)
+            date1 = datetime.datetime(2016, 05, 19, 23, 59, 59)
+            today = datetime.date.today()
+            yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
+            timestamp = int(time.mktime(yesterday.timetuple()))
+            haha = time.strftime("%Y-%m-%d 00:00:00", yesterday.timetuple())
+            haah1 = datetime_timestamp(haha)
 
-        sql = "select * from upload_plan WHERE client_number = '11111111111' AND addr = '" + addr + "' and UNIX_TIMESTAMP(creattime) > " + str(d) + " and UNIX_TIMESTAMP(creattime) < " + str(d1)
-        cursor.execute(sql)
-        result = cursor.fetchall()
+            sql = "select * from upload_plan WHERE client_number = '" + phoneNum + "' AND addr = '" + addr + "' and UNIX_TIMESTAMP(creattime) > " + str(
+                d) + " and UNIX_TIMESTAMP(creattime) < " + str(d1)
+            cursor.execute(sql)
+            result = cursor.fetchall()
 
-        appTestResult = [0]*4
-        for element in result:
-            data = getAppTestData(element["planid"])
-            for i in range(4):
-                appTestResult[i] += data[i]
+            appTestResult = [0] * 4
+            for element in result:
+                data = getAppTestData(element["planid"])
+                for i in range(4):
+                    appTestResult[i] += data[i]
 
-        print  appTestResult
+            print  appTestResult
+    finally:
+        connection.close()
 
 
-finally:
-    connection.close()
-
+getAppDataWithPhoneNum("11111111111")
 # n = os.system('/Users/zhongwu/Documents/workspace/test.sh 2014')
 # print n
