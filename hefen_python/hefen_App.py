@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 import pymysql.cursors
 import os
@@ -64,11 +65,15 @@ def getAppDataWithPhoneNum(phoneNum):
             yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
             timestamp = int(time.mktime(yesterday.timetuple()))
             yesterday_standard = time.strftime("%Y-%m-%d", yesterday.timetuple())
+            yesterdat_start = time.strftime("%Y-%m-%d 00:00:00",yesterday.timetuple())
+            today_start = time.strftime("%Y-%m-%d 00:00:00",today.timetuple())
             # yesterday_standard = time.strftime("%Y-%m-%d 00:00:00", yesterday.timetuple())
             # haah1 = datetime_timestamp(yesterday_standard)
+            final_yesterday_standart = datetime_timestamp(yesterdat_start)
+            final_today_start = datetime_timestamp(today_start)
 
             sql = "select * from upload_plan WHERE client_number = '" + phoneNum + "' AND addr = '" + addr + "' and UNIX_TIMESTAMP(creattime) > " + str(
-                d) + " and UNIX_TIMESTAMP(creattime) < " + str(d1)
+                final_yesterday_standart) + " and UNIX_TIMESTAMP(creattime) < " + str(final_today_start)
             cursor.execute(sql)
             result = cursor.fetchall()
 
@@ -118,8 +123,6 @@ try:
             appTestResult = getAppDataWithPhoneNum(element["phone_no"])
             executeResultInsertDatabase(element["phone_no"],element["province"],element["city"],appTestResult)
             # appTestResult = getAppDataWithPhoneNum("11111111111")
-
-            print appTestResult
 
 finally:
     SourcePhoneconnection.close()
