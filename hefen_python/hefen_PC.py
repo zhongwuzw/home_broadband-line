@@ -32,6 +32,7 @@ def getPCDataWithPhoneNum(phoneNum):
             timestamp = int(time.mktime(yesterday.timetuple()))
             haha = time.strftime("%Y-%m-%d 00:00:00", yesterday.timetuple())
             haah1 = datetime_timestamp(haha)
+            yesterday_standard = time.strftime("%Y-%m-%d", yesterday.timetuple())
 
             sql = "SELECT COUNT(*) AS num,file_path FROM pc_http_test WHERE consumerid = '" + phoneNum + "' and start_time > '" + str(d) + "000' and start_time < '" + str(d1) + "000' GROUP BY file_path"
 
@@ -56,12 +57,50 @@ def getPCDataWithPhoneNum(phoneNum):
 
             totoal_test_num = min(http_browsing_num,http_download_num)
 
-            print (totoal_test_num,http_download_num,http_browsing_num)
+            return (totoal_test_num,http_download_num,http_browsing_num,yesterday_standard)
 
     finally:
         connection.close()
 
+#将最终结果写入库中
+def executeResultInsertDatabase(phone_num,province,city,array):
+    destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
+                                            db='just_for_copy',
+                                            charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
-getPCDataWithPhoneNum("12355333333")
+    for i in range(3):
+        array[i] = str(array[i])
+    try:
+        with destDatabase.cursor() as cursor:
+            sql = "INSERT INTO `app_temporary` (`id`, `phone_no`, `date`, `province`, `city`, `valid_times`, `http_times`, `video_times`, `browse_times`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s)"
+            cursor.execute(sql,("0",phone_num,array[4],province,city,array[0],array[1],array[2],array[3]))
+            # sql = "INSERT INTO `app_temporary` (`id`, `phone_no`, `date`, `valid_times`, `http_times`, `video_times`, `browse_times`) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+            # cursor.execute(sql,("0",phone_num,array[4],array[0],array[1],array[2],array[3]))
+
+            destDatabase.commit()
+
+    finally:
+        destDatabase.close()
+
+# 执行主函数
+SourcePhoneconnection = pymysql.connect(host='192.168.16.113', port=3306, user='root', password='otsdatabase',
+                                        db='device',
+                                        charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+
+try:
+    with SourcePhoneconnection.cursor() as cursor:
+        sql = "select DISTINCT(phone_no),province,city from app_temporary"
+        cursor.execute(sql)
+        result = cursor.fetchall()
+
+        for element in result:
+            appTestResult = getPCDataWithPhoneNum(element["phone_no"])
+            executeResultInsertDatabase(element["phone_no"],element["province"],element["city"],appTestResult)
+            # appTestResult = getAppDataWithPhoneNum("11111111111")
+
+            print appTestResult
+
+finally:
+    SourcePhoneconnection.close()
 # n = os.system('/Users/zhongwu/Documents/workspace/test.sh 2014')
 # print n

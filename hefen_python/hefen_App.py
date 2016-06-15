@@ -23,7 +23,7 @@ def isAppFeatureComplete(planid, case_type_name):
             sql = "select test_status from upload_plan_case WHERE planid = '" + planid + "' and case_type_name = '" + case_type_name + "'"
             cursor.execute(sql)
             result = cursor.fetchone()
-            if result["test_status"] == "103":
+            if result and result["test_status"] == "103":
                 return True
             else:
                 return False
@@ -50,7 +50,6 @@ def getAppTestData(planid):
 
 #根据手机号获取测试数据
 def getAppDataWithPhoneNum(phoneNum):
-    # 执行主函数
     connection = pymysql.connect(host='192.168.16.113', port=3306, user='zhangbin', password='zhangbin', db='terminal',
                                  charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
@@ -64,8 +63,9 @@ def getAppDataWithPhoneNum(phoneNum):
             today = datetime.date.today()
             yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
             timestamp = int(time.mktime(yesterday.timetuple()))
-            haha = time.strftime("%Y-%m-%d 00:00:00", yesterday.timetuple())
-            haah1 = datetime_timestamp(haha)
+            yesterday_standard = time.strftime("%Y-%m-%d", yesterday.timetuple())
+            # yesterday_standard = time.strftime("%Y-%m-%d 00:00:00", yesterday.timetuple())
+            # haah1 = datetime_timestamp(yesterday_standard)
 
             sql = "select * from upload_plan WHERE client_number = '" + phoneNum + "' AND addr = '" + addr + "' and UNIX_TIMESTAMP(creattime) > " + str(
                 d) + " and UNIX_TIMESTAMP(creattime) < " + str(d1)
@@ -78,11 +78,50 @@ def getAppDataWithPhoneNum(phoneNum):
                 for i in range(4):
                     appTestResult[i] += data[i]
 
-            print  appTestResult
+            appTestResult.append(yesterday_standard)
+            return appTestResult
     finally:
         connection.close()
 
+#将最终结果写入库中
+def executeResultInsertDatabase(phone_num,province,city,array):
+    destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
+                                            db='just_for_copy',
+                                            charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
-getAppDataWithPhoneNum("11111111111")
+    for i in range(4):
+        array[i] = str(array[i])
+    try:
+        with destDatabase.cursor() as cursor:
+            sql = "INSERT INTO `app_temporary` (`id`, `phone_no`, `date`, `province`, `city`, `valid_times`, `http_times`, `video_times`, `browse_times`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s)"
+            cursor.execute(sql,("0",phone_num,array[4],province,city,array[0],array[1],array[2],array[3]))
+            # sql = "INSERT INTO `app_temporary` (`id`, `phone_no`, `date`, `valid_times`, `http_times`, `video_times`, `browse_times`) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+            # cursor.execute(sql,("0",phone_num,array[4],array[0],array[1],array[2],array[3]))
+
+            destDatabase.commit()
+
+    finally:
+        destDatabase.close()
+
+# 执行主函数
+SourcePhoneconnection = pymysql.connect(host='192.168.16.113', port=3306, user='root', password='otsdatabase',
+                                        db='device',
+                                        charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+
+try:
+    with SourcePhoneconnection.cursor() as cursor:
+        sql = "select DISTINCT(phone_no),province,city from app_temporary"
+        cursor.execute(sql)
+        result = cursor.fetchall()
+
+        for element in result:
+            appTestResult = getAppDataWithPhoneNum(element["phone_no"])
+            executeResultInsertDatabase(element["phone_no"],element["province"],element["city"],appTestResult)
+            # appTestResult = getAppDataWithPhoneNum("11111111111")
+
+            print appTestResult
+
+finally:
+    SourcePhoneconnection.close()
 # n = os.system('/Users/zhongwu/Documents/workspace/test.sh 2014')
 # print n
