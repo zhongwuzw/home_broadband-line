@@ -38,9 +38,9 @@ def getAppTestData(planid):
     videoIQiyiNum = isAppFeatureComplete(planid, u"视频测试-爱奇艺电视剧")
     webBrowsing = isAppFeatureComplete(planid, u"网页浏览测试")
 
-    videoTestNum = False
-    if videoIQiyiNum and videoTencentNum:
-        videoTestNum = True
+    videoTestNum = videoIQiyiNum + videoTencentNum
+    # if videoIQiyiNum and videoTencentNum:
+    #     videoTestNum = True
 
     totalTestNum = False
     if videoTestNum and internetDownload and webBrowsing:
@@ -72,7 +72,7 @@ def getAppDataWithPhoneNum(phoneNum):
             final_yesterday_standart = datetime_timestamp(yesterdat_start)
             final_today_start = datetime_timestamp(today_start)
 
-            sql = "select * from upload_plan WHERE client_number = '" + phoneNum + "' AND addr = '" + addr + "' and UNIX_TIMESTAMP(creattime) > " + str(
+            sql = "select * from upload_plan WHERE client_number = '" + phoneNum + "' and UNIX_TIMESTAMP(creattime) > " + str(
                 final_yesterday_standart) + " and UNIX_TIMESTAMP(creattime) < " + str(final_today_start)
             cursor.execute(sql)
             result = cursor.fetchall()
@@ -108,6 +108,7 @@ def executeResultInsertDatabase(phone_num,province,city,array):
     finally:
         destDatabase.close()
 
+
 # 执行主函数
 SourcePhoneconnection = pymysql.connect(host='192.168.16.113', port=3306, user='root', password='otsdatabase',
                                         db='device',
@@ -122,7 +123,7 @@ try:
         for element in result:
             appTestResult = getAppDataWithPhoneNum(element["phone_no"])
             executeResultInsertDatabase(element["phone_no"],element["province"],element["city"],appTestResult)
-            # appTestResult = getAppDataWithPhoneNum("11111111111")
+            # appTestResult = getAppDataWithPhoneNum("15999418686")
 
 finally:
     SourcePhoneconnection.close()
