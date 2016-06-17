@@ -123,7 +123,7 @@ try:
         for element in result:
             appTestResult = getAppDataWithPhoneNum(element["phone_no"])
             executeResultInsertDatabase(element["phone_no"],element["province"],element["city"],appTestResult)
-            # appTestResult = getAppDataWithPhoneNum("15999418686")
+            # appTestResult = getAppDataWithPhoneNum("13969587786")
 
 finally:
     SourcePhoneconnection.close()
