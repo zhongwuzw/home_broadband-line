@@ -214,7 +214,7 @@ public class ServicequalityGroupidVideoDao {
 		String groupidsql = "(SELECT t.org_key, m.groupid,	m. NAME	FROM "+authBaseName+".t_org t, ( SELECT j.org_id,j.groupid,i.name from "+authBaseName+".t_group_org_mapping i , (SELECT org_id, groupid" +
 				" 	FROM "+authBaseName+".t_group_org_mapping a, "+targetBaseName+".group_id b WHERE a.group_id = b.groupid ) j where j.groupid =i.parent_org_id  ) m WHERE t.id = m.org_id) n";
 		
-		sql = "select case p.android_ios when 'ios' then 'iOS' when 'android' then 'Android' end android_ios, COUNT(id)  as video_test_times,'"+month+"' month,n.groupid groupid ,n.name groupname,substring_index(test_description, '/', - 1) bandwidth,round(avg(CONVERT(avg_delay,decimal(10,2))),2) AS avg_video_delay ,round(avg(CONVERT(buffer_times,SIGNED)),1)    as  video_cache_count,min(CONVERT(avg_delay,decimal(10,2)))  as best_video_delay, min(CONVERT(buffer_times,SIGNED))   best_cache_count " +
+		sql = "select case p.android_ios when 'ios' then 'iOS' when 'android' then 'Android' end android_ios, COUNT(id)  as video_test_times,'"+month+"' month,n.groupid groupid ,n.name groupname,substring_index(test_description, '/', - 1) bandwidth,round(avg(CONVERT(avg_delay,decimal(10,2))),2) AS avg_video_delay ,round(avg(CONVERT(buffer_times,SIGNED)),1)    as  video_cache_count,min(CONVERT(avg_delay,decimal(10,2)))  as best_video_delay, min(CONVERT(buffer_times,SIGNED))   best_cache_count ,sum(case when delay != -330 then 1 else 0 end)/count(id) as success_rate" +
 				" from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+"  where 	p.imei!='' AND substring_index(test_description, '/', - 1) != '' and test_description LIKE '%/%'  AND time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND time < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000 and  cast(avg_delay AS signed)>0  and p.device_org = n.org_key  GROUP BY n.groupid,substring_index(test_description, '/', - 1),p.android_ios"; 
 		
 		ResultSet rs = null;
@@ -229,8 +229,6 @@ public class ServicequalityGroupidVideoDao {
 				Map map = new HashMap();
 				Map groupmap = new HashMap();
 				
-				
-
 				String groupid = rs.getString("groupid");
 				String groupname = rs.getString("groupname");
 				String video_test_times = rs.getString("video_test_times");
@@ -240,6 +238,7 @@ public class ServicequalityGroupidVideoDao {
 				String best_video_delay = rs.getString("best_video_delay");
 				String bandwidth = rs.getString("bandwidth");
 				String android_ios = rs.getString("android_ios");
+				String success_rate = rs.getString("success_rate");
 				
 				map.put("groupid", groupid);
 				map.put("groupname", groupname);
@@ -252,6 +251,7 @@ public class ServicequalityGroupidVideoDao {
 				map.put("month", month);
 				map.put("broadband_type", bandwidth);
 				map.put("probetype", android_ios);
+				map.put("success_rate", success_rate);
 				
 				
 				groupmap.put("groupid", groupid);

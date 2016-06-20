@@ -137,7 +137,7 @@ public class ServicequalityOrgidWebbrowsingDao {
 		
 		String sampleSql = "(select count(id) new_sample_num ,p.device_org,p.bandwidth from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+"  where  start_time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND start_time  < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000  and p.device_org = n.org_key GROUP BY p.device_org,p.bandwidth) q ";
 		
-		sql = "select COUNT(id)  as page_test_times,q.new_sample_num,n.orgname ,'"+month+"' month,n.org,p.device_org org_id,p.bandwidth,round(avg(CONVERT(loading_delay,decimal(10,2))),2) AS page_avg_delay ,round(avg(CONVERT(success_rate,decimal(10,2))),2)  as  page_success_rate,round(min(CONVERT(loading_delay,decimal(10,2))),2)  as best_page_delay, round(max(CONVERT(success_rate,decimal(10,2))),2)   best_page_success_rate,n.groupid,n. NAME " +
+		sql = "select COUNT(id)  as page_test_times,q.new_sample_num,n.orgname ,'"+month+"' month,n.org,p.device_org org_id,p.bandwidth,round(avg(CONVERT(loading_delay,decimal(10,2))),2) AS page_avg_delay ,round(avg(CONVERT(success_rate,decimal(10,2))),2)  as  page_success_rate,round(min(CONVERT(loading_delay,decimal(10,2))),2)  as best_page_delay, round(max(CONVERT(success_rate,decimal(10,2))),2)   best_page_success_rate,n.groupid,n. NAME ,sum(case when success_rate=100 then 1 else 0 end)/count(id) as success_rate" +
 				" from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+" ,"+sampleSql+"  where 	consumerid != '' AND businessid != '' AND p.bandwidth != '' AND mac != '' AND start_time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND start_time < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000 and  cast(loading_delay AS signed)>0 and cast(success_rate as signed) >=0 and cast(success_rate as signed) <=100  and p.device_org = n.org_key  and p.device_org=q.device_org and p.bandwidth=q.bandwidth GROUP BY p.device_org,p.bandwidth"; 
 		
 		ResultSet rs = null;
@@ -166,6 +166,7 @@ public class ServicequalityOrgidWebbrowsingDao {
 				map.put("groupname", rs.getString("NAME"));
 				map.put("new_sample_num", rs.getString("new_sample_num"));
 				map.put("probetype",probetype.toUpperCase());
+				map.put("success_rate", rs.getString("success_rate"));
 				
 				groupmap.put("orgid", rs.getString("org_id"));
 				groupmap.put("broadband_type",  rs.getString("bandwidth"));
@@ -205,7 +206,7 @@ public class ServicequalityOrgidWebbrowsingDao {
 		
 		String sampleSql = "(select count(id) new_sample_num ,p.device_org, substring_index(test_description, '/', - 1) bandwidth from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+"  where  time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND time  < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000  and p.device_org = n.org_key GROUP BY p.device_org,android_ios, substring_index(test_description, '/', - 1)  ) q ";
 		
-		sql = "select case p.android_ios when 'ios' then 'iOS' when 'android' then 'Android' end android_ios, COUNT(id)  as page_test_times,q.new_sample_num,n.orgname ,'"+month+"' month,n.org,p.device_org org_id,substring_index(test_description, '/', - 1) bandwidth, round(avg(CONVERT(eighty_loading,decimal(10,2))),2) AS page_avg_delay , round(avg(CONVERT(success_rate,decimal(10,2))),2)  as  page_success_rate, round(min(CONVERT(eighty_loading,decimal(10,2))),2) as best_page_delay, round(min(CONVERT(success_rate,decimal(10,2))),2)  best_page_success_rate,n.groupid,n. NAME " +
+		sql = "select case p.android_ios when 'ios' then 'iOS' when 'android' then 'Android' end android_ios, COUNT(id)  as page_test_times,q.new_sample_num,n.orgname ,'"+month+"' month,n.org,p.device_org org_id,substring_index(test_description, '/', - 1) bandwidth, round(avg(CONVERT(eighty_loading,decimal(10,2))),2) AS page_avg_delay , round(avg(CONVERT(success_rate,decimal(10,2))),2)  as  page_success_rate, round(min(CONVERT(eighty_loading,decimal(10,2))),2) as best_page_delay, round(min(CONVERT(success_rate,decimal(10,2))),2)  best_page_success_rate,n.groupid,n. NAME ,sum(case when success_rate=100 then 1 else 0 end)/count(id) as success_rate" +
 				" from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+" ,"+sampleSql+"  where 	p.imei!='' AND substring_index(test_description, '/', - 1) != '' and test_description LIKE '%/%'  AND time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND time < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000 and  cast(eighty_loading AS signed)>0 and cast(success_rate as signed) >=0 and cast(success_rate as signed) <=100  and p.device_org = n.org_key  and p.device_org=q.device_org and substring_index(test_description, '/', - 1)=q.bandwidth GROUP BY p.device_org,q.bandwidth,p.android_ios"; 
 		
 		ResultSet rs = null;
@@ -234,6 +235,7 @@ public class ServicequalityOrgidWebbrowsingDao {
 				map.put("groupname", rs.getString("NAME"));
 				map.put("new_sample_num", rs.getString("new_sample_num"));
 				map.put("probetype",rs.getString("android_ios"));
+				map.put("success_rate", rs.getString("success_rate"));
 				
 				groupmap.put("orgid", rs.getString("org_id"));
 				groupmap.put("broadband_type",  rs.getString("bandwidth"));

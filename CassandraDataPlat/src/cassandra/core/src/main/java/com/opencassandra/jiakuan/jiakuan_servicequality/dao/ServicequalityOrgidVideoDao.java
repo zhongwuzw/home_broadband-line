@@ -216,7 +216,7 @@ public class ServicequalityOrgidVideoDao {
 		
 		String sampleSql = "(select count(id) new_sample_num ,p.device_org,substring_index(test_description, '/', - 1)  bandwidth from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+"  where  time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND time  < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000  and p.device_org = n.org_key GROUP BY p.device_org,substring_index(test_description, '/', - 1),p.android_ios ) q ";
 
-		sql = "select case p.android_ios when 'ios' then 'iOS' when 'android' then 'Android' end android_ios, COUNT(id)  as video_test_times,q.new_sample_num,'"+month+"' month,p.device_org org_id,n.orgname,n.groupid groupid ,n.name groupname,substring_index(test_description, '/', - 1) bandwidth, round(avg(CONVERT(avg_delay,decimal(10,2))),2) AS avg_video_delay ,round(avg(CONVERT(buffer_times,SIGNED)),1)   as  video_cache_count,round(min(CONVERT(avg_delay,decimal(10,2))),2)  as best_video_delay, min(CONVERT(buffer_times,SIGNED))  best_cache_count " +
+		sql = "select case p.android_ios when 'ios' then 'iOS' when 'android' then 'Android' end android_ios, COUNT(id)  as video_test_times,q.new_sample_num,'"+month+"' month,p.device_org org_id,n.orgname,n.groupid groupid ,n.name groupname,substring_index(test_description, '/', - 1) bandwidth, round(avg(CONVERT(avg_delay,decimal(10,2))),2) AS avg_video_delay ,round(avg(CONVERT(buffer_times,SIGNED)),1)   as  video_cache_count,round(min(CONVERT(avg_delay,decimal(10,2))),2)  as best_video_delay, min(CONVERT(buffer_times,SIGNED))  best_cache_count ,sum(case when delay != -330 then 1 else 0 end)/count(id) as success_rate" +
 				" from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+" ,"+sampleSql+"  where 	p.imei!='' AND substring_index(test_description, '/', - 1) != '' and test_description LIKE '%/%'  AND time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND time < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000 and  cast(avg_delay AS signed)>0  and p.device_org = n.org_key  and p.device_org=q.device_org and substring_index(test_description, '/', - 1)=q.bandwidth  GROUP BY p.device_org,substring_index(test_description, '/', - 1),p.android_ios"; 
 		
 		ResultSet rs = null;
@@ -245,6 +245,7 @@ public class ServicequalityOrgidVideoDao {
 				String org_id = rs.getString("org_id");
 				String orgname = rs.getString("orgname");
 				String new_sample_num = rs.getString("new_sample_num");
+				String success_rate = rs.getString("success_rate");
 				
 				map.put("new_sample_num", new_sample_num);
 				map.put("groupid", groupid);
@@ -260,6 +261,7 @@ public class ServicequalityOrgidVideoDao {
 				map.put("month", month);
 				map.put("broadband_type", bandwidth);
 				map.put("probetype", android_ios);
+				map.put("success_rate", success_rate);
 				
 				
 				groupmap.put("groupid", groupid);

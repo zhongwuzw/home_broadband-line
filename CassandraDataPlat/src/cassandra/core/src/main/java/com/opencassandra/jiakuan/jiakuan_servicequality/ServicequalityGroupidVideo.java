@@ -21,7 +21,7 @@ public class ServicequalityGroupidVideo {
 	private static Pattern fieldpattern = Pattern.compile("[$]");
 	private static ServicequalityGroupidVideoDao groupidVideoDao = new ServicequalityGroupidVideoDao();
 
-	public static void main(String[] args) {
+	public static void main(String[] args1) {
 
 		// 程序开始时间
 		long startdate = 0;
@@ -30,7 +30,7 @@ public class ServicequalityGroupidVideo {
 		startdate = new Date().getTime();
 		System.out.println("开始进行数据读取::::::  " + startdate);
 		//pc$test_appreportdata_jiakuan$pc_web_browsing,
-		//String[] args = { "app$test_appreportdata_jiakuan$video_test_new_201605", "test_middle_table_jiakuan", "servicequality_groupid_video", "auth", "201605" };
+		String[] args = { "app$test_appreportdata_jiakuan$video_test_new_201605", "test_middle_table_jiakuan", "servicequality_groupid_video", "auth", "201605" };
 
 		for (int i = 0; i < args.length; i++) {
 			System.out.println(args[i] + "   对应的参数");

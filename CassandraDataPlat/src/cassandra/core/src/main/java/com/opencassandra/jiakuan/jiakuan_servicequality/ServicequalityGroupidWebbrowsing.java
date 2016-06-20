@@ -20,7 +20,7 @@ public class ServicequalityGroupidWebbrowsing {
 	private static Pattern fieldpattern = Pattern.compile("[$]");
 	private static ServicequalityGroupidWebbrowsingDao groupidWebbrowsingDao = new ServicequalityGroupidWebbrowsingDao();
 
-	public static void main(String[] args) {
+	public static void main(String[] args1) {
 
 		// 程序开始时间
 		long startdate = 0;
@@ -29,7 +29,8 @@ public class ServicequalityGroupidWebbrowsing {
 		startdate = new Date().getTime();
 		System.out.println("开始进行数据读取::::::  " + startdate);
 		//pc$test_appreportdata_jiakuan$pc_web_browsing,
-		//String[] args = { "pc$test_appreportdata_jiakuan$pc_web_browsing,app$test_appreportdata_jiakuan$web_browsing_new_201605", "test_middle_table_jiakuan", "servicequality_groupid_webbrowsing", "auth", "201605" };
+//		String[] args = { "pc$test_appreportdata_jiakuan$pc_web_browsing,app$test_appreportdata_jiakuan$web_browsing_new_201605", "test_middle_table_jiakuan", "servicequality_groupid_webbrowsing", "auth", "201605" };
+		String[] args = { "app$test_appreportdata_jiakuan$web_browsing_new_201605", "test_middle_table_jiakuan", "servicequality_groupid_webbrowsing", "auth", "201605" };
 
 		for (int i = 0; i < args.length; i++) {
 			System.out.println(args[i] + "   对应的参数");

@@ -441,7 +441,7 @@ public class ServicequalityorgidHttpdownloadDao {
 		
 		String sampleSql = "(select count(id) new_sample_num ,p.device_org,p.bandwidth from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+"  where  start_time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND start_time  < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000  and p.device_org = n.org_key and service_type='下载' GROUP BY p.device_org,p.bandwidth) q ";
 
-		sql = "select n.groupid groupid ,n.name groupname, n.orgname , q.new_sample_num, '"+month+"' month,p.device_org org_id,COUNT(id) AS download_test_times,round(avg(CONVERT(overall_speed,decimal(10,2))),2)  avg_download_rate,round(max(CONVERT(overall_speed,decimal(10,2))),2) best_download_rate ,p.bandwidth broadband_type" +
+		sql = "select n.groupid groupid ,n.name groupname, n.orgname , q.new_sample_num, '"+month+"' month,p.device_org org_id,COUNT(id) AS download_test_times,round(avg(CONVERT(overall_speed,decimal(10,2))),2)  avg_download_rate,round(max(CONVERT(overall_speed,decimal(10,2))),2) best_download_rate ,p.bandwidth broadband_type,sum(case when transfer_progress=100 then 1 else 0 end)/count(id) as success_rate" +
 				" from "+dataSourceTable+" p , "+groupidsql+", "+sampleSql+"  where 	consumerid != '' AND businessid != '' AND p.bandwidth != '' AND mac != '' AND start_time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND start_time < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000 and cast(overall_speed AS signed)>0  and p.device_org = n.org_key  and p.device_org=q.device_org and p.bandwidth=q.bandwidth  and service_type='下载' GROUP BY p.device_org,p.bandwidth"; 
 		
 		
@@ -464,6 +464,7 @@ public class ServicequalityorgidHttpdownloadDao {
 				String broadband_type = rs.getString("broadband_type");
 				String avg_download_rate = rs.getString("avg_download_rate");
 				String best_download_rate = rs.getString("best_download_rate");
+				String success_rate = rs.getString("success_rate");
 				
 				map.put("groupid", groupid);
 				String orgid = rs.getString("org_id");
@@ -478,6 +479,7 @@ public class ServicequalityorgidHttpdownloadDao {
 				map.put("probetype", probetype.toUpperCase());
 				map.put("orgname", rs.getString("orgname"));
 				map.put("new_sample_num", rs.getString("new_sample_num"));
+				map.put("success_rate", success_rate);
 				
 				groupmap.put("groupid", groupid);
 				groupmap.put("broadband_type", broadband_type);
@@ -518,7 +520,7 @@ public class ServicequalityorgidHttpdownloadDao {
 		
 		String sampleSql = "(select count(id) new_sample_num ,p.device_org, substring_index(test_description, '/', - 1) bandwidth from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+"  where  time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND time  < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000  and p.device_org = n.org_key and file_type='download'  GROUP BY p.device_org,android_ios, substring_index(test_description, '/', - 1)  ) q ";
 		
-		sql = "select case p.android_ios when 'ios' then 'iOS' when 'android' then 'Android' end android_ios, COUNT(id)  as download_test_times,'"+month+"' month,n.groupid groupid ,n.orgname , q.new_sample_num, p.device_org org_id ,n.name groupname,substring_index(test_description, '/', - 1) broadband_type,round(avg(CONVERT(avg_rate,decimal(10,2))),2) AS avg_download_rate ,max(CONVERT(avg_rate,decimal(10,2)))  as best_download_rate " +
+		sql = "select case p.android_ios when 'ios' then 'iOS' when 'android' then 'Android' end android_ios, COUNT(id)  as download_test_times,'"+month+"' month,n.groupid groupid ,n.orgname , q.new_sample_num, p.device_org org_id ,n.name groupname,substring_index(test_description, '/', - 1) broadband_type,round(avg(CONVERT(avg_rate,decimal(10,2))),2) AS avg_download_rate ,max(CONVERT(avg_rate,decimal(10,2)))  as best_download_rate ,sum(case when success_rate=100 then 1 else 0 end)/count(id) as success_rate" +
 				" from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+" ,"+sampleSql+"  where 	p.imei!='' AND substring_index(test_description, '/', - 1) != '' and test_description LIKE '%/%'  AND time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND time < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000 and  cast(avg_rate AS signed)>0 and p.device_org = n.org_key  and p.device_org=q.device_org and file_type='download' and substring_index(test_description, '/', - 1)=q.bandwidth  GROUP BY p.device_org,substring_index(test_description, '/', - 1),p.android_ios"; 
 		
 		ResultSet rs = null;
@@ -539,6 +541,7 @@ public class ServicequalityorgidHttpdownloadDao {
 				String avg_download_rate = rs.getString("avg_download_rate");
 				String best_download_rate = rs.getString("best_download_rate");
 				String android_ios = rs.getString("android_ios");
+				String success_rate = rs.getString("success_rate");
 				
 				map.put("groupid", groupid);
 				String orgid = rs.getString("org_id");
@@ -553,6 +556,7 @@ public class ServicequalityorgidHttpdownloadDao {
 				map.put("probetype", android_ios);
 				map.put("orgname", rs.getString("orgname"));
 				map.put("new_sample_num", rs.getString("new_sample_num"));
+				map.put("success_rate", success_rate);
 				
 				groupmap.put("groupid", groupid);
 				groupmap.put("broadband_type", broadband_type);

@@ -20,7 +20,7 @@ public class ServicequalityOrgidWebbrowsing {
 	private static Pattern fieldpattern = Pattern.compile("[$]");
 	private static ServicequalityOrgidWebbrowsingDao webbrowsingDao = new ServicequalityOrgidWebbrowsingDao();
 
-	public static void main(String[] args) {
+	public static void main(String[] args1) {
 
 		// 程序开始时间
 		long startdate = 0;
@@ -29,9 +29,10 @@ public class ServicequalityOrgidWebbrowsing {
 		startdate = new Date().getTime();
 		System.out.println("开始进行数据读取::::::  " + startdate);
 
-		// String[] args = { "pcreportdata_statistics", "pc_web_browsing",
-		// "map_data_statistic", "servicequality_orgid_webbrowsing", "201603" };pc$test_appreportdata_jiakuan$pc_web_browsing,
-		//String[] args = { "app$test_appreportdata_jiakuan$web_browsing_new_201605", "test_middle_table_jiakuan", "servicequality_orgid_webbrowsing","auth", "201605" };
+//		 String[] args = { "pcreportdata_statistics", "pc_web_browsing",
+//		 "map_data_statistic", "servicequality_orgid_webbrowsing", "201603" };pc$test_appreportdata_jiakuan$pc_web_browsing,
+		String[] args = { "app$test_appreportdata_jiakuan$web_browsing_new_201605", "test_middle_table_jiakuan", "servicequality_orgid_webbrowsing","auth", "201605" };
+//		String[] args = { "pc$test_appreportdata_jiakuan$pc_web_browsing", "test_middle_table_jiakuan", "servicequality_orgid_webbrowsing","auth", "201605" };
 		for (int i = 0; i < args.length; i++) {
 			System.out.println(args[i] + "   对应的参数");
 		}

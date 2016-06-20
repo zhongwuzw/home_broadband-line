@@ -29,6 +29,7 @@ public class ServicequalityGroupidHttpdownload {
 				startdate = new Date().getTime();
 				System.out.println("开始进行数据读取::::::  " + startdate);
 				//pc$test_appreportdata_jiakuan$pc_http_test,
+//				String[] args = { "pc$test_appreportdata_jiakuan$pc_http_test", "test_middle_table_jiakuan", "servicequality_groupid_httpdownload", "auth", "201605" };
 				String[] args = { "app$test_appreportdata_jiakuan$http_test_new_201605", "test_middle_table_jiakuan", "servicequality_groupid_httpdownload", "auth", "201605" };
 
 				for (int i = 0; i < args.length; i++) {

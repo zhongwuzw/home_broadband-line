@@ -115,7 +115,7 @@ public class ServicequalityGroupidWebbrowsingDao {
 	
 
 	/**
-	 * 根据类型获取数据
+	 * 根据PC类型获取数据
 	 * 
 	 * @param srctableName
 	 * @param month
@@ -135,7 +135,7 @@ public class ServicequalityGroupidWebbrowsingDao {
 		String groupidsql = "(SELECT t.org_key, m.groupid,	m. NAME	FROM "+authBaseName+".t_org t, ( SELECT j.org_id,j.groupid,i.name from "+authBaseName+".t_group_org_mapping i , (SELECT org_id, groupid" +
 				" 	FROM "+authBaseName+".t_group_org_mapping a, "+targetBaseName+".group_id b WHERE a.group_id = b.groupid ) j where j.groupid =i.parent_org_id  ) m WHERE t.id = m.org_id) n";
 		
-		sql = "select n.groupid groupid ,n.name groupname, '"+month+"' month,p.device_org org_id,COUNT(id) AS page_test_times,round(avg(CONVERT(loading_delay,decimal(10,2))),2)  page_avg_delay,round(avg(CONVERT(success_rate,decimal(10,2))),2) page_success_rate,min(CONVERT(loading_delay,decimal(10,2))) best_page_delay ,max(CONVERT(success_rate,decimal(10,2))) best_page_success_rate,p.bandwidth broadband_type" +
+		sql = "select n.groupid groupid ,n.name groupname, '"+month+"' month,p.device_org org_id,COUNT(id) AS page_test_times,round(avg(CONVERT(loading_delay,decimal(10,2))),2)  page_avg_delay,round(avg(CONVERT(success_rate,decimal(10,2))),2) page_success_rate,min(CONVERT(loading_delay,decimal(10,2))) best_page_delay ,max(CONVERT(success_rate,decimal(10,2))) best_page_success_rate,p.bandwidth broadband_type,sum(case when success_rate=100 then 1 else 0 end)/count(id) as success_rate" +
 				" from "+dataSourceTable+" p , "+groupidsql+"   where 	consumerid != '' AND businessid != '' AND p.bandwidth != '' AND mac != '' AND start_time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND start_time < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000 and cast(loading_delay AS signed)>0 and cast(success_rate as signed) >=0 and cast(success_rate as signed) <=100 and p.device_org = n.org_key  GROUP BY n.groupid,p.bandwidth"; 
 		
 		
@@ -160,6 +160,7 @@ public class ServicequalityGroupidWebbrowsingDao {
 				String best_page_delay = rs.getString("best_page_delay");
 				String best_page_success_rate = rs.getString("best_page_success_rate");
 				String broadband_type = rs.getString("broadband_type");
+				String success_rate = rs.getString("success_rate");
 				
 				map.put("groupid", groupid);
 				map.put("groupname", groupname);
@@ -172,6 +173,7 @@ public class ServicequalityGroupidWebbrowsingDao {
 				map.put("month", month);
 				map.put("broadband_type", broadband_type);
 				map.put("probetype", probetype.toUpperCase());
+				map.put("success_rate", success_rate);
 				
 				
 				groupmap.put("groupid", groupid);
@@ -191,7 +193,7 @@ public class ServicequalityGroupidWebbrowsingDao {
 	
 	
 	/**
-	 * 根据类型获取数据
+	 * 根据App类型获取数据
 	 * 
 	 * @param srctableName
 	 * @param month
@@ -214,7 +216,7 @@ public class ServicequalityGroupidWebbrowsingDao {
 		
 		/*String sampleSql = "(select count(id) new_sample_num ,p.device_org, substring_index(test_description, '/', - 1) bandwidth from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+"  where  time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND time  < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000  and p.device_org = n.org_key GROUP BY p.device_org,android_ios, substring_index(test_description, '/', - 1)  ) q ";
 		*/
-		sql = "select case p.android_ios when 'ios' then 'iOS' when 'android' then 'Android' end android_ios, COUNT(id)  as page_test_times,'"+month+"' month,n.groupid groupid ,n.name groupname,substring_index(test_description, '/', - 1) bandwidth,round(avg(CONVERT(eighty_loading,decimal(10,2))),2) AS page_avg_delay ,round(avg(CONVERT(success_rate,decimal(10,2))),2)   as  page_success_rate,min(CONVERT(eighty_loading,decimal(10,2)))  as best_page_delay, max(CONVERT(success_rate,decimal(10,2)))   best_page_success_rate,n.groupid,n. NAME " +
+		sql = "select case p.android_ios when 'ios' then 'iOS' when 'android' then 'Android' end android_ios, COUNT(id)  as page_test_times,'"+month+"' month,n.groupid groupid ,n.name groupname,substring_index(test_description, '/', - 1) bandwidth,round(avg(CONVERT(eighty_loading,decimal(10,2))),2) AS page_avg_delay ,round(avg(CONVERT(success_rate,decimal(10,2))),2)   as  page_success_rate,min(CONVERT(eighty_loading,decimal(10,2)))  as best_page_delay, max(CONVERT(success_rate,decimal(10,2)))   best_page_success_rate,n.groupid,n. NAME ,sum(case when success_rate=100 then 1 else 0 end)/count(id) as success_rate" +
 				" from "+dataSourcebasename+"."+dataSourceTable+" p , "+groupidsql+"   where 	p.imei!='' AND substring_index(test_description, '/', - 1) != '' and test_description LIKE '%/%'  AND time >= UNIX_TIMESTAMP('"+month+"01') * 1000 AND time < UNIX_TIMESTAMP('"+nextMonth+"01') * 1000 and  cast(eighty_loading AS signed)>0 and cast(success_rate as signed) >=0 and cast(success_rate as signed) <=100  and p.device_org = n.org_key GROUP BY n.groupid,substring_index(test_description, '/', - 1),p.android_ios"; 
 		
 		ResultSet rs = null;
@@ -240,6 +242,7 @@ public class ServicequalityGroupidWebbrowsingDao {
 				String best_page_success_rate = rs.getString("best_page_success_rate");
 				String bandwidth = rs.getString("bandwidth");
 				String android_ios = rs.getString("android_ios");
+				String success_rate = rs.getString("success_rate");
 				
 				map.put("groupid", groupid);
 				map.put("groupname", groupname);
@@ -252,6 +255,7 @@ public class ServicequalityGroupidWebbrowsingDao {
 				map.put("month", month);
 				map.put("broadband_type", bandwidth);
 				map.put("probetype", android_ios);
+				map.put("success_rate", success_rate);
 				
 				
 				groupmap.put("groupid", groupid);
