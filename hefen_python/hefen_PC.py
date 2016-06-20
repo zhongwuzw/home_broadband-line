@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 import pymysql.cursors
 import os
@@ -33,8 +34,12 @@ def getPCDataWithPhoneNum(phoneNum):
             haha = time.strftime("%Y-%m-%d 00:00:00", yesterday.timetuple())
             haah1 = datetime_timestamp(haha)
             yesterday_standard = time.strftime("%Y-%m-%d", yesterday.timetuple())
+            yesterdat_start = time.strftime("%Y-%m-%d 00:00:00",yesterday.timetuple())
+            today_start = time.strftime("%Y-%m-%d 00:00:00",today.timetuple())
+            final_yesterday_standart = datetime_timestamp(yesterdat_start)
+            final_today_start = datetime_timestamp(today_start)
 
-            sql = "SELECT COUNT(*) AS num,file_path FROM pc_http_test WHERE consumerid = '" + phoneNum + "' and start_time > '" + str(d) + "000' and start_time < '" + str(d1) + "000' GROUP BY file_path"
+            sql = "SELECT COUNT(*) AS num,file_path FROM pc_http_test WHERE consumerid = '" + phoneNum + "' and start_time > '" + str(final_yesterday_standart) + "000' and start_time < '" + str(final_today_start) + "000' GROUP BY file_path"
 
             cursor.execute(sql)
             result = cursor.fetchall()
