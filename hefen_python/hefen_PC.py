@@ -67,13 +67,13 @@ def executeResultInsertDatabase(phone_num,province,city,array):
     destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
                                             db='just_for_copy',
                                             charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
-
+    resultList = list(array)
     for i in range(3):
-        array[i] = str(array[i])
+        resultList[i] = str(resultList[i])
     try:
         with destDatabase.cursor() as cursor:
-            sql = "INSERT INTO `app_temporary` (`id`, `phone_no`, `date`, `province`, `city`, `valid_times`, `http_times`, `video_times`, `browse_times`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s)"
-            cursor.execute(sql,("0",phone_num,array[4],province,city,array[0],array[1],array[2],array[3]))
+            sql = "INSERT INTO `pc_temporary` (`id`, `phone_no`, `date`, `province`, `city`, `valid_times`, `http_times`, `browse_times`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+            cursor.execute(sql,("0",phone_num,array[3],province,city,array[0],array[1],array[2]))
             # sql = "INSERT INTO `app_temporary` (`id`, `phone_no`, `date`, `valid_times`, `http_times`, `video_times`, `browse_times`) VALUES (%s, %s, %s, %s, %s, %s, %s)"
             # cursor.execute(sql,("0",phone_num,array[4],array[0],array[1],array[2],array[3]))
 
@@ -89,7 +89,7 @@ SourcePhoneconnection = pymysql.connect(host='192.168.16.113', port=3306, user='
 
 try:
     with SourcePhoneconnection.cursor() as cursor:
-        sql = "select DISTINCT(phone_no),province,city from app_temporary"
+        sql = "select DISTINCT(phone_no),province,city from a_pc_temporary"
         cursor.execute(sql)
         result = cursor.fetchall()
 
@@ -97,8 +97,6 @@ try:
             appTestResult = getPCDataWithPhoneNum(element["phone_no"])
             executeResultInsertDatabase(element["phone_no"],element["province"],element["city"],appTestResult)
             # appTestResult = getAppDataWithPhoneNum("11111111111")
-
-            print appTestResult
 
 finally:
     SourcePhoneconnection.close()

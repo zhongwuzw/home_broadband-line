@@ -116,7 +116,7 @@ SourcePhoneconnection = pymysql.connect(host='192.168.16.113', port=3306, user='
 
 try:
     with SourcePhoneconnection.cursor() as cursor:
-        sql = "select DISTINCT(phone_no),province,city from app_temporary"
+        sql = "select DISTINCT(phone_no),province,city from a_app_temporary"
         cursor.execute(sql)
         result = cursor.fetchall()
 
