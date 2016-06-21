@@ -35,6 +35,22 @@ public interface ServicequalityGroupidWebbrowsingService {
 	 */
 	String getAvgDelay(String yearMonth,String groupid);
 	
+	/**
+	 * 获取页面浏览访问成功趋势
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getPageBrowseSuccessData(String groupid,String probetype);
+	
+	/**
+	 * 获取页面浏览访问成功率排名
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getPageBrowseSuccessOrder(String month,String groupid,String probetype);
 
 	/**
 	 * 获取页面打开成功趋势

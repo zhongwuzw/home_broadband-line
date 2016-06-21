@@ -61,6 +61,44 @@ public class ServicequalityGroupidWebbrowsingAction extends BaseAction {
 
 	}
 	
+	/**
+	 * 获取页面浏览访问成功率趋势
+	 * 
+	 * @return void
+	 */
+	public void getPageBrowseSuccessData() {
+
+		try {
+			String uuid = this.servletRequest.getParameter("key");
+			String probetype = this.servletRequest.getParameter("probetype");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50071,50074,50067,50068";
+			String avgdelayData = groupidWebbrowsingService.getPageBrowseSuccessData(groupid,probetype);
+			printWriter(avgdelayData);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 获取页面浏览访问成功率；排名
+	 * 
+	 * @return void
+	 */
+	public void getPageBrowseSuccessOrder() {
+
+		try {
+			String month = this.servletRequest.getParameter("month");
+			String probetype = this.servletRequest.getParameter("probetype");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50071,50074,50067,50068";
+			String delayOrder = groupidWebbrowsingService.getPageBrowseSuccessOrder(month, groupid,probetype);
+			printWriter(delayOrder);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	/**
 	 * 获取页面打开元素成功率趋势

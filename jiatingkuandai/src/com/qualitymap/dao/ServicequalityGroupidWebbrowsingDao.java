@@ -57,6 +57,24 @@ public interface ServicequalityGroupidWebbrowsingDao {
 	public List<Map<String, Object>> getAvgDelay(String yearMonth, String lastMonth, String groupid);
 	
 	/**
+	 * 获取页面浏览访问成功率趋势数据
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getPageBrowseSuccessData(String groupid,String probetype);
+	
+	/**
+	 * 获取页面浏览访问成功率的排名
+	 * @param thismonth
+	 * @param premonth
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getPageBrowseSuccessOrder(String thismonth,String premonth,String groupid,String probetype);
+	
+	/**
 	 * 获取页面元素打开成功率趋势数据
 	 * @param groupid
 	 * @return

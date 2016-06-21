@@ -210,6 +210,16 @@
 		<action name="getPageSuccessOrder" class="groupidWebbrowsingAction"
 			method="getPageSuccessOrder">
 		</action>
+		
+		<!-- 获取页面浏览访问成功率趋势 -->
+		<action name="getPageBrowseSuccessData" class="groupidWebbrowsingAction"
+			method="getPageBrowseSuccessData">
+		</action>
+		<!-- 获取页面浏览访问成功率排名 -->
+		<action name="getPageBrowseSuccessOrder" class="groupidWebbrowsingAction"
+			method="getPageBrowseSuccessOrder">
+		</action>
+		
 		<!-- 获取页面显示时延趋势 -->
 		<action name="getPageDelayData" class="groupidWebbrowsingAction"
 			method="getPageDelayData">

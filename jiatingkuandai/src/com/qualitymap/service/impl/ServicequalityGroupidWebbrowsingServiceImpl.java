@@ -99,6 +99,105 @@ public class ServicequalityGroupidWebbrowsingServiceImpl implements Servicequali
 	}
 
 	/**
+	 * 获取页面浏览访问趋势
+	 */
+	@Override
+	public String getPageBrowseSuccessData(String groupid,String probetype) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+		JSONArray avgArray = new JSONArray();
+		JSONArray monthArray = new JSONArray();
+		if (!"".equals(groupid)) {
+
+			List<Map<String, Object>> queryList = groupidWebbrowsingDao.getPageBrowseSuccessData(groupid,probetype);
+
+			for (Iterator iterator = queryList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+				double page_success_rate = Double.parseDouble(map.get("success_rate").toString());
+				String month = map.get("month").toString();
+				avgArray.add(fm.format(page_success_rate));
+				monthArray.add(month);
+			}
+		}
+
+		dataJSON.put("lable", monthArray);
+		dataJSON.put("data", avgArray);
+
+		return dataJSON.toString();
+	}
+
+	/**
+	 * 获取页面浏览访问排名
+	 */
+	@Override
+	public String getPageBrowseSuccessOrder(String month, String groupid,String probetype) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		JSONArray dataArray = new JSONArray();
+
+		String prmonth = UtilDate.getPreviousMonth(month);
+		if (!"".equals(groupid)) {
+			List<Map<String, Object>> monList = groupidWebbrowsingDao.getPageBrowseSuccessOrder(month, prmonth, groupid, probetype);
+
+			List<Map<String, Object>> mapList = new ArrayList<Map<String, Object>>();
+
+			String percent = "";
+
+			for (Iterator iterator = monList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+				Map datamap = new HashMap();
+
+				String province = (String) map.get("groupname");
+				String pagesuccess = "";
+				if (map.get("success_rate") != null) {
+					pagesuccess = map.get("success_rate").toString();
+				}else{
+					pagesuccess = "0";
+				}
+
+				String pre_pagesuccess = "";
+
+				if (map.get("pre_success_rate") != null) {
+					pre_pagesuccess = map.get("pre_success_rate").toString();
+				}
+
+				if (pre_pagesuccess != null && !pre_pagesuccess.isEmpty()) {
+					double difValue = Double.valueOf(pagesuccess) - Double.valueOf(pre_pagesuccess);
+					percent = fm.format(difValue / Double.valueOf(pre_pagesuccess) * 100);
+				} else {
+					percent = "N/A";
+				}
+
+				String thisdata = "";
+				if(!"0".equals(pagesuccess)){
+					 thisdata= fm.format(Double.valueOf(pagesuccess));
+				}else{
+					thisdata = "N/A";
+				}
+
+				datamap.put("province", province);
+				datamap.put("thisdata", thisdata);
+				
+				if (pre_pagesuccess != null && !pre_pagesuccess.isEmpty()) {
+					datamap.put("predata", fm.format(Double.valueOf(pre_pagesuccess)));
+				} else {
+					datamap.put("predata", "N/A");
+				}
+				datamap.put("percent", percent);
+
+				mapList.add(datamap);
+			}
+
+			dataArray = JSONArray.fromObject(mapList);
+		}
+
+		dataJSON.put("data", dataArray);
+
+		return dataJSON.toString();
+	}
+	
+	/**
 	 * 获取页面显示时延趋势
 	 */
 	@Override

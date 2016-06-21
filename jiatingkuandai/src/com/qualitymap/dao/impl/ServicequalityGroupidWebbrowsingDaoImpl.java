@@ -102,9 +102,41 @@ public class ServicequalityGroupidWebbrowsingDaoImpl implements ServicequalityGr
 	
 
 	}
+	
+	/**
+	 * 获取页面浏览访问成功率趋势数据
+	 */
+	@Override
+	public List<Map<String, Object>> getPageBrowseSuccessData(String groupid,String probetype) {
+		String sql = " SELECT sum(success_rate*page_test_times)/sum(page_test_times) success_rate ,month FROM servicequality_groupid_webbrowsing WHERE `groupid` in (" + groupid
+				+ ") and  probetype='" + probetype + "' GROUP BY month order by month";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
 
+	/**
+	 * 获取页面浏览访问成功率的排名
+	 */
+	@Override
+	public List<Map<String, Object>> getPageBrowseSuccessOrder(String thismonth, String premonth, String groupid,String probetype) {
+		/*String sql = " SELECT ifnull(sum(page_success_rate*page_test_times)/sum(page_test_times),0) page_success_rate ,"
+				+ "(SELECT ifnull(sum(page_success_rate * page_test_times) / sum(page_test_times),0)  FROM servicequality_groupid_webbrowsing b WHERE `month` = '" + premonth
+				+ "' and probetype='"+probetype+"' and b.groupid = a.groupid GROUP BY groupid ) pre_page_success_rate " + ",groupname FROM servicequality_groupid_webbrowsing a WHERE `groupid` in (" + groupid + ") and month = '"
+				+ thismonth + "' and probetype='"+probetype+"' GROUP BY groupid order by page_success_rate desc ";
+		*/
+		
+	String sql = "SELECT a.groupname, success_rate, pre_success_rate FROM ( SELECT groupname FROM servicequality_groupid_webbrowsing b WHERE" +
+			" probetype='"+probetype+"' AND `month` IN ('"+thismonth+"','"+premonth+"') and groupid in ("+groupid+") group by groupid ) a" +
+			" LEFT JOIN ( SELECT ifnull( sum( success_rate * page_test_times ) / sum(page_test_times), 0 ) success_rate, groupname, MONTH FROM servicequality_groupid_webbrowsing" +
+			" WHERE	MONTH = '"+thismonth+"' AND groupid IN ("+groupid+") and probetype='"+probetype+"' GROUP BY `month`, groupname ) b ON a.groupname = b.groupname " +
+			" LEFT JOIN ( SELECT ifnull( sum( success_rate * page_test_times ) / sum(page_test_times), 0 ) pre_success_rate, groupname, MONTH FROM servicequality_groupid_webbrowsing" +
+			" WHERE	MONTH = '"+premonth+"' AND groupid IN ("+groupid+") and probetype='"+probetype+"' GROUP BY `month`, groupname ) c ON a.groupname = c.groupname order by success_rate desc" ;
 	
-	
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+
 	/**
 	 * 获取页面元素打开成功率趋势数据
 	 */
