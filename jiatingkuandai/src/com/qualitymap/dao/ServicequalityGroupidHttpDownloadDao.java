@@ -35,6 +35,16 @@ public interface ServicequalityGroupidHttpDownloadDao {
 	List<Map<String, Object>> getDownloadRateData(String groupid,String probetype);
 	
 	/**
+	 * 获取下载成功率的排名
+	 * @param thismonth
+	 * @param premonth
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getDownloadSuccessRateOrder(String thismonth,String premonth,String groupid,String probetype);
+	
+	/**
 	 * 获取下载速率的排名
 	 * @param thismonth
 	 * @param premonth

@@ -37,6 +37,16 @@ public interface ServicequalityGroupidHttpDownloadService {
 	
 	
 	/**
+	 * 获取下载成功率的排名
+	 * @param thismonth
+	 * @param premonth
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getDownloadSuccessRateOrder(String month,String groupid,String probetype);
+	
+	/**
 	 * 获取下载速率的排名
 	 * @param thismonth
 	 * @param premonth
