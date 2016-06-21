@@ -28,6 +28,15 @@ public interface ServicequalityGroupidHttpDownloadService {
 	String getDownloadRateData(String groupid,String probetype);
 	
 	/**
+	 * 获取下载成功率趋势数据
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getDownloadSuccessRateData(String groupid,String probetype);
+	
+	
+	/**
 	 * 获取下载速率的排名
 	 * @param thismonth
 	 * @param premonth

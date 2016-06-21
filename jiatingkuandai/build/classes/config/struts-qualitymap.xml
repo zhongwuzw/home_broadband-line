@@ -283,6 +283,9 @@
 		<!-- 获取下载速率的排名-->
 		<action name="getDownloadRateOrder" class="groupidHttpDownloadAction" method="getDownloadRateOrder">
 		</action>
+		<!-- 获取下载成功率的趋势-->
+		<action name="getDownloadSuccessRateData" class="groupidHttpDownloadAction" method="getDownloadSuccessRateData">
+		</action>
 	</package>
 
 </struts>

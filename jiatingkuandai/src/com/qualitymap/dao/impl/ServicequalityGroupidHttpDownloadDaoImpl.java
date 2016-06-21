@@ -43,7 +43,20 @@ public class ServicequalityGroupidHttpDownloadDaoImpl implements ServicequalityG
 		return queryList;
 
 	}
+	
+	/**
+	 * 获取下载成功率趋势数据
+	 */
+	@Override
+	public List<Map<String, Object>> getDownloadSuccessRateData(String groupid, String probetype) {
+		String sql = " SELECT round(sum(success_rate*download_test_times)/sum(download_test_times),2) avg_download_rate ,month FROM servicequality_groupid_httpdownload WHERE `groupid` in (" + groupid
+				+ ") and  probetype='" + probetype + "' GROUP BY month order by month";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
 
+	
 	/**
 	 * 获取下载速率趋势数据
 	 */

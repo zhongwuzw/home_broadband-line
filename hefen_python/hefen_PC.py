@@ -24,8 +24,8 @@ def getPCDataWithPhoneNum(phoneNum):
     try:
         with connection.cursor() as cursor:
             addr = u'北京市西城区西便门内大街甲53号'
-            d = datetime_timestamp('2016-06-06 00:00:00')
-            d1 = datetime_timestamp('2016-06-07 00:00:00')
+            d = datetime_timestamp('2016-06-17 00:00:00')
+            d1 = datetime_timestamp('2016-06-18 00:00:00')
             date = datetime.datetime(2016, 05, 19, 00, 00, 00)
             date1 = datetime.datetime(2016, 05, 19, 23, 59, 59)
             today = datetime.date.today()
@@ -39,14 +39,17 @@ def getPCDataWithPhoneNum(phoneNum):
             final_yesterday_standart = datetime_timestamp(yesterdat_start)
             final_today_start = datetime_timestamp(today_start)
 
-            sql = "SELECT COUNT(*) AS num,file_path FROM pc_http_test WHERE consumerid = '" + phoneNum + "' and start_time > '" + str(final_yesterday_standart) + "000' and start_time < '" + str(final_today_start) + "000' GROUP BY file_path"
+            # sql = "SELECT COUNT(*) AS num,file_path FROM pc_http_test WHERE consumerid = '" + phoneNum + "' and start_time > '" + str(final_yesterday_standart) + "000' and start_time < '" + str(final_today_start) + "000' GROUP BY file_path"
+            sql = "SELECT COUNT(*) AS num,file_path FROM pc_http_test WHERE consumerid = '" + phoneNum + "' and start_time > '" + str(
+                d) + "000' and start_time < '" + str(
+                d1) + "000' GROUP BY file_path"
 
             cursor.execute(sql)
             result = cursor.fetchall()
 
             http_download_num = 0
             for element in result:
-                if element["num"] >= 40:
+                if element["num"] >= 2:
                     http_download_num += 1
 
             sql = "SELECT COUNT(*) AS num,file_path FROM pc_web_browsing WHERE consumerid = '" + phoneNum + "' and start_time > '" + str(
@@ -57,7 +60,7 @@ def getPCDataWithPhoneNum(phoneNum):
 
             http_browsing_num = 0
             for element in result:
-                if element["num"] >= 40:
+                if element["num"] >= 5:
                     http_browsing_num += 1
 
             totoal_test_num = min(http_browsing_num,http_download_num)
@@ -99,9 +102,9 @@ try:
         result = cursor.fetchall()
 
         for element in result:
-            appTestResult = getPCDataWithPhoneNum(element["phone_no"])
-            executeResultInsertDatabase(element["phone_no"],element["province"],element["city"],appTestResult)
-            # appTestResult = getAppDataWithPhoneNum("11111111111")
+            # appTestResult = getPCDataWithPhoneNum(element["phone_no"])
+            # executeResultInsertDatabase(element["phone_no"],element["province"],element["city"],appTestResult)
+            appTestResult = getPCDataWithPhoneNum("13666666666")
 
 finally:
     SourcePhoneconnection.close()

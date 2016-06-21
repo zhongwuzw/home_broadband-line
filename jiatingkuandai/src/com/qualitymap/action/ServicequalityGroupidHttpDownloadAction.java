@@ -44,6 +44,23 @@ public class ServicequalityGroupidHttpDownloadAction extends BaseAction {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * 获取下载成功率趋势数据
+	 */
+	public void getDownloadSuccessRateData() {
+
+		try {
+			String probetype = this.servletRequest.getParameter("probetype");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			 //String groupid = "50071,50074,50067";
+			String avgdelayData = groupidHttpDownloadService.getDownloadRateData(groupid, probetype);
+			printWriter(avgdelayData);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	/**
 	 * 获取下载速率的排名

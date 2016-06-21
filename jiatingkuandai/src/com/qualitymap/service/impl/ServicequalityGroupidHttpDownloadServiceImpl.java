@@ -43,7 +43,35 @@ public class ServicequalityGroupidHttpDownloadServiceImpl implements Servicequal
 
 		return avgJson.toString();
 	}
+	
+	/**
+	 * 获取下载成功率趋势数据
+	 */
+	@Override
+	public String getDownloadSuccessRateData(String groupid,String probetype){
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+		JSONArray avgArray = new JSONArray();
+		JSONArray monthArray = new JSONArray();
+		if (!"".equals(groupid)) {
 
+			List<Map<String, Object>> queryList = groupidHttpDownDao.getDownloadSuccessRateData(groupid, probetype);
+
+			for (Iterator iterator = queryList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+				double avg_download_rate = Double.parseDouble(map.get("success_rate").toString());
+				String month = map.get("month").toString();
+				avgArray.add(avg_download_rate);
+				monthArray.add(month);
+			}
+		}
+
+		dataJSON.put("lable", monthArray);
+		dataJSON.put("data", avgArray);
+
+		return dataJSON.toString();
+	}
+	
 	/**
 	 * 获取下载速率趋势数据
 	 */

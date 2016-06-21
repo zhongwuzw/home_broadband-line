@@ -16,6 +16,16 @@ public interface ServicequalityGroupidHttpDownloadDao {
 	 */
 	public List<Map<String, Object>> getHttpDownloadRate(String yearMonth, String lastMonth, String groupid);
 	
+	
+	/**
+	 * 获取下载成功率趋势数据
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getDownloadSuccessRateData(String groupid,String probetype);
+	
+	
 	/**
 	 * 获取下载速率趋势数据
 	 * @param groupid
