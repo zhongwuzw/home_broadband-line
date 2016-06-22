@@ -61,6 +61,39 @@ public class ServicequalityGroupidVideoDaoImpl implements ServicequalityGroupidV
 	}
 
 	/**
+	 * 获取视频播放成功率趋势数据
+	 */
+	@Override
+	public List<Map<String, Object>> getVideoPlaySuccessData(String groupid, String probetype) {
+		String sql = " SELECT sum(success_rate*video_test_times)/sum(video_test_times) success_rate ,month FROM servicequality_groupid_video WHERE `groupid` in (" + groupid
+				+ ") and  probetype='" + probetype + "' GROUP BY month order by month";
+
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+
+	/**
+	 * 获取视频播放成功率的排名
+	 */
+	@Override
+	public List<Map<String, Object>> getVideoPlaySuccessOrder(String thismonth, String premonth, String groupid, String probetype) {
+		/*String sql = " SELECT ifnull(sum(avg_video_delay*video_test_times)/sum(video_test_times),0) avg_video_delay ,"
+				+ "(SELECT ifnull(sum(avg_video_delay * video_test_times) / sum(video_test_times),0)  FROM servicequality_groupid_video b WHERE `month` = '" + premonth + "' and probetype='"
+				+ probetype + "' and b.groupid = a.groupid GROUP BY groupid ) pre_avg_video_delay " + ",groupname FROM servicequality_groupid_video a WHERE `groupid` in (" + groupid
+				+ ") and month = '" + thismonth + "' and probetype='" + probetype + "' GROUP BY groupid order by avg_video_delay asc ";
+*/
+		String sql = "SELECT a.groupname,  cast(ifnull(success_rate,999999) as signed) success_rate, cast(pre_success_rate as SIGNED) pre_success_rate FROM ( SELECT groupname FROM servicequality_groupid_video b WHERE" +
+				" probetype='"+probetype+"' AND `month` IN ('"+thismonth+"','"+premonth+"') and groupid in ("+groupid+") group by groupid ) a" +
+				" LEFT JOIN ( SELECT ifnull( sum( success_rate * video_test_times ) / sum(video_test_times), 0 ) success_rate, groupname, MONTH FROM servicequality_groupid_video" +
+				" WHERE	MONTH = '"+thismonth+"' AND groupid IN ("+groupid+") and probetype='"+probetype+"' GROUP BY `month`, groupname ) b ON a.groupname = b.groupname " +
+				" LEFT JOIN ( SELECT ifnull( sum( success_rate * video_test_times ) / sum(video_test_times), 0 ) pre_success_rate, groupname, MONTH FROM servicequality_groupid_video" +
+				" WHERE	MONTH = '"+premonth+"' AND groupid IN ("+groupid+") and probetype='"+probetype+"' GROUP BY `month`, groupname ) c ON a.groupname = c.groupname order by success_rate asc" ;
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	
+	/**
 	 * 获取视频加载时长趋势数据
 	 */
 	@Override

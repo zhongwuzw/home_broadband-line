@@ -47,6 +47,45 @@ public class ServicequalityGroupidVideoAction extends BaseAction {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * 获取视频播放成功率趋势数据
+	 * 
+	 * @return void
+	 */
+	public void getVideoPlaySuccessData() {
+
+		try {
+			String probetype = this.servletRequest.getParameter("probetype");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50071,50074,50067";
+			String avgdelayData = groupidVideoService.getVideoPlaySuccessData(groupid, probetype);
+			printWriter(avgdelayData);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 获取视频播放成功率的排名
+	 * 
+	 * @return void
+	 */
+	public void getVideoPlaySuccessOrder() {
+
+		try {
+			String probetype = this.servletRequest.getParameter("probetype");
+			String month = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50071,50074,50067";
+			String delayOrder = groupidVideoService.getVideoPlaySuccessOrder(month, groupid, probetype);
+			printWriter(delayOrder);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	/**
 	 * 获取视频加载时长趋势数据

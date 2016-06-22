@@ -260,6 +260,12 @@
 		<!-- 视频加载时长排名 -->
 		<action name="getVideoDelayOrder" class="groupidVideoAction" method="getVideoDelayOrder">
 		</action>
+		<!-- 视频播放成功率趋势 -->
+		<action name="getVideoPlaySuccessData" class="groupidVideoAction" method="getVideoPlaySuccessData">
+		</action>
+		<!-- 视频播放成功率排名 -->
+		<action name="getVideoPlaySuccessOrder" class="groupidVideoAction" method="getVideoPlaySuccessOrder">
+		</action>
 		<!-- 获取视频卡顿次数的排名趋势 -->
 		<action name="getVideoCacheCountData" class="groupidVideoAction" method="getVideoCacheCountData">
 		</action>

@@ -33,6 +33,24 @@ public interface ServicequalityGroupidVideoService {
 	String getCacheCount(String yearMonth,String groupid);
 	
 	/**
+	 * 获取视频播放成功率趋势数据
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getVideoPlaySuccessData(String groupid,String probetype);
+	
+	/**
+	 * 获取视频播放成功率的排名
+	 * @param thismonth
+	 * @param premonth
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getVideoPlaySuccessOrder(String thismonth,String groupid,String probetype);
+	
+	/**
 	 * 获取视频加载时长趋势数据
 	 * @param groupid
 	 * @return

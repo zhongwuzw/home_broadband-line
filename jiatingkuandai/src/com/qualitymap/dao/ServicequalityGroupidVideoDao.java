@@ -23,6 +23,24 @@ public interface ServicequalityGroupidVideoDao {
 	public List<Map<String, Object>> getCacheCount(String yearMonth, String lastMonth, String groupid);
 	
 	/**
+	 * 获取视频播放成功率趋势数据
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getVideoPlaySuccessData(String groupid,String probetype);
+	
+	/**
+	 * 获取视频视频播放成功率的排名
+	 * @param thismonth
+	 * @param premonth
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getVideoPlaySuccessOrder(String thismonth,String premonth,String groupid,String probetype);
+	
+	/**
 	 * 获取视频加载时长趋势数据
 	 * @param groupid
 	 * @return
