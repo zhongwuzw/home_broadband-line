@@ -44,6 +44,24 @@ public class ServicequalityGroupidWebbrowsingAction extends BaseAction {
 	}
 	
 	/**
+	 * 获取页面访问成功率本月上月
+	 */
+	public void getPageBrowseSuccess() {
+
+		try {
+			String yearMonth = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50091,50067";
+			String avgdata = groupidWebbrowsingService.getPageBrowseSuccess(yearMonth, groupid);
+			printWriter(avgdata);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	/**
 	 * 获取平均时延上下月数据
 	 */
 	public void getAvgDelay() {

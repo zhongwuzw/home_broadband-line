@@ -188,6 +188,9 @@
 		extends="abstract_struts">
 		<action name="getAvgDelay" class="groupidWebbrowsingAction"
 			method="getAvgDelay"></action>
+		<!-- 网页访问成功率本月上月 -->
+		<action name="getPageBrowseSuccess" class="groupidWebbrowsingAction"
+			method="getPageBrowseSuccess"></action>
 		<action name="getDelayStandardRate" class="groupidWebbrowsingAction"
 			method="getDelayStandardRate"></action>
 		<action name="getAvgPageSuccessRate" class="groupidWebbrowsingAction"

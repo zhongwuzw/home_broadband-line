@@ -97,6 +97,25 @@ public class ServicequalityGroupidWebbrowsingServiceImpl implements Servicequali
 
 		return avgJson.toString();
 	}
+	
+	/**
+	 * 获取本月上月的网页浏览成功率
+	 */
+	@Override
+	public String getPageBrowseSuccess(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+
+		List<Map<String, Object>> avgDelayList = new ArrayList<Map<String,Object>>();
+
+		if (!"".equals(groupid)) {
+			 avgDelayList = groupidWebbrowsingDao.getPageBrowseSuccess(yearMonth, lastMonth, groupid);
+		}	
+		avgJson.put("data",avgDelayList);
+
+		return avgJson.toString();
+	}
 
 	/**
 	 * 获取页面浏览访问趋势

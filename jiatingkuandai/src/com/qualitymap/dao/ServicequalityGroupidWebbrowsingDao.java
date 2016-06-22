@@ -49,6 +49,10 @@ public interface ServicequalityGroupidWebbrowsingDao {
 	 */
 	List<Map<String, Object>> getWebbrowsingServiceQualityCompare(String groupid,String month,String permonth,String broadband_type);
 	
+	/**
+	 * 获取上下月的页面浏览成功率
+	 */
+	public List<Map<String, Object>> getPageBrowseSuccess(String yearMonth, String lastMonth, String groupid);
 	
 	
 	/**
