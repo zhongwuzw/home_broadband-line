@@ -29,6 +29,23 @@ public class ServicequalityGroupidVideoAction extends BaseAction {
 
 	}
 	
+	/**
+	 * 获取视频播放上下月数据
+	 */
+	public void getVideoPlaySuccess() {
+
+		try {
+			String yearMonth = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50091,50067";
+			String avgdata = groupidVideoService.getVideoPlaySuccess(yearMonth, groupid);
+			printWriter(avgdata);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 
 
 	/**

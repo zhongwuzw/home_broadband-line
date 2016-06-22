@@ -21,6 +21,14 @@ public interface ServicequalityGroupidVideoService {
 	 */
 	String getVideoDelay(String yearMonth,String groupid);
 	
+	/**
+	 * 获取上下月的播放成功率
+	 * @param yearMonth
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getVideoPlaySuccess(String yearMonth,String groupid);
 
 	/**
 	/**

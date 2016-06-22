@@ -10,6 +10,10 @@ import java.util.Map;
  */
 public interface ServicequalityGroupidVideoDao {
 
+	/**
+	 * 获取上下月的播放成功率
+	 */
+	public List<Map<String, Object>> getVideoPlaySuccess(String yearMonth, String lastMonth, String groupid);
 	
 	/**
 	 * 获取上下月的平均时延

@@ -248,6 +248,9 @@
 	<!-- groupidvideo数据 -->
 	<package name="groupidVideoAction" namespace="/groupidvideomap"
 		extends="abstract_struts">
+		<!-- 视频播放成功率上下月-->
+		<action name="getVideoPlaySuccess" class="groupidVideoAction" method="getVideoPlaySuccess">
+		</action>
 		<!-- 视频平均时延上下月-->
 		<action name="getVideoDelay" class="groupidVideoAction" method="getVideoDelay">
 		</action>

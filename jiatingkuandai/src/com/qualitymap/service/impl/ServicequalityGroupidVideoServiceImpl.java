@@ -41,6 +41,25 @@ public class ServicequalityGroupidVideoServiceImpl implements ServicequalityGrou
 
 		return avgJson.toString();
 	}
+	
+	/**
+	 * 获取上下月的播放成功率
+	 */
+	@Override
+	public String getVideoPlaySuccess(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+
+		JSONObject avgJson = new JSONObject();
+
+		List<Map<String, Object>> avgDelayList = new ArrayList<Map<String, Object>>();
+
+		if (!"".equals(groupid)) {
+			avgDelayList = groupidVideoDao.getVideoPlaySuccess(yearMonth, lastMonth, groupid);
+		}
+		avgJson.put("data", avgDelayList);
+
+		return avgJson.toString();
+	}
 
 	/**
 	 * 视频卡顿次数上下月数据
