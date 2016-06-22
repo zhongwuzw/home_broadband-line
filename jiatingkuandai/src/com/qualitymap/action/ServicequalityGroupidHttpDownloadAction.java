@@ -11,7 +11,7 @@ public class ServicequalityGroupidHttpDownloadAction extends BaseAction {
 	ServicequalityGroupidHttpDownloadService groupidHttpDownloadService;
 
 	/**
-	 * 获取平均时延上下月数据
+	 * 获取http下载上下月数据
 	 */
 	public void getHttpDownloadRate() {
 
@@ -21,6 +21,24 @@ public class ServicequalityGroupidHttpDownloadAction extends BaseAction {
 			String groupid = this.getUserGroup(uuid);
 			// String groupid = "50091,50067";
 			String avgdata = groupidHttpDownloadService.getHttpDownloadRate(yearMonth, groupid);
+			printWriter(avgdata);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	/**
+	 * 获取http下载成功率上下月数据
+	 */
+	public void getHttpDownloadSuccessRate() {
+
+		try {
+			String yearMonth = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			// String groupid = "50091,50067";
+			String avgdata = groupidHttpDownloadService.getHttpDownloadSuccessRate(yearMonth, groupid);
 			printWriter(avgdata);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -12,6 +12,11 @@ public interface ServicequalityGroupidHttpDownloadDao {
 
 	
 	/**
+	 * 获取上下月的下载成功率
+	 */
+	public List<Map<String, Object>> getHttpDownloadSuccessRate(String yearMonth, String lastMonth, String groupid);
+	
+	/**
 	 * 获取上下月的下载速率
 	 */
 	public List<Map<String, Object>> getHttpDownloadRate(String yearMonth, String lastMonth, String groupid);

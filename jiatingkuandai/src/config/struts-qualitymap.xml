@@ -293,6 +293,9 @@
 		<!-- 下载速率上下月-->
 		<action name="getHttpDownloadRate" class="groupidHttpDownloadAction" method="getHttpDownloadRate">
 		</action>
+		<!-- 下载成功率上下月-->
+		<action name="getHttpDownloadSuccessRate" class="groupidHttpDownloadAction" method="getHttpDownloadSuccessRate">
+		</action>
 		<!-- 获取下载速率趋势数据-->
 		<action name="getDownloadRateData" class="groupidHttpDownloadAction" method="getDownloadRateData">
 		</action>

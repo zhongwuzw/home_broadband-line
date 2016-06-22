@@ -25,7 +25,26 @@ public class ServicequalityGroupidHttpDownloadDaoImpl implements ServicequalityG
 	public Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
+	
 
+	/**
+	 * 获取上下月的成功率
+	 */
+	@Override
+	public List<Map<String, Object>> getHttpDownloadSuccessRate(String yearMonth, String lastMonth, String groupid) {
+
+		String sql = "SELECT a.probetype, round(thisdata,2) thisdata, round(lastdata,2) lastdata FROM ( SELECT DISTINCT probetype FROM servicequality_groupid_httpdownload WHERE `month` in (" + yearMonth
+				+ "," + lastMonth + ") AND groupid IN (" + groupid + ") ) a "
+				+ "LEFT JOIN ( SELECT sum( download_test_times * success_rate ) / SUM(download_test_times) thisdata, probetype, 	MONTH FROM servicequality_groupid_httpdownload " + "where month='" + yearMonth
+				+ "' AND groupid IN (" + groupid + ") GROUP BY `month`, probetype ) b ON a.probetype = b.probetype "
+				+ "LEFT JOIN ( SELECT sum( 	download_test_times * success_rate ) / SUM(download_test_times) lastdata, probetype, MONTH FROM servicequality_groupid_httpdownload " + "where month='" + lastMonth
+				+ "' AND groupid IN (" + groupid + ") GROUP BY `month`, probetype ) c ON a.probetype = c.probetype";
+
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+
+	}
+	
 	/**
 	 * 获取上下月的打开时延
 	 */

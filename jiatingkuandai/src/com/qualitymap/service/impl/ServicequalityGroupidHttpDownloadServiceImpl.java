@@ -24,7 +24,26 @@ public class ServicequalityGroupidHttpDownloadServiceImpl implements Servicequal
 	@Resource
 	ServicequalityGroupidHttpDownloadDao groupidHttpDownDao;
 	static Format fm = new DecimalFormat("#.##");
+	
+	/**
+	 * 获取上下月的下载成功率
+	 */
+	@Override
+	public String getHttpDownloadSuccessRate(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
 
+		JSONObject avgJson = new JSONObject();
+
+		List<Map<String, Object>> avgDelayList = new ArrayList<Map<String,Object>>();
+
+		if (!"".equals(groupid)) {
+			 avgDelayList = groupidHttpDownDao.getHttpDownloadSuccessRate(yearMonth, lastMonth, groupid);
+		}	
+		avgJson.put("data",avgDelayList);
+
+		return avgJson.toString();
+	}
+	
 	/**
 	 * 获取上下月的打开时延
 	 */

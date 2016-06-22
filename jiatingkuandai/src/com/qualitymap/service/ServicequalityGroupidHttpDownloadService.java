@@ -8,6 +8,14 @@ package com.qualitymap.service;
  */
 public interface ServicequalityGroupidHttpDownloadService {
 	
+	/**
+	 * 获取上下月的下载成功率
+	 * @param yearMonth
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getHttpDownloadSuccessRate(String yearMonth,String groupid);
 	
 	/**
 	 * 获取上下月的下载速率
