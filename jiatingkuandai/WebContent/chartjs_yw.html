@@ -254,6 +254,54 @@
               </div>
             </div>
           </div>
+          <div class="box box-info" id="httpBrowsingSuccessTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">http浏览成功率趋势</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="httpBrowsingSuccessChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="box box-info" id="videoPlaySuccessTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">视频播放成功率趋势</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="videoPlaySuccessChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+            <div class="box box-info" id="httpDownloadSuccessTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">http下载成功率趋势</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="httpDownloadSuccessChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
           
         </div>
         
@@ -390,6 +438,69 @@
             </div>
           </div>
           
+          <div class="box"  id="webBrowseSuccessOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">网页浏览访问成功率排名</h3>
+            </div>
+            <div class="box-body">
+              <table id="webBrowseSuccessDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="box"  id="videoPlaySuccessOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">视频播放成功率排名</h3>
+            </div>
+            <div class="box-body">
+              <table id="videoPlaySuccessDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="box"  id="httpDownloadSuccessOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">http下载成功率排名</h3>
+            </div>
+            <div class="box-body">
+              <table id="httpDownloadSuccessDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
           
          </div>
       </div>
@@ -638,6 +749,9 @@ if(probeType == "软探针"){
 	  var pageSuccessDataTableData=[];
 	  var videoDelayDataTableData=[];
 	  var catchCountDataTableData=[];
+	  var webBrowsingSuccessDataTableData=[];
+	  var videoPlaySuccessDataTableData=[];
+	  var httpDownloadSuccessDataTableData=[];
 	//拼测试报告tableBody   
 	    function appendTable(result,tableId){
 		  var jsonData = [];
@@ -772,7 +886,69 @@ if(probeType == "软探针"){
 	        }  
 	    });
 	  
+		//网页浏览成功率排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidwebbrowsing/getPageBrowseSuccessOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#webBrowseSuccessOrder").show();
+	        		webBrowsingSuccessDataTableData = appendTable(result,"webBrowseSuccessDataTable");
+	        	}else{
+	        		$("#webBrowseSuccessOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	        	$("#webBrowseSuccessOrder").hide();
+	            alert("网页浏览成功率排名--返回数据出错");  
+	        }  
+	    });
 	    
+		//视频播放成功率排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidvideomap/getVideoPlaySuccessOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#videoPlaySuccessOrder").show();
+	        		videoPlaySuccessDataTableData = appendTable(result,"videoPlaySuccessDataTable");
+	        	}else{
+	        		$("#videoPlaySuccessOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	        	$("#videoPlaySuccessOrder").hide();
+	            alert("视频播放成功率排名--返回数据出错");  
+	        }  
+	    });
+		
+		//http下载成功率排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidhttpdownloadmap/getDownloadSuccessRateOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#httpDownloadSuccessOrder").show();
+	        		httpDownloadSuccessDataTableData = appendTable(result,"httpDownloadSuccessDataTable");
+	        	}else{
+	        		$("#httpDownloadSuccessOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	        	$("#httpDownloadSuccessOrder").hide();
+	            alert("http下载成功率排名--返回数据出错");  
+	        }  
+	    });
+		
 	  $("#updownDataTable").DataTable({
 	      "paging": true,
 	      "lengthChange": false, //3,10,25条选择 ""
@@ -918,6 +1094,84 @@ if(probeType == "软探针"){
   		}
 	    });
 	  
+	  //网页浏览访问成功率
+	  $("#webBrowseSuccessDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":webBrowsingSuccessDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  
+	  //视频播放成功率
+	  $("#videoPlaySuccessDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":videoPlaySuccessDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  
+	  //http下载成功率
+	  $("#httpDownloadSuccessDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":httpDownloadSuccessDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  
     //--------------
     //- 下载速率趋势 CHART -
     //--------------
@@ -1025,6 +1279,33 @@ if(probeType == "软探针"){
     var catchCountChartData = updownChartData;
       
     catchCountChart.Line(catchCountChartData, comomnChartOptions);
+    
+    //-------------
+    //- http浏览趋势 CHART -
+    //-------------
+    var httpBrowsingChartCanvas = $("#httpBrowsingSuccessChart").get(0).getContext("2d");
+    var httpBrowsingSuccessChart = new Chart(httpBrowsingChartCanvas);
+    var httpBrowsingSuccessChartData = updownChartData;
+      
+    httpBrowsingSuccessChart.Line(httpBrowsingSuccessChartData, comomnChartOptions);
+    
+    //-------------
+    //- 视频播放趋势 CHART -
+    //-------------
+    var videoPlayChartCanvas = $("#videoPlaySuccessChart").get(0).getContext("2d");
+    var videoPlaySuccessChart = new Chart(videoPlayChartCanvas);
+    var videoPlaySuccessChartData = updownChartData;
+      
+    videoPlaySuccessChart.Line(videoPlaySuccessChartData, comomnChartOptions);
+    
+    //-------------
+    //- http下载趋势 CHART -
+    //-------------
+    var httpDownloadChartCanvas = $("#httpDownloadSuccessChart").get(0).getContext("2d");
+    var httpDownloadSuccessChart = new Chart(httpDownloadChartCanvas);
+    var httpDownloadSuccessChartData = updownChartData;
+      
+    httpDownloadSuccessChart.Line(httpDownloadSuccessChartData, comomnChartOptions);
     
     //下载速率趋势
     $.ajax({  
@@ -1164,6 +1445,74 @@ if(probeType == "软探针"){
         }  
     });
   
+    //网页浏览成功率趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidwebbrowsing/getPageBrowseSuccessData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#httpBrowsingSuccessTrend").show();
+        		httpBrowsingSuccessChartData.labels=result.lable;
+        		httpBrowsingSuccessChartData.datasets[0].data=result.data;
+        		httpBrowsingSuccessChart.Line(httpBrowsingSuccessChartData, comomnChartOptions);
+        	}else{
+        		$("#httpBrowsingSuccessTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#httpBrowsingSuccessTrend").hide();
+            alert("网页浏览趋势--返回数据出错");  
+        }  
+    });
+    
+    //视频播放趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidvideomap/getVideoPlaySuccessData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#videoPlaySuccessTrend").show();
+        		videoPlaySuccessChartData.labels=result.lable;
+        		videoPlaySuccessChartData.datasets[0].data=result.data;
+        		videoPlaySuccessChart.Line(videoPlaySuccessChartData, comomnChartOptions);
+        	}else{
+        		$("#videoPlaySuccessTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#videoPlaySuccessTrend").hide();
+            alert("视频播放趋势--返回数据出错");  
+        }  
+    });
+    
+    //http下载趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidhttpdownloadmap/getDownloadSuccessRateData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#httpDownloadSuccessTrend").show();
+        		httpDownloadSuccessChartData.labels=result.lable;
+        		httpDownloadSuccessChartData.datasets[0].data=result.data;
+        		httpDownloadSuccessChart.Line.Line(httpDownloadSuccessChartData, comomnChartOptions);
+        	}else{
+        		$("#httpDownloadSuccessTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#httpDownloadSuccessTrend").hide();
+            alert("http下载趋势--返回数据出错");  
+        }  
+    });
   
   });
 </script>

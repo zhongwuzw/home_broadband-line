@@ -640,6 +640,51 @@ $(function () {
           alert("视频卡顿次数--返回数据出错");  
       }  
   });  
+  
+//页面成功率
+  $.ajax({  
+      type : "post",  
+      async : false, //同步执行  
+      url:'groupidwebbrowsing/getPageBrowseSuccess',
+      data : {month:yearMonth},  
+      dataType : "json", //返回数据形式为json  
+      success : function(result) {  
+    	  appendIndexTable(result,"info-box bg-gray");
+      },  
+      error : function(errorMsg) {  
+          alert("页面成功率--返回数据出错");  
+      }  
+  });  
+  
+//视频播放成功率
+  $.ajax({  
+      type : "post",  
+      async : false, //同步执行  
+      url:'groupidvideomap/getVideoPlaySuccess',
+      data : {month:yearMonth},  
+      dataType : "json", //返回数据形式为json  
+      success : function(result) {  
+    	  appendIndexTable(result,"info-box bg-lightgreen");
+      },  
+      error : function(errorMsg) {  
+          alert("视频播放成功率--返回数据出错");  
+      }  
+  }); 
+  
+//http下载成功率
+  $.ajax({  
+      type : "post",  
+      async : false, //同步执行  
+      url:'groupidhttpdownloadmap/getHttpDownloadSuccessRate',
+      data : {month:yearMonth},  
+      dataType : "json", //返回数据形式为json  
+      success : function(result) {  
+    	  appendIndexTable(result,"info-box bg-darkgreen");
+      },  
+      error : function(errorMsg) {  
+          alert("http下载成功率--返回数据出错");  
+      }  
+  }); 
 //////////////////////////  end///////////////////////////////
     
 //本月平台测试次数占比
