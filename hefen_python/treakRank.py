@@ -14,7 +14,7 @@ import time
 # r = requests.post('http://zh.voc.com.cn/zt/2016/yyfazhi/piao.php',data=payload,headers=headers)
 # print r.text
 
-i = 23169
+i = 24179
 for j in range(1000):
     count = j + i
     tid = str(count)
@@ -34,5 +34,5 @@ for j in range(1000):
     except IOError:
         print 'IO Error'
     finally:
-        print r.text, r.status_code
-        time.sleep(10)
+        print r.text, r.status_code, j
+        time.sleep(3)
