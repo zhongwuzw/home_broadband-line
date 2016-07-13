@@ -71,17 +71,15 @@ def getPCDataWithPhoneNum(phoneNum):
         connection.close()
 
 #将最终结果写入库中
-def executeResultInsertDatabase(phone_num,province,city,array):
+def executeResultInsertDatabase(phone_num,province,city,totalSum,httpDownload,videoPlay,webBrowsing):
     destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
                                             db='just_for_copy',
                                             charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
-    resultList = list(array)
-    for i in range(3):
-        resultList[i] = str(resultList[i])
+
     try:
         with destDatabase.cursor() as cursor:
             sql = "INSERT INTO `pc_temporary` (`id`, `phone_no`, `date`, `province`, `city`, `valid_times`, `http_times`, `browse_times`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-            cursor.execute(sql,("0",phone_num,array[3],province,city,array[0],array[1],array[2]))
+            cursor.execute(sql,("0",phone_num,province,city))
             # sql = "INSERT INTO `app_temporary` (`id`, `phone_no`, `date`, `valid_times`, `http_times`, `video_times`, `browse_times`) VALUES (%s, %s, %s, %s, %s, %s, %s)"
             # cursor.execute(sql,("0",phone_num,array[4],array[0],array[1],array[2],array[3]))
 
@@ -90,23 +88,79 @@ def executeResultInsertDatabase(phone_num,province,city,array):
     finally:
         destDatabase.close()
 
+def calculateIndicatorSum(indicatorName):
+    SourcePhoneconnection = pymysql.connect(host='192.168.16.113', port=3306, user='root', password='otsdatabase',
+                                                db='device',
+                                                charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+
+    try:
+        with SourcePhoneconnection.cursor() as cursor:
+            sql = "select count(*) as countSum,phone_no,province,city from " + indicatorName + " WHERE bandwidth_flag = 1 AND phoneno_flag = 1 AND province_flag = 1 AND region_flag = 1 GROUP BY file_path"
+            cursor.execute(sql)
+            result = cursor.fetchall()
+
+            resultDic = {}
+            testSucSet = set()
+
+            for element in result:
+                if element['countSum'] > 10:
+                    resultDic.setdefault(element['phone_no'], {})
+                    resultDic[element['phone_no']]['testCount'] += 1
+                    resultDic[element['phone_no']]['province'] = element['province']
+                    resultDic[element['phone_no']]['city'] = element['city']
+                    testSucSet.add(element['phone_no'])
+
+            return (resultDic,testSucSet)
+
+    finally:
+        SourcePhoneconnection.close()
+
+
 # 执行主函数
-SourcePhoneconnection = pymysql.connect(host='192.168.16.113', port=3306, user='root', password='otsdatabase',
-                                        db='device',
-                                        charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('downloadTable')
+(videoResultDic,videoResultSet) = calculateIndicatorSum('videoTable')
+(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('webBrowseTable')
 
-try:
-    with SourcePhoneconnection.cursor() as cursor:
-        sql = "select count(*) as countSum,phone_no,province,city from a_pc_temporary WHERE bandwidth_flag = 1 AND phoneno_flag = 1 AND province_flag = 1 AND region_flag = 1 GROUP BY file_path"
-        cursor.execute(sql)
-        result = cursor.fetchall()
+#计算http下载
+for key in httpDownloadResultDic.keys():
+    phone = key
+    province = httpDownloadResultDic[key]['province']
+    city = httpDownloadResultDic[key]['city']
+    httpDownload = httpDownloadResultDic[key]['testCount']
+    videoPlay = videoResultDic.get(key,{}).get('testCount',0)
+    webBrowsing = webBrowsingResultDic.get(key,{}).get('testCount',0)
 
-        for element in result:
-            # appTestResult = getPCDataWithPhoneNum(element["phone_no"])
-            # executeResultInsertDatabase(element["phone_no"],element["province"],element["city"],appTestResult)
-            appTestResult = getPCDataWithPhoneNum("13666666666")
+    totalTest = min(httpDownload,videoPlay,webBrowsing)
+    executeResultInsertDatabase(phone,province,city,totalTest,httpDownload,videoPlay,webBrowsing)
 
-finally:
-    SourcePhoneconnection.close()
+videoResultSet -= httpDownloadSet
+
+#计算视频播放
+for key in videoResultSet:
+    phone = key
+    province = videoResultDic[key]['province']
+    city = videoResultDic[key]['city']
+    httpDownload = 0
+    videoPlay = videoResultDic.get(key, {}).get('testCount', 0)
+    webBrowsing = webBrowsingResultDic.get(key, {}).get('testCount', 0)
+
+    totalTest = min(httpDownload, videoPlay, webBrowsing)
+    executeResultInsertDatabase(phone, province, city, totalTest, httpDownload, videoPlay, webBrowsing)
+
+webBrowsingResultSet -= videoResultSet
+webBrowsingResultSet -= httpDownloadSet
+
+#计算网页浏览
+for key in webBrowsingResultSet:
+    phone = key
+    province = webBrowsingResultDic[key]['province']
+    city = webBrowsingResultDic[key]['city']
+    httpDownload = 0
+    videoPlay = 0
+    webBrowsing = webBrowsingResultDic.get(key, {}).get('testCount', 0)
+
+    totalTest = min(httpDownload, videoPlay, webBrowsing)
+    executeResultInsertDatabase(phone, province, city, totalTest, httpDownload, videoPlay, webBrowsing)
+
 # n = os.system('/Users/zhongwu/Documents/workspace/test.sh 2014')
 # print n
