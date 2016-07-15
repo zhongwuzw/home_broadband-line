@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab18a2ca-bdb7-4c01-b279-2567a4c9b768" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/alterJsonFile.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/alterKeyToCode.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hefen_python.iws" />
@@ -22,6 +22,7 @@
     <SUITE FILE_PATH="PyCharm2016.1/coverage/hefen_python$hefen.coverage" NAME="hefen Coverage Results" MODIFIED="1466387396253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$treakRank.coverage" NAME="treakRank Coverage Results" MODIFIED="1467859375813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$alterJsonFile.coverage" NAME="alterJsonFile Coverage Results" MODIFIED="1468508526350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hefen_python$alterKeyToCode.coverage" NAME="alterKeyToCode Coverage Results" MODIFIED="1468575962951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1468507490370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$handleJsonFile.coverage" NAME="handleJsonFile Coverage Results" MODIFIED="1468508530741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -37,8 +38,8 @@
       <file leaf-file-name="hefen_App.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hefen_App.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="23" />
+            <state relative-caret-position="266">
+              <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
               <folding>
                 <element signature="e#42#64#0" expanded="true" />
                 <marker date="1466387354000" expanded="true" signature="811:904" placeholder="select test_... upload_plan_case" />
@@ -51,6 +52,16 @@
                 <marker date="1466387354000" expanded="true" signature="4528:4678" placeholder="INSERT INTO `app_temporary`... " />
                 <marker date="1466387354000" expanded="true" signature="5198:5258" placeholder="select DISTI... app_temporary" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alterKeyToCode.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/alterKeyToCode.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,8 +113,8 @@
       <file leaf-file-name="New_Hefen_App.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/New_Hefen_App.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2698">
-              <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+            <state relative-caret-position="3078">
+              <caret line="165" column="9" selection-start-line="1" selection-start-column="23" selection-end-line="165" selection-end-column="9" />
               <folding>
                 <element signature="e#42#64#0" expanded="true" />
                 <marker date="1468396858000" expanded="true" signature="2039:2255" placeholder="SELECT COUNT... pc_http_test" />
@@ -119,7 +130,7 @@
       <file leaf-file-name="handleJsonFile.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handleJsonFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
+            <state relative-caret-position="456">
               <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="e#43#52#0" expanded="true" />
@@ -128,12 +139,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alterJsonFile.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="alterJsonFile.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alterJsonFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="133">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="23" />
+              <folding>
+                <element signature="e#43#52#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,6 +174,7 @@
         <option value="$PROJECT_DIR$/py_test.py" />
         <option value="$PROJECT_DIR$/handleJsonFile.py" />
         <option value="$PROJECT_DIR$/alterJsonFile.py" />
+        <option value="$PROJECT_DIR$/alterKeyToCode.py" />
       </list>
     </option>
   </component>
@@ -170,8 +184,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="165" />
-    <option name="y" value="91" />
+    <option name="x" value="174" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="735" />
   </component>
@@ -200,7 +214,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -226,6 +239,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -250,25 +264,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="901" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
-  <component name="RunManager" selected="Python.handleJsonFile">
-    <configuration default="false" name="hefen_PC" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="hefen_python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hefen_PC.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.alterKeyToCode">
     <configuration default="false" name="py_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -337,6 +333,24 @@
       <module name="hefen_python" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alterJsonFile.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="alterKeyToCode" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="hefen_python" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alterKeyToCode.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -550,19 +564,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.hefen_PC" />
-      <item index="1" class="java.lang.String" itemvalue="Python.py_test" />
-      <item index="2" class="java.lang.String" itemvalue="Python.treakRank" />
-      <item index="3" class="java.lang.String" itemvalue="Python.handleJsonFile" />
-      <item index="4" class="java.lang.String" itemvalue="Python.alterJsonFile" />
+      <item index="0" class="java.lang.String" itemvalue="Python.py_test" />
+      <item index="1" class="java.lang.String" itemvalue="Python.treakRank" />
+      <item index="2" class="java.lang.String" itemvalue="Python.handleJsonFile" />
+      <item index="3" class="java.lang.String" itemvalue="Python.alterJsonFile" />
+      <item index="4" class="java.lang.String" itemvalue="Python.alterKeyToCode" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.handleJsonFile" />
-        <item index="1" class="java.lang.String" itemvalue="Python.alterJsonFile" />
-        <item index="2" class="java.lang.String" itemvalue="Python.py_test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.treakRank" />
-        <item index="4" class="java.lang.String" itemvalue="Python.hefen_PC" />
+        <item index="0" class="java.lang.String" itemvalue="Python.alterKeyToCode" />
+        <item index="1" class="java.lang.String" itemvalue="Python.handleJsonFile" />
+        <item index="2" class="java.lang.String" itemvalue="Python.alterJsonFile" />
+        <item index="3" class="java.lang.String" itemvalue="Python.py_test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.treakRank" />
       </list>
     </recent_temporary>
   </component>
@@ -583,16 +597,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="165" y="91" width="1280" height="735" extended-state="0" />
-    <editor active="true" />
+    <frame x="174" y="23" width="1280" height="735" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25825825" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25825825" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -631,25 +645,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hefen_App.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1178">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
-          <folding>
-            <element signature="e#42#64#0" expanded="true" />
-            <marker date="1466387354000" expanded="true" signature="811:904" placeholder="select test_... upload_plan_case" />
-            <marker date="1466387354000" expanded="true" signature="811:906" placeholder="select test_... upload_plan_case" />
-            <marker date="1466387354000" expanded="true" signature="811:929" placeholder="select test_... upload_plan_case" />
-            <marker date="1466387354000" expanded="true" signature="3124:3173" placeholder="select * fro... upload_plan" />
-            <marker date="1466387354000" expanded="true" signature="3124:3231" placeholder="select * fro... upload_plan" />
-            <marker date="1466387354000" expanded="true" signature="3124:3310" placeholder="select * fro... upload_plan" />
-            <marker date="1466387354000" expanded="true" signature="4221:4398" placeholder="INSERT INTO `app_temporary`... " />
-            <marker date="1466387354000" expanded="true" signature="4528:4678" placeholder="INSERT INTO `app_temporary`... " />
-            <marker date="1466387354000" expanded="true" signature="5198:5258" placeholder="select DISTI... app_temporary" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/py_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -1344,10 +1339,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/py_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handleJsonFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#43#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/New_Hefen_App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3078">
+          <caret line="165" column="9" selection-start-line="1" selection-start-column="23" selection-end-line="165" selection-end-column="9" />
+          <folding>
+            <element signature="e#42#64#0" expanded="true" />
+            <marker date="1468396858000" expanded="true" signature="2039:2255" placeholder="SELECT COUNT... pc_http_test" />
+            <marker date="1468396858000" expanded="true" signature="2502:2704" placeholder="SELECT COUNT... pc_web_browsing" />
+            <marker date="1468396858000" expanded="true" signature="3593:3751" placeholder="INSERT INTO `pc_temporary`... " />
+            <marker date="1468396858000" expanded="true" signature="4571:4627" placeholder="select count... missing_value" />
+            <marker date="1468396858000" expanded="true" signature="4571:4755" placeholder="select count... a_pc_temporary" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hefen_App.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="23" />
+        <state relative-caret-position="266">
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
           <folding>
             <element signature="e#42#64#0" expanded="true" />
             <marker date="1466387354000" expanded="true" signature="811:904" placeholder="select test_... upload_plan_case" />
@@ -1363,43 +1391,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/New_Hefen_App.py">
+    <entry file="file://$PROJECT_DIR$/alterJsonFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2698">
-          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
-          <folding>
-            <element signature="e#42#64#0" expanded="true" />
-            <marker date="1468396858000" expanded="true" signature="2039:2255" placeholder="SELECT COUNT... pc_http_test" />
-            <marker date="1468396858000" expanded="true" signature="2502:2704" placeholder="SELECT COUNT... pc_web_browsing" />
-            <marker date="1468396858000" expanded="true" signature="3593:3751" placeholder="INSERT INTO `pc_temporary`... " />
-            <marker date="1468396858000" expanded="true" signature="4571:4627" placeholder="select count... missing_value" />
-            <marker date="1468396858000" expanded="true" signature="4571:4755" placeholder="select count... a_pc_temporary" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handleJsonFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="133">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="23" />
           <folding>
             <element signature="e#43#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alterJsonFile.py">
+    <entry file="file://$PROJECT_DIR$/alterKeyToCode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        <state relative-caret-position="228">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
           <folding />
         </state>
       </provider>
