@@ -324,6 +324,9 @@ $(function () {
     	  for(var i=0;i<result.data.length;i++){
     		  if(i>4){break;}
     		  prePc = parseInt(result.data[i].thisMonth)/parseInt(result.data[i].accumulat)*100+"%";
+    		  //屏蔽嵌入式和探针
+    		  if(result.data[i].type.indexOf("软探针") >= 0 || result.data[i].type.indexOf("嵌入式") >= 0)
+    			  continue;
     		  $("#broadbandType").append(
     				  "<div class='progress-group' >"+
     				  "  <span class='progress-text'>"+result.data[i].type+"</span>"+
