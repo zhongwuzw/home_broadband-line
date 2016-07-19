@@ -1,0 +1,181 @@
+package com.qualitymap.base;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import redis.JedisCilent;
+
+import com.cmri.base.bean.SessionUser;
+
+/**
+ * 
+ * @author：kxc
+ * @date：Mar 30, 2016
+ */
+public abstract class BaseAction extends BaseActionSupport {
+
+	private static final long serialVersionUID = 100000000000L;
+
+
+	protected void printWriter(StringBuilder outJsonStr) {
+		this.printWriter(outJsonStr.toString());
+	}
+
+	protected void printWriter(String outJsonStr) {
+		boolean jsonP = false;
+		String cb = null;
+		cb = servletRequest.getParameter("callback");
+		if (cb != null) {
+		    jsonP = true;
+		}
+		if(jsonP){
+			printWriter(outJsonStr,cb);
+		}else{
+			PrintWriter printWriter = null;
+			try {
+				servletRequest.setCharacterEncoding("UTF-8");
+				servletResponse.setCharacterEncoding("UTF-8");
+				servletResponse.setContentType("application/json;charset=UTF-8");
+				printWriter = servletResponse.getWriter();
+
+				printWriter.write(outJsonStr);
+				printWriter.flush();
+			} catch (IOException e) {
+				// e.printStackTrace();
+				//logger.error("error" + e.getMessage());
+			} finally {
+				if (printWriter != null) {
+					printWriter.close();
+				}
+			}
+		}
+	}
+	
+	protected void printWriter(String outJsonStr,String callback) {
+		PrintWriter printWriter = null;
+		try {
+			servletRequest.setCharacterEncoding("UTF-8");
+			servletResponse.setCharacterEncoding("UTF-8");
+			servletResponse.setContentType("application/x-json");
+			printWriter = servletResponse.getWriter();
+
+			printWriter.write(callback + "(");
+			printWriter.write(outJsonStr);
+			printWriter.write(");");
+			printWriter.flush();
+		} catch (IOException e) {
+			// e.printStackTrace();
+			//logger.error("error" + e.getMessage());
+		} finally {
+			if (printWriter != null) {
+				printWriter.close();
+			}
+		}
+
+	}
+	
+
+	/*protected String toJsonString(Object object) {
+		return JSON.toJSONString(object);
+	}*/
+
+	public String getUserGroup(String key){
+		if(key != null && !"".equals(key)){
+			Object obj = null;
+			try {
+				obj = JedisCilent.getObj(key+"-group");
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			if(obj !=null){
+				return (String)obj;
+			}
+		}
+		return "";
+	}
+	
+	public SessionUser getUserInfo(String key){
+		if(key != null && !"".equals(key)){
+			Object obj = null;
+			try {
+				obj = JedisCilent.getObj(key);
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			if(obj !=null){
+				SessionUser ruser =	(SessionUser)obj;
+				return ruser;
+			}
+		}
+		return null;
+	}
+	
+	public SessionUser returnSessionUser() throws IOException {//--返回SessionUser
+		String uuid = servletRequest.getParameter("key");
+		if(uuid != null && !"".equals(uuid)){
+			Object obj = JedisCilent.getObj(uuid);
+			if(obj !=null){
+				SessionUser ruser =	(SessionUser)obj;
+				session.put("userInfo", ruser);
+				session.put("key", uuid);
+				return ruser;
+			}
+		}
+		SessionUser user = (SessionUser) session.get("userInfo");
+		try{
+			if (user != null) {
+				return user;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public void validLogin() throws IOException {
+		String outJsonStr = "{\"status\":2}";
+		String uuid = servletRequest.getParameter("key");
+		String apiKey = servletRequest.getParameter("apiKey");
+
+		if(uuid != null && !"".equals(uuid)){
+			Object obj = null;
+			try {
+				obj = JedisCilent.getObj(uuid);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			if(obj !=null){
+				SessionUser ruser =	(SessionUser)obj;
+				outJsonStr = "{\"status\":1,\"username\":\""+ruser.getUsername()+
+						"\",\"personName\":\""+ruser.getPersonName()+
+						"\",\"orgName\":\""+ruser.getOrgName()+
+						"\",\"roleId\":\""+ruser.getRoleId()+
+						"\",\"orgid\":\""+ruser.getOrgId()+"\""+
+						"}";
+				
+				session.put("userInfo", ruser);
+				session.put("key", uuid);
+				session.put("apiKey", apiKey);
+				this.servletRequest.getSession().setAttribute("db_orgId", ruser.getOrgId());
+				printWriter(outJsonStr);
+				return;
+			}
+		}
+		SessionUser user = (SessionUser) session.get("userInfo");
+		try{
+			if (user != null) {
+				outJsonStr = "{\"status\":1,\"username\":\"" + user.getUsername();
+				outJsonStr +=  "\",\"personName\":\"" + user.getPersonName()
+						+ "\",\"orgName\":\"" + user.getOrgName() + "\",\"roleId\":\""
+						+ user.getRoleId() + "\",\"orgid\":\"" + user.getOrgId() + "\"}";
+				this.servletRequest.getSession().setAttribute("db_orgId", user.getOrgId());
+			}
+			printWriter(outJsonStr);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+}

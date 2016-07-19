@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>OTS | 业务质量</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="adminLTE_zx/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="adminLTE_zx/bootstrap/css/font-awesome.min.css">
+  <link rel="stylesheet" href="adminLTE_zx/bootstrap/css/ionicons.min.css"> 
+  <link rel="stylesheet" href="adminLTE_zx/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="adminLTE_zx/dist/css/skins/_all-skins.min.css">
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <a onclick="targetFunc('index2.html','indexhead')" id="indexhead" href="" class="logo">
+      <span class="logo-mini"><b>O</b>TS</span>
+      <span class="logo-lg"><img src="images/logo.png"> &nbsp;<b>OTS</b>统计平台</span>
+    </a>
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+         
+          <li class="dropdown user user-menu">
+            <a href="#" class="" data-toggle="">
+              <img src="adminLTE_zx/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">集团</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="user-header">
+                <img src="adminLTE_zx/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+              </li>
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="" onclick="loginout()">退出</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      
+      <ul class="sidebar-menu">
+        <li class="header">导航栏</li>
+        <li class="treeview">
+          <a onclick="targetFunc('index2.html','indexOver')" id="indexOver" href="">
+            <i><img src="images/dashboard.png"></i> <span>概览</span> <i class=""></i>
+          </a>
+          
+        </li>
+        
+        <li>
+          <a onclick="targetFunc('chartjs.html','yhAnaly')" id="yhAnaly" href="">
+            <i><img src="images/useranalysis.png"></i> <span>用户分析</span>
+          </a>
+        </li>
+        <li>
+          <a onclick="targetFunc('chartjs_zd.html','zdAnaly')" id="zdAnaly" href="">
+            <i><img src="images/terminalanalysis.png"></i> <span>终端分析</span>
+          </a>
+        </li>
+        <!-- <li class="active">
+          <a onclick="targetFunc('chartjs_yw.html','ywAnaly')" href="" id="ywAnaly">
+            <i><img src="images/biz.png"></i> <span>业务质量</span>
+          </a>
+        </li> -->
+        <li class="active treeview">
+          <a href="#">
+            <i><img src="images/biz.png"></i> <span>业务质量</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li id="liAndroid"><a onclick="targetProbeFunc('chartjs_yw.html','ywAndroid','Android')" href="" id="ywAndroid">
+            	<i class="fa fa-circle-o"></i>Android</a></li>
+            <li id="liiOS"><a onclick="targetProbeFunc('chartjs_yw.html','ywiOS','iOS')" href="" id="ywiOS">
+            	<i class="fa fa-circle-o"></i>iOS</a></li>
+            <li id="liPC"><a onclick="targetProbeFunc('chartjs_yw.html','ywPC','PC')" href="" id="ywPC">
+            	<i class="fa fa-circle-o"></i>PC</a></li>
+            <li id="liQianrushi"><a onclick="targetProbeFunc('chartjs_yw.html','ywQianrushi','嵌入式')" href="" id="ywQianrushi">
+            	<i class="fa fa-circle-o"></i>嵌入式</a></li>
+            <li id="liRuantanzhen"><a onclick="targetProbeFunc('chartjs_yw.html','ywRuantanzhen','软探针')" href="" id="ywRuantanzhen">
+            	<i class="fa fa-circle-o"></i>软探针</a></li>
+          </ul>
+        </li>
+        <li>
+          <a onclick="targetFunc('chartjs_wl.html','wlAnaly')" href="" id="wlAnaly">
+            <i><img src="images/netanalysis.png"></i> <span>网络分析</span>
+          </a>
+        </li>
+        <!--<li>
+          <a href="chartjs_yyong.html">
+            <i class="fa fa-table"></i> <span>应用分析</span>
+            <small class="label pull-right bg-green">new</small> 
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <!--<i class="fa fa-folder"></i> <span>用户行为</span>
+            <!--<small class="label pull-right bg-green">new</small> 
+          </a>
+        </li>-->
+        
+      </ul>
+    </section>
+  </aside>
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        
+        <small></small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">业务质量</li>
+      </ol>
+    </section>
+
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">         
+          <div class="box box-info" id="updownTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">全国家庭宽带平均下载速率趋势(Mbps)</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="updownChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div class="box box-info" id="uploadTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">全国家庭宽带平均上传速率趋势(Mbps)</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="uploadChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="box box-info" id="pageDelayTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">全国家庭宽带平均时延趋势(ms)</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="pageDelayChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div class="box box-info" id="pageNinetyDelayTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">全国家庭宽带网页浏览平均90%页面访问时延趋势(ms)</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="pageNinetyDelayChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div class="box box-info" id="pageSuccessTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">全国家庭宽带100%页面元素打开成功率趋势</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="pageSuccessChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="box box-info" id="videoDelayTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">全国家庭宽带平均视频加载时延趋势(ms)</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="videoDelayChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="box box-info" id="catchCountTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">全国家庭宽带平均视频视频卡顿次数趋势(次)</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="catchCountChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div class="box box-info" id="bufferProportionTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">全国家庭宽带平均视频总缓冲时长占比趋势</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="bufferProportionChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="box box-info" id="httpBrowsingSuccessTrend" >
+            <div class="box-header with-border">
+              <!-- <h3 class="box-title">http浏览成功率趋势</h3> -->
+              <h3 class="box-title">全国家庭宽带网页浏览访问成功率趋势</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="httpBrowsingSuccessChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="box box-info" id="videoPlaySuccessTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">全国家庭宽带H5视频播放成功率趋势</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="videoPlaySuccessChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+            <div class="box box-info" id="httpDownloadSuccessTrend" >
+            <div class="box-header with-border">
+              <h3 class="box-title">全国家庭宽带互联网下载成功率趋势</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="httpDownloadSuccessChart" style="height:250px"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6" >
+          <div class="box"  id="updownOrder" style="height:320px">
+            <div class="box-header" >
+              <h3 class="box-title">全国家庭宽带平均下载速率排名(Mbps)</h3>
+            </div>
+            <div class="box-body">
+              <table id="updownDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+		  <div class="box"  id="uploadOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">全国家庭宽带平均上传速率排名(Mbps)</h3>
+            </div>
+            <div class="box-body">
+              <table id="uploadDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="box"  id="pageDelayOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">全国家庭宽带平均时延排名(ms)</h3>
+            </div>
+            <div class="box-body">
+              <table id="pageDelayDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="box"  id="pageNinetyDelayOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">全国家庭宽带网页浏览平均90%页面访问时延排名(ms)</h3>
+            </div>
+            <div class="box-body">
+              <table id="pageNinetyDelayDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="box"  id="pageSuccessOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">全国家庭宽带100%页面元素打开成功率排名</h3>
+            </div>
+            <div class="box-body">
+              <table id="pageSuccessDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="box"  id="videoDelayOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">全国家庭宽带平均视频加载时延排名(ms)</h3>
+            </div>
+            <div class="box-body">
+              <table id="videoDelayDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="box"  id="catchCountOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">全国家庭宽带平均视频视频卡顿次数排名(次)</h3>
+            </div>
+            <div class="box-body">
+              <table id="catchCountDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="box"  id="bufferProportionOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">全国家庭宽带平均视频总缓冲时长占比排名</h3>
+            </div>
+            <div class="box-body">
+              <table id="bufferProportionDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+		  
+		  <div class="box"  id="webBrowseSuccessOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">全国家庭宽带网页浏览访问成功率排名</h3>
+            </div>
+            <div class="box-body">
+              <table id="webBrowseSuccessDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="box"  id="videoPlaySuccessOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">全国家庭宽带H5视频播放成功率排名</h3>
+            </div>
+            <div class="box-body">
+              <table id="videoPlaySuccessDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="box"  id="httpDownloadSuccessOrder" style="height:320px">
+            <div class="box-header">
+              <h3 class="box-title">全国家庭宽带互联网下载成功率排名</h3>
+            </div>
+            <div class="box-body">
+              <table id="httpDownloadSuccessDataTable" class="table table-bordered table-striped" style="margin-bottom: 25px;">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>省份</th>
+                  <th>上月</th>
+				  <th>本月</th>
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+         </div>
+      </div>
+    </section>
+  </div>
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      
+    </div>
+    
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div class="tab-pane" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                <p>Will be 23 on April 24th</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-user bg-yellow"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                <p>New phone +1(800)555-1234</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                <p>nora@example.com</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                <p>Execution time 5 seconds</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="label label-danger pull-right">70%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Update Resume
+                <span class="label label-success pull-right">95%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Laravel Integration
+                <span class="label label-warning pull-right">50%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Back End Framework
+                <span class="label label-primary pull-right">68%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Allow mail redirect
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Other sets of options are available
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Expose author name in posts
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Allow the user to show his name in blog posts
+            </p>
+          </div>
+
+          <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Show me as online
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Turn off notifications
+              <input type="checkbox" class="pull-right">
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Delete chat history
+              <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </aside>
+  <div class="control-sidebar-bg"></div>
+</div>
+
+<script src="adminLTE_zx/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="adminLTE_zx/bootstrap/js/bootstrap.min.js"></script>
+<script src="adminLTE_zx/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="adminLTE_zx/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="adminLTE_zx/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="adminLTE_zx/plugins/chartjs/Chart.min.js"></script>
+<script src="adminLTE_zx/plugins/fastclick/fastclick.js"></script>
+<script src="adminLTE_zx/dist/js/app.min.js"></script>
+<script src="adminLTE_zx/dist/js/demo.js"></script>
+<script src="common/common.js"></script> 
+<script>
+
+//增加正则表达式
+var probeType = location.search.getQueryString("probetype");  //
+probeType = decodeURI(probeType,"UTF-8");
+
+$("section[class='content-header'] h1").html(probeType+"平台业务质量");
+
+if(probeType == "Android"){
+	$("#liAndroid").addClass('active');
+	$("#liiOS").removeClass('active');
+	$("#liPC").removeClass('active');
+	$("#liQianrushi").removeClass('active');
+	$("#liRuantanzhen").removeClass('active');
+}
+if(probeType == "iOS"){
+	$("#liAndroid").removeClass('active');
+	$("#liiOS").addClass('active');
+	$("#liPC").removeClass('active');
+	$("#liQianrushi").removeClass('active');
+	$("#liRuantanzhen").removeClass('active');
+}
+if(probeType == "PC"){
+	$("#liAndroid").removeClass('active');
+	$("#liiOS").removeClass('active');
+	$("#liPC").addClass('active');
+	$("#liQianrushi").removeClass('active');
+	$("#liRuantanzhen").removeClass('active');
+}
+if(probeType == "嵌入式"){
+	$("#liAndroid").removeClass('active');
+	$("#liiOS").removeClass('active');
+	$("#liPC").removeClass('active');
+	$("#liQianrushi").addClass('active');
+	$("#liRuantanzhen").removeClass('active');
+}
+if(probeType == "软探针"){
+	$("#liAndroid").removeClass('active');
+	$("#liiOS").removeClass('active');
+	$("#liPC").removeClass('active');
+	$("#liQianrushi").removeClass('active');
+	$("#liRuantanzhen").addClass('active');
+}
+  $(function () {
+	  var updownDataTableData=[];
+	  var uploadDataTableData=[];
+	  var pageDelayDataTableData=[];
+	  var pageNinetyDelayDataTableData=[]; //全国家庭宽带网页浏览平均90%页面访问时延
+	  var pageSuccessDataTableData=[];
+	  var videoDelayDataTableData=[];
+	  var catchCountDataTableData=[];
+	  var bufferProportionDataTableData=[]; //全国家庭宽带平均视频总缓冲时长占比趋势
+	  var webBrowsingSuccessDataTableData=[];
+	  var videoPlaySuccessDataTableData=[];
+	  var httpDownloadSuccessDataTableData=[];
+	//拼测试报告tableBody   
+	    function appendTable(result,tableId){
+		  var jsonData = [];
+	  	  for(var i=0;i<result.data.length;i++){
+	  		jsonData[i]=[i+1,result.data[i].province,result.data[i].predata,result.data[i].thisdata,result.data[i].percent+"%"];
+	  	  }
+	  	  return jsonData;
+	    }
+	  
+	    function appendTablebufferP(result,tableId){
+			  var jsonData = [];
+		  	  for(var i=0;i<result.data.length;i++){
+		  		  var predata = "";
+		  		  var thisdata = "";
+		  		  if(result.data[i].predata != "N/A"){
+		  			predata = result.data[i].predata+"%";
+		  		  }else{
+		  			predata="N/A";
+		  		  }
+		  		  if(result.data[i].thisdata != "N/A"){
+		  			thisdata = result.data[i].thisdata +"%";
+		  		  }else{
+		  			thisdata="N/A";
+		  		  }
+		  		  jsonData[i]=[i+1,result.data[i].province,predata,thisdata,result.data[i].percent+"%"];
+		  	  }
+		  	  return jsonData;
+		    }
+	
+	//下载速率排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidhttpdownloadmap/getDownloadRateOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#updownOrder").show();
+	        		updownDataTableData = appendTable(result,"updownDataTable");
+	        	}else{
+	        		$("#updownOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	            $("#updownOrder").hide();
+	            alert("下载速率排名--返回数据出错");  
+	        }  
+	    });
+	  //上传速率排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidhttpuploadmap/getUploadRateOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#uploadOrder").show();
+	        		uploadDataTableData = appendTable(result,"uploadDataTable");
+	        	}else{
+	        		$("#uploadOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	            $("#uploadOrder").hide();
+	            alert("上传速率排名--返回数据出错");  
+	        }  
+	    });
+	  
+	  //页面时延排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidwebbrowsing/getPageDelayOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#pageDelayOrder").show();
+	        		pageDelayDataTableData = appendTable(result,"pageDelayDataTable");
+	        	}else{
+	        		$("#pageDelayOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	            $("#pageDelayOrder").hide();
+	            alert("页面时延排名--返回数据出错");  
+	        }  
+	    });
+	  
+	  //全国家庭宽带网页浏览平均90%页面访问时延排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidwebbrowsing/getPageNinetyDelayOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#pageNinetyDelayOrder").show();
+	        		pageNinetyDelayDataTableData = appendTable(result,"pageNinetyDelayDataTable");
+	        	}else{
+	        		$("#pageNinetyDelayOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	            $("#pageNinetyDelayOrder").hide();
+	            alert("全国家庭宽带网页浏览平均90%页面访问时延排名--返回数据出错");  
+	        }  
+	    });
+	  
+	  //页面成功率排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidwebbrowsing/getPageSuccessOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#pageSuccessOrder").show();
+	        		pageSuccessDataTableData = appendTablebufferP(result,"pageSuccessDataTable");
+	        	}else{
+	        		$("#pageSuccessOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	        	$("#pageSuccessOrder").hide();
+	            alert("页面成功率排名--返回数据出错");  
+	        }  
+	    });
+	  
+	  //视频时延排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidvideomap/getVideoDelayOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#videoDelayOrder").show();
+	        		videoDelayDataTableData = appendTable(result,"videoDelayDataTable");
+	        	}else{
+	        		$("#videoDelayOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	        	$("#videoDelayOrder").hide();
+	            alert("视频时延排名--返回数据出错");  
+	        }  
+	    });
+	  
+	  //视频卡顿次数排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidvideomap/getVideoCacheCountOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#catchCountOrder").show();
+	        		catchCountDataTableData = appendTable(result,"catchCountDataTable");
+	        	}else{
+	        		$("#catchCountOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	        	$("#catchCountOrder").hide();
+	            alert("视频卡顿次数排名--返回数据出错");  
+	        }  
+	    });
+	  
+	  //全国家庭宽带平均视频总缓冲时长占比排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidvideomap/getVideoBufferProportionOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#bufferProportionOrder").show();
+	        		bufferProportionDataTableData = appendTablebufferP(result,"bufferProportionDataTable");
+	        	}else{
+	        		$("#bufferProportionOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	        	$("#bufferProportionOrder").hide();
+	            alert("全国家庭宽带平均视频总缓冲时长占比排名--返回数据出错");  
+	        }  
+	    });
+	  
+		//网页浏览成功率排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidwebbrowsing/getPageBrowseSuccessOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#webBrowseSuccessOrder").show();
+	        		webBrowsingSuccessDataTableData = appendTablebufferP(result,"webBrowseSuccessDataTable");
+	        	}else{
+	        		$("#webBrowseSuccessOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	        	$("#webBrowseSuccessOrder").hide();
+	            alert("网页浏览成功率排名--返回数据出错");  
+	        }  
+	    });
+	    
+		//视频播放成功率排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidvideomap/getVideoPlaySuccessOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#videoPlaySuccessOrder").show();
+	        		videoPlaySuccessDataTableData = appendTablebufferP(result,"videoPlaySuccessDataTable");
+	        	}else{
+	        		$("#videoPlaySuccessOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	        	$("#videoPlaySuccessOrder").hide();
+	            alert("视频播放成功率排名--返回数据出错");  
+	        }  
+	    });
+		
+		//http下载成功率排名
+	    $.ajax({  
+	        type : "post",  
+	        async : false, //同步执行  
+	        url:'groupidhttpdownloadmap/getDownloadSuccessRateOrder',
+	        data : {month:yearMonth,probetype:probeType},  
+	        dataType : "json", //返回数据形式为json  
+	        success : function(result) {  
+	        	if(result.data.length >0){
+	        		$("#httpDownloadSuccessOrder").show();
+	        		httpDownloadSuccessDataTableData = appendTablebufferP(result,"httpDownloadSuccessDataTable");
+	        	}else{
+	        		$("#httpDownloadSuccessOrder").hide();
+	        	}
+	        },  
+	        error : function(errorMsg) {  
+	        	$("#httpDownloadSuccessOrder").hide();
+	            alert("http下载成功率排名--返回数据出错");  
+	        }  
+	    });
+		    
+	  $("#updownDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData": updownDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      //"sPaginationType": "bootstrap",
+	      "bInfo": true,
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) { //设置最后一个td颜色
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  $("#uploadDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":uploadDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  $("#pageDelayDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":pageDelayDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  
+	  //全国家庭宽带网页浏览平均90%页面访问时延table
+	  $("#pageNinetyDelayDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":pageNinetyDelayDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  
+	  $("#pageSuccessDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":pageSuccessDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  $("#videoDelayDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":videoDelayDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  $("#catchCountDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":catchCountDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  
+	  //全国家庭宽带平均视频总缓冲时长占比
+	  $("#bufferProportionDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":bufferProportionDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+
+	  //网页浏览访问成功率
+	  $("#webBrowseSuccessDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":webBrowsingSuccessDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  
+	  //视频播放成功率
+	  $("#videoPlaySuccessDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":videoPlaySuccessDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+	  
+	  //http下载成功率
+	  $("#httpDownloadSuccessDataTable").DataTable({
+	      "paging": true,
+	      "lengthChange": false, //3,10,25条选择 ""
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "aaData":httpDownloadSuccessDataTableData, //table数据源
+	      "aLengthMenu": [[3,10, 25, 50, -1], [3,10, 25, 50, "All"]], //设置默认每页显示的行数
+	      "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+	    	  if(aData[4] == "N/A%"){
+	    		  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4].substring(0,aData[4].length-1)+"</span></td>");
+	    	  }else{
+	    		  if ( aData[4].substring(0,aData[4].length-1) >= 0 )
+	    		  {
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-green'>"+aData[4]+"</span></td>");
+	    		  }else{
+	    			  $('td:eq(4)', nRow).html("<td><span class='badge bg-red'>"+aData[4]+"</span></td>");
+	    		  }
+	    	  }
+  			
+  			return nRow;
+  		}
+	    });
+		
+		
+    //--------------
+    //- 下载速率趋势 CHART -
+    //--------------
+    var updownChartCanvas = $("#updownChart").get(0).getContext("2d");
+    var updownChart = new Chart(updownChartCanvas);
+
+    var updownChartData = {
+      labels: [],
+      datasets: [
+        {
+          label: "Digital Goods",
+          fillColor: "rgba(60,141,188,0.9)",
+          strokeColor: "rgba(60,141,188,0.8)",
+          pointColor: "#3b8bba",
+          pointStrokeColor: "rgba(60,141,188,1)",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(60,141,188,1)",
+          data: []
+        }
+      ]
+    };
+
+    var comomnChartOptions = {
+      //Boolean - If we should show the scale at all
+      showScale: true,
+      //Boolean - Whether grid lines are shown across the chart
+      scaleShowGridLines: false,
+      //String - Colour of the grid lines
+      scaleGridLineColor: "rgba(0,0,0,.05)",
+      //Number - Width of the grid lines
+      scaleGridLineWidth: 1,
+      scaleBeginAtZero: true,
+      //Boolean - Whether to show horizontal lines (except X axis)
+      scaleShowHorizontalLines: true,
+      //Boolean - Whether to show vertical lines (except Y axis)
+      scaleShowVerticalLines: true,
+      //Boolean - Whether the line is curved between points
+      bezierCurve: true,
+      //Number - Tension of the bezier curve between points
+      bezierCurveTension: 0.3,
+      //Boolean - Whether to show a dot for each point
+      pointDot: false,
+      //Number - Radius of each point dot in pixels
+      pointDotRadius: 4,
+      //Number - Pixel width of point dot stroke
+      pointDotStrokeWidth: 1,
+      //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+      pointHitDetectionRadius: 20,
+      //Boolean - Whether to show a stroke for datasets
+      datasetStroke: true,
+      //Number - Pixel width of dataset stroke
+      datasetStrokeWidth: 2,
+      //Boolean - Whether to fill the dataset with a color
+      datasetFill: false,
+      //String - A legend template
+      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+      //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+      maintainAspectRatio: true,
+      //Boolean - whether to make the chart responsive to window resizing
+      responsive: true
+    };
+    var comomnChartOptions_Percent = {
+    	      //Boolean - If we should show the scale at all
+    	      showScale: true,
+    	      scaleOverride: true,
+  			// ** Required if scaleOverride is true **
+  			// Number - The number of steps in a hard coded scale
+  			scaleSteps: 10,
+  			// Number - The value jump in the hard coded scale
+  			scaleStepWidth: 10,
+  			// Number - The scale starting value
+  			scaleStartValue: 0,
+    	      //Boolean - Whether grid lines are shown across the chart
+    	      scaleShowGridLines: false,
+    	      //String - Colour of the grid lines
+    	      scaleGridLineColor: "rgba(0,0,0,.05)",
+    	      //Number - Width of the grid lines
+    	      scaleGridLineWidth: 1,
+    	      scaleBeginAtZero: true,
+    	      //Boolean - Whether to show horizontal lines (except X axis)
+    	      scaleShowHorizontalLines: true,
+    	      //Boolean - Whether to show vertical lines (except Y axis)
+    	      scaleShowVerticalLines: true,
+    	      //Boolean - Whether the line is curved between points
+    	      bezierCurve: true,
+    	      //Number - Tension of the bezier curve between points
+    	      bezierCurveTension: 0.3,
+    	      //Boolean - Whether to show a dot for each point
+    	      pointDot: false,
+    	      //Number - Radius of each point dot in pixels
+    	      pointDotRadius: 4,
+    	      //Number - Pixel width of point dot stroke
+    	      pointDotStrokeWidth: 1,
+    	      //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+    	      pointHitDetectionRadius: 20,
+    	      //Boolean - Whether to show a stroke for datasets
+    	      datasetStroke: true,
+    	      //Number - Pixel width of dataset stroke
+    	      datasetStrokeWidth: 2,
+    	      //Boolean - Whether to fill the dataset with a color
+    	      datasetFill: false,
+    	      //String - A legend template
+    	      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+    	      //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+    	      maintainAspectRatio: true,
+    	      //Boolean - whether to make the chart responsive to window resizing
+    	      responsive: true
+    	    };
+
+    updownChart.Line(updownChartData, comomnChartOptions);
+ 
+    //-------------
+    //- 上传速率趋势 CHART -
+    //-------------
+    var uploadChartCanvas = $("#uploadChart").get(0).getContext("2d");
+    var uploadChart = new Chart(uploadChartCanvas);
+    var uploadChartData = updownChartData;
+      
+    uploadChart.Line(uploadChartData, comomnChartOptions);
+    
+    //-------------
+    //- 页面时延趋势 CHART -
+    //-------------
+    var pageDelayChartCanvas = $("#pageDelayChart").get(0).getContext("2d");
+    var pageDelayChart = new Chart(pageDelayChartCanvas);
+    var pageDelayChartData = updownChartData;
+      
+    pageDelayChart.Line(pageDelayChartData, comomnChartOptions);
+    
+    //-------------
+    //- 全国家庭宽带网页浏览平均90%页面访问时延趋势
+    //-------------
+    var pageNinetyDelayChartCanvas = $("#pageNinetyDelayChart").get(0).getContext("2d");
+    var pageNinetyDelayChart = new Chart(pageNinetyDelayChartCanvas);
+    var pageNinetyDelayChartData = updownChartData;
+      
+    pageNinetyDelayChart.Line(pageNinetyDelayChartData, comomnChartOptions);
+    
+  //-------------
+    //- 页面成功率趋势 CHART -
+    //-------------
+    var pageSuccessChartCanvas = $("#pageSuccessChart").get(0).getContext("2d");
+    var pageSuccessChart = new Chart(pageSuccessChartCanvas);
+    var pageSuccessChartData = updownChartData;
+      
+    pageSuccessChart.Line(pageSuccessChartData, comomnChartOptions_Percent);
+    
+  //-------------
+    //- 视频时延趋势 CHART -
+    //-------------
+    var videoDelayChartCanvas = $("#videoDelayChart").get(0).getContext("2d");
+    var videoDelayChart = new Chart(videoDelayChartCanvas);
+    var videoDelayChartData = updownChartData;
+      
+    videoDelayChart.Line(videoDelayChartData, comomnChartOptions);
+    
+    //-------------
+    //- 视频卡顿次数趋势 CHART -
+    //-------------
+    var catchCountChartCanvas = $("#catchCountChart").get(0).getContext("2d");
+    var catchCountChart = new Chart(catchCountChartCanvas);
+    var catchCountChartData = updownChartData;
+      
+    catchCountChart.Line(catchCountChartData, comomnChartOptions);
+    
+    //-------------
+    //- 全国家庭宽带平均视频总缓冲时长占比趋势
+    //-------------
+    var bufferProportionChartCanvas = $("#bufferProportionChart").get(0).getContext("2d");
+    var bufferProportionChart = new Chart(bufferProportionChartCanvas);
+    var bufferProportionChartData = updownChartData;
+      
+    bufferProportionChart.Line(bufferProportionChartData, comomnChartOptions);
+    //-------------
+    //- http浏览趋势 CHART -
+    //-------------
+    var httpBrowsingChartCanvas = $("#httpBrowsingSuccessChart").get(0).getContext("2d");
+    var httpBrowsingSuccessChart = new Chart(httpBrowsingChartCanvas);
+    var httpBrowsingSuccessChartData = updownChartData;
+      
+    httpBrowsingSuccessChart.Line(httpBrowsingSuccessChartData, comomnChartOptions_Percent);
+    
+    //-------------
+    //- 视频播放趋势 CHART -
+    //-------------
+    var videoPlayChartCanvas = $("#videoPlaySuccessChart").get(0).getContext("2d");
+    var videoPlaySuccessChart = new Chart(videoPlayChartCanvas);
+    var videoPlaySuccessChartData = updownChartData;
+      
+    videoPlaySuccessChart.Line(videoPlaySuccessChartData, comomnChartOptions_Percent);
+    
+    //-------------
+    //- http下载趋势 CHART -
+    //-------------
+    var httpDownloadChartCanvas = $("#httpDownloadSuccessChart").get(0).getContext("2d");
+    var httpDownloadSuccessChart = new Chart(httpDownloadChartCanvas);
+    var httpDownloadSuccessChartData = updownChartData;
+      
+    httpDownloadSuccessChart.Line(httpDownloadSuccessChartData, comomnChartOptions_Percent);
+    
+    
+    //下载速率趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidhttpdownloadmap/getDownloadRateData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#updownTrend").show();
+	        	updownChartData.labels=result.lable;
+	        	updownChartData.datasets[0].data=result.data;
+	        	updownChart.Line(updownChartData, comomnChartOptions);
+        	}else{
+        		$("#updownTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#updownTrend").hide();
+            alert("下载速率趋势--返回数据出错");  
+        }  
+    });
+   
+  //上传速率趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidhttpuploadmap/getUploadRateData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#uploadTrend").show();
+	        	uploadChartData.labels=result.lable;
+	        	uploadChartData.datasets[0].data=result.data;
+	        	uploadChart.Line(uploadChartData, comomnChartOptions);
+        	}else{
+        		$("#uploadTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#uploadTrend").hide();
+            alert("上传速率趋势--返回数据出错");  
+        }  
+    });
+  
+  //页面时延趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidwebbrowsing/getPageDelayData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#pageDelayTrend").show();
+	        	pageDelayChartData.labels=result.lable;
+	        	pageDelayChartData.datasets[0].data=result.data;
+	        	pageDelayChart.Line(pageDelayChartData, comomnChartOptions);
+        	}else{
+        		$("#pageDelayTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#pageDelayTrend").hide();
+            alert("页面时延趋势--返回数据出错");  
+        }  
+    });
+  
+  //全国家庭宽带网页浏览平均90%页面访问时延趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidwebbrowsing/getPageNinetyDelayData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#pageNinetyDelayTrend").show();
+	        	pageNinetyDelayChartData.labels=result.lable;
+	        	pageNinetyDelayChartData.datasets[0].data=result.data;
+	        	pageNinetyDelayChart.Line(pageNinetyDelayChartData, comomnChartOptions);
+        	}else{
+        		$("#pageNinetyDelayTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#pageNinetyDelayTrend").hide();
+            alert("全国家庭宽带网页浏览平均90%页面访问时延趋势--返回数据出错");  
+        }  
+    });
+  
+  //页面成功率趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidwebbrowsing/getPageSuccessData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#pageSuccessTrend").show();
+	        	pageSuccessChartData.labels=result.lable;
+	        	pageSuccessChartData.datasets[0].data=result.data;
+	        	pageSuccessChart.Line(pageSuccessChartData, comomnChartOptions_Percent);
+        	}else{
+        		$("#pageSuccessTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#pageSuccessTrend").hide();
+            alert("页面成功率趋势--返回数据出错");  
+        }  
+    });
+  
+  //视频时延趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidvideomap/getVideoDelayData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#videoDelayTrend").show();
+	        	videoDelayChartData.labels=result.lable;
+	        	videoDelayChartData.datasets[0].data=result.data;
+	        	videoDelayChart.Line(videoDelayChartData, comomnChartOptions);
+        	}else{
+        		$("#videoDelayTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#videoDelayTrend").hide();
+            alert("视频时延趋势--返回数据出错");  
+        }  
+    });
+  
+  //视频卡顿次数趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidvideomap/getVideoCacheCountData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#catchCountTrend").show();
+	        	catchCountChartData.labels=result.lable;
+	        	catchCountChartData.datasets[0].data=result.data;
+	        	catchCountChart.Line(catchCountChartData, comomnChartOptions);
+        	}else{
+        		$("#catchCountTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#catchCountTrend").hide();
+            alert("视频卡顿次数趋势--返回数据出错");  
+        }  
+    });
+  
+    //全国家庭宽带平均视频总缓冲时长占比趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidvideomap/getVideoBufferProportionData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#bufferProportionTrend").show();
+        		bufferProportionChartData.labels=result.lable;
+        		bufferProportionChartData.datasets[0].data=result.data;
+        		bufferProportionChart.Line(bufferProportionChartData, comomnChartOptions);
+        	}else{
+        		$("#bufferProportionTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#bufferProportionTrend").hide();
+            alert("全国家庭宽带平均视频总缓冲时长占比趋势--返回数据出错");  
+        }  
+    });
+	
+	    //网页浏览成功率趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidwebbrowsing/getPageBrowseSuccessData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#httpBrowsingSuccessTrend").show();
+        		httpBrowsingSuccessChartData.labels=result.lable;
+        		httpBrowsingSuccessChartData.datasets[0].data=result.data;
+        		httpBrowsingSuccessChart.Line(httpBrowsingSuccessChartData, comomnChartOptions_Percent);
+        	}else{
+        		$("#httpBrowsingSuccessTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#httpBrowsingSuccessTrend").hide();
+            alert("网页浏览成功率趋势--返回数据出错");  
+        }  
+    });
+    
+    //视频播放成功率趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidvideomap/getVideoPlaySuccessData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#videoPlaySuccessTrend").show();
+        		videoPlaySuccessChartData.labels=result.lable;
+        		videoPlaySuccessChartData.datasets[0].data=result.data;
+        		videoPlaySuccessChart.Line(videoPlaySuccessChartData, comomnChartOptions_Percent);
+        	}else{
+        		$("#videoPlaySuccessTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#videoPlaySuccessTrend").hide();
+            alert("视频播放成功率趋势--返回数据出错");  
+        }  
+    });
+    
+    //http下载成功率趋势
+    $.ajax({  
+        type : "post",  
+        async : false, //同步执行  
+        url:'groupidhttpdownloadmap/getDownloadSuccessRateData',
+        data : {month:yearMonth,probetype:probeType},  
+        dataType : "json", //返回数据形式为json  
+        success : function(result) {  
+        	if(result.lable.length>0 && result.data.length>0){
+        		$("#httpDownloadSuccessTrend").show();
+        		httpDownloadSuccessChartData.labels=result.lable;
+        		httpDownloadSuccessChartData.datasets[0].data=result.data;
+        		httpDownloadSuccessChart.Line(httpDownloadSuccessChartData, comomnChartOptions_Percent);
+        	}else{
+        		$("#httpDownloadSuccessTrend").hide();
+        	}
+        },  
+        error : function(errorMsg) {  
+        	$("#httpDownloadSuccessTrend").hide();
+            alert("http下载成功率趋势--返回数据出错");  
+        }  
+    });
+  
+    //$("ul[class='pagination']").css("margin-left","-160px");
+  });
+  
+</script>
+</body>
+</html>

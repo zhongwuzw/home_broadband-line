@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/LTE_E2E_analyse/!svn/ver/2894/trunk/jiatingkuandai_0.6/src/config
+END
+sso.properties
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/LTE_E2E_analyse/!svn/ver/2894/trunk/jiatingkuandai_0.6/src/config/sso.properties
+END
+redis.properties
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LTE_E2E_analyse/!svn/ver/2894/trunk/jiatingkuandai_0.6/src/config/redis.properties
+END
+struts.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/LTE_E2E_analyse/!svn/ver/2894/trunk/jiatingkuandai_0.6/src/config/struts.xml
+END
+struts-qualitymap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/LTE_E2E_analyse/!svn/ver/2894/trunk/jiatingkuandai_0.6/src/config/struts-qualitymap.xml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LTE_E2E_analyse/!svn/ver/2894/trunk/jiatingkuandai_0.6/src/config/log4j.properties
+END
+applicationContext-beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/LTE_E2E_analyse/!svn/ver/2894/trunk/jiatingkuandai_0.6/src/config/applicationContext-beans.xml
+END
+applicationContext-common.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/LTE_E2E_analyse/!svn/ver/2894/trunk/jiatingkuandai_0.6/src/config/applicationContext-common.xml
+END
+jdbc.properties
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/LTE_E2E_analyse/!svn/ver/2894/trunk/jiatingkuandai_0.6/src/config/jdbc.properties
+END
+struts-pcdata.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LTE_E2E_analyse/!svn/ver/2894/trunk/jiatingkuandai_0.6/src/config/struts-pcdata.xml
+END
