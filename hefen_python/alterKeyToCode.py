@@ -3,7 +3,7 @@
 
 import json
 
-with open('/Users/zhongwu/Downloads/provinceAndCity.json', 'r') as f:
+with open('/Users/zhongwu/Downloads/provinceAndCity1.json', 'r') as f:
     fileStr = ''
     lines = f.readlines()
     resultJson = {}
@@ -12,8 +12,8 @@ with open('/Users/zhongwu/Downloads/provinceAndCity.json', 'r') as f:
     decodeJson = json.loads(fileStr)
     for key in decodeJson:
         code = decodeJson[key]["code"]
-        value = decodeJson[key]
+        value = key
         resultJson[code] = value
     resultJsonStr = json.dumps(resultJson)
-with open('/Users/zhongwu/Downloads/provinceAndCity.json', 'w+') as f:
+with open('/Users/zhongwu/Downloads/keyProvince.json', 'w+') as f:
     f.write(resultJsonStr)
