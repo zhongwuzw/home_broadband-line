@@ -1,0 +1,20 @@
+#---- global logging configuration
+#---- level: FATAL,ERROR,WARN,INFO,DEBUG
+#---- appender: console, file, mail
+log4j.rootCategory=INFO, console
+log4j.additivity.monitorLogger=false
+#---- output to console
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+#include date log
+#log4j.appender.console.layout.ConversionPattern=[%-5p] [%t] %d{yyyy-MM-dd HH:mm:ss,SSS} %l >>> %m %n
+#no date log
+#log4j.appender.console.layout.ConversionPattern=[%-5p] %l - %m %n
+
+log4j.appender.console.encoding=UTF-8
+#log4j.logger.org.hibernate.SQL=debug   
+  
+log4j.appender.Threshold=DEBUG 
+log4j.appender.CONSOLE.Target=System.out 
+log4j.appender.CONSOLE.layout.ConversionPattern=[framework] %d - %c -%-4r [%t] %-5p %c %x - %m%n 
+#log4j.appender.CONSOLE.layout.ConversionPattern=[start]%d{DATE}[DATE]%n%p[PRIORITY]%n%x[NDC]%n%t[thread] n%c[CATEGORY]%n%m[MESSAGE]%n%n 
