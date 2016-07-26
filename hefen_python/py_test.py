@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-a = [1,2,3]
-b = [1,2,3]
-a = a + b
+a = {}
+a.setdefault("ss",0)
+a["ss"]+=1
+a["sass"] = 3
 print a
 

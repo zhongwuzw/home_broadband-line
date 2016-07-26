@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ab18a2ca-bdb7-4c01-b279-2567a4c9b768" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alterKeyToCode.py" afterPath="$PROJECT_DIR$/alterKeyToCode.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/New_Hefen_App.py" afterPath="$PROJECT_DIR$/New_Hefen_App.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/py_test.py" afterPath="$PROJECT_DIR$/py_test.py" />
     </list>
     <ignored path="hefen_python.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,7 +24,8 @@
     <SUITE FILE_PATH="coverage/hefen_python$treakRank.coverage" NAME="treakRank Coverage Results" MODIFIED="1467859375813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$alterJsonFile.coverage" NAME="alterJsonFile Coverage Results" MODIFIED="1468508526350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$alterKeyToCode.coverage" NAME="alterKeyToCode Coverage Results" MODIFIED="1468993733520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1468507490370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hefen_python$New_Hefen_App.coverage" NAME="New_Hefen_App Coverage Results" MODIFIED="1469513691539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1469500633417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$handleJsonFile.coverage" NAME="handleJsonFile Coverage Results" MODIFIED="1468508530741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -56,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alterKeyToCode.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="alterKeyToCode.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alterKeyToCode.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
@@ -69,8 +71,8 @@
       <file leaf-file-name="py_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/py_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            <state relative-caret-position="95">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -110,19 +112,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="New_Hefen_App.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="New_Hefen_App.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/New_Hefen_App.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3078">
-              <caret line="165" column="9" selection-start-line="1" selection-start-column="23" selection-end-line="165" selection-end-column="9" />
+            <state relative-caret-position="219">
+              <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
               <folding>
                 <element signature="e#42#64#0" expanded="true" />
-                <marker date="1468396858000" expanded="true" signature="2039:2255" placeholder="SELECT COUNT... pc_http_test" />
-                <marker date="1468396858000" expanded="true" signature="2502:2704" placeholder="SELECT COUNT... pc_web_browsing" />
-                <marker date="1468396858000" expanded="true" signature="3593:3751" placeholder="INSERT INTO `pc_temporary`... " />
-                <marker date="1468396858000" expanded="true" signature="4571:4627" placeholder="select count... missing_value" />
-                <marker date="1468396858000" expanded="true" signature="4571:4755" placeholder="select count... a_pc_temporary" />
+                <marker date="1469513409000" expanded="true" signature="827:834" placeholder="select phone... hefen_app_table" />
+                <marker date="1469513409000" expanded="true" signature="827:904" placeholder="select phone... phone_imei_time" />
+                <marker date="1469513409000" expanded="true" signature="1562:1602" placeholder="select phone... hefen_app_table" />
+                <marker date="1469513409000" expanded="true" signature="1919:1958" placeholder="update hefen... " />
+                <marker date="1469513409000" expanded="true" signature="1919:1980" placeholder="update hefen... " />
+                <marker date="1469513409000" expanded="true" signature="1919:1995" placeholder="update hefen... " />
+                <marker date="1469513409000" expanded="true" signature="1919:2015" placeholder="update hefen... " />
+                <marker date="1469513409000" expanded="true" signature="1919:2033" placeholder="update hefen... " />
+                <marker date="1469513409000" expanded="true" signature="1919:2060" placeholder="update hefen... " />
+                <marker date="1469513409000" expanded="true" signature="1919:2073" placeholder="update hefen... " />
+                <marker date="1469513409000" expanded="true" signature="1919:2097" placeholder="update hefen... " />
+                <marker date="1469513409000" expanded="true" signature="1919:2098" placeholder="update hefen... " />
+                <marker date="1469513409000" expanded="true" signature="3791:4007" placeholder="SELECT COUNT... pc_http_test" />
+                <marker date="1469513409000" expanded="true" signature="4254:4456" placeholder="SELECT COUNT... pc_web_browsing" />
+                <marker date="1469513409000" expanded="true" signature="5306:5459" placeholder="INSERT INTO `pc_temporary`... " />
+                <marker date="1469513409000" expanded="true" signature="6315:6585" placeholder="SELECT count... count" />
+                <marker date="1469513409000" expanded="true" signature="6315:6587" placeholder="SELECT count... count" />
+                <marker date="1469513409000" expanded="true" signature="6376:6436" placeholder="select count... missing_value" />
+                <marker date="1469513409000" expanded="true" signature="6376:6564" placeholder="select count... a_pc_temporary" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connections.py" pinned="false" current-in-tab="false">
+        <entry file="file:///Library/Python/2.7/site-packages/pymysql/connections.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="754" column="8" selection-start-line="754" selection-start-column="8" selection-end-line="754" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,7 +168,7 @@
       <file leaf-file-name="alterJsonFile.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alterJsonFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
+            <state relative-caret-position="228">
               <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
               <folding>
                 <element signature="e#43#52#0" expanded="true" />
@@ -170,11 +196,11 @@
         <option value="$PROJECT_DIR$/hefen_App.py" />
         <option value="$PROJECT_DIR$/hefen_PC.py" />
         <option value="$PROJECT_DIR$/treakRank.py" />
-        <option value="$PROJECT_DIR$/New_Hefen_App.py" />
-        <option value="$PROJECT_DIR$/py_test.py" />
         <option value="$PROJECT_DIR$/handleJsonFile.py" />
         <option value="$PROJECT_DIR$/alterJsonFile.py" />
         <option value="$PROJECT_DIR$/alterKeyToCode.py" />
+        <option value="$PROJECT_DIR$/py_test.py" />
+        <option value="$PROJECT_DIR$/New_Hefen_App.py" />
       </list>
     </option>
   </component>
@@ -184,8 +210,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="96" />
-    <option name="y" value="68" />
+    <option name="x" value="8" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="735" />
   </component>
@@ -214,7 +240,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -240,6 +265,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,7 +290,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="901" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
-  <component name="RunManager" selected="Python.alterKeyToCode">
+  <component name="RunManager" selected="Python.New_Hefen_App">
     <configuration default="false" name="py_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -279,24 +305,6 @@
       <module name="hefen_python" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/py_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="treakRank" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="hefen_python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/treakRank.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -351,6 +359,24 @@
       <module name="hefen_python" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alterKeyToCode.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="New_Hefen_App" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="hefen_python" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/New_Hefen_App.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -565,18 +591,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.py_test" />
-      <item index="1" class="java.lang.String" itemvalue="Python.treakRank" />
-      <item index="2" class="java.lang.String" itemvalue="Python.handleJsonFile" />
-      <item index="3" class="java.lang.String" itemvalue="Python.alterJsonFile" />
-      <item index="4" class="java.lang.String" itemvalue="Python.alterKeyToCode" />
+      <item index="1" class="java.lang.String" itemvalue="Python.handleJsonFile" />
+      <item index="2" class="java.lang.String" itemvalue="Python.alterJsonFile" />
+      <item index="3" class="java.lang.String" itemvalue="Python.alterKeyToCode" />
+      <item index="4" class="java.lang.String" itemvalue="Python.New_Hefen_App" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.alterKeyToCode" />
-        <item index="1" class="java.lang.String" itemvalue="Python.handleJsonFile" />
-        <item index="2" class="java.lang.String" itemvalue="Python.alterJsonFile" />
-        <item index="3" class="java.lang.String" itemvalue="Python.py_test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.treakRank" />
+        <item index="0" class="java.lang.String" itemvalue="Python.New_Hefen_App" />
+        <item index="1" class="java.lang.String" itemvalue="Python.py_test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.alterKeyToCode" />
+        <item index="3" class="java.lang.String" itemvalue="Python.handleJsonFile" />
+        <item index="4" class="java.lang.String" itemvalue="Python.alterJsonFile" />
       </list>
     </recent_temporary>
   </component>
@@ -597,26 +623,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="96" y="68" width="1280" height="735" extended-state="0" />
+    <frame x="8" y="23" width="1280" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25825825" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3978979" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3978979" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -640,19 +666,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="51" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/py_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hefen_PC.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -689,11 +707,25 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#64#0" expanded="true" />
-            <marker date="1468396858000" expanded="true" signature="2039:2255" placeholder="SELECT COUNT... pc_http_test" />
-            <marker date="1468396858000" expanded="true" signature="2502:2704" placeholder="SELECT COUNT... pc_web_browsing" />
-            <marker date="1468396858000" expanded="true" signature="3593:3751" placeholder="INSERT INTO `pc_temporary`... " />
-            <marker date="1468396858000" expanded="true" signature="4571:4627" placeholder="select count... missing_value" />
-            <marker date="1468396858000" expanded="true" signature="4571:4755" placeholder="select count... a_pc_temporary" />
+            <marker date="1469513409000" expanded="true" signature="827:834" placeholder="select phone... hefen_app_table" />
+            <marker date="1469513409000" expanded="true" signature="827:904" placeholder="select phone... phone_imei_time" />
+            <marker date="1469513409000" expanded="true" signature="1562:1602" placeholder="select phone... hefen_app_table" />
+            <marker date="1469513409000" expanded="true" signature="1919:1958" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:1980" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:1995" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2015" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2033" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2060" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2073" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2097" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2098" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="3791:4007" placeholder="SELECT COUNT... pc_http_test" />
+            <marker date="1469513409000" expanded="true" signature="4254:4456" placeholder="SELECT COUNT... pc_web_browsing" />
+            <marker date="1469513409000" expanded="true" signature="5306:5459" placeholder="INSERT INTO `pc_temporary`... " />
+            <marker date="1469513409000" expanded="true" signature="6315:6585" placeholder="SELECT count... count" />
+            <marker date="1469513409000" expanded="true" signature="6315:6587" placeholder="SELECT count... count" />
+            <marker date="1469513409000" expanded="true" signature="6376:6436" placeholder="select count... missing_value" />
+            <marker date="1469513409000" expanded="true" signature="6376:6564" placeholder="select count... a_pc_temporary" />
           </folding>
         </state>
       </provider>
@@ -761,11 +793,25 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#64#0" expanded="true" />
-            <marker date="1468396858000" expanded="true" signature="2039:2255" placeholder="SELECT COUNT... pc_http_test" />
-            <marker date="1468396858000" expanded="true" signature="2502:2704" placeholder="SELECT COUNT... pc_web_browsing" />
-            <marker date="1468396858000" expanded="true" signature="3593:3751" placeholder="INSERT INTO `pc_temporary`... " />
-            <marker date="1468396858000" expanded="true" signature="4571:4627" placeholder="select count... missing_value" />
-            <marker date="1468396858000" expanded="true" signature="4571:4755" placeholder="select count... a_pc_temporary" />
+            <marker date="1469513409000" expanded="true" signature="827:834" placeholder="select phone... hefen_app_table" />
+            <marker date="1469513409000" expanded="true" signature="827:904" placeholder="select phone... phone_imei_time" />
+            <marker date="1469513409000" expanded="true" signature="1562:1602" placeholder="select phone... hefen_app_table" />
+            <marker date="1469513409000" expanded="true" signature="1919:1958" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:1980" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:1995" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2015" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2033" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2060" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2073" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2097" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2098" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="3791:4007" placeholder="SELECT COUNT... pc_http_test" />
+            <marker date="1469513409000" expanded="true" signature="4254:4456" placeholder="SELECT COUNT... pc_web_browsing" />
+            <marker date="1469513409000" expanded="true" signature="5306:5459" placeholder="INSERT INTO `pc_temporary`... " />
+            <marker date="1469513409000" expanded="true" signature="6315:6585" placeholder="SELECT count... count" />
+            <marker date="1469513409000" expanded="true" signature="6315:6587" placeholder="SELECT count... count" />
+            <marker date="1469513409000" expanded="true" signature="6376:6436" placeholder="select count... missing_value" />
+            <marker date="1469513409000" expanded="true" signature="6376:6564" placeholder="select count... a_pc_temporary" />
           </folding>
         </state>
       </provider>
@@ -1339,35 +1385,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/py_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/handleJsonFile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="e#43#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/New_Hefen_App.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3078">
-          <caret line="165" column="9" selection-start-line="1" selection-start-column="23" selection-end-line="165" selection-end-column="9" />
-          <folding>
-            <element signature="e#42#64#0" expanded="true" />
-            <marker date="1468396858000" expanded="true" signature="2039:2255" placeholder="SELECT COUNT... pc_http_test" />
-            <marker date="1468396858000" expanded="true" signature="2502:2704" placeholder="SELECT COUNT... pc_web_browsing" />
-            <marker date="1468396858000" expanded="true" signature="3593:3751" placeholder="INSERT INTO `pc_temporary`... " />
-            <marker date="1468396858000" expanded="true" signature="4571:4627" placeholder="select count... missing_value" />
-            <marker date="1468396858000" expanded="true" signature="4571:4755" placeholder="select count... a_pc_temporary" />
           </folding>
         </state>
       </provider>
@@ -1393,7 +1416,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/alterJsonFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
+        <state relative-caret-position="228">
           <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
           <folding>
             <element signature="e#43#52#0" expanded="true" />
@@ -1406,6 +1429,51 @@
         <state relative-caret-position="114">
           <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/py_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/pymysql/connections.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="754" column="8" selection-start-line="754" selection-start-column="8" selection-end-line="754" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/New_Hefen_App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding>
+            <element signature="e#42#64#0" expanded="true" />
+            <marker date="1469513409000" expanded="true" signature="827:834" placeholder="select phone... hefen_app_table" />
+            <marker date="1469513409000" expanded="true" signature="827:904" placeholder="select phone... phone_imei_time" />
+            <marker date="1469513409000" expanded="true" signature="1562:1602" placeholder="select phone... hefen_app_table" />
+            <marker date="1469513409000" expanded="true" signature="1919:1958" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:1980" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:1995" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2015" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2033" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2060" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2073" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2097" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="1919:2098" placeholder="update hefen... " />
+            <marker date="1469513409000" expanded="true" signature="3791:4007" placeholder="SELECT COUNT... pc_http_test" />
+            <marker date="1469513409000" expanded="true" signature="4254:4456" placeholder="SELECT COUNT... pc_web_browsing" />
+            <marker date="1469513409000" expanded="true" signature="5306:5459" placeholder="INSERT INTO `pc_temporary`... " />
+            <marker date="1469513409000" expanded="true" signature="6315:6585" placeholder="SELECT count... count" />
+            <marker date="1469513409000" expanded="true" signature="6315:6587" placeholder="SELECT count... count" />
+            <marker date="1469513409000" expanded="true" signature="6376:6436" placeholder="select count... missing_value" />
+            <marker date="1469513409000" expanded="true" signature="6376:6564" placeholder="select count... a_pc_temporary" />
+          </folding>
         </state>
       </provider>
     </entry>
