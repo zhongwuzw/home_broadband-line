@@ -141,7 +141,7 @@ def calculateIndicatorSum(indicatorName):
 
     try:
         with SourcePhoneconnection.cursor() as cursor:
-            sql = "SELECT count(*) as countSum,imei,phoneno,province,city FROM (select count(*) as countSum,imei,phoneno,province,city from " + indicatorName + " WHERE bandwidth_flag = 1 AND phoneno_flag = 1 AND province_flag = 1 AND region_flag = 1 GROUP BY file_path) as temp group by imei"
+            sql = "select count(*) as countSum,imei,phoneno,province,city from " + indicatorName + " WHERE bandwidth_flag = 1 AND phoneno_flag = 1 AND province_flag = 1 AND region_flag = 1 GROUP BY file_path"
             cursor.execute(sql)
             result = cursor.fetchall()
 
