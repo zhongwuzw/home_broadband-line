@@ -134,7 +134,7 @@ def executeResultInsertDatabase(phone_num,province,city,totalSum,imei):
     finally:
         destDatabase.close()
 
-def calculateIndicatorSum(indicatorName):
+def calculateIndicatorSum(indicatorName,threshold):
     SourcePhoneconnection = pymysql.connect(host='192.168.16.97', port=5050, user='gbase', password='gbase20110531',
                                                 db='aappreportdata_gps',
                                                 charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
@@ -149,7 +149,7 @@ def calculateIndicatorSum(indicatorName):
             testSucSet = set()
 
             for element in result:
-                if element['countSum'] > 0:
+                if element['countSum'] == threshold:
                     key = element['phoneno']+'_' + element['imei']
                     resultDic.setdefault(key, {})
                     resultDic[key].setdefault('testCount',0)
@@ -165,9 +165,9 @@ def calculateIndicatorSum(indicatorName):
 
 
 # 执行主函数
-(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('gps_http_test_new_201606')
-(videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_new_201606')
-(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_new_201606')
+(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('gps_http_test_new_201606',2)
+(videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_new_201606',2)
+(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_new_201606',5)
 
 #计算http下载
 for key in httpDownloadResultDic.keys():
