@@ -169,6 +169,10 @@ def calculateIndicatorSum(indicatorName,threshold):
 (videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_new_201606',2)
 (webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_new_201606',5)
 
+print httpDownloadResultDic
+print videoResultDic
+print webBrowsingResultDic
+
 #计算http下载
 for key in httpDownloadResultDic.keys():
     phone = key
