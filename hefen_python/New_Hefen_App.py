@@ -5,6 +5,9 @@ import os
 import datetime
 import time
 
+imeiDatabase = pymysql.connect(host='192.168.39.51', port=5151, user='gbase', password='gbase20110531',
+                               db='appreportdata',
+                               charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 #转时间戳
 def datetime_timestamp(dt):
     # dt为字符串
@@ -16,25 +19,16 @@ def datetime_timestamp(dt):
     return int(s)
 
 def getImeiValid(imei):
-    destDatabase = pymysql.connect(host='192.168.16.97', port=5050, user='gbase', password='gbase20110531',
-                                   db='aappreportdata_gps',
-                                   charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+    with imeiDatabase.cursor() as cursor:
+        sql = "select phone_number as phoneno FROM phone_imei_time where imei = '" + imei + "' order by time"
+        cursor.execute(sql)
+        result = cursor.fetchall()
 
-
-    try:
-        with destDatabase.cursor() as cursor:
-            sql = "select phoneno FROM phone_imei_time where imei = '" + imei + "' order by time"
-            cursor.execute(sql)
-            result = cursor.fetchall()
-
-            valid_phone = ''
-            if len(result) > 0:
-                element = result[0]
-                valid_phone = element['phoneno']
-            return (valid_phone,len(result))
-
-    finally:
-        destDatabase.close()
+        valid_phone = ''
+        if len(result) > 0:
+            element = result[0]
+            valid_phone = element['phoneno']
+        return (valid_phone, len(result))
 
 #计算Imei号
 def calculateImeiNum():
@@ -135,13 +129,13 @@ def executeResultInsertDatabase(phone_num,province,city,totalSum,imei):
         destDatabase.close()
 
 def calculateIndicatorSum(indicatorName,threshold):
-    SourcePhoneconnection = pymysql.connect(host='192.168.16.97', port=5050, user='gbase', password='gbase20110531',
-                                                db='aappreportdata_gps',
+    SourcePhoneconnection = pymysql.connect(host='192.168.39.51', port=5151, user='gbase', password='gbase20110531',
+                                                db='appreportdata',
                                                 charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
     try:
         with SourcePhoneconnection.cursor() as cursor:
-            sql = "select count(*) as countSum,imei,phoneno,province,city from " + indicatorName + " WHERE bandwidth_flag = 1 AND phoneno_flag = 1 AND province_flag = 1 AND region_flag = 1 GROUP BY file_path"
+            sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city from " + indicatorName + " WHERE bandwidth_flag = 1 AND phone_number_flag = 1 AND openBroadband_flag = 1 AND signal_flag = 1 AND operator_flag = 1 GROUP BY file_path"
             cursor.execute(sql)
             result = cursor.fetchall()
 
@@ -165,9 +159,9 @@ def calculateIndicatorSum(indicatorName,threshold):
 
 
 # 执行主函数
-(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('gps_http_test_new_201606',2)
-(videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_new_201606',2)
-(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_new_201606',5)
+(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('gps_http_test_new_201608',2)
+(videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_new_201608',1)
+(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_new_201608',5)
 
 print httpDownloadResultDic
 print videoResultDic
@@ -179,7 +173,7 @@ for key in httpDownloadResultDic.keys():
     province = httpDownloadResultDic[key]['province']
     city = httpDownloadResultDic[key]['city']
     httpDownload = httpDownloadResultDic[key]['testCount']
-    videoPlay = videoResultDic.get(key,{}).get('testCount',0)
+    videoPlay = videoResultDic.get(key,{}).get('testCount',0)/2
     webBrowsing = webBrowsingResultDic.get(key,{}).get('testCount',0)
 
     totalTest = min(httpDownload,videoPlay,webBrowsing)
@@ -198,7 +192,7 @@ for key in videoResultSet:
     province = videoResultDic[key]['province']
     city = videoResultDic[key]['city']
     httpDownload = 0
-    videoPlay = videoResultDic.get(key, {}).get('testCount', 0)
+    videoPlay = videoResultDic.get(key, {}).get('testCount', 0)/2
     webBrowsing = webBrowsingResultDic.get(key, {}).get('testCount', 0)
 
     totalTest = min(httpDownload, videoPlay, webBrowsing)
@@ -229,5 +223,7 @@ for key in webBrowsingResultSet:
         executeResultInsertDatabase(phone_final, province, city, totalTest, imei)
 
 calculateImeiNum()
+
+imeiDatabase.close()
 # n = os.system('/Users/zhongwu/Documents/workspace/test.sh 2014')
 # print n
