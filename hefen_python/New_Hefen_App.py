@@ -111,15 +111,15 @@ def getPCDataWithPhoneNum(phoneNum):
         connection.close()
 
 #将最终结果写入库中
-def executeResultInsertDatabase(phone_num,province,city,totalSum,imei):
+def executeResultInsertDatabase(phone_num,province,city,totalSum,imei,openBroadband_phone):
     destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
                                             db='test',
                                             charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
     try:
         with destDatabase.cursor() as cursor:
-            sql = "INSERT INTO `hefen_app_table` (`id`, `phoneno`, `province`, `city`, `imei`,`imei_num`,`phone_flag`, `test_times`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-            cursor.execute(sql,("0",phone_num,province,city,imei,"0","0",totalSum))
+            sql = "INSERT INTO `hefen_app_table` (`id`, `phoneno`, `province`, `city`, `imei`,`imei_num`,`phone_flag`, `test_times`,`openBroadband_phone`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            cursor.execute(sql,("0",phone_num,province,city,imei,"0","0",totalSum,openBroadband_phone))
             # sql = "INSERT INTO `app_temporary` (`id`, `phone_no`, `date`, `valid_times`, `http_times`, `video_times`, `browse_times`) VALUES (%s, %s, %s, %s, %s, %s, %s)"
             # cursor.execute(sql,("0",phone_num,array[4],array[0],array[1],array[2],array[3]))
 
@@ -135,7 +135,7 @@ def calculateIndicatorSum(indicatorName,threshold):
 
     try:
         with SourcePhoneconnection.cursor() as cursor:
-            sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city from " + indicatorName + " WHERE bandwidth_flag = 1 AND phone_number_flag = 1 AND openBroadband_flag = 1 AND signal_flag = 1 AND operator_flag = 1 GROUP BY file_path"
+            sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone from " + indicatorName + " WHERE bandwidth_flag = 1 AND phone_number_flag = 1 AND openBroadband_flag = 1 AND signal_flag = 1 AND operator_flag = 1 GROUP BY file_path"
             cursor.execute(sql)
             result = cursor.fetchall()
 
@@ -150,6 +150,7 @@ def calculateIndicatorSum(indicatorName,threshold):
                     resultDic[key]['testCount'] += 1
                     resultDic[key]['province'] = element['province']
                     resultDic[key]['city'] = element['city']
+                    resultDic[key]['openBroadband_phone'] = element['openBroadband_phone']
                     testSucSet.add(key)
 
             return (resultDic,testSucSet)
@@ -175,6 +176,7 @@ for key in httpDownloadResultDic.keys():
     httpDownload = httpDownloadResultDic[key]['testCount']
     videoPlay = videoResultDic.get(key,{}).get('testCount',0)/2
     webBrowsing = webBrowsingResultDic.get(key,{}).get('testCount',0)
+    openBroadband_phone = httpDownloadResultDic[key]['openBroadband_phone']
 
     totalTest = min(httpDownload,videoPlay,webBrowsing)
 
@@ -182,7 +184,7 @@ for key in httpDownloadResultDic.keys():
     if len(key_sep) > 1:
         phone_final = key_sep[0]
         imei = key_sep[1]
-        executeResultInsertDatabase(phone_final,province,city,totalTest,imei)
+        executeResultInsertDatabase(phone_final,province,city,totalTest,imei,openBroadband_phone)
 
 videoResultSet -= httpDownloadSet
 
@@ -194,6 +196,7 @@ for key in videoResultSet:
     httpDownload = 0
     videoPlay = videoResultDic.get(key, {}).get('testCount', 0)/2
     webBrowsing = webBrowsingResultDic.get(key, {}).get('testCount', 0)
+    openBroadband_phone = videoResultDic[key]['openBroadband_phone']
 
     totalTest = min(httpDownload, videoPlay, webBrowsing)
 
@@ -201,7 +204,7 @@ for key in videoResultSet:
     if len(key_sep) > 1:
         phone_final = key_sep[0]
         imei = key_sep[1]
-        executeResultInsertDatabase(phone_final, province, city, totalTest, imei)
+        executeResultInsertDatabase(phone_final, province, city, totalTest, imei, openBroadband_phone)
 
 webBrowsingResultSet -= videoResultSet
 webBrowsingResultSet -= httpDownloadSet
@@ -214,13 +217,14 @@ for key in webBrowsingResultSet:
     httpDownload = 0
     videoPlay = 0
     webBrowsing = webBrowsingResultDic.get(key, {}).get('testCount', 0)
+    openBroadband_phone = webBrowsingResultDic[key]['openBroadband_phone']
 
     totalTest = min(httpDownload, videoPlay, webBrowsing)
     key_sep = str(key).split('_')
     if len(key_sep) > 1:
         phone_final = key_sep[0]
         imei = key_sep[1]
-        executeResultInsertDatabase(phone_final, province, city, totalTest, imei)
+        executeResultInsertDatabase(phone_final, province, city, totalTest, imei, openBroadband_phone)
 
 calculateImeiNum()
 
