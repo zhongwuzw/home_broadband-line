@@ -1,0 +1,200 @@
+package com.qualitymap.service.impl;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.qualitymap.dao.OverviewKpiApiDao;
+import com.qualitymap.service.OverviewKpiApiService;
+import com.qualitymap.utils.UtilDate;
+
+/**
+ * 概览数据统计分析
+ * 
+ * @author：kxc
+ * @date：Apr 12, 2016
+ */
+public class OverviewKpiApiServiceImpl implements OverviewKpiApiService {
+
+	@Resource
+	private OverviewKpiApiDao kpiApiDao;
+	static Format fm = new DecimalFormat("#.##");
+
+
+	/**
+	 * 累计注册用户数及增长比
+	 */
+	@Override
+	public String getRegusernameNum(String month, String userName) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		if (!"".equals(userName)) {
+			String prmonth = UtilDate.getPreviousMonth(month);
+			List<Map<String, Object>> terList = kpiApiDao.getRegusernameNum(prmonth, month, userName);
+			String previousNum = "";
+			String toNum = "";
+
+			if(terList.size() == 1){
+				for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
+					Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+					if (month.equals(map.get("month"))) { //本月
+						if("null".equals(map.get("regusername_num"))){
+							toNum = "N/A";
+						}else{
+							toNum = map.get("regusername_num").toString();
+						}
+						dataJSON.put("percent", "N/A");
+						dataJSON.put("regusername_num", toNum);
+					} 
+					if (prmonth.equals(map.get("month"))) { //上月
+						if("null".equals(map.get("regusername_num"))){
+							previousNum = "N/A";
+						}else{
+							previousNum = map.get("regusername_num").toString();
+						}
+						dataJSON.put("percent", "-100%");
+						dataJSON.put("regusername_num", "N/A");
+					}
+				}
+			}else if(terList.size() == 0){
+				dataJSON.put("percent", "N/A");
+				dataJSON.put("regusername_num", "N/A");
+			}else{
+				for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
+					Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+					if(month.equals(map.get("month"))) {
+						if("null".equals(map.get("regusername_num"))){
+							toNum = "N/A";
+						}else{
+							toNum = map.get("regusername_num").toString();
+						}
+					}
+					if(prmonth.equals(map.get("month"))) {
+						if("null".equals(map.get("regusername_num"))){
+							previousNum="N/A";
+						}else{
+							previousNum = map.get("regusername_num").toString();
+						}
+					}
+				}
+
+				String percent = "";
+				if (previousNum!=null && toNum!=null&&!"N/A".equals(previousNum) && !"N/A".equals(toNum) ) {
+					double difValue = Double.valueOf(toNum) - Double.valueOf(previousNum);
+					if(Double.valueOf(previousNum)!=0){
+						percent = fm.format(Double.valueOf(difValue) / Double.valueOf(previousNum) * 100) + "%";
+					}else{
+						percent = "N/A";
+					}
+				} else {
+					percent = "N/A";
+				}
+
+				dataJSON.put("percent", percent);
+				dataJSON.put("regusername_num", toNum);
+			}
+			
+		} else {
+			dataJSON.put("percent", "");
+			dataJSON.put("regusername_num", "");
+		}
+
+		return dataJSON.toString();
+	}
+
+	/**
+	 * 累计用户数及增长比
+	 */
+	@Override
+	public String getCustomersNum(String month, String userName) {
+
+		JSONObject dataJSON = new JSONObject();
+
+		if (!"".equals(userName)) {
+			String prmonth = UtilDate.getPreviousMonth(month);
+			// month = month+","+prmonth;
+			List<Map<String, Object>> terList = kpiApiDao.getCustomersNum(prmonth, month, userName);
+
+			String previousNum = "";
+			String toNum = "";
+			if(terList.size() == 1){
+				for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
+					Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+					if (month.equals(map.get("month"))) { //本月
+						if("null".equals(map.get("customers_num"))){
+							toNum = "N/A";
+						}else{
+							toNum = map.get("customers_num").toString();
+						}
+						dataJSON.put("percent", "N/A");
+						dataJSON.put("customers_num", toNum);
+					} 
+					if (prmonth.equals(map.get("month"))) { //上月
+						if("null".equals(map.get("customers_num"))){
+							previousNum = "N/A";
+						}else{
+							previousNum = map.get("customers_num").toString();
+						}
+						dataJSON.put("percent", "-100%");
+						dataJSON.put("customers_num", "N/A");
+					}
+				}
+			}else if(terList.size() == 0){
+				dataJSON.put("percent", "N/A");
+				dataJSON.put("customers_num", "N/A");
+			}else{
+				for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
+					Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+					if (month.equals(map.get("month"))) {
+						if("null".equals(map.get("customers_num"))){
+							toNum = "N/A";
+						}else{
+							toNum = map.get("customers_num").toString();
+						}
+					} 
+					if (prmonth.equals(map.get("month"))) {
+						if("null".equals(map.get("customers_num"))){
+							previousNum = "N/A";
+						}else{
+							previousNum = map.get("customers_num").toString();
+						}
+					}
+				}
+
+				String percent = "";
+				if (previousNum!=null && toNum!=null&& !"N/A".equals(previousNum) && !"N/A".equals(toNum) ) {
+					double difValue = Double.valueOf(toNum) - Double.valueOf(previousNum);
+					if(Double.valueOf(previousNum)!=0){
+						percent = fm.format(Double.valueOf(difValue) / Double.valueOf(previousNum) * 100) + "%";
+					}else{
+						percent = "N/A";
+					}
+				} else {
+					percent = "N/A";
+				}
+
+				dataJSON.put("percent", percent);
+				dataJSON.put("customers_num", toNum);
+			}
+			
+		} else {
+			dataJSON.put("percent", "");
+			dataJSON.put("customers_num", "");
+		}
+
+		return dataJSON.toString();
+	}
+
+}
