@@ -85,4 +85,28 @@ public interface OverviewProvinceService {
 	 * @return String
 	 */
 	String getValidSampleNum(String month,String groupid,String broadType);
+	
+	/**
+	 * 获取业务质量上下月对比
+	 * @param month
+	 * @param permonth
+	 * @param groupid
+	 * @param broadband_type
+	 * @return
+	 */
+	String getServiceQualityCompare(String month,String groupid,String broadband_type);
+	
+	/**
+	 * 获取各类型的指标情况
+	 * @param parameter
+	 * @param month
+	 * @param groupid
+	 * @param broadband_type
+	 * @return
+	 */
+	String getKPIbyGroupid(String month,String groupid,String broadband_type );
+	
+	
+	
+	String getProvinceName(String groupid );
 }

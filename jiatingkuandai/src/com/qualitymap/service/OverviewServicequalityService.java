@@ -10,89 +10,30 @@ package com.qualitymap.service;
 public interface OverviewServicequalityService {
 	
 	/**
-	 * 获取上下月的平均时延
-	 * @param yearMonth
+	 * 获取用户指标统计
 	 * @param groupid
+	 * @param month
+	 * @param broadband_type
 	 * @return
-	 * @return String
 	 */
-	String getAvgDelay(String yearMonth,String groupid);
-	
-	/**
-	 * 获取上下月的时延达标率
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	String getDelayStandardRate(String yearMonth,String groupid);
-	
-	
-	/**
-	 * 获取上下月平均页面元素打开成功率
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	String getAvgPageSuccessRate(String yearMonth,String groupid);
+	String getUserIndicator(String groupid, String month, String broadband_type);
 
-	/**
-	 * 获取上下月页面元素打开达标率
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	String getPageStandardRate(String yearMonth,String groupid);
 	
 	/**
-	 * 获取上下月的90%用户页面时延
-	 * @param yearMonth
+	 * 获取地域级别用户指标统计
 	 * @param groupid
+	 * @param month
+	 * @param broadband_type
 	 * @return
-	 * @return String
 	 */
-	String getTop90PageDelay(String yearMonth,String groupid);
+	String getTerritoryData(String groupid, String month, String broadband_type);
 	
 	/**
-	 * 获取上下月90%用户页面元素打开成功率
-	 * @param yearMonth
+	 * 分地域指标统计
 	 * @param groupid
+	 * @param month
+	 * @param broadband_type
 	 * @return
-	 * @return String
 	 */
-	String getTop90PageSuccessRate(String yearMonth,String groupid);
-	/**
-	 * 获取上下月平均ping时延(MS)
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	String getAvgPingDelay(String yearMonth,String groupid);
-	/**
-	 * 获取上下月90%用户ping时延
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	String getTop90PingDelay(String yearMonth,String groupid);
-	/**
-	 * 获取上下月ping丢包率
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	String getPingLossRate(String yearMonth,String groupid);
-	/**
-	 * 获取上下月90%用户ping丢包率
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	String getTop90PingLossRate(String yearMonth,String groupid);
+	String getCityData(String groupid, String month, String broadband_type);
 }

@@ -211,5 +211,57 @@ public class OverviewProvinceAction extends BaseAction {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * 获取质量分析 即 上下月中数据的增减情况
+	 * 
+	 * @return void
+	 */
+	public void getServiceQualityCompare() {
+		try {
+			String month = this.servletRequest.getParameter("month");
+			String groupid = this.servletRequest.getParameter("groupid");  //页面获取指定groupid
+			String broadType = this.servletRequest.getParameter("broadType");
+			String ping_test_times = provinceService.getServiceQualityCompare(month, groupid, broadType);
+			printWriter(ping_test_times);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * 获取质量分析 即 上下月中数据的增减情况
+	 * 
+	 * @return void
+	 */
+	public void getKPIbyGroupid() {
+		try {
+			String month = this.servletRequest.getParameter("month");
+			String groupid = this.servletRequest.getParameter("groupid");  //页面获取指定groupid
+			String broadType = this.servletRequest.getParameter("broadType");
+			//String parameter = this.servletRequest.getParameter("parameter");
+			String ping_test_times = provinceService.getKPIbyGroupid( month, groupid, broadType);
+			printWriter(ping_test_times);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * 获取质量分析 即 上下月中数据的增减情况
+	 * 
+	 * @return void
+	 */
+	public void getProvinceName() {
+		try {
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);  //页面获取指定groupid
+			//String groupid = "50093,50094";
+			String groupname = provinceService.getProvinceName(groupid);
+			printWriter(groupname);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
 
 }

@@ -132,5 +132,10 @@ public class ServicequalityGroupidHttpDownloadDaoImpl implements ServicequalityG
 		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
 		return queryList;
 	}
+	
+	
+	
+	
+	
 
 }

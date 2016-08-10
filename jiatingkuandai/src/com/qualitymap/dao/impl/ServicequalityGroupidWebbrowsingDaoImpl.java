@@ -90,7 +90,7 @@ public class ServicequalityGroupidWebbrowsingDaoImpl implements ServicequalityGr
 	@Override
 	public List<Map<String, Object>> getPageBrowseSuccess(String yearMonth, String lastMonth, String groupid) {
 		
-		String sql = "SELECT a.probetype, round(thisdata,0)*100 thisdata, round(lastdata,0)*100 lastdata FROM ( SELECT DISTINCT probetype FROM servicequality_groupid_webbrowsing WHERE `month` in (" + yearMonth + "," + lastMonth
+		String sql = "SELECT a.probetype, round(thisdata,2)*100 thisdata, round(lastdata,2)*100 lastdata FROM ( SELECT DISTINCT probetype FROM servicequality_groupid_webbrowsing WHERE `month` in (" + yearMonth + "," + lastMonth
 				+ ") AND groupid IN (" + groupid + ") ) a " +
 						"LEFT JOIN ( SELECT sum( page_test_times * success_rate ) / SUM(page_test_times) thisdata, probetype, 	MONTH FROM servicequality_groupid_webbrowsing " +
 						"where month='"+yearMonth+"' AND groupid IN (" + groupid + ") GROUP BY `month`, probetype ) b ON a.probetype = b.probetype " +

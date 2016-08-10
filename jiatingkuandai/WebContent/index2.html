@@ -25,6 +25,9 @@
   	.bg-red table thead tr th{line-height:25px;text-align:center}
   	.bg-red table tbody tr td{border:solid #FFFFFF; border-width:0px 0px 2px 0px;line-height:27px;text-align:center}
   	
+  	.bg-orange table thead tr th{line-height:25px;text-align:center}
+  	.bg-orange table tbody tr td{border:solid #FFFFFF; border-width:0px 0px 2px 0px;line-height:27px;text-align:center}
+  	
   	.bg-aqua table thead tr th{line-height:25px;text-align:center}
   	.bg-aqua table tbody tr td{border:solid #FFFFFF; border-width:0px 0px 2px 0px;line-height:27px;text-align:center}
   	
@@ -34,11 +37,15 @@
   	.bg-olive table thead tr th{line-height:25px;text-align:center}
   	.bg-olive table tbody tr td{border:solid #FFFFFF; border-width:0px 0px 2px 0px;line-height:27px;text-align:center}
   	
-  	.bg-darkgreen table thead tr th{line-height:25px;text-align:center}
-  	.bg-darkgreen table tbody tr td{border:solid #FFFFFF; border-width:0px 0px 2px 0px;line-height:27px;text-align:center}
+  	.bg-purple table thead tr th{line-height:25px;text-align:center}
+  	.bg-purple table tbody tr td{border:solid #FFFFFF; border-width:0px 0px 2px 0px;line-height:27px;text-align:center}
+	
+	
+  	.bg-teal table thead tr th{line-height:25px;text-align:center}
+  	.bg-teal table tbody tr td{border:solid #FFFFFF; border-width:0px 0px 2px 0px;line-height:27px;text-align:center}
   	
-  	.bg-lightgreen table thead tr th{line-height:25px;text-align:center}
-  	.bg-lightgreen table tbody tr td{border:solid #FFFFFF; border-width:0px 0px 2px 0px;line-height:27px;text-align:center}
+  	.bg-teal-active table thead tr th{line-height:25px;text-align:center}
+  	.bg-teal-active table tbody tr td{border:solid #FFFFFF; border-width:0px 0px 2px 0px;line-height:27px;text-align:center}
   		
   	.bg-gray table thead tr th{line-height:25px;text-align:center}
   	.bg-gray table tbody tr td{border:solid #FFFFFF; border-width:0px 0px 2px 0px;line-height:27px;text-align:center}
@@ -47,7 +54,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
   <header class="main-header">
-    <a href="index2.html" class="logo">
+    <a onclick="targetFunc('index2.html','indexhead')" id="indexhead" href="" class="logo">
       <span class="logo-mini">家宽</span>
 	   <span class="logo-lg"><img src="images/jiating.png"></span>
     </a>
@@ -136,14 +143,14 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a onclick="targetProbeFunc('chartjs_yw.html','ywAndroid','Android')" href="" id="ywAndroid">
-            	<i class="fa fa-circle-o"></i>Android</a></li>
+            	<i class="fa fa-circle-o"></i>安卓</a></li>
             <li ><a onclick="targetProbeFunc('chartjs_yw.html','ywiOS','iOS')" href="" id="ywiOS">
-            	<i class="fa fa-circle-o"></i>iOS</a></li>
+            	<i class="fa fa-circle-o"></i>苹果</a></li>
             <li ><a onclick="targetProbeFunc('chartjs_yw.html','ywPC','PC')" href="" id="ywPC">
-            	<i class="fa fa-circle-o"></i>PC</a></li>
-          <!--   <li ><a onclick="targetProbeFunc('chartjs_yw.html','ywQianrushi','嵌入式')" href="" id="ywQianrushi">
-            	<i class="fa fa-circle-o"></i>嵌入式</a></li> -->
-<!--             <li ><a onclick="targetProbeFunc('chartjs_yw.html','ywRuantanzhen','软探针')" href="" id="ywRuantanzhen">
+            	<i class="fa fa-circle-o"></i>桌面</a></li>
+            <!-- <li ><a onclick="targetProbeFunc('chartjs_yw.html','ywQianrushi','嵌入式')" href="" id="ywQianrushi">
+            	<i class="fa fa-circle-o"></i>嵌入式</a></li>
+            <li ><a onclick="targetProbeFunc('chartjs_yw.html','ywRuantanzhen','软探针')" href="" id="ywRuantanzhen">
             	<i class="fa fa-circle-o"></i>软探针</a></li> -->
           </ul>
         </li>
@@ -188,7 +195,7 @@
           <div class="info-box">
             <span class="info-box-icon bg-aqua"><i><img src="images/accumulativnum.png"></i></span>
             <div class="info-box-content">
-              <span class="info-box-text">累计用户数</span>
+              <span class="info-box-text">累计参测用户</span>
               <span class="info-box-number" id="accumulativnum">0<small></small></span>
             </div>
           </div>
@@ -199,17 +206,17 @@
 
             <div class="info-box-content">
               <!-- <span class="info-box-text">账户总数</span> --> 
-              <span class="info-box-text">本月新增用户数</span>
+              <span class="info-box-text">本月新增参测用户</span>
               <span class="info-box-number" id="orgnum">0</span>
             </div>
           </div>
         </div>
         
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-md-3 col-sm-6 col-xs-12" id="provincenumDiv" style="display:none">
           <div class="info-box">
             <span class="info-box-icon bg-red"><i><img src="images/provincenum.png"></i></span>
             <div class="info-box-content">
-              <span class="info-box-text">本月参测省份数</span>
+              <span class="info-box-text">本月参测省份</span>
               <span class="info-box-number" id="provincenum">0</span>
             </div>
           </div>
@@ -218,14 +225,15 @@
         <div class="clearfix visible-sm-block"></div>
 
         
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-md-3 col-sm-6 col-xs-12" id="thismonthTesttimesDiv" >
           <div class="info-box">
             <span class="info-box-icon bg-yellow"><i><img src="images/thismonthTesttimes.png"></i></span>
 
             <div class="info-box-content">
               <!-- <span class="info-box-text">渠道数</span>
               <span class="info-box-number" id="channelnum">0</span> -->
-              <span class="info-box-text">本月测试次数</span>
+              <!-- <span class="info-box-text">本月测试次数</span> -->
+              <span class="info-box-text">本月有效样本</span>
               <span class="info-box-number" id="thismonthTesttimes">0</span>
             </div>
           </div>
@@ -236,7 +244,7 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">用户数趋势</h3>
+              <h3 class="box-title">新增及累计参测用户</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -291,14 +299,14 @@
                   <div class="description-block border-right" id="customers_num">
                     <span class="description-percentage"></span>
                     <h5 class="description-header">0</h5>
-                    <span class="description-text">累计使用用户数</span>
+                    <span class="description-text">使用用户数</span>
                   </div>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                   <div class="description-block" id="newlyincrease_num">
                     <span class="description-percentage"></span>
                     <h5 class="description-header">0</h5>
-                    <span class="description-text">上月测试次数</span>
+                    <span class="description-text">上月有效样本数</span>
                   </div>
                 </div>
               </div>
@@ -309,9 +317,9 @@
 
       <div class="row">
         <div class="col-md-8">
-          <div class="box box-success">
+          <div class="box box-success" style="display:none">
             <div class="box-header with-border">
-              <h3 class="box-title">本月各省测试次数</h3>
+              <h3 class="box-title">本月家庭宽带各省有效样本数</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -361,7 +369,8 @@
                   <th>时间</th>
                   <th>省份</th>
                   <th>宽带种类</th>
-                  <th>测试次数</th>
+                  <!-- <th>测试次数</th> -->
+                  <th>有效样本</th>
                   <th>详情</th>
                 </tr>
                 </thead>
@@ -377,13 +386,21 @@
           <div class="info-box bg-yellow">
             <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
             	<thead>
+            		<tr>
+            			<td colspan="5" style="line-height: 25px;font-weight:bold;">&nbsp;&nbsp;互联网下载-速率(Mbps)</td>
+            		</tr>
             		<tr >
-            			<th style="width: 20%">下载速率(Mbps)</th>
+            			<!-- <th style="width: 20%">下载速率(Mbps)</th> 
             			<th style="width: 20%">Android</th>
             			<th style="width: 15%">iOS</th>
             			<th style="width: 15%">PC</th>
-<!--             			<th style="width: 15%">嵌入式</th>
-            			<th style="width: 15%">软探针</th> -->
+            			<th style="width: 15%">嵌入式</th>
+            			<th style="width: 15%">软探针</th>  -->
+            			<th style="width: 25%"></th>
+            			<th style="width: 25%">安卓</th>
+            			<th style="width: 25%">苹果</th>
+            			<th style="width: 25%">桌面</th>
+            			
             		</tr>
             	</thead>
             	<tbody>
@@ -392,7 +409,7 @@
             			<td>/</td>
             			<td>/</td>
             			<td>/</td>
-<!--             			<td>/</td>
+            			<!-- <td>/</td>
             			<td>/</td> -->
             		</tr>
             		<tr>
@@ -400,52 +417,23 @@
             			<td>/</td>
             			<td>/</td>
             			<td>/</td>
-<!--             			<td>/</td>
+            			<!-- <td>/</td>
             			<td>/</td> -->
             		</tr>
             	</tbody>
             </table>
           </div>
-          <!-- <div class="info-box bg-green">
-            <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
-            	<thead>
-            		<tr >
-            			<th style="width: 20%">上传速率(Mbps)</th>
-            			<th style="width: 20%">Android</th>
-            			<th style="width: 15%">iOS</th>
-            			<th style="width: 15%">PC</th>
-            			<th style="width: 15%">嵌入式</th>
-            			<th style="width: 15%">软探针</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-            		<tr>
-            			<td>本月</td>
-            			<td>/</td>
-            			<td>/</td>
-            			<td>/</td>
-            			<td>/</td>
-            			<td>/</td>
-            		</tr>
-            		<tr>
-            			<td>上月</td>
-            			<td>/</td>
-            			<td>/</td>
-            			<td>/</td>
-            			<td>/</td>
-            			<td>/</td>
-            		</tr>
-            	</tbody>
-            </table>
-          </div> -->
-          <div class="info-box bg-red">
+          <div class="info-box bg-teal">
             <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
             	 <thead>
+            	 <tr>
+            			<td colspan="5" style="line-height: 25px;font-weight:bold;">&nbsp;&nbsp;互联网下载-成功率(%)</td>
+            		</tr>
             		<tr >
-            			<th style="width: 20%">页面时延(ms)</th>
-            			<th style="width: 20%">Android</th>
-            			<th style="width: 15%">iOS</th>
-            			<th style="width: 15%">PC</th>
+            			<th style="width: 25%"></th>
+            			<th style="width: 25%">安卓</th>
+            			<th style="width: 25%">苹果</th>
+            			<th style="width: 25%">桌面</th>
 <!--             			<th style="width: 15%">嵌入式</th>
             			<th style="width: 15%">软探针</th> -->
             		</tr>
@@ -470,14 +458,122 @@
             	</tbody> 
             </table>
           </div>
+          <div class="info-box bg-red">
+            <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
+            	 <thead>
+            	 	<tr>
+            			<td colspan="5" style="line-height: 25px;font-weight:bold;">&nbsp;&nbsp;网页浏览-100%加载时延(ms)</td>
+            		</tr>
+            		<tr >
+            			<th style="width: 25%"></th>
+            			<th style="width: 25%">安卓</th>
+            			<th style="width: 25%">苹果</th>
+            			<th style="width: 25%">桌面</th>
+            		<!-- 	<th style="width: 15%">嵌入式</th>
+            			<th style="width: 15%">软探针</th> -->
+            		</tr>
+            	</thead>
+            	<tbody>
+            		 <tr>
+            			<td>本月</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<td>/</td>
+            		<!-- 	<td>/</td>
+            			<td>/</td> -->
+            		</tr>
+            		<tr>
+            			<td>上月</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<td>/</td>
+            		<!-- 	<td>/</td>
+            			<td>/</td> -->
+            		</tr> 
+            	</tbody> 
+            </table>
+          </div>
+          <div class="info-box bg-orange">
+            <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
+            	 <thead>
+            	 <tr>
+            			<td colspan="5" style="line-height: 25px;font-weight:bold;">&nbsp;&nbsp;网页浏览-90%加载时延(ms)</td>
+            		</tr>
+            		<tr >
+            			<th style="width: 25%"></th>
+            			<th style="width: 25%">安卓</th>
+            			<th style="width: 25%">苹果</th>
+            			<th style="width: 25%">桌面</th>
+            			<!-- <th style="width: 15%">嵌入式</th>
+            			<th style="width: 15%">软探针</th> -->
+            		</tr>
+            	</thead>
+            	<tbody>
+            		 <tr>
+            			<td>本月</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<!-- <td>/</td>
+            			<td>/</td> -->
+            		</tr>
+            		<tr>
+            			<td>上月</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<!-- <td>/</td>
+            			<td>/</td> -->
+            		</tr> 
+            	</tbody> 
+            </table>
+          </div>
           <div class="info-box bg-aqua">
             <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
             	 <thead>
+            	 <tr>
+            			<td colspan="5" style="line-height: 25px;font-weight:bold;">&nbsp;&nbsp;网页浏览-100%页面元素打开成功率(%)</td>
+            		</tr>
             		<tr >
-            			<th style="width: 20%">页面成功率(%)</th>
-            			<th style="width: 20%">Android</th>
-            			<th style="width: 15%">iOS</th>
-            			<th style="width: 15%">PC</th>
+            			<th style="width: 25%"></th>
+            			<th style="width: 25%">安卓</th>
+            			<th style="width: 25%">苹果</th>
+            			<th style="width: 25%">桌面</th>
+            			<!-- <th style="width: 15%">嵌入式</th>
+            			<th style="width: 15%">软探针</th> -->
+            		</tr>
+            	</thead>
+            	<tbody>
+            		 <tr>
+            			<td>本月</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<!-- <td>/</td>
+            			<td>/</td> -->
+            		</tr>
+            		<tr>
+            			<td>上月</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<td>/</td>
+            		<!-- 	<td>/</td>
+            			<td>/</td> -->
+            		</tr> 
+            	</tbody> 
+            </table>
+          </div>
+          <div class="info-box bg-gray">
+            <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
+            	 <thead>
+            	 <tr>
+            			<td colspan="5" style="line-height: 25px;font-weight:bold;">&nbsp;&nbsp;网页浏览-访问成功率(%)</td>
+            		</tr>
+            		<tr >
+            			<th style="width: 25%"></th>
+            			<th style="width: 25%">安卓</th>
+            			<th style="width: 25%">苹果</th>
+            			<th style="width: 25%">桌面</th>
 <!--             			<th style="width: 15%">嵌入式</th>
             			<th style="width: 15%">软探针</th> -->
             		</tr>
@@ -505,12 +601,15 @@
           <div class="info-box bg-light-blue">
             <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
             	<thead>
+            	<tr>
+            			<td colspan="5" style="line-height: 25px;font-weight:bold;">&nbsp;&nbsp;H5视频-播放平均时延(ms)</td>
+            		</tr>
             		<tr >
-            			<th style="width: 20%">视频时延(ms)</th>
-            			<th style="width: 20%">Android</th>
-            			<th style="width: 15%">iOS</th>
-            			<th style="width: 15%">PC</th>
-<!--             			<th style="width: 15%">嵌入式</th>
+            			<th style="width: 25%"></th>
+            			<th style="width: 25%">安卓</th>
+            			<th style="width: 25%">苹果</th>
+            			<th style="width: 25%">桌面</th>
+            			<!-- <th style="width: 15%">嵌入式</th>
             			<th style="width: 15%">软探针</th> -->
             		</tr>
             	</thead>
@@ -520,7 +619,7 @@
             			<td>/</td>
             			<td>/</td>
             			<td>/</td>
-<!--             			<td>/</td>
+            		<!-- 	<td>/</td>
             			<td>/</td> -->
             		</tr>
             		<tr>
@@ -528,7 +627,7 @@
             			<td>/</td>
             			<td>/</td>
             			<td>/</td>
-<!--             			<td>/</td>
+            			<!-- <td>/</td>
             			<td>/</td> -->
             		</tr>
             	</tbody>
@@ -537,12 +636,15 @@
           <div class="info-box bg-olive">
             <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
             	<thead>
+            	<tr>
+            			<td colspan="5" style="line-height: 25px;font-weight:bold;">&nbsp;&nbsp;H5视频-卡顿次数(次)</td>
+            		</tr>
             		<tr >
-            			<th style="width: 20%">视频卡顿次数(次)</th>
-            			<th style="width: 20%">Android</th>
-            			<th style="width: 15%">iOS</th>
-            			<th style="width: 15%">PC</th>
-<!--             			<th style="width: 15%">嵌入式</th>
+            			<th style="width: 25%"></th>
+            			<th style="width: 25%">安卓</th>
+            			<th style="width: 25%">苹果</th>
+            			<th style="width: 25%">桌面</th>
+            			<!-- <th style="width: 15%">嵌入式</th>
             			<th style="width: 15%">软探针</th> -->
             		</tr>
             	</thead>
@@ -552,7 +654,7 @@
             			<td>/</td>
             			<td>/</td>
             			<td>/</td>
-<!--             			<td>/</td>
+            			<!-- <td>/</td>
             			<td>/</td> -->
             		</tr>
             		<tr>
@@ -560,31 +662,34 @@
             			<td>/</td>
             			<td>/</td>
             			<td>/</td>
-<!--             			<td>/</td>
+            			<!-- <td>/</td>
             			<td>/</td> -->
             		</tr>
             	</tbody>
             </table>
           </div>
-          <div class="info-box bg-gray">
+		  <div class="info-box bg-purple">
             <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
-            	 <thead>
+            	<thead>
+            	<tr>
+            			<td colspan="5" style="line-height: 25px;font-weight:bold;">&nbsp;&nbsp;H5视频-缓冲时长占比(%)</td>
+            		</tr>
             		<tr >
-            			<th style="width: 20%">网页浏览访问成功率(%)</th>
-            			<th style="width: 20%">Android</th>
-            			<th style="width: 15%">iOS</th>
-            			<th style="width: 15%">PC</th>
-<!--             			<th style="width: 15%">嵌入式</th>
+            			<th style="width: 25%"></th>
+            			<th style="width: 25%">安卓</th>
+            			<th style="width: 25%">苹果</th>
+            			<th style="width: 25%">桌面</th>
+            			<!-- <th style="width: 15%">嵌入式</th>
             			<th style="width: 15%">软探针</th> -->
             		</tr>
             	</thead>
             	<tbody>
-            		 <tr>
+            		<tr>
             			<td>本月</td>
             			<td>/</td>
             			<td>/</td>
             			<td>/</td>
-<!--             			<td>/</td>
+            			<!-- <td>/</td>
             			<td>/</td> -->
             		</tr>
             		<tr>
@@ -592,80 +697,87 @@
             			<td>/</td>
             			<td>/</td>
             			<td>/</td>
-<!--             			<td>/</td>
-            			<td>/</td> -->
-            		</tr> 
-            	</tbody> 
-            </table>
-          </div>
-         <div class="info-box bg-lightgreen">
-            <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
-            	 <thead>
-            		<tr >
-            			<th style="width: 20%">视频播放成功率(%)</th>
-            			<th style="width: 20%">Android</th>
-            			<th style="width: 15%">iOS</th>
-            			<th style="width: 15%">PC</th>
-<!--             			<th style="width: 15%">嵌入式</th>
-            			<th style="width: 15%">软探针</th> -->
-            		</tr>
-            	</thead>
-            	<tbody>
-            		 <tr>
-            			<td>本月</td>
-            			<td>/</td>
-            			<td>/</td>
-            			<td>/</td>
-<!--             			<td>/</td>
+            			<!-- <td>/</td>
             			<td>/</td> -->
             		</tr>
-            		<tr>
-            			<td>上月</td>
-            			<td>/</td>
-            			<td>/</td>
-            			<td>/</td>
-<!--             			<td>/</td>
-            			<td>/</td> -->
-            		</tr> 
-            	</tbody> 
-            </table>
-          </div>
-                   <div class="info-box bg-darkgreen">
-            <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
-            	 <thead>
-            		<tr >
-            			<th style="width: 20%">http下载成功率(%)</th>
-            			<th style="width: 20%">Android</th>
-            			<th style="width: 15%">iOS</th>
-            			<th style="width: 15%">PC</th>
-<!--             			<th style="width: 15%">嵌入式</th>
-            			<th style="width: 15%">软探针</th> -->
-            		</tr>
-            	</thead>
-            	<tbody>
-            		 <tr>
-            			<td>本月</td>
-            			<td>/</td>
-            			<td>/</td>
-            			<td>/</td>
-<!--             			<td>/</td>
-            			<td>/</td> -->
-            		</tr>
-            		<tr>
-            			<td>上月</td>
-            			<td>/</td>
-            			<td>/</td>
-            			<td>/</td>
-<!--             			<td>/</td>
-            			<td>/</td> -->
-            		</tr> 
-            	</tbody> 
+            	</tbody>
             </table>
           </div>
           
+         <div class="info-box bg-teal-active">
+            <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
+            	 <thead>
+            	 <tr>
+            			<td colspan="5" style="line-height: 25px;font-weight:bold;">&nbsp;&nbsp;H5视频-播放成功率(%)</td>
+            		</tr>
+            		<tr >
+            			<th style="width: 25%"></th>
+            			<th style="width: 25%">安卓</th>
+            			<th style="width: 25%">苹果</th>
+            			<th style="width: 25%">桌面</th>
+<!--             			<th style="width: 15%">嵌入式</th>
+            			<th style="width: 15%">软探针</th> -->
+            		</tr>
+            	</thead>
+            	<tbody>
+            		 <tr>
+            			<td>本月</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<td>/</td>
+<!--             			<td>/</td>
+            			<td>/</td> -->
+            		</tr>
+            		<tr>
+            			<td>上月</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<td>/</td>
+<!--             			<td>/</td>
+            			<td>/</td> -->
+            		</tr> 
+            	</tbody> 
+            </table>
+          </div>
+                   
+		  <div class="info-box bg-green">
+            <table style="width: 100%;border-collapse:separate;border-spacing:0px;">
+            	<thead>
+            		<tr>
+            			<td colspan="5" style="line-height: 25px;font-weight:bold;">&nbsp;&nbsp;互联网上传-速率(Mbps)</td>
+            		</tr>
+            		<tr >
+            			<th style="width: 25%"></th>
+            			<th style="width: 25%">安卓</th>
+            			<th style="width: 25%">苹果</th>
+            			<th style="width: 25%">桌面</th>
+            			<!-- <th style="width: 15%">嵌入式</th>
+            			<th style="width: 15%">软探针</th> -->
+            		</tr>
+            	</thead>
+            	<tbody>
+            		<tr>
+            			<td>本月</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<!-- <td>/</td>
+            			<td>/</td> -->
+            		</tr>
+            		<tr>
+            			<td>上月</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<td>/</td>
+            			<!-- <td>/</td>
+            			<td>/</td> -->
+            		</tr>
+            	</tbody>
+            </table>
+          </div>
           <div class="box box-default">
             <div class="box-header with-border">
-              <h3 class="box-title">本月平台测试次数占比</h3>
+              <h3 class="box-title">本月各用户群有效样本数占比</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -705,178 +817,7 @@
       <b></b> 
     </div>
     <strong></strong> 
-    
   </footer>
-
-  <aside class="control-sidebar control-sidebar-dark">
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript::;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <i class="menu-icon fa fa-user bg-yellow"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-                <p>New phone +1(800)555-1234</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                <p>nora@example.com</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                <p>Execution time 5 seconds</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript::;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="label label-danger pull-right">70%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <h4 class="control-sidebar-subheading">
-                Update Resume
-                <span class="label label-success pull-right">95%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <h4 class="control-sidebar-subheading">
-                Laravel Integration
-                <span class="label label-warning pull-right">50%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <h4 class="control-sidebar-subheading">
-                Back End Framework
-                <span class="label label-primary pull-right">68%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Allow mail redirect
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Other sets of options are available
-            </p>
-          </div>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Expose author name in posts
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Allow the user to show his name in blog posts
-            </p>
-          </div>
-
-          <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Show me as online
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Turn off notifications
-              <input type="checkbox" class="pull-right">
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Delete chat history
-              <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-            </label>
-          </div>
-        </form>
-      </div>
-    </div>
-  </aside>
   <div class="control-sidebar-bg"></div>
 
 </div>
@@ -908,7 +849,7 @@
       "ordering": true,
       "info": true,
       "autoWidth": false,
-      "aaSorting": [[ 0, "desc" ]] //设置第一列倒序排
+      "aaSorting": [[ 0, "desc" ],[ 3, "desc" ]] //设置第一列倒序排
     });
     
   });

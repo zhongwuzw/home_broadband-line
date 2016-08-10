@@ -323,10 +323,16 @@ public class OverviewKpiServiceImpl implements OverviewKpiService {
 			for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
 				Map<String, Object> map = (Map<String, Object>) iterator.next();
 
+				String totalnum = map.get("newly_increase_num")+"";
+				String pro = map.get("newly_increase_num")+"";
 				if (month.equals(map.get("month"))) {
-					toNum = Double.valueOf(map.get("newly_increase_num").toString());
+					if(!totalnum.equals("null")){
+						toNum = Double.valueOf(totalnum);
+					}
 				} else if (prmonth.equals(map.get("month"))) {
-					previousNum = Double.valueOf(map.get("newly_increase_num").toString());
+					if(!pro.equals("null")){
+						previousNum = Double.valueOf(pro);
+					}
 				}
 			}
 

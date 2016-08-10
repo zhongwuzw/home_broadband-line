@@ -16,8 +16,8 @@
 		scope="prototype"></bean>
 	<bean name="terminalOsAction" class="com.qualitymap.action.TerminalOsAction"
 		scope="prototype"></bean>
-	<!-- <bean name="overviewServicequalityAction" class="com.qualitymap.action.OverviewServicequalityAction"
-		scope="prototype"></bean> -->
+	<bean name="overviewServicequalityAction" class="com.qualitymap.action.OverviewServicequalityAction"
+		scope="prototype"></bean>
 	<bean name="networkOperatorAction" class="com.qualitymap.action.NetworkOperatorAction"
 		scope="prototype"></bean>
 	<bean name="networkTyperAction" class="com.qualitymap.action.NetworkTypeAction"
@@ -51,9 +51,9 @@
 		
 	<!-- Spring管理Struts2的Interceptor -->
 
-	<!-- <bean name="overviewServicequalityService"
+	<bean name="overviewServicequalityService"
 		class="com.qualitymap.service.impl.OverviewServicequalityServiceImpl">
-	</bean> -->
+	</bean>
 	<bean name="provinceService"
 		class="com.qualitymap.service.impl.OverviewProvinceServiceImpl">
 	</bean>
@@ -101,9 +101,9 @@
 	<bean name="provinceDao" class="com.qualitymap.dao.impl.OverviewProvinceDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<!-- <bean name="overviewServicequalityDao" class="com.qualitymap.dao.impl.OverviewServicequalityDaoImpl">
+	<bean name="overviewServicequalityDao" class="com.qualitymap.dao.impl.OverviewServicequalityDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
-	</bean> -->
+	</bean>
 	<!-- <bean name="servicequalityDao"
 		class="com.qualitymap.dao.impl.OverviewServicequalityProvinceDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />

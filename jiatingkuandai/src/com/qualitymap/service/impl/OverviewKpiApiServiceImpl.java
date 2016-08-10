@@ -42,35 +42,68 @@ public class OverviewKpiApiServiceImpl implements OverviewKpiApiService {
 			String previousNum = "";
 			String toNum = "";
 
-			for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
-				Map<String, Object> map = (Map<String, Object>) iterator.next();
+			if(terList.size() == 1){
+				for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
+					Map<String, Object> map = (Map<String, Object>) iterator.next();
 
-				if(month.equals(map.get("month"))) {
-					if("null".equals(map.get("regusername_num"))){
-						toNum = "N/A";
-					}else{
-						toNum = map.get("regusername_num").toString();
+					if (month.equals(map.get("month"))) { //本月
+						if("null".equals(map.get("regusername_num"))){
+							toNum = "N/A";
+						}else{
+							toNum = map.get("regusername_num").toString();
+						}
+						dataJSON.put("percent", "N/A");
+						dataJSON.put("regusername_num", toNum);
+					} 
+					if (prmonth.equals(map.get("month"))) { //上月
+						if("null".equals(map.get("regusername_num"))){
+							previousNum = "N/A";
+						}else{
+							previousNum = map.get("regusername_num").toString();
+						}
+						dataJSON.put("percent", "-100%");
+						dataJSON.put("regusername_num", "N/A");
 					}
 				}
-				if(prmonth.equals(map.get("month"))) {
-					if("null".equals(map.get("regusername_num"))){
-						previousNum="N/A";
-					}else{
-						previousNum = map.get("regusername_num").toString();
+			}else if(terList.size() == 0){
+				dataJSON.put("percent", "N/A");
+				dataJSON.put("regusername_num", "N/A");
+			}else{
+				for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
+					Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+					if(month.equals(map.get("month"))) {
+						if("null".equals(map.get("regusername_num"))){
+							toNum = "N/A";
+						}else{
+							toNum = map.get("regusername_num").toString();
+						}
+					}
+					if(prmonth.equals(map.get("month"))) {
+						if("null".equals(map.get("regusername_num"))){
+							previousNum="N/A";
+						}else{
+							previousNum = map.get("regusername_num").toString();
+						}
 					}
 				}
-			}
 
-			String percent = "";
-			if (previousNum!=null && toNum!=null&&!"N/A".equals(previousNum) && !"N/A".equals(toNum) ) {
-				double difValue = Double.valueOf(toNum) - Double.valueOf(previousNum);
-				percent = fm.format(Double.valueOf(difValue) / Double.valueOf(previousNum) * 100) + "%";
-			} else {
-				percent = "N/A";
-			}
+				String percent = "";
+				if (previousNum!=null && toNum!=null&&!"N/A".equals(previousNum) && !"N/A".equals(toNum) ) {
+					double difValue = Double.valueOf(toNum) - Double.valueOf(previousNum);
+					if(Double.valueOf(previousNum)!=0){
+						percent = fm.format(Double.valueOf(difValue) / Double.valueOf(previousNum) * 100) + "%";
+					}else{
+						percent = "N/A";
+					}
+				} else {
+					percent = "N/A";
+				}
 
-			dataJSON.put("percent", percent);
-			dataJSON.put("regusername_num", toNum);
+				dataJSON.put("percent", percent);
+				dataJSON.put("regusername_num", toNum);
+			}
+			
 		} else {
 			dataJSON.put("percent", "");
 			dataJSON.put("regusername_num", "");
@@ -94,36 +127,68 @@ public class OverviewKpiApiServiceImpl implements OverviewKpiApiService {
 
 			String previousNum = "";
 			String toNum = "";
+			if(terList.size() == 1){
+				for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
+					Map<String, Object> map = (Map<String, Object>) iterator.next();
 
-			for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
-				Map<String, Object> map = (Map<String, Object>) iterator.next();
-
-				if (month.equals(map.get("month"))) {
-					if("null".equals(map.get("customers_num"))){
-						toNum = "N/A";
-					}else{
-						toNum = map.get("customers_num").toString();
-					}
-				} 
-				if (prmonth.equals(map.get("month"))) {
-					if("null".equals(map.get("customers_num"))){
-						previousNum = "N/A";
-					}else{
-						previousNum = map.get("customers_num").toString();
+					if (month.equals(map.get("month"))) { //本月
+						if("null".equals(map.get("customers_num"))){
+							toNum = "N/A";
+						}else{
+							toNum = map.get("customers_num").toString();
+						}
+						dataJSON.put("percent", "N/A");
+						dataJSON.put("customers_num", toNum);
+					} 
+					if (prmonth.equals(map.get("month"))) { //上月
+						if("null".equals(map.get("customers_num"))){
+							previousNum = "N/A";
+						}else{
+							previousNum = map.get("customers_num").toString();
+						}
+						dataJSON.put("percent", "-100%");
+						dataJSON.put("customers_num", "N/A");
 					}
 				}
-			}
+			}else if(terList.size() == 0){
+				dataJSON.put("percent", "N/A");
+				dataJSON.put("customers_num", "N/A");
+			}else{
+				for (Iterator iterator = terList.iterator(); iterator.hasNext();) {
+					Map<String, Object> map = (Map<String, Object>) iterator.next();
 
-			String percent = "";
-			if (previousNum!=null && toNum!=null&& !"N/A".equals(previousNum) && !"N/A".equals(toNum) ) {
-				double difValue = Double.valueOf(toNum) - Double.valueOf(previousNum);
-				percent = fm.format(Double.valueOf(difValue) / Double.valueOf(previousNum) * 100) + "%";
-			} else {
-				percent = "N/A";
-			}
+					if (month.equals(map.get("month"))) {
+						if("null".equals(map.get("customers_num"))){
+							toNum = "N/A";
+						}else{
+							toNum = map.get("customers_num").toString();
+						}
+					} 
+					if (prmonth.equals(map.get("month"))) {
+						if("null".equals(map.get("customers_num"))){
+							previousNum = "N/A";
+						}else{
+							previousNum = map.get("customers_num").toString();
+						}
+					}
+				}
 
-			dataJSON.put("percent", percent);
-			dataJSON.put("customers_num", toNum);
+				String percent = "";
+				if (previousNum!=null && toNum!=null&& !"N/A".equals(previousNum) && !"N/A".equals(toNum) ) {
+					double difValue = Double.valueOf(toNum) - Double.valueOf(previousNum);
+					if(Double.valueOf(previousNum)!=0){
+						percent = fm.format(Double.valueOf(difValue) / Double.valueOf(previousNum) * 100) + "%";
+					}else{
+						percent = "N/A";
+					}
+				} else {
+					percent = "N/A";
+				}
+
+				dataJSON.put("percent", percent);
+				dataJSON.put("customers_num", toNum);
+			}
+			
 		} else {
 			dataJSON.put("percent", "");
 			dataJSON.put("customers_num", "");

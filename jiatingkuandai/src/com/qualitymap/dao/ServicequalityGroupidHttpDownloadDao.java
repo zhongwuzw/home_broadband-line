@@ -3,6 +3,8 @@ package com.qualitymap.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.transform.Transformers;
+
 /**
  * 
  * @author kongxiangchun
@@ -58,5 +60,9 @@ public interface ServicequalityGroupidHttpDownloadDao {
 	 * @return List<Map<String,Object>>
 	 */
 	List<Map<String, Object>> getDownloadRateOrder(String thismonth,String premonth,String groupid,String probetype);
+	
+
+	
+	
 	
 }

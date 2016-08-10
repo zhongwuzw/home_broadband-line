@@ -70,7 +70,20 @@
   	oriXOpen.call(this, method, url, asncFlag, user, password);
   };
 
-
+  $.ajax({
+	  type : "post",  
+      async : false, //同步执行  
+      url:'provincequalitymap/getProvinceName',
+      data : {key:_authkey,apiKey:apiKey},  
+      dataType : "json", //返回数据形式为json  
+      success : function(res) { 
+    	  nationwideOrProvince = res.groupname;
+      },  
+      error : function(errorMsg) {  
+    	  alert("全国/省份--返回数据出错！");
+      }  
+});
+  
 //饼图颜色集合定义
 var pie_color = [
         {color: "#f56954",highlight: "#f56954"}, //red
@@ -84,10 +97,15 @@ var pie_color = [
         {color: "#D2D6DE",highlight: "#D2D6DE"}, //灰色
         {color: "#3c8dbc",highlight: "#3c8dbc"}, 
         {color: "#FDA7FE",highlight: "#FDA7FE"},
-        
-        
         {color: "#FF570F",highlight: "#FF570F"},
-        {color: "#A7A600",highlight: "#A7A600"}
+        {color: "#A7A600",highlight: "#A7A600"}, 
+        {color: "#99FFCC",highlight: "#99FFCC"},
+        
+        {color: "#669966",highlight: "#669966"},
+        {color: "#663300",highlight: "#663300"},
+        {color: "#003300",highlight: "#003300"},
+        {color: "#FFFF99",highlight: "#FFFF99"},
+        {color: "#7FFFD4",highlight: "#7FFFD4"} //Aquamarine
     ];
 
 //barClass集合定义

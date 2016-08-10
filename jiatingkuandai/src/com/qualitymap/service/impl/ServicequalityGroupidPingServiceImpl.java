@@ -335,8 +335,8 @@ public class ServicequalityGroupidPingServiceImpl implements ServicequalityGroup
 
 			if (avgDelayList.size() > 0) {
 				Map<String, Object> map = avgDelayList.get(0);
-				String ping_avg_delay = map.get("ping_avg_delay").toString();
-				String ping_loss_rate = map.get("ping_loss_rate").toString();
+				String ping_avg_delay = map.get("ping_avg_delay")+"";
+				String ping_loss_rate = map.get("ping_loss_rate")+"";
 
 				if (ping_avg_delay.contains("-")) {
 					avg_delay = "减少" + Math.abs(Double.parseDouble(ping_avg_delay));

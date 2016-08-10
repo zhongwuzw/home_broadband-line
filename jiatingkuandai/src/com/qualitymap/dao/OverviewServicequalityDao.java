@@ -3,115 +3,61 @@ package com.qualitymap.dao;
 import java.util.List;
 import java.util.Map;
 
-import com.qualitymap.vo.OverviewServicequality;
-
 public interface OverviewServicequalityDao {
 
 	/**
-	 * 获取上下月的平均时延
-	 * 
-	 * @param yearMonth
+	 * 获取用户指标统计
 	 * @param groupid
+	 * @param month
+	 * @param broadband_type
 	 * @return
-	 * @return String
 	 */
-	List<Map<String, Object>> getAvgDelay(String yearMonth, String lastMonth, String groupid);
-
-	/**
-	 * 获取上下月的时延达标率
-	 * 
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	List<Map<String, Object>> getDelayStandardRate(String yearMonth, String lastMonth, String groupid);
-
-	/**
-	 * 获取上下月平均页面元素打开成功率
-	 * 
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	List<Map<String, Object>> getAvgPageSuccessRate(String yearMonth, String lastMonth, String groupid);
-
-	/**
-	 * 获取上下月页面元素打开达标率
-	 * 
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	List<Map<String, Object>> getPageStandardRate(String yearMonth, String lastMonth, String groupid);
-
-	void savequality(OverviewServicequality serquality);
-
-	void deletequality(OverviewServicequality serquality);
-
-	List<OverviewServicequality> findquality();
-
-	void updatequality(OverviewServicequality serquality);
+	List<Map<String, Object>> getHttpDownloadUserIndicator(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getHttpDownloadSuccessUserIndicator(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getHttpUploadUserIndicator(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getVideoProportionUserIndicator(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getVideoDelayUserIndicator(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getVideoCache_countUserIndicator(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getVideoPaly_successUserIndicator(String groupid, String month, String broadband_type);
+	//List<Map<String, Object>> getVideoUserIndicator(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getWebbrowsingAvgdelayUserIndicator(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getWebbrowsingninetydelayUserIndicator(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getWebbrowsingsuccessUserIndicator(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getWebbrowsingVisitSuccessRate(String groupid, String month, String broadband_type);
+	
 	
 	/**
-	 * 获取上下月的90%用户页面时延
-	 * 
-	 * @param yearMonth
+	 * 获取地域级指标数据统计
 	 * @param groupid
+	 * @param month
+	 * @param broadband_type
 	 * @return
-	 * @return String
 	 */
-	List<Map<String, Object>> getTop90PageDelay(String yearMonth, String lastMonth, String groupid);
+	List<Map<String, Object>> getTerritoryHttpDownload(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getTerritoryHttpUpload(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getTerritoryVideo(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getTerritoryWebbrowsing(String groupid, String month, String broadband_type);
+	
+	
 	
 	/**
-	 * 获取上下月90%用户页面元素打开成功率
-	 * 
-	 * @param yearMonth
+	 * 获取分地域指标统计
 	 * @param groupid
+	 * @param month
+	 * @param broadband_type
 	 * @return
-	 * @return String
 	 */
-	List<Map<String, Object>> getTop90PageSuccessRate(String yearMonth, String lastMonth, String groupid);
+	List<Map<String, Object>> getCityrateHttpdownload(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getCitysuccessHttpdownload(String groupid, String month, String broadband_type);
 	
-	/**
-	 * 获取上下月平均ping时延(MS)
-	 * 
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	List<Map<String, Object>> getAvgPingDelay(String yearMonth, String lastMonth, String groupid);
+	List<Map<String, Object>> getCityNinetyDelayWebbrowsing(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getCityAvgDelayWebbrowsing(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getCityPageSuccessRateWebbrowsing(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getCitySuccessWebbrowsing(String groupid, String month, String broadband_type);
 	
-	/**
-	 * 获取上下月90%用户ping时延
-	 * 
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	List<Map<String, Object>> getTop90PingDelay(String yearMonth, String lastMonth, String groupid);
+	List<Map<String, Object>> getCityVideoDelayVideo(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getCitycacheCountVideo(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getCityPlaySuccessVideo(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getCityBufferproportionVideo(String groupid, String month, String broadband_type);
 	
-	/**
-	 * 获取上下月ping丢包率
-	 * 
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	List<Map<String, Object>> getPingLossRate(String yearMonth, String lastMonth, String groupid);
-	
-	/**
-	 * 获取上下月90%用户ping丢包率
-	 * 
-	 * @param yearMonth
-	 * @param groupid
-	 * @return
-	 * @return String
-	 */
-	List<Map<String, Object>> getTop90PingLossRate(String yearMonth, String lastMonth, String groupid);
 }

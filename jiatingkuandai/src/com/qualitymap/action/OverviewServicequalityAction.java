@@ -16,160 +16,62 @@ public class OverviewServicequalityAction extends BaseAction {
 	private OverviewServicequalityService overviewServicequalityService;
 
 	/**
-	 * 获取平均时延上下月数据
+	 * 根据时间查询本月的测试次数
+	 * 
+	 * @return void
 	 */
-	public void getAvgDelay() {
+	public void getUserIndicator() {
 
 		try {
-			String yearMonth = this.servletRequest.getParameter("month");
-			String uuid = this.servletRequest.getParameter("key");
-			String groupid = this.getUserGroup(uuid);
-			String avgdata = overviewServicequalityService.getAvgDelay(yearMonth, groupid);
-			printWriter(avgdata);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 
-	}
-
-	/**
-	 * 获取时延达标率上下月数据
-	 */
-	public void getDelayStandardRate() {
-
-		try {
-			String yearMonth = this.servletRequest.getParameter("month");
-			String uuid = this.servletRequest.getParameter("key");
-			String groupid = this.getUserGroup(uuid);
-			String msg = overviewServicequalityService.getDelayStandardRate(yearMonth, groupid);
-			printWriter(msg);
+			String month = this.servletRequest.getParameter("month");
+			/*
+			 * String uuid = this.servletRequest.getParameter("key"); String
+			 * groupid = this.getUserGroup(uuid);
+			 */
+			String groupid = this.servletRequest.getParameter("groupid");
+			String broadband_type = this.servletRequest.getParameter("broadband_type");
+			String datajson = overviewServicequalityService.getUserIndicator(groupid, month, broadband_type);
+			printWriter(datajson);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * 平均页面元素打开成功率上下月数据
+	 * 获取地域级别用户指标统计
+	 * 
+	 * @return void
 	 */
-	public void getAvgPageSuccessRate() {
+	public void getTerritoryData() {
+
 		try {
-			String yearMonth = this.servletRequest.getParameter("month");
-			String uuid = this.servletRequest.getParameter("key");
-			String groupid = this.getUserGroup(uuid);
-			String msg = overviewServicequalityService.getAvgPageSuccessRate(yearMonth, groupid);
-			printWriter(msg);
+
+			String month = this.servletRequest.getParameter("month");
+			String groupid = this.servletRequest.getParameter("groupid");
+			String broadband_type = this.servletRequest.getParameter("broadband_type");
+			String datajson = overviewServicequalityService.getTerritoryData(groupid, month, broadband_type);
+			printWriter(datajson);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * 页面元素打开达标率上下月数据
+	 * 分地域指标统计
 	 */
-	public void getPageStandardRate() {
+	public void getCityData() {
 
 		try {
-			String yearMonth = this.servletRequest.getParameter("month");
-			String uuid = this.servletRequest.getParameter("key");
-			String groupid = this.getUserGroup(uuid);
-			String msg = overviewServicequalityService.getPageStandardRate(yearMonth, groupid);
-			printWriter(msg);
+
+			String month = this.servletRequest.getParameter("month");
+			String groupid = this.servletRequest.getParameter("groupid");
+			String broadband_type = this.servletRequest.getParameter("broadband_type");
+			String datajson = overviewServicequalityService.getCityData(groupid, month, broadband_type);
+			printWriter(datajson);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	/**
-	 * 获取90%用户页面时延上下月数据
-	 */
-	public void getTop90PageDelay() {
-
-		try {
-			String yearMonth = this.servletRequest.getParameter("month");
-			String uuid = this.servletRequest.getParameter("key");
-			String groupid = this.getUserGroup(uuid);
-			String msg = overviewServicequalityService.getTop90PageDelay(yearMonth, groupid);
-			printWriter(msg);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * 90%用户页面元素打开成功率上下月数据
-	 */
-	public void getTop90PageSuccessRate() {
-
-		try {
-			String yearMonth = this.servletRequest.getParameter("month");
-			String uuid = this.servletRequest.getParameter("key");
-			String groupid = this.getUserGroup(uuid);
-			String msg = overviewServicequalityService.getTop90PageSuccessRate(yearMonth, groupid);
-			printWriter(msg);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * 平均ping时延(MS)上下月数据
-	 */
-	public void getAvgPingDelay() {
-
-		try {
-			String yearMonth = this.servletRequest.getParameter("month");
-			String uuid = this.servletRequest.getParameter("key");
-			String groupid = this.getUserGroup(uuid);
-			String msg = overviewServicequalityService.getAvgPingDelay(yearMonth, groupid);
-			printWriter(msg);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	/**
-	 * 90%用户ping时延上下月数据
-	 */
-	public void getTop90PingDelay() {
-
-		try {
-			String yearMonth = this.servletRequest.getParameter("month");
-			String uuid = this.servletRequest.getParameter("key");
-			String groupid = this.getUserGroup(uuid);
-			String msg = overviewServicequalityService.getTop90PingDelay(yearMonth, groupid);
-			printWriter(msg);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	/**
-	 * ping丢包率上下月数据
-	 */
-	public void getPingLossRate() {
-
-		try {
-			String yearMonth = this.servletRequest.getParameter("month");
-			String uuid = this.servletRequest.getParameter("key");
-			String groupid = this.getUserGroup(uuid);
-			String msg = overviewServicequalityService.getPingLossRate(yearMonth, groupid);
-			printWriter(msg);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	/**
-	 * 90%用户ping丢包率上下月数据
-	 */
-	public void getTop90PingLossRate() {
-
-		try {
-			String yearMonth = this.servletRequest.getParameter("month");
-			String uuid = this.servletRequest.getParameter("key");
-			String groupid = this.getUserGroup(uuid);
-			String msg = overviewServicequalityService.getTop90PingLossRate(yearMonth, groupid);
-			printWriter(msg);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 }

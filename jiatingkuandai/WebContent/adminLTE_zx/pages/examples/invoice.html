@@ -111,12 +111,12 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a onclick="targetProbeFunc('../../../chartjs_yw.html','ywAndroid','Android')" href="" id="ywAndroid">
-            	<i class="fa fa-circle-o"></i>Android</a></li>
+            	<i class="fa fa-circle-o"></i>安卓</a></li>
             <li ><a onclick="targetProbeFunc('../../../chartjs_yw.html','ywiOS','iOS')" href="" id="ywiOS">
-            	<i class="fa fa-circle-o"></i>iOS</a></li>
+            	<i class="fa fa-circle-o"></i>苹果</a></li>
             <li ><a onclick="targetProbeFunc('../../../chartjs_yw.html','ywPC','PC')" href="" id="ywPC">
-            	<i class="fa fa-circle-o"></i>PC</a></li>
-<!--             <li ><a onclick="targetProbeFunc('../../../chartjs_yw.html','ywQianrushi','嵌入式')" href="" id="ywQianrushi">
+            	<i class="fa fa-circle-o"></i>桌面</a></li>
+           <!--  <li ><a onclick="targetProbeFunc('../../../chartjs_yw.html','ywQianrushi','嵌入式')" href="" id="ywQianrushi">
             	<i class="fa fa-circle-o"></i>嵌入式</a></li>
             <li ><a onclick="targetProbeFunc('../../../chartjs_yw.html','ywRuantanzhen','软探针')" href="" id="ywRuantanzhen">
             	<i class="fa fa-circle-o"></i>软探针</a></li> -->
@@ -156,15 +156,7 @@
         <li class="active">测试报告</li>
       </ol>
     </section>
-
-    <div class="pad margin no-print">
-      <div class="callout callout-info" style="margin-bottom: 0!important;">
-        <h4><i class="fa fa-info"></i> 注意:</h4>
-        该页底部有打印按钮，点击可打印
-      </div>
-    </div>
-
-    <section class="invoice">
+    <section class="invoice" id="export">
       <!-- title row -->
       <div class="row">
         <div class="col-xs-12">
@@ -203,117 +195,109 @@
           <b>数据来源:</b> PC 、手机 、嵌入式 -->
         </div>
       </div>
-
+	  <div><strong>一、本月测试概览</strong></div> 
+	  <div id="urlDiv"></div>
       <div class="row">
         <div class="col-xs-12 table-responsive">
-          <table class="table table-striped" id="cityTable">
+          <table class="table table-striped" id="cityInfoTable">
             <thead>
             <tr>
-              <th>城市</th>
-              <th>样本数</th>
-              <th>用例数</th>
-              <th>测试结果</th>
-			  <th></th>
+              <th>地域</th>
+              <th>样本总数</th>
+              <th>有效样本</th>
+              <th>互联网下载</th>
+              <th>网页浏览</th>
+              <th>H5视频</th>
             </tr>
             </thead>
             <tbody>
-            	<!-- <tr>
-                <td>城市xx</td>
-                <td>2650</td>
-				<td>3</td>
-                <td>PC页面时延为12ms,Android页面时延为10ms,iOS页面时延为9ms;<br>
-                	PC页面成功率为12%,Android页面成功率为10%,iOS页面成功率为9%;<br>
-                	PC下载速率为12ms,Android下载速率为10ms,iOS下载速率为9ms;<br>
-                	PC上传速率为12ms,Android上传速率为10ms,iOS上传速率为9ms;<br>
-                	PC视频时延为12ms,Android视频时延为10ms,iOS视频时延为9ms;<br>
-                	PC视频卡顿次数为12ms,Android视频卡顿次数为10ms,iOS视频卡顿次数为9ms;<br>
-                </td>
-              </tr> -->
             </tbody>
           </table>
         </div>
       </div>
-	  <div class="row">
+      <div><strong>二、分用户指标统计</strong></div> 
+      <div id="userByprobeType">
+       <!-- <div class="row">
+       
         <div class="col-xs-12 table-responsive">
-          <table class="table table-striped" id="probetypeTable">
+          <div>1、安卓智能终端用户</div>
+           <table class="table table-striped" >
             <thead>
             <tr>
-              <th>探针</th>
-              <th>样本数</th>
-              <th>用例数</th>
-              <th>测试结果</th>
-			  <th></th>
+              <th>指标</th>
+              <th>有效样本</th>
+              <th>95分位值</th>
+              <th>85分位值</th>
+              <th>75分位值</th>
+              <th>平均</th>
             </tr>
             </thead>
             <tbody>
-            	<!-- <tr>
-                <td>iOS</td>
-                <td>2650</td>
-				<td>3</td>
-                <td>页面时延为12ms,页面成功率为10%,下载速率为xxx,上传速率为xxx,视频时延为23ms,视频卡顿次数为2;<br>
-                </td>
-              </tr>
-              <tr>
-                <td>android</td>
-                <td>250</td>
-				<td>30</td>
-                <td>页面时延为12ms,页面成功率为10%,下载速率为xxx,上传速率为xxx,视频时延为23ms,视频卡顿次数为2;<br>
-                </td>
-              </tr> -->
+            	
             </tbody>
           </table>
-        </div>
-      </div>
+        </div> 
+      </div> -->
+     </div>
+      
+     <div><strong>三、分地域指标统计</strong></div> 
+      <div id="userBycity">
+      	 <!-- <div class="row">
+	        <div class="col-xs-12 table-responsive">
+	         <div>1、松原</div>
+	         <div>互联网下载</div>
+	           <table class="table table-striped" >
+	            <thead>
+	            <tr>
+	              <th>指标</th>
+	              <th>用户类型</th>
+	              <th>95分位值</th>
+	              <th>85分位值</th>
+	              <th>75分位值</th>
+	              <th>平均</th>
+	            </tr>
+	            </thead>
+	            <tbody>
+	            	
+	            </tbody>
+	          </table>
+	        </div> 
+      	</div>  -->
+     </div>
+      
       <div class="row">
         <div class="col-xs-6">
-          <!-- <p class="lead">质量分析:</p>
+           <strong>四、质量分析:</strong>
           
           <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
             
-          </p> -->
+          </p> 
         </div>
         <div class="col-xs-6">
-          <!-- <p class="lead">本月指标情况</p>
+           <strong>五、本月典型指标（85分位值）</strong>
 
           <div class="table-responsive">
             <table class="table">
               <tr>
-                <th style="width:25%">指标名称</th>
-				<th style="width:25%">本省结果</th>
-				<th style="width:25%">全国排名</th>
-				<th style="width:25%">本期最优结果</th>
+                <th style="width:20%">指标名称</th>
+                <th style="width:20%">用户类型</th>
+				<th style="width:20%">本省</th>
+				<th style="width:20%">排名</th>
+				<th style="width:20%">最优</th>
               </tr>
-              <tr>
-                <td>平均下载速率</td>
-                <td>10.34</td>
-				<td>1</td>
-                <td>10.34</td>
-              </tr>
-              <tr>
-                <td>平均网页成功率</td>
-                <td>5.80</td>
-				<td>2</td>
-                <td>10.34</td>
-              </tr>
-              <tr>
-                <td>平均时延</td>
-                <td>265.24</td>
-				<td>3</td>
-                <td>10.34</td>
-              </tr>
+              
             </table>
-          </div> -->
+          </div> 
         </div>
       </div>
 
       <div class="row no-print">
         <div class="col-xs-12">
-          <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+          <!-- <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a> 
           
-          </button>
-          <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
-            <i class="fa fa-download"></i> 下载
-          </button>
+          <a type="button" class="btn btn-primary pull-right" style="margin-right: 5px;" onclick="showResultText()">
+            <i class="fa fa-download"></i>下载 
+          </a> -->
         </div>
       </div>
     </section>
@@ -325,179 +309,6 @@
     </div>
     
   </footer>
-
-  <aside class="control-sidebar control-sidebar-dark">
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript::;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <i class="menu-icon fa fa-user bg-yellow"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                <p>New phone +1(800)555-1234</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                <p>nora@example.com</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                <p>Execution time 5 seconds</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript::;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="label label-danger pull-right">70%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <h4 class="control-sidebar-subheading">
-                Update Resume
-                <span class="label label-success pull-right">95%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <h4 class="control-sidebar-subheading">
-                Laravel Integration
-                <span class="label label-warning pull-right">50%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript::;">
-              <h4 class="control-sidebar-subheading">
-                Back End Framework
-                <span class="label label-primary pull-right">68%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Allow mail redirect
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Other sets of options are available
-            </p>
-          </div>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Expose author name in posts
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Allow the user to show his name in blog posts
-            </p>
-          </div>
-
-          <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Show me as online
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Turn off notifications
-              <input type="checkbox" class="pull-right">
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Delete chat history
-              <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-            </label>
-          </div>
-        </form>
-      </div>
-    </div>
-  </aside>
   <div class="control-sidebar-bg"></div>
 </div>
 
@@ -506,6 +317,7 @@
 <script src="../../plugins/fastclick/fastclick.js"></script>
 <script src="../../dist/js/app.min.js"></script>
 <script src="../../dist/js/demo.js"></script>
+<script type="text/javascript" src="../../../html2canvas/html2canvas.js"></script>
 <!--  <script src="../../../common/common.js"></script>   -->
 
 <script>
@@ -524,6 +336,7 @@ reportProvinceName = decodeURI(reportProvinceName,"UTF-8");
 
 reportBroadType = location.search.getQueryString("reportBroadType"); //报告宽带类型
 reportBroadType = decodeURI(reportBroadType,"UTF-8");
+reportBroadType = reportBroadType.substr(0,reportBroadType.length-1);
 
 groupid = location.search.getQueryString("groupid"); //groupid
 //  
@@ -593,6 +406,55 @@ function loginout(){
     	
     }
 }
+
+function showResultText(){  
+	 var dataUrl;//simpleSumID  export
+	 var sResult=prompt("请输入生成pdf文件名:","");
+	if(sResult!=null)
+	{
+	        if(sResult.indexOf('.pdf')>-1){
+	  html2canvas(document.getElementById("export"),{
+		                       	 allowTaint: true,
+		                       	 taintTest: false,
+		                       	 onrendered: function(canvas) {
+		                           	 canvas.id = "mycanvas";
+			                         //document.body.appendChild(canvas);
+			                         //生成base64图片数据
+		                          	 dataUrl = canvas.toDataURL();
+		                          	$.ajax({
+											  type : "post",  
+										      async : false, //同步执行  
+										      url:'../../../creatPdfImport/creatPdfImport',
+										      data: { dataUrl: dataUrl, fileName:sResult,randoms: Math.random()},
+										      text: "Updating...",  
+								              dataType: "json",
+										      success : function(data) { 
+										    	  if(data.filestatus == "ok"){
+										    		  alert("生成pdf文件成功！");
+										    	  }else if(data.filestatus == "FileNotFound"){
+										    		  alert("生成pdf文件失败，找不到pdf文件路径！(No such file or directory)");
+										    	  }else if(data.filestatus == "jpgnotfound"){
+										    		  alert("jpg(No such file or directory)");
+										    	  }else{
+										    		  
+										    	  }
+										         
+										      },  
+										      error : function(errorMsg) { 
+										    	  alert("您要生成的文件格式不对");
+									      }  
+									});
+							    	 
+							    }
+							});
+	        }else{
+				 alert("要生成pdf文件名格式不对");
+	        }
+	}else{
+	        alert("要生成pdf文件名不能为空！");
+	}
+}
+
 </script>
 
 <!-- 页面数据源接口 begin -->
@@ -601,6 +463,12 @@ var myDate = new Date();
 var year = myDate.getFullYear().toString();
 var monthh = myDate.getMonth()+1;  
 var dayy = myDate.getDate();
+if (monthh < 10 && monthh != 0) {
+	monthh = '0' + monthh;
+}
+if (dayy < 10 && dayy != 0) {
+	dayy = '0' + dayy;
+}
 var thisDate = year+"/"+monthh+"/"+dayy;//Date:当前年月
 
 //reportBroadType = reportBroadType.substring(0,reportBroadType.length-3);
@@ -615,7 +483,10 @@ if (nextmonth == 13) {
     year2 = parseInt(year2) + 1;
     nextmonth = 1;
 }
-var nextYMonth = year2.toString()+"/"+nextmonth.toString()+"/1"; //发布日期:下个月的第一天
+if (nextmonth < 10 && nextmonth != 0) {
+	nextmonth = '0' + nextmonth;
+}
+var nextYMonth = year2.toString()+"/"+nextmonth.toString()+"/01"; //发布日期:下个月的第一天
 
 var lastmonth = parseInt(month) - 1;
 var yearlast = reportDate.substr(0,4);//获取当前日期的年份
@@ -630,21 +501,26 @@ var preYMonth = yearlast.toString()+lastmonth.toString();
 
 var regionNum ="";  //地区数量
 var cityList=""    ;    //城市列表
-var validSampleNum = ""; //有效样本数
-var thisMonthSample = ""; //本月样本总数
+var validSampleNum = "0"; //有效样本数
+var thisMonthSample = "0"; //本月样本总数
 var validSampleRate =""; //样本有效率：有效率=有效样本数/本月样本总数
 var lastMonthSample = ""; //上月样本总数
 var userNumByGroupid = ""; //用户
 var terminalNumByGroupid = ""; //终端
 var rpDatasource = "";  //报告的数据来源
+var casecountNum = ""; //表中的用例数
+var totalURLNum = "0"; //本轮测试共覆盖URL地址数
+var internetDownURLNum = "0" ;//互联网下载覆盖URL地址数
+var webbrowseURLNum = "0"; //网页浏览覆盖URL地址数
+var h5VideoURLNum = "0"; //H5视频覆盖URL地址数
 
 $("h2[class='page-header']").append(
-		" <i class='fa fa-globe'></i> "+reportProvinceName + reportBroadType+"家庭宽带品质监测报告("+reportDate+")"+
-		" <small class='pull-right'>Date: "+thisDate+"</small>"
+		" <i class='fa fa-globe'></i> "+reportProvinceName + reportBroadType+"M家庭宽带品质监测报告("+reportDate+")"+
+		" <small class='pull-right'>发布日期: "+thisDate+"</small>"
 );
    
 //有效样本
- $.ajax({  
+ /* $.ajax({  
     type : "post",  
     async : false, //同步执行  
     url:'../../../provincequalitymap/getValidSampleNum',
@@ -656,11 +532,11 @@ $("h2[class='page-header']").append(
     error : function(errorMsg) {  
         alert("有效样本--返回数据出错");  
     }  
-}); 
+}); */ 
 
 
 //样本有效率
- $.ajax({  
+ /* $.ajax({  
     type : "post",  
     async : false, //同步执行  
     url:'../../../provincequalitymap/getTotalSampleNum',
@@ -677,20 +553,20 @@ $("h2[class='page-header']").append(
     error : function(errorMsg) {  
         alert("样本有效率--返回数据出错");  
     }  
-});  
+});  */ 
 
-//上月样本数
+//上月有效样本数
  $.ajax({  
     type : "post",  
     async : false, //同步执行  
-    url:'../../../provincequalitymap/getTotalSampleNum',
+    url:'../../../provincequalitymap/getValidSampleNum',
     data : {month:preYMonth,groupid:groupid,broadType:reportBroadType},  
     dataType : "json", //返回数据形式为json  
     success : function(result) {  
-    	lastMonthSample = parseInt(result.new_sample_num);
+    	lastMonthSample = parseInt(result.ping_test_times);
     },  
     error : function(errorMsg) {  
-        alert("上月样本数--返回数据出错");  
+        alert("上月有效样本数--返回数据出错");  
     }  
 });   
  
@@ -722,39 +598,104 @@ $("h2[class='page-header']").append(
            alert("终端--返回数据出错");  
        }  
     });
-//数据来源
- /*$.ajax({  
+
+//用例数
+/* $.ajax({  
     type : "post",  
     async : false, //同步执行  
-    url:'../../../provincequalitymap/getPlatformList',
-    data : {month:reportDate,groupid:groupid},  
+    url:'../../../creatPdfImport/getCaseCount',
+    data : {},  
     dataType : "json", //返回数据形式为json  
     success : function(result) {  
-  		if(result.data.length>0){
-  			for(var i=0;i<result.data.length;i++){
-  				rpDatasource = rpDatasource+result.data[i].type+" 、";
-  			}
-  			rpDatasource = rpDatasource.substring(0,rpDatasource.length-1);
-  		}else{
-  			rpDatasource="";
-  		}
+    	if(result.msg != 200){
+    		casecountNum = "N/A";
+    	}else{
+    		casecountNum = result.detail.casecount;
+    	}
+    	
     },  
     error : function(errorMsg) {  
-        alert("数据来源列表--返回数据出错");  
+        alert("casecountNum--返回数据出错");  
     }  
-});    */
+ }); */
 
+//拼本月测试概览-地域有效样本tableBody
+function appendTablecityinfo(result){
+	var htmlStr = "";
+	
+	for(var i=0;i<result.data.length;i++){
+		validSampleNum = parseFloat(validSampleNum)+parseFloat(result.data[i].validsample);
+		thisMonthSample = parseFloat(thisMonthSample)+parseFloat(result.data[i].samplenum);
+		var subHtmStr = "";
+		subHtmStr = "<tr>"+
+	    				"<td>"+result.data[i].cityname+"</td>"+
+	  					"<td>"+result.data[i].samplenum+"</td>"+
+	  					"<td>"+result.data[i].validsample+"</td>"+
+	  					"<td>"+result.data[i].internetdownload+"</td>"+
+	  					"<td>"+result.data[i].webbrowse+"</td>"+
+	  					"<td>"+result.data[i].h5video+"</td>"+
+	  				"</tr>";
+		htmlStr = htmlStr+subHtmStr;
+	}
+	
+	$("#cityInfoTable tbody").append(htmlStr);
+	if(thisMonthSample !=0 && thisMonthSample!="0"){
+		validSampleRate = (validSampleNum/thisMonthSample*100).toFixed(2)+"%";
+	}else{
+		validSampleRate=0;
+	}
+}
+ 
+ function getURLNum(result){
+	for(var i=0;i<result.urldata.length;i++){
+		if(result.urldata[i].testtype == "H5视频"){
+			h5VideoURLNum = result.urldata[i].url_num;
+		}
+		if(result.urldata[i].testtype == "网页浏览"){
+			webbrowseURLNum = result.urldata[i].url_num;
+		}
+		if(result.urldata[i].testtype == "互联网下载"){
+			internetDownURLNum = result.urldata[i].url_num;
+		}
+	}
+	totalURLNum = parseFloat(h5VideoURLNum)+parseFloat(webbrowseURLNum)+parseFloat(internetDownURLNum);
+}
+//本月测试概览-地域有效样本
+$.ajax({  
+   type : "post",  
+   async : false, //同步执行  
+   url:'../../../overviewServicequality/getTerritoryData',
+   data : {month:reportDate,groupid:groupid,broadband_type:reportBroadType},  
+   dataType : "json", //返回数据形式为json  
+   success : function(result) {  
+	   if(result.data.length>0){
+		   appendTablecityinfo(result);
+ 	  }else{
+ 		  alert("地域有效样本--没有数据记录！");
+ 	  }
+	   if(result.urldata.length>0){
+		   getURLNum(result);
+	   }else{
+		   alert("本轮测试覆盖URL为空！");
+	   }
+	   $("#urlDiv").html("本轮测试共覆盖URL地址"+totalURLNum+"个，其中互联网下载覆盖URL地址"+internetDownURLNum+"个，网页浏览覆盖URL地址"+webbrowseURLNum+"个，H5视频覆盖URL地址"+h5VideoURLNum+"个。");
+   },  
+   error : function(errorMsg) {  
+       alert("地域有效样本--返回数据出错");  
+   }  
+}); 
 
 
 // 城市维度 拼tableBody
-function appendCityTable(result){
+/* function appendCityTable(result){
 	var tableStr = "";
 	for(var i=0;i<result.values.length;i++){
 		var tdContent = "";
 		tableStr = "<tr>"+
 			  	"<td>"+result.values[i].city+"</td>"+
+			  	"<td>"+casecountNum+"</td>"+
 			  	"<td>"+result.values[i].new_sample_num+"</td>"+
-			  	"<td>"+result.values[i].case_num+"</td>";
+			  	"<td>有效样本数</td>";
 			  	
 		for(var j=0;j<result.values[i].item.length;j++){
 			var onetestkpi = "";
@@ -768,18 +709,88 @@ function appendCityTable(result){
 		 
 		$("#cityTable tbody").append(tableStr);
 	}	
+} */
+function appendCityTable(result){
+	var htmlStr = "";
+	for(var i=0;i<result.data.length;i++){
+		cityList = cityList + result.data[i].cityname+"、";
+		htmlStr="<div class='row'> <div class='col-xs-12 table-responsive'> <div><strong>"+(i+1)+"、"+result.data[i].cityname+"</strong></div>";
+        				for(var j=0;j<result.data[i].citydata.length;j++){
+        					htmlStr = htmlStr + "<div><strong>"+result.data[i].citydata[j].kpitypename+"</strong></div>";
+        					htmlStr = htmlStr + "<table class='table table-striped'>"+
+        										"<thead>"+
+        										"<tr>"+
+        											"<th style='width: 25%'>指标</th>"+
+        											"<th style='width: 15%'>用户类型</th>"+
+        											"<th style='width: 15%'>95分位值</th>"+
+        											"<th style='width: 15%'>85分位值</th>"+
+        											"<th style='width: 15%'>75分位值</th>"+
+        											"<th style='width: 15%'>平均</th>"+
+        										"</tr>"+
+        										"</thead>"+
+        										"<tbody>";
+        					for(var k=0;k<result.data[i].citydata[j].kpidata.length;k++){
+        						for(var m=0;m<result.data[i].citydata[j].kpidata[k].filedata.length;m++){
+        							htmlStr = htmlStr + "<tr>";
+            						var rowspanNum = result.data[i].citydata[j].kpidata[k].filedata.length;
+            						if(m==0){
+            							htmlStr = htmlStr + "<td rowspan='"+rowspanNum+"'>"+result.data[i].citydata[j].kpidata[k].fieldname+"</td>";
+            						}
+            						if(result.data[i].citydata[j].kpidata[k].fieldname.indexOf("成功率") > 0){
+            							htmlStr = htmlStr + "<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].usertype+"</td>" ;
+            							if(result.data[i].citydata[j].kpidata[k].filedata[m].percent95 != "N/A"){
+            								htmlStr = htmlStr + "<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].percent95+"%</td>" ;
+            							}else{
+            								htmlStr = htmlStr + "<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].percent95+"</td>" ;
+            							}
+            							if(result.data[i].citydata[j].kpidata[k].filedata[m].percent85 !="N/A"){
+            								htmlStr = htmlStr +"<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].percent85+"%</td>" ; 
+            							}else{
+            								htmlStr = htmlStr +"<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].percent85+"</td>" ; 
+            							}
+            							if(result.data[i].citydata[j].kpidata[k].filedata[m].percent75 !="N/A"){
+            								htmlStr = htmlStr +"<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].percent75+"%</td>" ; 
+            							}else{
+            								htmlStr = htmlStr +"<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].percent75+"</td>" ; 
+            							}
+            							if(result.data[i].citydata[j].kpidata[k].filedata[m].avgvalue !="N/A"){
+            								htmlStr = htmlStr +"<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].avgvalue+"%</td>" ;
+            							}else{
+            								htmlStr = htmlStr +"<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].avgvalue+"</td>" ;
+            							}
+            							
+										htmlStr = htmlStr + "</tr>";	
+            						}else{
+            							htmlStr = htmlStr + "<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].usertype+"</td>" +
+										"<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].percent95+"</td>" + 
+										"<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].percent85+"</td>" + 
+										"<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].percent75+"</td>" + 
+										"<td>"+result.data[i].citydata[j].kpidata[k].filedata[m].avgvalue+"</td>" ;
+										htmlStr = htmlStr + "</tr>";	
+            						}
+        										
+        						}
+        					}
+        					htmlStr = htmlStr + "</tbody>";
+        					htmlStr = htmlStr + "</table>";	
+        				}
+        				htmlStr = htmlStr + "</div> ";
+    		            htmlStr = htmlStr + "</div>";
+            			$("#userBycity").append(htmlStr);
+	} 
+	cityList = cityList.substring(0,cityList.length-1);
 }
 //城市维度报告明细
 $.ajax({  
    type : "post",  
    async : false, //同步执行  
-   url:'../../../provincequalitymap/getReportItem',
-   data : {month:reportDate,groupid:groupid,broadType:reportBroadType},  
+   url:'../../../overviewServicequality/getCityData',
+   data : {month:reportDate,groupid:groupid,broadband_type:reportBroadType},  
    dataType : "json", //返回数据形式为json  
    success : function(result) {  
-	   if(result.values.length>0){
-		   regionNum = result.citydata.city_num;  //地区数量
-	 	   cityList=result.citydata.citys;  //城市列表
+	   if(result.data.length>0){
+		   regionNum = result.data.length;  //地区数量
+	 	   //cityList=result.citydata.citys;  //城市列表
  		  appendCityTable(result);
  	  }else{
  		  regionNum = "";
@@ -794,15 +805,16 @@ $.ajax({
 
 
  //探针维度 拼tableBody
- function appendProbeTable(result){
+ /* function appendProbeTable(result){
 	 var tableStr = "";
 		for(var i=0;i<result.values.length;i++){
 			rpDatasource = rpDatasource + result.values[i].probetype+"、";
 			var tdContent = "";
 			tableStr = "<tr>"+
 				  	"<td>"+result.values[i].probetype+"</td>"+
+				  	"<td>"+casecountNum+"</td>"+
 				  	"<td>"+result.values[i].new_sample_num+"</td>"+
-				  	"<td>"+result.values[i].case_num+"</td>";
+				  	"<td>有效样本数</td>";
 				  	
 			for(var j=0;j<result.values[i].item.length;j++){
 				tdContent = tdContent + result.values[i].item[j].typename + "为" + result.values[i].item[j].value+"  ；";
@@ -813,75 +825,169 @@ $.ajax({
 			$("#probetypeTable tbody").append(tableStr);
 		}	
 		rpDatasource = rpDatasource.substring(0,rpDatasource.length-1);
+} */
+function appendProbeTable(result){
+	 var tableStr = "";
+		for(var i=0;i<result.data.length;i++){
+			
+			tableStr = "<div class='row'>"+
+					        "<div class='col-xs-12 table-responsive'>";
+			if(result.data[i].type =="PC"){
+				tableStr = tableStr+"<div><strong>"+(i+1)+"、桌面终端用户</strong></div>";
+				rpDatasource = rpDatasource + "桌面、";
+			}
+			if(result.data[i].type =="Android"){
+				tableStr = tableStr+"<div><strong>"+(i+1)+"、安卓智能终端用户</strong></div>";
+				rpDatasource = rpDatasource + "安卓、";
+			}
+			if(result.data[i].type =="iOS"){
+				tableStr = tableStr+"<div><strong>"+(i+1)+"、苹果智能终端用户</strong></div>";
+				rpDatasource = rpDatasource + "苹果、";
+			}
+			tableStr = tableStr + "<table class='table table-striped' >"+
+					            "<thead>"+
+					            "<tr>"+
+					              "<th style='width: 25%'>指标</th>"+
+					              "<th style='width: 15%'>有效样本</th>"+
+					              "<th style='width: 15%'>95分位值</th>"+
+					              "<th style='width: 15%'>85分位值</th>"+
+					              "<th style='width: 15%'>75分位值</th>"+
+					              "<th style='width: 15%'>平均</th>"+
+					            "</tr>"+
+					            "</thead>"+
+					            "<tbody>";
+			for(var j=0;j<result.data[i].data.length;j++){
+				tableStr = tableStr+
+				"<tr>"+
+				  	"<td>"+result.data[i].data[j].kpiname+"</td>"+
+				  	"<td>"+result.data[i].data[j].validsample+"</td>"+
+				  	"<td>"+result.data[i].data[j].percent95+"</td>"+
+				  	"<td>"+result.data[i].data[j].percent85+"</td>"+
+				  	"<td>"+result.data[i].data[j].percent75+"</td>"+
+				  	"<td>"+result.data[i].data[j].avgvalue+"</td>"+
+			  	"</tr>";
+			}		            	
+            tableStr = tableStr + "</tbody>";
+            tableStr = tableStr + "</table>";
+            tableStr = tableStr + "</div> ";
+            tableStr = tableStr + "</div>";
+			 
+			$("#userByprobeType").append(tableStr);
+		}	
+		rpDatasource = rpDatasource.substring(0,rpDatasource.length-1);
 }
-//探针维度 报告明细
+//分用户指标统计
 $.ajax({  
 	   type : "post",  
 	   async : false, //同步执行  
-	   url:'../../../provincequalitymap/getProbetypeReportItem',
-	   data : {month:reportDate,groupid:groupid,broadType:reportBroadType},  
+	   url:'../../../overviewServicequality/getUserIndicator',
+	   data : {month:reportDate,groupid:groupid,broadband_type:reportBroadType},  
 	   dataType : "json", //返回数据形式为json  
 	   success : function(result) {  
-		   if(result.values.length>0){
+		  if(result.data.length>0){
 	 		  appendProbeTable(result);
 	 	  }else{
-	 		  alert("探针报告明细--没有数据记录！");
+	 		  alert("分用户指标统计--没有数据记录！");
 	 	  }
 	   },  
 	   error : function(errorMsg) {  
-	       alert("探针报告明细--返回数据出错");  
+	       alert("分用户指标统计--返回数据出错");  
 	   }  
 	});  
 
+
 $("div[class='row invoice-info']").children("div").eq(0).html(
-		"范围<address><strong>"+reportBroadType+"家庭宽带</strong><br>区域: "+reportProvinceName+"<br>地区: "+regionNum+"个<br>周期: "+firstdate+" --- "+lastdate+"<br>城市: "+cityList+"</address>");
+		"范围<address><strong>"+reportBroadType+"M家庭宽带</strong><br>区域: "+reportProvinceName+"<br>地区: "+regionNum+"个<br>周期: "+firstdate+" --- "+lastdate+"<br>城市: "+cityList+"</address>");
 $("div[class='row invoice-info']").children("div").eq(1).html(
-		" 样本<address><strong>有效样本:"+validSampleNum+" </strong><br>用户: "+userNumByGroupid+"<br>终端: "+terminalNumByGroupid+"<br>样本有效率: "+validSampleRate+"<br>上月样本数: "+lastMonthSample+"</address>");
+		" 样本<address><strong>有效样本:"+validSampleNum+" </strong><br>用户: "+userNumByGroupid+"<br>终端: "+terminalNumByGroupid+"<br>样本有效率: "+validSampleRate+"<br>上月有效样本数: "+lastMonthSample+"</address>");
 
 $("div[class='row invoice-info']").children("div").eq(2).html(
-			" <b> </b><br><br><b>编号:</b> #"+groupid+reportBroadType+reportDate+"<br><b>发布日期:</b> "+nextYMonth+"<br><b>数据来源:</b> "+rpDatasource
+			" <b> </b><br><br><b>编号:</b> #"+groupid+reportBroadType+reportDate+"<br><b>生成日期:</b> "+nextYMonth+"<br><b>数据来源:</b> "+rpDatasource
 			);
 
-//ping质量分析
- /* $.ajax({  
+
+//质量分析
+  $.ajax({  
    type : "post",  
    async : false, //同步执行  
-   url:'../../../groupidpingmap/getPingServiceQualityCompare',
-   data : {month:reportDate,groupid:groupid,broadband_type:reportBroadType},  
+   url:'../../../provincequalitymap/getServiceQualityCompare',
+   data : {month:reportDate,groupid:groupid,broadType:reportBroadType},  
    dataType : "json", //返回数据形式为json  
    success : function(result) {  
-	   $("p[class='text-muted well well-sm no-shadow']").html("与上月相比，平均ping时延"+result.ping_avg_delay+"ms,平均ping丢包率"+result.ping_loss_rate+"%。");
+	   var htmlstr = "";
+	   if(result.data.length>0){
+		   htmlstr = "与上月相比，<br>";
+		   for(var i=0;i<result.data.length;i++){
+			   var substr = "";
+			   if(result.data[i].typename == "PC"){
+				   substr =  "桌面终端用户：";
+				   for(var j=0;j<result.data[i].data.length;j++){
+					   substr = substr + result.data[i].data[j].datatype + result.data[i].data[j].data+"，";
+				   }
+				   substr = substr.substr(0,substr.length-1)+"；";
+				   substr = substr+"<br>";
+				   htmlstr = htmlstr + substr;
+			   }
+			   if(result.data[i].typename == "iOS"){
+				   substr = "苹果智能终端用户：";
+				   for(var j=0;j<result.data[i].data.length;j++){
+					   substr = substr + result.data[i].data[j].datatype + result.data[i].data[j].data+"，";
+				   }
+				   substr = substr.substr(0,substr.length-1)+"；";
+				   substr = substr+"<br>";
+				   htmlstr = htmlstr + substr;
+			   }
+			   if(result.data[i].typename == "Android"){
+				   substr = "安卓智能终端用户：";
+				   for(var j=0;j<result.data[i].data.length;j++){
+					   substr = substr + result.data[i].data[j].datatype + result.data[i].data[j].data+"，";
+				   }
+				   substr = substr.substr(0,substr.length-1)+"；";
+				   substr = substr+"<br>";
+				   htmlstr = htmlstr + substr;
+			   }
+			   
+		   }
+		   
+		   //htmlstr = htmlstr.substr(0,htmlstr.length-1)+"。";
+		   $("p[class='text-muted well well-sm no-shadow']").append(htmlstr);
+	   }else{
+		   htmlstr = "暂无数据";
+		   $("p[class='text-muted well well-sm no-shadow']").html(htmlstr);
+	   }
+	   
+	   
    },  
    error : function(errorMsg) {  
        alert("质量分析--返回数据出错");  
    }  
-});   */
+});   
 
 
 //拼本月指标情况tableBody
- /* function appendTable2(result){
-  $("table[class='table'] tbody").append(
-		  "<tr>"+
-		    "<td>平均ping时延(ms)</td>"+
-		  	"<td>"+result.data.avg_delay_data+"</td>"+
-		  	"<td>"+result.data.delay_order+"</td>"+
-		  	"<td>"+result.data.best_delay+"</td>"+
-		  "</tr>"+
-		  "<tr>"+
-		    "<td>平均ping丢包率(%)</td>"+
-		  	"<td>"+result.data.rate_data+"</td>"+
-		  	"<td>"+result.data.rate_order+"</td>"+
-		  	"<td>"+result.data.best_loss_rate+"</td>"+
-		  "</tr>"
-  );
+  function appendTable2(result){
+	var htmlStr = "";
+	for(var i=0;i<result.data.length;i++){
+		var subHtmStr = "";
+		subHtmStr = "<tr>"+
+	    				"<td>"+result.data[i].datatype+"</td>"+
+	    				"<td>"+result.data[i].usertype+"</td>"+
+	  					"<td>"+result.data[i].avg_data+"</td>"+
+	  					"<td>"+result.data[i].avg_order+"</td>"+
+	  					"<td>"+result.data[i].best_data+"</td>"+
+	  				"</tr>";
+		htmlStr = htmlStr+subHtmStr;
+	}
+	
+  $("table[class='table'] tbody").append(htmlStr);
 }
 
 //本月指标情况
 $.ajax({  
    type : "post",  
    async : false, //同步执行  
-   url:'../../../groupidpingmap/getPingKPIbyGroupid',
-   data : {month:reportDate,groupid:groupid,broadband_type:reportBroadType},  
+   url:'../../../provincequalitymap/getKPIbyGroupid',
+   data : {month:reportDate,groupid:groupid,broadType:reportBroadType},  
    dataType : "json", //返回数据形式为json  
    success : function(result) {  
  	 appendTable2(result);
@@ -889,7 +995,7 @@ $.ajax({
    error : function(errorMsg) {  
        alert("本月指标情况--返回数据出错");  
    }  
-});   */
+});   
 
 
 

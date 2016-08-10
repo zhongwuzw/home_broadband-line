@@ -115,4 +115,58 @@ public interface OverviewProvinceDao {
 	 * @return String
 	 */
 	String getValidSampleNum(String month,String groupid,String broadType);
+	
+	
+	
+	/**
+	 * 获取质量分析 即 上下月中数据的增减情况
+	 * @param thismonth
+	 * @param premonth
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getServiceQualityCompare(String probetype ,String fieldName, String tableName ,String dataq,String datatype, String thismonth,String premonth,String groupid,String broadband_type);
+	List<Map<String, Object>> getHttpdownloadServiceQualityCompare(String thismonth,String premonth,String groupid,String broadband_type);
+	List<Map<String, Object>> getVideoServiceQualityCompare(String thismonth,String premonth,String groupid,String broadband_type);
+	List<Map<String, Object>> getWebbrowsingServiceQualityCompare(String thismonth,String premonth,String groupid,String broadband_type);
+	/*List<Map<String, Object>> getHttpServiceQualityCompare(String thismonth,String premonth,String groupid,String broadband_type);
+	List<Map<String, Object>> getHttpServiceQualityCompare(String thismonth,String premonth,String groupid,String broadband_type);*/
+	
+	
+	
+	/**
+	 * 获取本期（当月）最佳的结果数据
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	List<Map<String, Object>>  getBestResult(String probetype ,String fieldName, String tableName ,String dataq,String datatype, String month,String broadType);
+
+	
+	/**
+	 * 获取本省的结果数据在全国的排名
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getResultOrder(String probetype ,String fieldName, String tableName ,String dataq,String datatype,String month,String groupid,String broadType);
+	
+	/**
+	 * 获取本省的结果数据
+	 * @param month
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	List<Map<String, Object>> getProvinceResult(String probetype ,String fieldName, String tableName ,String dataq,String datatype,String month,String groupid,String broadType);
+	
+	/**
+	 * 根据groupid个数判断返回的是全国还是省份名称
+	 * @param groupid
+	 * @return
+	 */
+	List<Map<String, Object>> getProvinceName(String groupid);
 }

@@ -2,6 +2,14 @@
 $(function () {
   'use strict';
 
+  if(nationwideOrProvince =="全国"){
+	  $("div[class='box box-success']").show();
+	  $("#provincenumDiv").show();
+  }else{
+	  $("div[class='box box-success']").hide();
+	  $("#provincenumDiv").hide();
+	  
+  }
   //-------------
   //- 用户数趋势 CHART -
   //-------------
@@ -263,22 +271,8 @@ $(function () {
           alert("本月新增用户数--返回数据出错");  
       }  
   });
-  //渠道数
-  /*$.ajax({  
-      type : "post",  
-      async : false, //同步执行  
-      url:'kpiqualitymap/getChannelnum',
-      data : {month:yearMonth},  
-      dataType : "json", //返回数据形式为json  
-      success : function(result) {  
-    	  $("#channelnum").html(result.distribution_channel_num);
-      },  
-      error : function(errorMsg) {  
-          alert("渠道数--返回数据出错");  
-      }  
-  });*/
   
-  //本月测试次数
+//本月有效样本数
   $.ajax({  
       type : "post",  
       async : false, //同步执行  
@@ -289,9 +283,30 @@ $(function () {
     	  $("#thismonthTesttimes").html(result.thismonthnum);
       },  
       error : function(errorMsg) {  
-          alert("本月测试次数--返回数据出错");  
+          alert("本月有效样本数--返回数据出错");  
       }  
   });
+//上月有效样本数
+  $.ajax({  
+      type : "post",  
+      async : false, //同步执行  
+      url:'kpiqualitymap/getTesttimes',
+      data : {month:preYearMonth},  
+      dataType : "json", //返回数据形式为json  
+      success : function(result) {  
+    	  $("#newlyincrease_num span[class='description-percentage']").text(result.percent);
+    	  $("#newlyincrease_num h5[class='description-header']").text(result.thismonthnum);
+    	  if(result.percent.substring(0,result.percent.length-1)>=0){
+    		  $("#newlyincrease_num span[class='description-percentage']").css("color","green");
+    	  }else{
+    		  $("#newlyincrease_num span[class='description-percentage']").css("color","red");
+    	  }
+      },  
+      error : function(errorMsg) {  
+          alert("上月有效样本数--返回数据出错");  
+      }  
+  });
+  
   
   
   
@@ -324,12 +339,19 @@ $(function () {
     	  for(var i=0;i<result.data.length;i++){
     		  if(i>4){break;}
     		  prePc = parseInt(result.data[i].thisMonth)/parseInt(result.data[i].accumulat)*100+"%";
-    		  //屏蔽嵌入式和探针
-    		  if(result.data[i].type.indexOf("软探针") >= 0 || result.data[i].type.indexOf("嵌入式") >= 0)
-    			  continue;
+    		 var type ;
+    		 if(result.data[i].type == "PC"){
+    			 type="桌面";
+    		 }
+    		 if(result.data[i].type == "iOS"){
+    			 type="苹果";
+    		 }
+    		 if(result.data[i].type == "Android"){
+    			 type="安卓";
+    		 }
     		  $("#broadbandType").append(
     				  "<div class='progress-group' >"+
-    				  "  <span class='progress-text'>"+result.data[i].type+"</span>"+
+    				  "  <span class='progress-text'>"+type+"</span>"+
     				  "  <span class='progress-number'>"+result.data[i].thisMonth+"/"+result.data[i].accumulat+"</span>"+
     				  "  <div class='progress sm'>"+
     				  "    <div class='"+barClass_color[i].barclass+"' style='width: "+prePc+"'></div>"+
@@ -406,26 +428,7 @@ $(function () {
           alert("累计使用用户数--返回数据出错");  
       }  
   });
-  //上月启动次数
-  $.ajax({  
-      type : "post",  
-      async : false, //同步执行  
-      url:'kpiqualitymap/getTesttimes',
-      data : {month:preYearMonth},  
-      dataType : "json", //返回数据形式为json  
-      success : function(result) {  
-    	  $("#newlyincrease_num span[class='description-percentage']").text(result.percent);
-    	  $("#newlyincrease_num h5[class='description-header']").text(result.thismonthnum);
-    	  if(result.percent.substring(0,result.percent.length-1)>=0){
-    		  $("#newlyincrease_num span[class='description-percentage']").css("color","green");
-    	  }else{
-    		  $("#newlyincrease_num span[class='description-percentage']").css("color","red");
-    	  }
-      },  
-      error : function(errorMsg) {  
-          alert("上月启动次数--返回数据出错");  
-      }  
-  });
+  
   
 //////////////////////////   start///////////////////////////////
 /*//拼table 表头不固定 根据数据库的数据自动变化
@@ -597,6 +600,21 @@ $(function () {
           alert("页面时延--返回数据出错");  
       }  
   });
+  
+//90%页面时延
+  $.ajax({  
+      type : "post",  
+      async : false, //同步执行  
+      url:'groupidwebbrowsing/getPageAvgNinetyDelay',
+      data : {month:yearMonth},  
+      dataType : "json", //返回数据形式为json  
+      success : function(result) {  
+    	  appendIndexTable(result,"info-box bg-orange");
+      },  
+      error : function(errorMsg) {  
+          alert("90%页面时延--返回数据出错");  
+      }  
+  });
 
   //页面成功率
   $.ajax({  
@@ -641,6 +659,22 @@ $(function () {
       }  
   });  
   
+//视频缓冲时长占比
+  $.ajax({  
+      type : "post",  
+      async : false, //同步执行  
+      url:'groupidvideomap/getAvgBufferProportion',
+      data : {month:yearMonth},  
+      dataType : "json", //返回数据形式为json  
+      success : function(result) {  
+    	  appendIndexTable(result,"info-box bg-purple");
+      },  
+      error : function(errorMsg) {  
+          alert("视频缓冲时长占比--返回数据出错");  
+      }  
+  });  
+  
+
 //页面成功率
   $.ajax({  
       type : "post",  
@@ -664,14 +698,14 @@ $(function () {
       data : {month:yearMonth},  
       dataType : "json", //返回数据形式为json  
       success : function(result) {  
-    	  appendIndexTable(result,"info-box bg-lightgreen");
+    	  appendIndexTable(result,"info-box bg-teal-active");
       },  
       error : function(errorMsg) {  
           alert("视频播放成功率--返回数据出错");  
       }  
   }); 
   
-//http下载成功率
+//互联网下载-成功率(%)
   $.ajax({  
       type : "post",  
       async : false, //同步执行  
@@ -679,13 +713,15 @@ $(function () {
       data : {month:yearMonth},  
       dataType : "json", //返回数据形式为json  
       success : function(result) {  
-    	  appendIndexTable(result,"info-box bg-darkgreen");
+    	  appendIndexTable(result,"info-box bg-teal");
       },  
       error : function(errorMsg) {  
-          alert("http下载成功率--返回数据出错");  
+          alert("互联网下载-成功率(%)--返回数据出错");  
       }  
   }); 
-//////////////////////////  end///////////////////////////////
+  
+  
+//////////////////////////  end   ///////////////////////////////
     
 //本月平台测试次数占比
   $.ajax({  
@@ -697,12 +733,23 @@ $(function () {
       success : function(result) {  
     	  for(var i=0;i<result.data.length;i++){
     		  var jsonObj={value:"",color:"",highlight:"",label:""};
+    		  var lable;
+    		  if(result.data[i].lable == "PC"){
+    			  lable="桌面";
+    		  }
+    		  if(result.data[i].lable == "iOS"){
+    			  lable="苹果";
+    		  }
+    		  if(result.data[i].lable == "Android"){
+    			  lable="安卓";
+    		  }
     		  jsonObj.value=result.data[i].value;
     		  jsonObj.color=pie_color[i].color;
     		  jsonObj.highlight=pie_color[i].highlight;
-    		  jsonObj.label=result.data[i].lable;
+    		  jsonObj.label=lable;
     		  PieData.push(jsonObj);
-    		  $("ul[class='chart-legend clearfix']").append("<li><i class='fa fa-circle-o' style='color:"+pie_color[i].color+"'></i> "+result.data[i].lable+"</li>");
+    		  
+    		  $("ul[class='chart-legend clearfix']").append("<li><i class='fa fa-circle-o' style='color:"+pie_color[i].color+"'></i> "+lable+"</li>");
     	  }
     	  pieChart.Doughnut(PieData, pieOptions);
     	  

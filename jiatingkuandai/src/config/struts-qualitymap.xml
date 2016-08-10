@@ -15,8 +15,16 @@
 			method="getNetTypeData"></action>
 	</package>
 
-	<!-- <package name="overviewServicequalityAction" namespace="/overviewServicequality" 
-		extends="abstract_struts"> </package> -->
+	<!--业务质量统计-->
+	<package name="overviewServicequalityAction" namespace="/overviewServicequality" extends="abstract_struts">
+	
+		<action name="getUserIndicator" class="overviewServicequalityAction"
+			method="getUserIndicator"></action>
+		<action name="getTerritoryData" class="overviewServicequalityAction"
+			method="getTerritoryData"></action>
+		<action name="getCityData" class="overviewServicequalityAction"
+			method="getCityData"></action>
+	</package>
 
 	<package name="terminalOsAction" namespace="/terminalOs"
 		extends="abstract_struts">
@@ -58,6 +66,15 @@
 			method="getReportItem"></action>
 		<action name="getProbetypeReportItem" class="provinceAction"
 			method="getProbetypeReportItem"></action>
+			<!--获取质量分析 即 上下月中数据的增减情况-->
+		<action name="getServiceQualityCompare" class="provinceAction"
+			method="getServiceQualityCompare"></action>
+			<!--获取各类型指标情况-->
+		<action name="getKPIbyGroupid" class="provinceAction"
+			method="getKPIbyGroupid"></action>
+			<!--获取各省名称-->
+		<action name="getProvinceName" class="provinceAction"
+			method="getProvinceName"></action>
 	</package>
 
 	<package name="kpiAction" namespace="/kpiqualitymap" extends="abstract_struts">
@@ -340,6 +357,9 @@
 		extends="abstract_struts"> 
 		 <action name="creatPdfImport" class="com.qualitymap.action.OverviewAnalysisAction"
 			method="creatPdfImport">
+	    </action>
+	    <action name="getCaseCount" class="com.qualitymap.action.OverviewAnalysisAction"
+			method="getCaseCount">
 	    </action>
 	</package> 
 </struts>
