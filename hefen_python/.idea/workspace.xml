@@ -23,10 +23,10 @@
     <SUITE FILE_PATH="coverage/hefen_python$treakRank.coverage" NAME="treakRank Coverage Results" MODIFIED="1467859375813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$alterJsonFile.coverage" NAME="alterJsonFile Coverage Results" MODIFIED="1468508526350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$alterKeyToCode.coverage" NAME="alterKeyToCode Coverage Results" MODIFIED="1468993733520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hefen_python$New_Hefen_App.coverage" NAME="New_Hefen_App Coverage Results" MODIFIED="1470817054401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hefen_python$New_Hefen_App.coverage" NAME="New_Hefen_App Coverage Results" MODIFIED="1471002807222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1469500633417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$handleJsonFile.coverage" NAME="handleJsonFile Coverage Results" MODIFIED="1468508530741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hefen_python$hefen_by_province.coverage" NAME="hefen_by_province Coverage Results" MODIFIED="1470817219220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hefen_python$hefen_by_province.coverage" NAME="hefen_by_province Coverage Results" MODIFIED="1471002898084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -40,7 +40,7 @@
       <file leaf-file-name="hefen_App.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hefen_App.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="209">
               <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
               <folding>
                 <element signature="e#42#64#0" expanded="true" />
@@ -115,27 +115,27 @@
       <file leaf-file-name="New_Hefen_App.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/New_Hefen_App.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="138" column="234" selection-start-line="138" selection-start-column="234" selection-end-line="138" selection-end-column="234" />
+            <state relative-caret-position="232">
+              <caret line="165" column="33" selection-start-line="165" selection-start-column="33" selection-end-line="165" selection-end-column="33" />
               <folding>
                 <element signature="e#42#64#0" expanded="true" />
-                <marker date="1470817026000" expanded="true" signature="791:884" placeholder="select phone... phone_imei_time" />
-                <marker date="1470817026000" expanded="true" signature="1472:1512" placeholder="select phone... hefen_app_table" />
-                <marker date="1470817026000" expanded="true" signature="1829:1868" placeholder="update hefen... " />
-                <marker date="1470817026000" expanded="true" signature="1829:1890" placeholder="update hefen... " />
-                <marker date="1470817026000" expanded="true" signature="1829:1905" placeholder="update hefen... " />
-                <marker date="1470817026000" expanded="true" signature="1829:1925" placeholder="update hefen... " />
-                <marker date="1470817026000" expanded="true" signature="1829:1943" placeholder="update hefen... " />
-                <marker date="1470817026000" expanded="true" signature="1829:1970" placeholder="update hefen... " />
-                <marker date="1470817026000" expanded="true" signature="1829:1983" placeholder="update hefen... " />
-                <marker date="1470817026000" expanded="true" signature="1829:2007" placeholder="update hefen... " />
-                <marker date="1470817026000" expanded="true" signature="1829:2008" placeholder="update hefen... " />
-                <marker date="1470817026000" expanded="true" signature="3701:3917" placeholder="SELECT COUNT... pc_http_test" />
-                <marker date="1470817026000" expanded="true" signature="4164:4366" placeholder="SELECT COUNT... pc_web_browsing" />
-                <marker date="1470817026000" expanded="true" signature="5236:5415" placeholder="INSERT INTO `pc_temporary`... " />
-                <marker date="1470817026000" expanded="true" signature="6298:6394" placeholder="select count... missing_value" />
-                <marker date="1470817026000" expanded="true" signature="6298:6592" placeholder="select count... missing_value" />
-                <marker date="1470817026000" expanded="true" signature="6613:6885" placeholder="select count... missing_value" />
+                <marker date="1471002781000" expanded="true" signature="791:884" placeholder="select phone... phone_imei_time" />
+                <marker date="1471002781000" expanded="true" signature="1472:1512" placeholder="select phone... hefen_app_table" />
+                <marker date="1471002781000" expanded="true" signature="1829:1868" placeholder="update hefen... " />
+                <marker date="1471002781000" expanded="true" signature="1829:1890" placeholder="update hefen... " />
+                <marker date="1471002781000" expanded="true" signature="1829:1905" placeholder="update hefen... " />
+                <marker date="1471002781000" expanded="true" signature="1829:1925" placeholder="update hefen... " />
+                <marker date="1471002781000" expanded="true" signature="1829:1943" placeholder="update hefen... " />
+                <marker date="1471002781000" expanded="true" signature="1829:1970" placeholder="update hefen... " />
+                <marker date="1471002781000" expanded="true" signature="1829:1983" placeholder="update hefen... " />
+                <marker date="1471002781000" expanded="true" signature="1829:2007" placeholder="update hefen... " />
+                <marker date="1471002781000" expanded="true" signature="1829:2008" placeholder="update hefen... " />
+                <marker date="1471002781000" expanded="true" signature="3701:3917" placeholder="SELECT COUNT... pc_http_test" />
+                <marker date="1471002781000" expanded="true" signature="4164:4366" placeholder="SELECT COUNT... pc_web_browsing" />
+                <marker date="1471002781000" expanded="true" signature="5236:5415" placeholder="INSERT INTO `pc_temporary`... " />
+                <marker date="1471002781000" expanded="true" signature="6296:6392" placeholder="select count... missing_value" />
+                <marker date="1471002781000" expanded="true" signature="6296:6590" placeholder="select count... missing_value" />
+                <marker date="1471002781000" expanded="true" signature="6613:6885" placeholder="select count... missing_value" />
               </folding>
             </state>
           </provider>
@@ -144,8 +144,8 @@
       <file leaf-file-name="hefen_by_province.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hefen_by_province.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="285">
+              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
               <folding>
                 <element signature="e#42#64#0" expanded="true" />
                 <marker date="1470709885000" expanded="true" signature="453:569" placeholder="select provi... hefen_app_table" />
@@ -223,8 +223,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
-    <option name="y" value="23" />
+    <option name="x" value="-5" />
+    <option name="y" value="25" />
     <option name="width" value="1280" />
     <option name="height" value="735" />
   </component>
@@ -253,8 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -279,6 +277,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -636,16 +636,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="23" width="1280" height="735" extended-state="6" />
+    <frame x="-5" y="25" width="1280" height="735" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25825825" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6936937" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -679,7 +679,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="60" />
+      <option name="time" value="61" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -700,23 +700,23 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#64#0" expanded="true" />
-            <marker date="1470817026000" expanded="true" signature="791:884" placeholder="select phone... phone_imei_time" />
-            <marker date="1470817026000" expanded="true" signature="1472:1512" placeholder="select phone... hefen_app_table" />
-            <marker date="1470817026000" expanded="true" signature="1829:1868" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1890" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1905" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1925" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1943" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1970" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1983" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:2007" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:2008" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="3701:3917" placeholder="SELECT COUNT... pc_http_test" />
-            <marker date="1470817026000" expanded="true" signature="4164:4366" placeholder="SELECT COUNT... pc_web_browsing" />
-            <marker date="1470817026000" expanded="true" signature="5236:5415" placeholder="INSERT INTO `pc_temporary`... " />
-            <marker date="1470817026000" expanded="true" signature="6298:6394" placeholder="select count... missing_value" />
-            <marker date="1470817026000" expanded="true" signature="6298:6592" placeholder="select count... missing_value" />
-            <marker date="1470817026000" expanded="true" signature="6613:6885" placeholder="select count... missing_value" />
+            <marker date="1471002781000" expanded="true" signature="791:884" placeholder="select phone... phone_imei_time" />
+            <marker date="1471002781000" expanded="true" signature="1472:1512" placeholder="select phone... hefen_app_table" />
+            <marker date="1471002781000" expanded="true" signature="1829:1868" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1890" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1905" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1925" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1943" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1970" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1983" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:2007" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:2008" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="3701:3917" placeholder="SELECT COUNT... pc_http_test" />
+            <marker date="1471002781000" expanded="true" signature="4164:4366" placeholder="SELECT COUNT... pc_web_browsing" />
+            <marker date="1471002781000" expanded="true" signature="5236:5415" placeholder="INSERT INTO `pc_temporary`... " />
+            <marker date="1471002781000" expanded="true" signature="6296:6392" placeholder="select count... missing_value" />
+            <marker date="1471002781000" expanded="true" signature="6296:6590" placeholder="select count... missing_value" />
+            <marker date="1471002781000" expanded="true" signature="6613:6885" placeholder="select count... missing_value" />
           </folding>
         </state>
       </provider>
@@ -784,23 +784,23 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#64#0" expanded="true" />
-            <marker date="1470817026000" expanded="true" signature="791:884" placeholder="select phone... phone_imei_time" />
-            <marker date="1470817026000" expanded="true" signature="1472:1512" placeholder="select phone... hefen_app_table" />
-            <marker date="1470817026000" expanded="true" signature="1829:1868" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1890" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1905" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1925" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1943" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1970" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1983" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:2007" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:2008" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="3701:3917" placeholder="SELECT COUNT... pc_http_test" />
-            <marker date="1470817026000" expanded="true" signature="4164:4366" placeholder="SELECT COUNT... pc_web_browsing" />
-            <marker date="1470817026000" expanded="true" signature="5236:5415" placeholder="INSERT INTO `pc_temporary`... " />
-            <marker date="1470817026000" expanded="true" signature="6298:6394" placeholder="select count... missing_value" />
-            <marker date="1470817026000" expanded="true" signature="6298:6592" placeholder="select count... missing_value" />
-            <marker date="1470817026000" expanded="true" signature="6613:6885" placeholder="select count... missing_value" />
+            <marker date="1471002781000" expanded="true" signature="791:884" placeholder="select phone... phone_imei_time" />
+            <marker date="1471002781000" expanded="true" signature="1472:1512" placeholder="select phone... hefen_app_table" />
+            <marker date="1471002781000" expanded="true" signature="1829:1868" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1890" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1905" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1925" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1943" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1970" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1983" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:2007" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:2008" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="3701:3917" placeholder="SELECT COUNT... pc_http_test" />
+            <marker date="1471002781000" expanded="true" signature="4164:4366" placeholder="SELECT COUNT... pc_web_browsing" />
+            <marker date="1471002781000" expanded="true" signature="5236:5415" placeholder="INSERT INTO `pc_temporary`... " />
+            <marker date="1471002781000" expanded="true" signature="6296:6392" placeholder="select count... missing_value" />
+            <marker date="1471002781000" expanded="true" signature="6296:6590" placeholder="select count... missing_value" />
+            <marker date="1471002781000" expanded="true" signature="6613:6885" placeholder="select count... missing_value" />
           </folding>
         </state>
       </provider>
@@ -1390,6 +1390,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hefen_App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+          <folding>
+            <element signature="e#42#64#0" expanded="true" />
+            <marker date="1466387354000" expanded="true" signature="811:904" placeholder="select test_... upload_plan_case" />
+            <marker date="1466387354000" expanded="true" signature="811:906" placeholder="select test_... upload_plan_case" />
+            <marker date="1466387354000" expanded="true" signature="811:929" placeholder="select test_... upload_plan_case" />
+            <marker date="1466387354000" expanded="true" signature="3124:3173" placeholder="select * fro... upload_plan" />
+            <marker date="1466387354000" expanded="true" signature="3124:3231" placeholder="select * fro... upload_plan" />
+            <marker date="1466387354000" expanded="true" signature="3124:3310" placeholder="select * fro... upload_plan" />
+            <marker date="1466387354000" expanded="true" signature="4221:4398" placeholder="INSERT INTO `app_temporary`... " />
+            <marker date="1466387354000" expanded="true" signature="4528:4678" placeholder="INSERT INTO `app_temporary`... " />
+            <marker date="1466387354000" expanded="true" signature="5198:5258" placeholder="select DISTI... app_temporary" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///Library/Python/2.7/site-packages/pymysql/connections.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13927">
@@ -1418,29 +1437,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hefen_App.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
-          <folding>
-            <element signature="e#42#64#0" expanded="true" />
-            <marker date="1466387354000" expanded="true" signature="811:904" placeholder="select test_... upload_plan_case" />
-            <marker date="1466387354000" expanded="true" signature="811:906" placeholder="select test_... upload_plan_case" />
-            <marker date="1466387354000" expanded="true" signature="811:929" placeholder="select test_... upload_plan_case" />
-            <marker date="1466387354000" expanded="true" signature="3124:3173" placeholder="select * fro... upload_plan" />
-            <marker date="1466387354000" expanded="true" signature="3124:3231" placeholder="select * fro... upload_plan" />
-            <marker date="1466387354000" expanded="true" signature="3124:3310" placeholder="select * fro... upload_plan" />
-            <marker date="1466387354000" expanded="true" signature="4221:4398" placeholder="INSERT INTO `app_temporary`... " />
-            <marker date="1466387354000" expanded="true" signature="4528:4678" placeholder="INSERT INTO `app_temporary`... " />
-            <marker date="1466387354000" expanded="true" signature="5198:5258" placeholder="select DISTI... app_temporary" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hefen_by_province.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state relative-caret-position="285">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding>
             <element signature="e#42#64#0" expanded="true" />
             <marker date="1470709885000" expanded="true" signature="453:569" placeholder="select provi... hefen_app_table" />
@@ -1451,27 +1451,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/New_Hefen_App.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="138" column="234" selection-start-line="138" selection-start-column="234" selection-end-line="138" selection-end-column="234" />
+        <state relative-caret-position="232">
+          <caret line="165" column="33" selection-start-line="165" selection-start-column="33" selection-end-line="165" selection-end-column="33" />
           <folding>
             <element signature="e#42#64#0" expanded="true" />
-            <marker date="1470817026000" expanded="true" signature="791:884" placeholder="select phone... phone_imei_time" />
-            <marker date="1470817026000" expanded="true" signature="1472:1512" placeholder="select phone... hefen_app_table" />
-            <marker date="1470817026000" expanded="true" signature="1829:1868" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1890" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1905" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1925" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1943" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1970" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:1983" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:2007" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="1829:2008" placeholder="update hefen... " />
-            <marker date="1470817026000" expanded="true" signature="3701:3917" placeholder="SELECT COUNT... pc_http_test" />
-            <marker date="1470817026000" expanded="true" signature="4164:4366" placeholder="SELECT COUNT... pc_web_browsing" />
-            <marker date="1470817026000" expanded="true" signature="5236:5415" placeholder="INSERT INTO `pc_temporary`... " />
-            <marker date="1470817026000" expanded="true" signature="6298:6394" placeholder="select count... missing_value" />
-            <marker date="1470817026000" expanded="true" signature="6298:6592" placeholder="select count... missing_value" />
-            <marker date="1470817026000" expanded="true" signature="6613:6885" placeholder="select count... missing_value" />
+            <marker date="1471002781000" expanded="true" signature="791:884" placeholder="select phone... phone_imei_time" />
+            <marker date="1471002781000" expanded="true" signature="1472:1512" placeholder="select phone... hefen_app_table" />
+            <marker date="1471002781000" expanded="true" signature="1829:1868" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1890" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1905" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1925" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1943" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1970" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:1983" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:2007" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="1829:2008" placeholder="update hefen... " />
+            <marker date="1471002781000" expanded="true" signature="3701:3917" placeholder="SELECT COUNT... pc_http_test" />
+            <marker date="1471002781000" expanded="true" signature="4164:4366" placeholder="SELECT COUNT... pc_web_browsing" />
+            <marker date="1471002781000" expanded="true" signature="5236:5415" placeholder="INSERT INTO `pc_temporary`... " />
+            <marker date="1471002781000" expanded="true" signature="6296:6392" placeholder="select count... missing_value" />
+            <marker date="1471002781000" expanded="true" signature="6296:6590" placeholder="select count... missing_value" />
+            <marker date="1471002781000" expanded="true" signature="6613:6885" placeholder="select count... missing_value" />
           </folding>
         </state>
       </provider>
