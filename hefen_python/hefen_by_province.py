@@ -14,7 +14,7 @@ def calculateImeiNum():
 
     try:
         with destDatabase.cursor() as cursor:
-            sql = "select province,count(*) as times from hefen_app_table WHERE phone_flag = '1' and test_times > '0' GROUP BY province"
+            sql = "select province,count(*) as times from hefen_app_table WHERE phone_flag = '1' and isValid > '0' GROUP BY province"
             cursor.execute(sql)
             result = cursor.fetchall()
 
