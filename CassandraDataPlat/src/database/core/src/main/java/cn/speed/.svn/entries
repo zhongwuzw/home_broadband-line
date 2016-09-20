@@ -1,34 +1,0 @@
-10
-
-dir
-2219
-http://192.168.85.240:3690/svn/LTE_E2E_analyse/trunk/CassandraDataPlat/src/database/core/src/main/java/cn/speed
-http://192.168.85.240:3690/svn/LTE_E2E_analyse
-
-
-
-2015-02-11T09:31:03.370245Z
-1061
-wangzhen
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-4fa04b59-7810-44d7-b29f-f71709df9fc3
-
-history
-dir
-
-jdbc
-dir
-

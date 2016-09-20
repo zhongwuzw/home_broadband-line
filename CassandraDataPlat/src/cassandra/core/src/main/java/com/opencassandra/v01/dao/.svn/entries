@@ -1,34 +1,0 @@
-10
-
-dir
-2502
-http://192.168.85.240:3690/svn/LTE_E2E_analyse/trunk/CassandraDataPlat/src/cassandra/core/src/main/java/com/opencassandra/v01/dao
-http://192.168.85.240:3690/svn/LTE_E2E_analyse
-
-
-
-2016-03-31T06:12:44.926606Z
-2323
-limaowei
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-4fa04b59-7810-44d7-b29f-f71709df9fc3
-
-factory
-dir
-
-impl
-dir
-
