@@ -1,8 +1,0 @@
-package com.qualitymap.service;
-
-
-public interface OverviewProvinceService {
-
-	String findByMonth(String month);
-	String findAll();
-}

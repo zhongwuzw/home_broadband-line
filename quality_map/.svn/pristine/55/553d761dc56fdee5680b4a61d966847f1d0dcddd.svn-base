@@ -1,4 +1,0 @@
-#sso login configuration
-#sso.service = http\://192.168.85.233\:8011/ctp
-sso.service = http\://218.206.179.233\:10002/ctp
-sso.jumpUrl =http\://192.168.25.87\:8080/quality_map/index2.html
