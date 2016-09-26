@@ -12,18 +12,18 @@ public interface OverviewServicequalityDao {
 	 * @param broadband_type
 	 * @return
 	 */
-	List<Map<String, Object>> getHttpDownloadUserIndicator(String groupid, String month, String broadband_type);
-	List<Map<String, Object>> getHttpDownloadSuccessUserIndicator(String groupid, String month, String broadband_type);
-	List<Map<String, Object>> getHttpUploadUserIndicator(String groupid, String month, String broadband_type);
-	List<Map<String, Object>> getVideoProportionUserIndicator(String groupid, String month, String broadband_type);
-	List<Map<String, Object>> getVideoDelayUserIndicator(String groupid, String month, String broadband_type);
-	List<Map<String, Object>> getVideoCache_countUserIndicator(String groupid, String month, String broadband_type);
-	List<Map<String, Object>> getVideoPaly_successUserIndicator(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getHttpDownloadUserIndicator(String groupid, String month, String broadband_type,String group);
+	List<Map<String, Object>> getHttpDownloadSuccessUserIndicator(String groupid, String month, String broadband_type,String group);
+	List<Map<String, Object>> getHttpUploadUserIndicator(String groupid, String month, String broadband_type,String group);
+	List<Map<String, Object>> getVideoProportionUserIndicator(String groupid, String month, String broadband_type,String group);
+	List<Map<String, Object>> getVideoDelayUserIndicator(String groupid, String month, String broadband_type,String group);
+	List<Map<String, Object>> getVideoCache_countUserIndicator(String groupid, String month, String broadband_type,String group);
+	List<Map<String, Object>> getVideoPaly_successUserIndicator(String groupid, String month, String broadband_type,String group);
 	//List<Map<String, Object>> getVideoUserIndicator(String groupid, String month, String broadband_type);
-	List<Map<String, Object>> getWebbrowsingAvgdelayUserIndicator(String groupid, String month, String broadband_type);
-	List<Map<String, Object>> getWebbrowsingninetydelayUserIndicator(String groupid, String month, String broadband_type);
-	List<Map<String, Object>> getWebbrowsingsuccessUserIndicator(String groupid, String month, String broadband_type);
-	List<Map<String, Object>> getWebbrowsingVisitSuccessRate(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getWebbrowsingAvgdelayUserIndicator(String groupid, String month, String broadband_type,String group);
+	List<Map<String, Object>> getWebbrowsingninetydelayUserIndicator(String groupid, String month, String broadband_type,String group);
+	List<Map<String, Object>> getWebbrowsingsuccessUserIndicator(String groupid, String month, String broadband_type,String group);
+	List<Map<String, Object>> getWebbrowsingVisitSuccessRate(String groupid, String month, String broadband_type,String group);
 	
 	
 	/**
@@ -59,5 +59,22 @@ public interface OverviewServicequalityDao {
 	List<Map<String, Object>> getCitycacheCountVideo(String groupid, String month, String broadband_type);
 	List<Map<String, Object>> getCityPlaySuccessVideo(String groupid, String month, String broadband_type);
 	List<Map<String, Object>> getCityBufferproportionVideo(String groupid, String month, String broadband_type);
+	
+	
+	/**
+	 * 获取地域级指标数据统计
+	 * @param groupid
+	 * @param month
+	 * @param broadband_type
+	 * @return
+	 */
+	List<Map<String, Object>> getSpecialCaseHttpDownloadRate(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getSpecialCaseHttpUpload(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getSpecialCaseFirstDelayVideo(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getSpecialCaseCacheCountVideo(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getSpecialCasebufferVideo(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getSpecialCaseNinetyDelayWebbrowsing(String groupid, String month, String broadband_type);
+	List<Map<String, Object>> getSpecialCaseAvgDelayWebbrowsing(String groupid, String month, String broadband_type);
+	
 	
 }

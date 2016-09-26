@@ -61,6 +61,23 @@ public class ServicequalityGroupidVideoDaoImpl implements ServicequalityGroupidV
 		return queryList;
 
 	}
+	/**
+	 * 获取上下月的打开时延
+	 */
+	@Override
+	public List<Map<String, Object>> getVideoFistBufferDelay(String yearMonth, String lastMonth, String groupid) {
+		
+		String sql = "SELECT a.probetype, round(thisdata,0) thisdata, round(lastdata,0) lastdata FROM ( SELECT DISTINCT probetype FROM servicequality_groupid_video WHERE `month` in (" + yearMonth
+				+ "," + lastMonth + ") AND groupid IN (" + groupid + ") ) a "
+				+ "LEFT JOIN ( SELECT sum( video_test_times * first_buffer_delay ) / SUM(video_test_times) thisdata, probetype, 	MONTH FROM servicequality_groupid_video " + "where month='" + yearMonth
+				+ "' AND groupid IN (" + groupid + ") GROUP BY `month`, probetype ) b ON a.probetype = b.probetype "
+				+ "LEFT JOIN ( SELECT sum( 	video_test_times * first_buffer_delay ) / SUM(video_test_times) lastdata, probetype, MONTH FROM servicequality_groupid_video " + "where month='" + lastMonth
+				+ "' AND groupid IN (" + groupid + ") GROUP BY `month`, probetype ) c ON a.probetype = c.probetype";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+		
+	}
 
 	/**
 	 * 获取视频卡顿次数上下月数据
@@ -172,6 +189,17 @@ public class ServicequalityGroupidVideoDaoImpl implements ServicequalityGroupidV
 		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
 		return queryList;
 	}
+	/**
+	 * 获取视频首次缓冲时延数据
+	 */
+	@Override
+	public List<Map<String, Object>> getVideoFirstBufferDelayData(String groupid, String probetype) {
+		String sql = " SELECT sum(first_buffer_delay*video_test_times)/sum(video_test_times) first_buffer_delay ,month FROM servicequality_groupid_video WHERE `groupid` in (" + groupid
+				+ ") and  probetype='" + probetype + "' GROUP BY month order by month";
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
 
 	/**
 	 * 获取视频卡顿次数的排名
@@ -183,12 +211,28 @@ public class ServicequalityGroupidVideoDaoImpl implements ServicequalityGroupidV
 				+ probetype + "' and b.groupid = a.groupid GROUP BY groupid ) pre_video_cache_count " + ",groupname FROM servicequality_groupid_video a WHERE `groupid` in (" + groupid
 				+ ") and month = '" + thismonth + "' and probetype='" + probetype + "' GROUP BY groupid order by video_cache_count asc ";
 */
-		String sql = "SELECT a.groupname, ROUND(video_cache_count,1) video_cache_count, ROUND(pre_video_cache_count,1) pre_video_cache_count  FROM ( SELECT groupname FROM servicequality_groupid_video b WHERE" +
+		String sql = "SELECT a.groupname, ROUND(ifnull(video_cache_count,999999),1) video_cache_count, ROUND(pre_video_cache_count,1) pre_video_cache_count  FROM ( SELECT groupname FROM servicequality_groupid_video b WHERE" +
 				" probetype='"+probetype+"' AND `month` IN ('"+thismonth+"','"+premonth+"') and groupid in ("+groupid+") group by groupid ) a" +
 				" LEFT JOIN ( SELECT ifnull( sum( video_cache_count * video_test_times ) / sum(video_test_times), 0 ) video_cache_count, groupname, MONTH FROM servicequality_groupid_video" +
 				" WHERE	MONTH = '"+thismonth+"' AND groupid IN ("+groupid+") and probetype='"+probetype+"' GROUP BY `month`, groupname ) b ON a.groupname = b.groupname " +
 				" LEFT JOIN ( SELECT ifnull( sum( video_cache_count * video_test_times ) / sum(video_test_times), 0 ) pre_video_cache_count, groupname, MONTH FROM servicequality_groupid_video" +
 				" WHERE	MONTH = '"+premonth+"' AND groupid IN ("+groupid+") and probetype='"+probetype+"' GROUP BY `month`, groupname ) c ON a.groupname = c.groupname order by video_cache_count asc " ;
+		
+		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return queryList;
+	}
+	/**
+	 * 获取视频卡顿次数的排名
+	 */
+	@Override
+	public List<Map<String, Object>> getVideoFirstBufferDelayOrder(String thismonth, String premonth, String groupid, String probetype) {
+		
+		String sql = "SELECT a.groupname, ROUND(ifnull(first_buffer_delay,999999),0) first_buffer_delay, ROUND(pre_first_buffer_delay,0) pre_first_buffer_delay  FROM ( SELECT groupname FROM servicequality_groupid_video b WHERE" +
+				" probetype='"+probetype+"' AND `month` IN ('"+thismonth+"','"+premonth+"') and groupid in ("+groupid+") group by groupid ) a" +
+				" LEFT JOIN ( SELECT ifnull( sum( first_buffer_delay * video_test_times ) / sum(video_test_times), 0 ) first_buffer_delay, groupname, MONTH FROM servicequality_groupid_video" +
+				" WHERE	MONTH = '"+thismonth+"' AND groupid IN ("+groupid+") and probetype='"+probetype+"' GROUP BY `month`, groupname ) b ON a.groupname = b.groupname " +
+				" LEFT JOIN ( SELECT ifnull( sum( first_buffer_delay * video_test_times ) / sum(video_test_times), 0 ) pre_first_buffer_delay, groupname, MONTH FROM servicequality_groupid_video" +
+				" WHERE	MONTH = '"+premonth+"' AND groupid IN ("+groupid+") and probetype='"+probetype+"' GROUP BY `month`, groupname ) c ON a.groupname = c.groupname order by first_buffer_delay asc " ;
 		
 		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
 		return queryList;
@@ -211,7 +255,7 @@ public class ServicequalityGroupidVideoDaoImpl implements ServicequalityGroupidV
 	 */
 	@Override
 	public List<Map<String, Object>> getVideoBufferProportionOrder(String thismonth, String premonth, String groupid, String probetype) {
-		String sql = "SELECT a.groupname, ROUND(avg_buffer_proportion,2) avg_buffer_proportion, ROUND(pre_avg_buffer_proportion,2) pre_avg_buffer_proportion  FROM ( SELECT groupname FROM servicequality_groupid_video b WHERE" +
+		String sql = "SELECT a.groupname, ROUND(ifnull(avg_buffer_proportion,999999),2) avg_buffer_proportion, ROUND(pre_avg_buffer_proportion,2) pre_avg_buffer_proportion  FROM ( SELECT groupname FROM servicequality_groupid_video b WHERE" +
 				" probetype='"+probetype+"' AND `month` IN ('"+thismonth+"','"+premonth+"') and groupid in ("+groupid+") group by groupid ) a" +
 				" LEFT JOIN ( SELECT ifnull( sum( avg_buffer_proportion * video_test_times ) / sum(video_test_times)*100, 0 ) avg_buffer_proportion, groupname, MONTH FROM servicequality_groupid_video" +
 				" WHERE	MONTH = '"+thismonth+"' AND groupid IN ("+groupid+") and probetype='"+probetype+"' GROUP BY `month`, groupname ) b ON a.groupname = b.groupname " +

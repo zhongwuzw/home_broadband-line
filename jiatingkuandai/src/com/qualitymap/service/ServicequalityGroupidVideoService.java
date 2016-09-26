@@ -20,6 +20,14 @@ public interface ServicequalityGroupidVideoService {
 	 * @return String
 	 */
 	String getVideoDelay(String yearMonth,String groupid);
+	/**
+	 * 获取上下月的首次缓冲时延
+	 * @param yearMonth
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getVideoFistBufferDelay(String yearMonth,String groupid);
 	
 	/**
 	 * 获取上下月的播放成功率
@@ -103,7 +111,23 @@ public interface ServicequalityGroupidVideoService {
 	 * @return String
 	 */
 	String getVideoCacheCountOrder(String thismonth,String groupid,String probetype);
+	/**
+	 * 获取视频首次缓冲时延的排名
+	 * @param thismonth
+	 * @param premonth
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getVideoFirstBufferDelayOrder(String thismonth,String groupid,String probetype);
 	
+	/**
+	 * 获取视频首次缓冲时延数据
+	 * @param groupid
+	 * @return
+	 * @return String
+	 */
+	String getVideoFirstBufferDelayData(String groupid,String probetype);
 	/**
 	 * 全国家庭宽带平均视频总缓冲时长占比趋势
 	 * @param groupid

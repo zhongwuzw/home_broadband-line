@@ -25,11 +25,11 @@ public class OverviewServicequalityAction extends BaseAction {
 		try {
 
 			String month = this.servletRequest.getParameter("month");
-			/*
-			 * String uuid = this.servletRequest.getParameter("key"); String
-			 * groupid = this.getUserGroup(uuid);
-			 */
 			String groupid = this.servletRequest.getParameter("groupid");
+			if(groupid.isEmpty()){
+				String uuid = this.servletRequest.getParameter("key");
+				groupid = this.getUserGroup(uuid);
+			}
 			String broadband_type = this.servletRequest.getParameter("broadband_type");
 			String datajson = overviewServicequalityService.getUserIndicator(groupid, month, broadband_type);
 			printWriter(datajson);
@@ -49,6 +49,10 @@ public class OverviewServicequalityAction extends BaseAction {
 
 			String month = this.servletRequest.getParameter("month");
 			String groupid = this.servletRequest.getParameter("groupid");
+			if(groupid.isEmpty()){
+				String uuid = this.servletRequest.getParameter("key");
+				groupid = this.getUserGroup(uuid);
+			}
 			String broadband_type = this.servletRequest.getParameter("broadband_type");
 			String datajson = overviewServicequalityService.getTerritoryData(groupid, month, broadband_type);
 			printWriter(datajson);
@@ -66,8 +70,32 @@ public class OverviewServicequalityAction extends BaseAction {
 
 			String month = this.servletRequest.getParameter("month");
 			String groupid = this.servletRequest.getParameter("groupid");
+			if(groupid.isEmpty()){
+				String uuid = this.servletRequest.getParameter("key");
+				groupid = this.getUserGroup(uuid);
+			}
 			String broadband_type = this.servletRequest.getParameter("broadband_type");
 			String datajson = overviewServicequalityService.getCityData(groupid, month, broadband_type);
+			printWriter(datajson);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * 分地域指标统计
+	 */
+	public void getOperatorData() {
+		
+		try {
+			
+			String month = this.servletRequest.getParameter("month");
+			String groupid = this.servletRequest.getParameter("groupid");
+			if(groupid.isEmpty()){
+				String uuid = this.servletRequest.getParameter("key");
+				groupid = this.getUserGroup(uuid);
+			}
+			String broadband_type = this.servletRequest.getParameter("broadband_type");
+			String datajson = overviewServicequalityService.getOperatorData(groupid, month, broadband_type);
 			printWriter(datajson);
 		} catch (Exception e) {
 			e.printStackTrace();

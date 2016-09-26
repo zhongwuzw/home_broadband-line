@@ -20,6 +20,11 @@ public interface ServicequalityGroupidVideoDao {
 	 */
 	public List<Map<String, Object>> getVideoDelay(String yearMonth, String lastMonth, String groupid);
 	
+	/**
+	 * 获取上下月的首次缓冲时延
+	 */
+	public List<Map<String, Object>> getVideoFistBufferDelay(String yearMonth, String lastMonth, String groupid);
+	
 	
 	/**
 	 * 视频卡顿次数上下月数据
@@ -72,6 +77,20 @@ public interface ServicequalityGroupidVideoDao {
 	 * @return List<Map<String,Object>>
 	 */
 	List<Map<String, Object>> getVideoCacheCountData(String groupid,String probetype);
+	/**
+	 * 获取视频首次缓冲时延数据
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getVideoFirstBufferDelayData(String groupid,String probetype);
+	/**
+	 * 获取视频首次缓冲时延排名
+	 * @param groupid
+	 * @return
+	 * @return List<Map<String,Object>>
+	 */
+	List<Map<String, Object>> getVideoFirstBufferDelayOrder(String thismonth, String premonth, String groupid, String probetype);
 	
 	/**
 	 * 获取视频卡顿次数的排名

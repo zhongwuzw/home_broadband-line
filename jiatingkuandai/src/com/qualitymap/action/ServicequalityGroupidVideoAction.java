@@ -28,6 +28,23 @@ public class ServicequalityGroupidVideoAction extends BaseAction {
 		}
 
 	}
+	/**
+	 * 获取首次缓冲时延上下月数据
+	 */
+	public void getVideoFistBufferDelay() {
+		
+		try {
+			String yearMonth = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50091,50067";
+			String avgdata = groupidVideoService.getVideoFistBufferDelay(yearMonth, groupid);
+			printWriter(avgdata);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	/**
 	 * 获取视频播放上下月数据
@@ -189,6 +206,44 @@ public class ServicequalityGroupidVideoAction extends BaseAction {
 			String groupid = this.getUserGroup(uuid);
 			//String groupid = "50071,50074,50067";
 			String delayOrder = groupidVideoService.getVideoCacheCountOrder(month, groupid, probetype);
+			printWriter(delayOrder);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * 获取视频卡顿次数数据
+	 * 
+	 * @return void
+	 */
+	public void getVideoFirstBufferDelayData() {
+		
+		try {
+			String probetype = this.servletRequest.getParameter("probetype");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50071,50074,50067";
+			String avgdelayData = groupidVideoService.getVideoFirstBufferDelayData(groupid, probetype);
+			printWriter(avgdelayData);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 获取视频卡顿次数的排名
+	 * 
+	 * @return void
+	 */
+	public void getVideoFirstBufferDelayOrder() {
+		
+		try {
+			String probetype = this.servletRequest.getParameter("probetype");
+			String month = this.servletRequest.getParameter("month");
+			String uuid = this.servletRequest.getParameter("key");
+			String groupid = this.getUserGroup(uuid);
+			//String groupid = "50071,50074,50067";
+			String delayOrder = groupidVideoService.getVideoFirstBufferDelayOrder(month, groupid, probetype);
 			printWriter(delayOrder);
 		} catch (Exception e) {
 			e.printStackTrace();

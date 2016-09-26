@@ -40,9 +40,14 @@
   var myDate = new Date();
   var year = myDate.getFullYear().toString();
   var monthh = myDate.getMonth()+1;
-  if(monthh<10){
-	  monthh = "0"+monthh.toString();
+  var dayy = myDate.getDate();
+  if (monthh < 10 && monthh != 0) {
+  	monthh = '0' + monthh;
   }
+  if (dayy < 10 && dayy != 0) {
+  	dayy = '0' + dayy;
+  }
+  var thisDate = year+"/"+monthh+"/"+dayy;//Date:当前年月 (报告中的发布日期)
   var yearMonth = year+monthh.toString();
   
   var month = monthh.toString(); //获取当前日期的月份
@@ -55,7 +60,9 @@
   if (month2 < 10 && month2 != 0) {
       month2 = '0' + month2;
   }
-  var preYearMonth = year2.toString()+month2.toString(); //上月
+  var preYearMonth = year2.toString()+month2.toString(); //当前月份的上月
+  
+  
   
   var oriXOpen = XMLHttpRequest.prototype.open;
   XMLHttpRequest.prototype.open = function(method, url, asncFlag, user, password) {

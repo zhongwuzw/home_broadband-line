@@ -571,7 +571,7 @@ $(function () {
       }  
   });
 
-  //上传速率
+  /*//上传速率
   $.ajax({  
       type : "post",  
       async : false, //同步执行  
@@ -584,7 +584,7 @@ $(function () {
       error : function(errorMsg) {  
           alert("上传速率--返回数据出错");  
       }  
-  });
+  });*/
   
   //页面时延
   $.ajax({  
@@ -720,6 +720,20 @@ $(function () {
       }  
   }); 
   
+//H5视频-首次缓冲时延(ms)
+  $.ajax({  
+      type : "post",  
+      async : false, //同步执行  
+      url:'groupidvideomap/getVideoFistBufferDelay',
+      data : {month:yearMonth},  
+      dataType : "json", //返回数据形式为json  
+      success : function(result) {  
+    	  appendIndexTable(result,"info-box bg-green-active");
+      },  
+      error : function(errorMsg) {  
+          alert("首次缓冲时延(ms)--返回数据出错");  
+      }  
+  });
   
 //////////////////////////  end   ///////////////////////////////
     
@@ -769,8 +783,7 @@ $(function () {
 				  	"<td>"+result.data[i].province+"</td>"+
 				  	"<td>"+result.data[i].broadband_type+"</td>"+
 				  	"<td>"+result.data[i].testtimes+"</td>"+
-				  	/*"<td><a class='fa fa-download' href='adminLTE_zx/pages/examples/invoice.html'></td>"+*/
-				  	"<td><a class='fa fa-download' onclick='targetFunc_report(\"adminLTE_zx/pages/examples/invoice.html\",\"testreport"+i+"\",\""+result.data[i].month+"\",\""+result.data[i].province+"\",\""+result.data[i].broadband_type+"\",\""+result.data[i].groupid+"\")' id='testreport"+i+"' href=''></td>"+
+				  	"<td><a class='fa fa-download' onclick='targetFunc_report(\"report.html\",\"testreport"+i+"\",\""+result.data[i].month+"\",\""+result.data[i].province+"\",\""+result.data[i].broadband_type+"\",\""+result.data[i].groupid+"\")' id='testreport"+i+"' href=''></td>"+
 				  "</tr>"
 		  );
 	  }

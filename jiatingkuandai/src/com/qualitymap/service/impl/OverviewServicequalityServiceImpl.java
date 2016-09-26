@@ -12,13 +12,12 @@ import java.util.Map.Entry;
 
 import javax.annotation.Resource;
 
-import org.hibernate.dialect.function.StandardAnsiSqlAggregationFunctions.SumFunction;
-
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import com.qualitymap.dao.OverviewServicequalityDao;
 import com.qualitymap.service.OverviewServicequalityService;
+
 
 /**
  * Description: OTS统计平台业务质量
@@ -40,35 +39,44 @@ public class OverviewServicequalityServiceImpl implements OverviewServicequality
 		JSONObject androidjson = new JSONObject();
 		JSONObject iosjson = new JSONObject();
 		JSONObject pcjson = new JSONObject();
+		
+		String group = "";
+
+		if(groupid.contains(",")){
+			group = "and groupid in(" + groupid + ")";
+		}else{
+			group = " and groupid ='" + groupid + "' ";
+		}
+		
 		// 下载用户指标统计
-		List<Map<String, Object>> getHttpDownloadUserIndicator = overviewServicequalityDao.getHttpDownloadUserIndicator(groupid, month, broadband_type);
-		List<Map<String, Object>> getHttpDownloadSuccessUserIndicator = overviewServicequalityDao.getHttpDownloadSuccessUserIndicator(groupid, month, broadband_type);
+		List<Map<String, Object>> getHttpDownloadUserIndicator = overviewServicequalityDao.getHttpDownloadUserIndicator(groupid, month, broadband_type,group);
+		//List<Map<String, Object>> getHttpDownloadSuccessUserIndicator = overviewServicequalityDao.getHttpDownloadSuccessUserIndicator(groupid, month, broadband_type,group);
 		// 视频用户指标
-		List<Map<String, Object>> getVideoProportionUserIndicator = overviewServicequalityDao.getVideoProportionUserIndicator(groupid, month, broadband_type);
-		List<Map<String, Object>> getVideoDelayUserIndicator = overviewServicequalityDao.getVideoDelayUserIndicator(groupid, month, broadband_type);
-		List<Map<String, Object>> getVideoCache_countUserIndicator = overviewServicequalityDao.getVideoCache_countUserIndicator(groupid, month, broadband_type);
-		List<Map<String, Object>> getVideoPaly_successUserIndicator = overviewServicequalityDao.getVideoPaly_successUserIndicator(groupid, month, broadband_type);
+		List<Map<String, Object>> getVideoProportionUserIndicator = overviewServicequalityDao.getVideoProportionUserIndicator(groupid, month, broadband_type,group);
+		List<Map<String, Object>> getVideoDelayUserIndicator = overviewServicequalityDao.getVideoDelayUserIndicator(groupid, month, broadband_type,group);
+		List<Map<String, Object>> getVideoCache_countUserIndicator = overviewServicequalityDao.getVideoCache_countUserIndicator(groupid, month, broadband_type,group);
+		//List<Map<String, Object>> getVideoPaly_successUserIndicator = overviewServicequalityDao.getVideoPaly_successUserIndicator(groupid, month, broadband_type,group);
 		// 网页浏览用户指标统计
-		List<Map<String, Object>> getWebbrowsingAvgdelayUserIndicator = overviewServicequalityDao.getWebbrowsingAvgdelayUserIndicator(groupid, month, broadband_type);
-		List<Map<String, Object>> getWebbrowsingninetydelayUserIndicator = overviewServicequalityDao.getWebbrowsingninetydelayUserIndicator(groupid, month, broadband_type);
-		List<Map<String, Object>> getWebbrowsingsuccessUserIndicator = overviewServicequalityDao.getWebbrowsingsuccessUserIndicator(groupid, month, broadband_type);
-		List<Map<String, Object>> getWebbrowsingVisitSuccessRate = overviewServicequalityDao.getWebbrowsingVisitSuccessRate(groupid, month, broadband_type);
+		List<Map<String, Object>> getWebbrowsingAvgdelayUserIndicator = overviewServicequalityDao.getWebbrowsingAvgdelayUserIndicator(groupid, month, broadband_type,group);
+		List<Map<String, Object>> getWebbrowsingninetydelayUserIndicator = overviewServicequalityDao.getWebbrowsingninetydelayUserIndicator(groupid, month, broadband_type,group);
+		//List<Map<String, Object>> getWebbrowsingsuccessUserIndicator = overviewServicequalityDao.getWebbrowsingsuccessUserIndicator(groupid, month, broadband_type,group);
+		//List<Map<String, Object>> getWebbrowsingVisitSuccessRate = overviewServicequalityDao.getWebbrowsingVisitSuccessRate(groupid, month, broadband_type);
 
 		List<Map<String, Object>> datalist = new ArrayList<Map<String, Object>>();
 
 		datalist.addAll(getHttpDownloadUserIndicator);
-		datalist.addAll(getHttpDownloadSuccessUserIndicator);
+		//datalist.addAll(getHttpDownloadSuccessUserIndicator);
 		
 		
 		datalist.addAll(getWebbrowsingninetydelayUserIndicator);
 		datalist.addAll(getWebbrowsingAvgdelayUserIndicator);
-		datalist.addAll(getWebbrowsingsuccessUserIndicator);
-		datalist.addAll(getWebbrowsingVisitSuccessRate);
+		//datalist.addAll(getWebbrowsingsuccessUserIndicator);
+		//datalist.addAll(getWebbrowsingVisitSuccessRate);
 
 		datalist.addAll(getVideoProportionUserIndicator);
 		datalist.addAll(getVideoCache_countUserIndicator);
 		datalist.addAll(getVideoDelayUserIndicator);
-		datalist.addAll(getVideoPaly_successUserIndicator);
+		//datalist.addAll(getVideoPaly_successUserIndicator);
 		
 		JSONArray androidArray = new JSONArray();
 		JSONArray iosArray = new JSONArray();
@@ -87,14 +95,6 @@ public class OverviewServicequalityServiceImpl implements OverviewServicequality
 				iosArray.add(map);
 			}
 		}
-
-		if (pcArray.size() > 0) {
-
-			pcjson.put("type", "PC");
-			pcjson.put("data", pcArray);
-			dataArray.add(pcjson);
-		}
-
 		if (androidArray.size() > 0) {
 			androidjson.put("type", "Android");
 			androidjson.put("data", androidArray);
@@ -106,9 +106,17 @@ public class OverviewServicequalityServiceImpl implements OverviewServicequality
 			iosjson.put("data", iosArray);
 			dataArray.add(iosjson);
 		}
+		if (pcArray.size() > 0) {
+
+			pcjson.put("type", "PC");
+			pcjson.put("data", pcArray);
+			dataArray.add(pcjson);
+		}
+
+		
 
 		datajson.put("data", dataArray);
-
+System.out.println(datajson.toString());
 		return datajson.toString();
 
 	}
@@ -245,31 +253,31 @@ public class OverviewServicequalityServiceImpl implements OverviewServicequality
 		LinkedHashMap<String, LinkedHashMap<String, LinkedHashMap<String, List<LinkedHashMap<String, String>>>>> datamap = new LinkedHashMap<String, LinkedHashMap<String, LinkedHashMap<String, List<LinkedHashMap<String, String>>>>>();
 
 		List<Map<String, Object>> getCityrateHttpdownload = overviewServicequalityDao.getCityrateHttpdownload(groupid, month, broadband_type);
-		List<Map<String, Object>> getCitysuccessHttpdownload = overviewServicequalityDao.getCitysuccessHttpdownload(groupid, month, broadband_type);
+		//List<Map<String, Object>> getCitysuccessHttpdownload = overviewServicequalityDao.getCitysuccessHttpdownload(groupid, month, broadband_type);
 		List<Map<String, Object>> getCityVideoDelayVideo = overviewServicequalityDao.getCityVideoDelayVideo(groupid, month, broadband_type);
 		List<Map<String, Object>> getCitycacheCountVideo = overviewServicequalityDao.getCitycacheCountVideo(groupid, month, broadband_type);
-		List<Map<String, Object>> getCityPlaySuccessVideo = overviewServicequalityDao.getCityPlaySuccessVideo(groupid, month, broadband_type);
+		//List<Map<String, Object>> getCityPlaySuccessVideo = overviewServicequalityDao.getCityPlaySuccessVideo(groupid, month, broadband_type);
 		List<Map<String, Object>> getCityBufferproportionVideo = overviewServicequalityDao.getCityBufferproportionVideo(groupid, month, broadband_type);
 		List<Map<String, Object>> getCityNinetyDelayWebbrowsing = overviewServicequalityDao.getCityNinetyDelayWebbrowsing(groupid, month, broadband_type);
 		List<Map<String, Object>> getCityAvgDelayWebbrowsing = overviewServicequalityDao.getCityAvgDelayWebbrowsing(groupid, month, broadband_type);
-		List<Map<String, Object>> getCityPageSuccessRateWebbrowsing = overviewServicequalityDao.getCityPageSuccessRateWebbrowsing(groupid, month, broadband_type);
-		List<Map<String, Object>> getCitySuccessWebbrowsing = overviewServicequalityDao.getCitySuccessWebbrowsing(groupid, month, broadband_type);
+		//List<Map<String, Object>> getCityPageSuccessRateWebbrowsing = overviewServicequalityDao.getCityPageSuccessRateWebbrowsing(groupid, month, broadband_type);
+		//List<Map<String, Object>> getCitySuccessWebbrowsing = overviewServicequalityDao.getCitySuccessWebbrowsing(groupid, month, broadband_type);
 	
 		List<Map<String, Object>> datalist = new ArrayList<Map<String, Object>>();
 
 		
 		
 		datalist.addAll(getCityrateHttpdownload);
-		datalist.addAll(getCitysuccessHttpdownload);
+		//datalist.addAll(getCitysuccessHttpdownload);
 		
 		datalist.addAll(getCityNinetyDelayWebbrowsing);
 		datalist.addAll(getCityAvgDelayWebbrowsing);
-		datalist.addAll(getCityPageSuccessRateWebbrowsing);
-		datalist.addAll(getCitySuccessWebbrowsing);
+		//datalist.addAll(getCityPageSuccessRateWebbrowsing);
+		//datalist.addAll(getCitySuccessWebbrowsing);
 		
 		datalist.addAll(getCityVideoDelayVideo);
 		datalist.addAll(getCitycacheCountVideo);
-		datalist.addAll(getCityPlaySuccessVideo);
+		//datalist.addAll(getCityPlaySuccessVideo);
 		datalist.addAll(getCityBufferproportionVideo);
 		
 		
@@ -294,6 +302,7 @@ public class OverviewServicequalityServiceImpl implements OverviewServicequality
 						percentmap.put("percent95", map.get("percent95") + "");
 						percentmap.put("avgvalue", map.get("avgvalue") + "");
 						percentmap.put("usertype", map.get("usertype") + "");
+						percentmap.put("successratevalue", map.get("successratevalue") + "");
 						perlist.add(percentmap);
 						filemap.put(map.get("fieldname") + "", perlist);
 						kpimap.put(map.get("kpitypename") + "", filemap);
@@ -308,6 +317,7 @@ public class OverviewServicequalityServiceImpl implements OverviewServicequality
 						percentmap.put("percent95", map.get("percent95") + "");
 						percentmap.put("avgvalue", map.get("avgvalue") + "");
 						percentmap.put("usertype", map.get("usertype") + "");
+						percentmap.put("successratevalue", map.get("successratevalue") + "");
 
 						maplist_new.add(percentmap);
 						filemap.put(map.get("fieldname") + "", maplist_new);
@@ -325,6 +335,7 @@ public class OverviewServicequalityServiceImpl implements OverviewServicequality
 					percentmap.put("percent95", map.get("percent95") + "");
 					percentmap.put("avgvalue", map.get("avgvalue") + "");
 					percentmap.put("usertype", map.get("usertype") + "");
+					percentmap.put("successratevalue", map.get("successratevalue") + "");
 					maplist_new.add(percentmap);
 					fieldmap.put(map.get("fieldname") + "", maplist_new);
 					kpimap.put(map.get("kpitypename") + "", fieldmap);
@@ -343,6 +354,7 @@ public class OverviewServicequalityServiceImpl implements OverviewServicequality
 				percentmap.put("percent95", map.get("percent95") + "");
 				percentmap.put("avgvalue", map.get("avgvalue") + "");
 				percentmap.put("usertype", map.get("usertype") + "");
+				percentmap.put("successratevalue", map.get("successratevalue") + "");
 				maplist_new.add(percentmap);
 				fieldmap.put(map.get("fieldname") + "", maplist_new);
 				citymap.put(map.get("kpitypename") + "", fieldmap);
@@ -394,4 +406,129 @@ public class OverviewServicequalityServiceImpl implements OverviewServicequality
 		return jsonObject.toString();
 	}
 
+	/**
+	 * 按运营商进行的指标统计
+	 */
+	@Override
+	public String getOperatorData(String groupid, String month, String broadband_type) {
+
+		
+		JSONArray dataaArray = new JSONArray();
+		JSONObject datajson = new JSONObject();
+		List<Map<String, Object>> getSpecialCasebufferVideo = overviewServicequalityDao.getSpecialCasebufferVideo(groupid, month, broadband_type);
+		List<Map<String, Object>> getSpecialCaseHttpDownloadRate = overviewServicequalityDao.getSpecialCaseHttpDownloadRate(groupid, month, broadband_type);
+		List<Map<String, Object>> getSpecialCaseCacheCountVideo = overviewServicequalityDao.getSpecialCaseCacheCountVideo(groupid, month, broadband_type);
+		List<Map<String, Object>> getSpecialCaseFirstDelayVideo = overviewServicequalityDao.getSpecialCaseFirstDelayVideo(groupid, month, broadband_type);
+		List<Map<String, Object>> getSpecialCaseNinetyDelayWebbrowsing = overviewServicequalityDao.getSpecialCaseNinetyDelayWebbrowsing(groupid, month, broadband_type);
+		List<Map<String, Object>> getSpecialCaseAvgDelayWebbrowsing = overviewServicequalityDao.getSpecialCaseAvgDelayWebbrowsing(groupid, month, broadband_type);
+		List<List<Map<String, Object>>> datalist = new ArrayList<List<Map<String, Object>>>();
+		
+		datalist.add(getSpecialCaseHttpDownloadRate);
+		datalist.add(getSpecialCaseNinetyDelayWebbrowsing);
+		datalist.add(getSpecialCaseAvgDelayWebbrowsing);
+		datalist.add(getSpecialCasebufferVideo);
+		datalist.add(getSpecialCaseCacheCountVideo);
+		datalist.add(getSpecialCaseFirstDelayVideo);
+		
+		for (Iterator iterator = datalist.iterator(); iterator.hasNext();) {
+			List<Map<String, Object>> list = (List<Map<String, Object>>) iterator.next();
+			JSONObject kpiarray = dealListData(list);
+			if(kpiarray.size()>0){
+				
+				dataaArray.add(kpiarray);
+			}
+		}
+		datajson.put("data", dataaArray);
+		System.out.println(datajson.toString());
+		return datajson.toString();
+	}
+
+	
+
+	/**
+	 * 处理竞品对标数据
+	 * 
+	 * @param dataList
+	 * @return
+	 */
+	public static JSONObject dealListData(List<Map<String, Object>> dataList) {
+
+		LinkedHashMap<String, LinkedHashMap<String, List<LinkedHashMap<String, String>>>> datamap = new LinkedHashMap<String, LinkedHashMap<String, List<LinkedHashMap<String, String>>>>();
+
+		for (Iterator iterator = dataList.iterator(); iterator.hasNext();) {
+			Map<String, Object> map = (Map<String, Object>) iterator.next();
+
+			if (datamap.containsKey(map.get("kpiname"))) {
+				LinkedHashMap<String, List<LinkedHashMap<String, String>>> oldkpimap = datamap.get(map.get("kpiname"));
+
+				if (oldkpimap.containsKey(map.get("probetype"))) {
+					List<LinkedHashMap<String, String>> oldprolist = oldkpimap.get(map.get("probetype"));
+					LinkedHashMap<String, String> operatormap = new LinkedHashMap<String, String>();
+					operatormap.put("percent75", map.get("percent75") + "");
+					operatormap.put("percent85", map.get("percent85") + "");
+					operatormap.put("percent95", map.get("percent95") + "");
+					operatormap.put("operator", map.get("operator") + "");
+					operatormap.put("avgvalue", map.get("avgvalue") + "");
+					operatormap.put("successratevalue", map.get("successratevalue") + "");
+					oldprolist.add(operatormap);
+					oldkpimap.put(map.get("probetype") + "", oldprolist);
+					datamap.put(map.get("kpiname") + "", oldkpimap);
+
+				} else {
+					List<LinkedHashMap<String, String>> newprobetypeList = new ArrayList<LinkedHashMap<String, String>>();
+					LinkedHashMap<String, String> operatormap = new LinkedHashMap<String, String>();
+
+					operatormap.put("percent75", map.get("percent75") + "");
+					operatormap.put("percent85", map.get("percent85") + "");
+					operatormap.put("percent95", map.get("percent95") + "");
+					operatormap.put("operator", map.get("operator") + "");
+					operatormap.put("avgvalue", map.get("avgvalue") + "");
+					operatormap.put("successratevalue", map.get("successratevalue") + "");
+					newprobetypeList.add(operatormap);
+					oldkpimap.put(map.get("probetype") + "", newprobetypeList);
+					datamap.put(map.get("kpiname") + "", oldkpimap);
+				}
+
+			} else {
+				LinkedHashMap<String, List<LinkedHashMap<String, String>>> newkpimap = new LinkedHashMap<String, List<LinkedHashMap<String, String>>>();
+				List<LinkedHashMap<String, String>> newprobetypeList = new ArrayList<LinkedHashMap<String, String>>();
+				LinkedHashMap<String, String> operatormap = new LinkedHashMap<String, String>();
+
+				operatormap.put("percent75", map.get("percent75") + "");
+				operatormap.put("percent85", map.get("percent85") + "");
+				operatormap.put("percent95", map.get("percent95") + "");
+				operatormap.put("operator", map.get("operator") + "");
+				operatormap.put("avgvalue", map.get("avgvalue") + "");
+				operatormap.put("successratevalue", map.get("successratevalue") + "");
+				newprobetypeList.add(operatormap);
+				newkpimap.put(map.get("probetype") + "", newprobetypeList);
+				datamap.put(map.get("kpiname") + "", newkpimap);
+			}
+		}
+
+		
+		JSONObject datajson = new JSONObject();
+		JSONObject probetypejson = new JSONObject();
+
+		for (Entry<String, LinkedHashMap<String, List<LinkedHashMap<String, String>>>> entry : datamap.entrySet()) {
+			datajson.put("kpitypename", entry.getKey());
+
+			 LinkedHashMap<String, List<LinkedHashMap<String, String>>> kpimap = entry.getValue();
+
+			 JSONArray probetypearray = new JSONArray();
+			for (Entry<String,  List<LinkedHashMap<String, String>>> kpi : kpimap.entrySet()) {
+				probetypejson.put("probename", kpi.getKey());
+				probetypejson.put("probedata", kpi.getValue());
+				probetypearray.add(probetypejson);
+			}
+			datajson.put("kpidata", probetypearray);
+			//cityarray.add(datajson);
+		}
+
+		//jsonObject.put("data", cityarray);
+		System.out.println(datajson.toString());
+		return datajson;
+	}
+
+	
 }

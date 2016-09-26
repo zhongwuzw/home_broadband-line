@@ -132,6 +132,10 @@ public class OverviewProvinceAction extends BaseAction {
 		try {
 			String month = this.servletRequest.getParameter("month");
 			String groupid = this.servletRequest.getParameter("groupid");  //页面获取指定groupid
+			if(groupid.isEmpty()){
+				String uuid = this.servletRequest.getParameter("key");
+				groupid = this.getUserGroup(uuid);
+			}
 			String broadType = this.servletRequest.getParameter("broadType"); //宽带类型
 			String new_user_num = provinceService.getUsernumByGroupId(month, groupid,broadType);
 			printWriter(new_user_num);
@@ -151,6 +155,10 @@ public class OverviewProvinceAction extends BaseAction {
 		try {
 			String month = this.servletRequest.getParameter("month");
 			String groupid = this.servletRequest.getParameter("groupid");  //页面获取指定groupid
+			if(groupid.isEmpty()){
+				String uuid = this.servletRequest.getParameter("key");
+				groupid = this.getUserGroup(uuid);
+			}
 			String broadType = this.servletRequest.getParameter("broadType");//宽带类型
 			String new_terminal_num = provinceService.getTerminalnumByGroupId(month, groupid,broadType);
 			printWriter(new_terminal_num);
@@ -203,6 +211,10 @@ public class OverviewProvinceAction extends BaseAction {
 		try {
 			String month = this.servletRequest.getParameter("month");
 			String groupid = this.servletRequest.getParameter("groupid");  //页面获取指定groupid
+			if(groupid.isEmpty()){
+				String uuid = this.servletRequest.getParameter("key");
+				groupid = this.getUserGroup(uuid);
+			}
 			String broadType = this.servletRequest.getParameter("broadType");
 			String ping_test_times = provinceService.getValidSampleNum(month, groupid,broadType);
 			printWriter(ping_test_times);
@@ -220,6 +232,10 @@ public class OverviewProvinceAction extends BaseAction {
 		try {
 			String month = this.servletRequest.getParameter("month");
 			String groupid = this.servletRequest.getParameter("groupid");  //页面获取指定groupid
+			if(groupid.isEmpty()){
+				String uuid = this.servletRequest.getParameter("key");
+				groupid = this.getUserGroup(uuid);
+			}
 			String broadType = this.servletRequest.getParameter("broadType");
 			String ping_test_times = provinceService.getServiceQualityCompare(month, groupid, broadType);
 			printWriter(ping_test_times);
@@ -237,6 +253,10 @@ public class OverviewProvinceAction extends BaseAction {
 		try {
 			String month = this.servletRequest.getParameter("month");
 			String groupid = this.servletRequest.getParameter("groupid");  //页面获取指定groupid
+			if(groupid.isEmpty()){
+				String uuid = this.servletRequest.getParameter("key");
+				groupid = this.getUserGroup(uuid);
+			}
 			String broadType = this.servletRequest.getParameter("broadType");
 			//String parameter = this.servletRequest.getParameter("parameter");
 			String ping_test_times = provinceService.getKPIbyGroupid( month, groupid, broadType);

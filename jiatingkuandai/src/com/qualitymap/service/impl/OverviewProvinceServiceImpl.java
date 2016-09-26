@@ -2,6 +2,7 @@ package com.qualitymap.service.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.Format;
 import java.util.ArrayList;
@@ -642,14 +643,26 @@ public class OverviewProvinceServiceImpl implements OverviewProvinceService {
 				String tableName = data[2];
 				String dataq = data[3];
 				String datatype = data[4];
+				String testtimes = data[6];
 
 				String bestfielddata = "";
+				
 
 				if (fieldName.contains("delay")) {
 					df = new DecimalFormat("#");
 				} else if (fieldName.contains("proportion") || fieldName.contains("download_rate")) {
 					df = new DecimalFormat("#.00");
+					/*BigDecimal   b   =   new   BigDecimal(f);  
+					double   f1   =   b.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();  */
 				}
+				/*String group = "";
+				if(groupid.contains(",")){
+					group = " and groupid in("+groupid+")";
+				}else{
+					group = " and groupid = ";
+				}*/
+				
+				fieldName = "sum("+fieldName+"*"+testtimes+")/sum("+testtimes+")";
 
 				String datas = "";
 				if (!"".equals(groupid)) {
@@ -675,13 +688,18 @@ public class OverviewProvinceServiceImpl implements OverviewProvinceService {
 								if (Double.parseDouble(datas) == 0) {
 									fielddata = "0";
 								} else {
-									fielddata = (df.format(Math.abs(Double.parseDouble(datas)) * 100)) + "%";
+									BigDecimal bg = new BigDecimal(Math.abs(Double.parseDouble(datas)));
+						            double f1 = bg.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+									fielddata = f1 + "%";
 								}
 							} else if (fieldName.contains("download_rate")) {
 								if (Double.parseDouble(datas) == 0) {
 									fielddata = "0 Mbps";
 								} else {
-									fielddata = (df.format(Math.abs(Double.parseDouble(datas)))) + "Mbps";
+									 BigDecimal bg = new BigDecimal(Math.abs(Double.parseDouble(datas)));
+							            double f1 = bg.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+									fielddata = f1+"Mbps";
+											//(df.format(Math.abs(Double.parseDouble(datas)))) + "Mbps";
 								}
 							} else {
 								fielddata = Math.abs(Double.parseDouble(datas)) + "";
@@ -768,6 +786,7 @@ public class OverviewProvinceServiceImpl implements OverviewProvinceService {
 				String dataq = data[3];
 				String datatype = data[4];
 				String field85 = data[5];
+				String testtimes = data[6];
 
 				String usertype = "";
 				Map provinceMap = new HashMap();
@@ -792,29 +811,33 @@ public class OverviewProvinceServiceImpl implements OverviewProvinceService {
 				String bestfielddata = "";
 
 				if (field85.contains("delay")) {
-					fielddata = "CONCAT(round(" + field85 + ",0) ,'ms') ";
+					fielddata = "ifnull(CONCAT(round(sum(" + field85 + "*"+testtimes+")/sum("+testtimes+"),0) ,'ms'),'N/A') ";
 					bestfielddata = "CONCAT(round(" + ss + "(abs(" + field85 + ")), 0),'ms')";
 				} else if (field85.contains("proportion")) {
-					fielddata = "CONCAT(round(" + field85 + ",2)*100 ,'%') ";
+					fielddata = "IFNULL(CONCAT(round(sum(" + field85 + "*"+testtimes+")/sum("+testtimes+"),2)*100 ,'%'),'N/A') ";
 					bestfielddata = "CONCAT(round(" + ss + "(abs(" + field85 + ")), 2)*100,'%')";
 				} else if (field85.contains("download_rate")) {
-					fielddata = "CONCAT(round(" + field85 + ",2) ,'Mbps') ";
+					fielddata = "IFNULL(CONCAT(round(sum(" + field85 + "*"+testtimes+")/sum("+testtimes+"),2) ,'Mbps'),'N/A') ";
 					bestfielddata = "CONCAT(round(" + ss + "(abs(" + field85 + ")), 2),'Mbps')";
 				} else {
-					fielddata = field85;
+					fielddata = " IFNULL(round(sum(" + field85 + "*"+testtimes+")/sum("+testtimes+"),2),'N/A') ";
 					bestfielddata = "" + ss + "(abs(" + field85 + "))";
 				}
 
+				List<Map<String, Object>> bestResList = new ArrayList<Map<String,Object>>();
 				if (!"".equals(groupid)) {
 
-					List<Map<String, Object>> provinceResList = provinceDao.getProvinceResult(probetype, fielddata, tableName, dataq, datatype, month, groupid, broadband_type);
+					List<Map<String, Object>>  provinceResList = provinceDao.getProvinceResult(probetype, fielddata, tableName, dataq, datatype, month, groupid, broadband_type);
 					if (provinceResList.size() > 0) {
 						provinceMap = provinceResList.get(0);
 					}
-
-					List<Map<String, Object>> bestResList = provinceDao.getBestResult(probetype, bestfielddata, tableName, dataq, datatype, month, broadband_type);
-					if (bestResList.size() > 0) {
-						bestResultMap = bestResList.get(0);
+					
+					if(!groupid.contains(",")){
+						
+						 bestResList = provinceDao.getBestResult(probetype, bestfielddata, tableName, dataq, datatype, month, broadband_type);
+						if (bestResList.size() > 0) {
+							bestResultMap = bestResList.get(0);
+						}
 					}
 					if (provinceResList.size() == 0) {
 						provinceMap.put("avg_order", "N/A");
@@ -823,9 +846,16 @@ public class OverviewProvinceServiceImpl implements OverviewProvinceService {
 						provinceMap.put("avg_data", "N/A");
 						// provinceMap.put("best_data", "N/A");
 					} else {
-
+						String avg_order = "";
 						// provinceMap.putAll(bestResultMap);
-						String avg_order = provinceDao.getResultOrder(probetype, field85, tableName, dataq, datatype, month, groupid, broadband_type);
+						if(!groupid.contains(",")){
+							 avg_order = provinceDao.getResultOrder(probetype, field85, tableName, dataq, datatype, month, groupid, broadband_type);
+							 if(avg_order.equals("0")){
+								 avg_order = "N/A";
+							 }
+						}else{
+							avg_order = "N/A";
+						}
 						provinceMap.put("avg_order", avg_order);
 						provinceMap.put("datatype", datatype);
 						provinceMap.put("usertype", usertype);
@@ -836,7 +866,6 @@ public class OverviewProvinceServiceImpl implements OverviewProvinceService {
 
 							provinceMap.put("best_data", "N/A");
 						} else {
-
 							provinceMap.putAll(bestResultMap);
 						}
 					} else {

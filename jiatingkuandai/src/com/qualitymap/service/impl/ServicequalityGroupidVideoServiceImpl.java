@@ -41,6 +41,24 @@ public class ServicequalityGroupidVideoServiceImpl implements ServicequalityGrou
 
 		return avgJson.toString();
 	}
+	/**
+	 * 获取上下月的首次缓冲时延
+	 */
+	@Override
+	public String getVideoFistBufferDelay(String yearMonth, String groupid) {
+		String lastMonth = UtilDate.getPreviousMonth(yearMonth);
+		
+		JSONObject avgJson = new JSONObject();
+		
+		List<Map<String, Object>> avgDelayList = new ArrayList<Map<String, Object>>();
+		
+		if (!"".equals(groupid)) {
+			avgDelayList = groupidVideoDao.getVideoFistBufferDelay(yearMonth, lastMonth, groupid);
+		}
+		avgJson.put("data", avgDelayList);
+		
+		return avgJson.toString();
+	}
 	
 	/**
 	 * 获取上下月的播放成功率
@@ -319,6 +337,102 @@ public class ServicequalityGroupidVideoServiceImpl implements ServicequalityGrou
 		return dataJSON.toString();
 	}
 	/**
+	 * 获取视频卡顿次数数据
+	 */
+	@Override
+	public String getVideoFirstBufferDelayData(String groupid, String probetype) {
+		// TODO Auto-generated method stub
+		JSONObject dataJSON = new JSONObject();
+		JSONArray avgArray = new JSONArray();
+		JSONArray monthArray = new JSONArray();
+		if (!"".equals(groupid)) {
+			
+			List<Map<String, Object>> queryList = groupidVideoDao.getVideoFirstBufferDelayData(groupid, probetype);
+			
+			for (Iterator iterator = queryList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+				double page_success_rate = Double.parseDouble(map.get("first_buffer_delay").toString());
+				String month = map.get("month").toString();
+				avgArray.add(fm.format(page_success_rate));
+				monthArray.add(month);
+			}
+		}
+		
+		dataJSON.put("lable", monthArray);
+		dataJSON.put("data", avgArray);
+		
+		return dataJSON.toString();
+	}
+	/**
+	 * 获取视频卡顿次数的排名
+	 */
+	@Override
+	public String getVideoFirstBufferDelayOrder(String thismonth, String groupid, String probetype) {
+		
+		JSONObject dataJSON = new JSONObject();
+		
+		JSONArray dataArray = new JSONArray();
+		
+		String prmonth = UtilDate.getPreviousMonth(thismonth);
+		if (!"".equals(groupid)) {
+			List<Map<String, Object>> monList = groupidVideoDao.getVideoFirstBufferDelayOrder(thismonth, prmonth, groupid, probetype);
+			
+			List<Map<String, Object>> mapList = new ArrayList<Map<String, Object>>();
+			
+			String percent = "";
+			
+			for (Iterator iterator = monList.iterator(); iterator.hasNext();) {
+				Map<String, Object> map = (Map<String, Object>) iterator.next();
+				Map datamap = new HashMap();
+				
+				String province = (String) map.get("groupname");
+				String pagesuccess = "";
+				if (map.get("first_buffer_delay") != null) {
+					pagesuccess = map.get("first_buffer_delay").toString();
+				}else{
+					pagesuccess = "0";
+				}
+				
+				String pre_pagesuccess = "";
+				
+				if (map.get("pre_first_buffer_delay") != null) {
+					pre_pagesuccess = map.get("pre_first_buffer_delay").toString();
+				}
+				
+				if (pre_pagesuccess != null && !pre_pagesuccess.isEmpty()&&!"999999.0".equals(pagesuccess)) {
+					double difValue = Double.valueOf(pagesuccess) - Double.valueOf(pre_pagesuccess);
+					percent = fm.format(difValue / Double.valueOf(pre_pagesuccess) * 100);
+				} else {
+					percent = "N/A";
+				}
+				
+				String thisdata = "";
+				if(!"0".equals(pagesuccess)&&!"999999.0".equals(pagesuccess)){
+					thisdata= fm.format(Double.valueOf(pagesuccess));
+				}else{
+					thisdata = "N/A";
+				}
+				
+				datamap.put("province", province);
+				datamap.put("thisdata", thisdata);
+				if (pre_pagesuccess != null && !pre_pagesuccess.isEmpty()) {
+					datamap.put("predata", fm.format(Double.valueOf(pre_pagesuccess)));
+				} else {
+					datamap.put("predata", "N/A");
+				}
+				datamap.put("percent", percent);
+				
+				mapList.add(datamap);
+			}
+			
+			dataArray = JSONArray.fromObject(mapList);
+		}
+		
+		dataJSON.put("data", dataArray);
+		
+		return dataJSON.toString();
+	}
+	/**
 	 * 获取视频卡顿次数的排名
 	 */
 	@Override
@@ -354,7 +468,7 @@ public class ServicequalityGroupidVideoServiceImpl implements ServicequalityGrou
 					pre_pagesuccess = map.get("pre_video_cache_count").toString();
 				}
 
-				if (pre_pagesuccess != null && !pre_pagesuccess.isEmpty()) {
+				if (pre_pagesuccess != null && !pre_pagesuccess.isEmpty()&&!"999999.0".equals(pagesuccess)) {
 					double difValue = Double.valueOf(pagesuccess) - Double.valueOf(pre_pagesuccess);
 					percent = fm.format(difValue / Double.valueOf(pre_pagesuccess) * 100);
 				} else {
@@ -362,7 +476,7 @@ public class ServicequalityGroupidVideoServiceImpl implements ServicequalityGrou
 				}
 
 				String thisdata = "";
-				if(!"0".equals(pagesuccess)){
+				if(!"0".equals(pagesuccess)&&!"999999.0".equals(pagesuccess)){
 					 thisdata= fm.format(Double.valueOf(pagesuccess));
 				}else{
 					thisdata = "N/A";
@@ -451,7 +565,7 @@ public class ServicequalityGroupidVideoServiceImpl implements ServicequalityGrou
 					pre_pagesuccess = map.get("pre_avg_buffer_proportion").toString();
 				}
 
-				if (pre_pagesuccess != null && !pre_pagesuccess.isEmpty() && !("0.0").equals(pre_pagesuccess)) {
+				if (pre_pagesuccess != null && !pre_pagesuccess.isEmpty() && !("0.0").equals(pre_pagesuccess)&&!("999999.00".equals(pagesuccess))) {
 					double difValue = Double.valueOf(pagesuccess) - Double.valueOf(pre_pagesuccess);
 					percent = fm.format(difValue / Double.valueOf(pre_pagesuccess) * 100);
 				} else {
@@ -459,7 +573,7 @@ public class ServicequalityGroupidVideoServiceImpl implements ServicequalityGrou
 				}
 
 				String thisdata = "";
-				if(!"0".equals(pagesuccess)){
+				if(!"0".equals(pagesuccess)&&!("999999.0".equals(pagesuccess))){
 					 thisdata= fm.format(Double.valueOf(pagesuccess));
 				}else{
 					thisdata = "N/A";

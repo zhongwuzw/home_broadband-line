@@ -24,6 +24,8 @@
 			method="getTerritoryData"></action>
 		<action name="getCityData" class="overviewServicequalityAction"
 			method="getCityData"></action>
+		<action name="getOperatorData" class="overviewServicequalityAction"
+			method="getOperatorData"></action>
 	</package>
 
 	<package name="terminalOsAction" namespace="/terminalOs"
@@ -285,6 +287,9 @@
 		<!-- 视频平均时延上下月-->
 		<action name="getVideoDelay" class="groupidVideoAction" method="getVideoDelay">
 		</action>
+		<!-- 视频平均时延上下月-->
+		<action name="getVideoFistBufferDelay" class="groupidVideoAction" method="getVideoFistBufferDelay">
+		</action>
 		<!-- 视频卡顿次数上下月 -->
 		<action name="getCacheCount" class="groupidVideoAction" method="getCacheCount">
 		</action>
@@ -305,6 +310,12 @@
 		</action>
 		<!-- 获取视频卡顿次数的排名 -->
 		<action name="getVideoCacheCountOrder" class="groupidVideoAction" method="getVideoCacheCountOrder">
+		</action> 
+		<!-- 获取视频首次缓冲时延的排名趋势 -->
+		<action name="getVideoFirstBufferDelayData" class="groupidVideoAction" method="getVideoFirstBufferDelayData">
+		</action>
+		<!-- 获取视频首次缓冲时延的排名 -->
+		<action name="getVideoFirstBufferDelayOrder" class="groupidVideoAction" method="getVideoFirstBufferDelayOrder">
 		</action> 
 		<!-- 视频缓冲时长占比上下月 -->
 		<action name="getAvgBufferProportion" class="groupidVideoAction" method="getAvgBufferProportion">
@@ -360,6 +371,9 @@
 	    </action>
 	    <action name="getCaseCount" class="com.qualitymap.action.OverviewAnalysisAction"
 			method="getCaseCount">
+	    </action>
+	    <action name="downloadPDF" class="com.qualitymap.action.OverviewAnalysisAction"
+			method="downloadPDF">
 	    </action>
 	</package> 
 </struts>

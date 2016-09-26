@@ -36,4 +36,13 @@ public interface OverviewServicequalityService {
 	 * @return
 	 */
 	String getCityData(String groupid, String month, String broadband_type);
+	
+	/**
+	 * 按运营商进行的指标统计
+	 * @param groupid
+	 * @param month
+	 * @param broadband_type
+	 * @return
+	 */
+	String getOperatorData(String groupid, String month, String broadband_type);
 }

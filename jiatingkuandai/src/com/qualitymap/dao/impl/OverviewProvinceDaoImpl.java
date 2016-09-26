@@ -41,8 +41,16 @@ public class OverviewProvinceDaoImpl implements OverviewProvinceDao {
 
 	@Override
 	public List<OverviewProvince> findProvice(String groupid,String month) {
-		// TODO Auto-generated method stub
-		SQLQuery query = getSession().createSQLQuery("select month,province, CONCAT(broadband_type,'M') broadband_type,sum(testtimes) testtimes ,groupid  from overview_province where groupid in ("+groupid+") and month<='"+month+"' and broadband_type in('20','50','100') group by province ,broadband_type ,month order by month desc");
+		String sql = "";
+		System.out.println(groupid);
+		if(groupid.contains(",")){
+			
+			 sql = "select * from ((select month,province, CONCAT(broadband_type,'M') broadband_type,sum(testtimes) testtimes ,groupid  from overview_province where groupid in ("+groupid+") and month<='"+month+"' and broadband_type in('20','50','100') group by province ,broadband_type ,month) union all  " +
+					"(select month, '全国' province, CONCAT(broadband_type,'M') broadband_type,sum(testtimes) testtimes , '' groupid  from overview_province where groupid in ("+groupid+") and month<='"+month+"' and broadband_type in('20','50','100') group by broadband_type ,month )) a order by month desc ";
+		}else{
+			sql = "select month,province, CONCAT(broadband_type,'M') broadband_type,sum(testtimes) testtimes ,groupid  from overview_province where groupid in ("+groupid+") and month<='"+month+"' and broadband_type in('20','50','100') group by province ,broadband_type ,month";
+		}
+		SQLQuery query = getSession().createSQLQuery(sql);
 		List<OverviewProvince> proList = query.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
 		return proList;
 	}
@@ -102,7 +110,7 @@ public class OverviewProvinceDaoImpl implements OverviewProvinceDao {
 	 */
 	@Override
 	public String getUsernumByGroupId(String month, String groupid,String broadType) {
-		String sql = "select IFNULL(sum(new_user_num),0) new_user_num from overview_province where  month= '"+month+"' and groupid = '"+groupid+"' and broadband_type = '"+broadType+"' ";
+		String sql = "select IFNULL(sum(new_user_num),0) new_user_num from overview_province where  month= '"+month+"' and groupid in("+groupid+") and broadband_type = '"+broadType+"' ";
 		SQLQuery query = this.getSession().createSQLQuery(sql);    
 	    String new_user_num = query.uniqueResult().toString(); 
 		return new_user_num;
@@ -112,7 +120,7 @@ public class OverviewProvinceDaoImpl implements OverviewProvinceDao {
 	 */
 	@Override
 	public String getTerminalnumByGroupId(String month, String groupid,String broadType) {
-		String sql = "select IFNULL(sum(terminal_num),0) new_terminal_num from overview_province where  month= '"+month+"' and groupid = '"+groupid+"' and broadband_type = '"+broadType+"' ";
+		String sql = "select IFNULL(sum(terminal_num),0) new_terminal_num from overview_province where  month= '"+month+"' and groupid in("+groupid+")  and broadband_type = '"+broadType+"' ";
 		SQLQuery query = this.getSession().createSQLQuery(sql);    
 	    String new_terminal_num = query.uniqueResult().toString(); 
 		return new_terminal_num;
@@ -254,7 +262,7 @@ public class OverviewProvinceDaoImpl implements OverviewProvinceDao {
 	 */
 	@Override
 	public String getValidSampleNum(String month, String groupid,String broadType) {
-		String sql = "select IFNULL(sum(testtimes),0) ping_test_times from overview_province where  month= '"+month+"' and groupid = '"+groupid+"' and broadband_type = '"+broadType+"' ";
+		String sql = "select IFNULL(sum(testtimes),0) ping_test_times from overview_province where  month= '"+month+"' and groupid IN("+groupid+") and broadband_type = '"+broadType+"' ";
 		SQLQuery query = this.getSession().createSQLQuery(sql);    
 	    String ping_test_times = query.uniqueResult().toString(); 
 		return ping_test_times;
@@ -327,7 +335,7 @@ public class OverviewProvinceDaoImpl implements OverviewProvinceDao {
 	@Override
 	public List<Map<String, Object>> getProvinceResult(String probetype ,String fieldName, String tableName,String dataq,String datatype , String month, String groupid,String broadType) {
 		String sql = "select "+fieldName+" avg_data from "+tableName+" where  month= '"+month+"' and " +
-				"groupid = '"+groupid+"' and broadband_type = '"+broadType+"' and probetype='"+probetype+"'";
+				"groupid in("+groupid+") and broadband_type = '"+broadType+"' and probetype='"+probetype+"'";
 		SQLQuery query = this.getSession().createSQLQuery(sql);  
 
 		List<Map<String, Object>> queryList =query.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
@@ -359,19 +367,34 @@ public class OverviewProvinceDaoImpl implements OverviewProvinceDao {
 	public List<Map<String, Object>> getServiceQualityCompare(String probetype, String fieldName, String tableName, String dataq, String datatype, String month, String premonth, String groupid,
 			String broadband_type) {
 		
+ 	String sql = "";
  	
-		
-		
-		String sql = "SELECT avg_data ,pre_avg_data FROM ( SELECT probetype FROM "+tableName+" b WHERE" +
-				" `month` IN ('"+month+"','"+premonth+"') and groupid='"+groupid+"' and broadband_type='"+broadband_type+"' and probetype='"+probetype+"'  group by probetype ) a" +
-				" LEFT JOIN ( SELECT  "+fieldName+" avg_data, probetype, MONTH FROM "+tableName+" " +
-				" WHERE	month='"+month+"' and groupid='"+groupid+"' and broadband_type='"+broadband_type+"' and probetype='"+probetype+"' ) b ON a.probetype = b.probetype " +
+ 	/*if(groupid.contains(",")){
+		 sql = "SELECT avg_data ,pre_avg_data FROM ( SELECT probetype FROM "+tableName+" b WHERE" +
+				" `month` IN ('"+month+"','"+premonth+"') and groupid in("+groupid+") and broadband_type='"+broadband_type+"' and probetype='"+probetype+"'  group by probetype ) a" +
+				" LEFT JOIN ( SELECT  sum("+fieldName+"*) avg_data, probetype, MONTH FROM "+tableName+" " +
+				" WHERE	month='"+month+"' and groupid in("+groupid+") and broadband_type='"+broadband_type+"' and probetype='"+probetype+"' ) b ON a.probetype = b.probetype " +
 				" LEFT JOIN ( SELECT  "+fieldName+" pre_avg_data, probetype, MONTH FROM "+tableName+" " +
-				" WHERE	month='"+premonth+"' and groupid='"+groupid+"' and broadband_type='"+broadband_type+"' and probetype='"+probetype+"'  ) c ON a.probetype = c.probetype " ;
+				" WHERE	month='"+premonth+"' and groupid in("+groupid+") and broadband_type='"+broadband_type+"' and probetype='"+probetype+"'  ) c ON a.probetype = c.probetype " ;
+
+ 	}else{
+
+ 		sql = "SELECT avg_data ,pre_avg_data FROM ( SELECT probetype FROM "+tableName+" b WHERE" +
+ 				" `month` IN ('"+month+"','"+premonth+"') and groupid='"+groupid+"' and broadband_type='"+broadband_type+"' and probetype='"+probetype+"'  group by probetype ) a" +
+ 				" LEFT JOIN ( SELECT  "+fieldName+" avg_data, probetype, MONTH FROM "+tableName+" " +
+ 				" WHERE	month='"+month+"' and groupid='"+groupid+"' and broadband_type='"+broadband_type+"' and probetype='"+probetype+"' ) b ON a.probetype = b.probetype " +
+ 				" LEFT JOIN ( SELECT  "+fieldName+" pre_avg_data, probetype, MONTH FROM "+tableName+" " +
+ 				" WHERE	month='"+premonth+"' and groupid='"+groupid+"' and broadband_type='"+broadband_type+"' and probetype='"+probetype+"'  ) c ON a.probetype = c.probetype " ;
+ 	}*/
+ 	sql = "SELECT avg_data ,pre_avg_data FROM ( SELECT probetype FROM "+tableName+" b WHERE" +
+ 			" `month` IN ('"+month+"','"+premonth+"') and groupid in("+groupid+")  and broadband_type='"+broadband_type+"' and probetype='"+probetype+"'  group by probetype ) a" +
+ 			" LEFT JOIN ( SELECT  "+fieldName+" avg_data, probetype, MONTH FROM "+tableName+" " +
+ 			" WHERE	month='"+month+"' and groupid in("+groupid+") and broadband_type='"+broadband_type+"' and probetype='"+probetype+"' ) b ON a.probetype = b.probetype " +
+ 			" LEFT JOIN ( SELECT  "+fieldName+" pre_avg_data, probetype, MONTH FROM "+tableName+" " +
+ 			" WHERE	month='"+premonth+"' and groupid in("+groupid+") and broadband_type='"+broadband_type+"' and probetype='"+probetype+"'  ) c ON a.probetype = c.probetype " ;
 		
-	/*	String sql = "select round(("+fieldName+" - (select "+fieldName+" from "+tableName+" where month='"+permonth+"' and groupid='"+groupid+"' and broadband_type='"+broadband_type+"' and probetype='"+probetype+"')),2) avg_data " +
-				" from  "+tableName+"  where  month='"+month+"' and groupid='"+groupid+"' and broadband_type='"+broadband_type+"' and probetype='"+probetype+"' ";
-		*/
+		
+		
 		List<Map<String, Object>> queryList = this.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
 		return queryList;
 	}
