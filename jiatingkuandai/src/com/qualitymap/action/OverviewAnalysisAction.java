@@ -49,7 +49,7 @@ public class OverviewAnalysisAction extends BaseAction {
             //String pathString=(new File("")).getAbsolutePath().replaceAll("\\\\", "/");
     		//pathString=pathString.substring(0, pathString.length()-3);
     		
-            imgFilePath = "../webapps/jiatingkuandai/pdf/222.jpg";//新生成的图片
+            imgFilePath = "../webapps/quality_map/pdf/222.jpg";//新生成的图片
             OutputStream out = new FileOutputStream(imgFilePath);    
             out.write(b);
             out.flush();
@@ -111,7 +111,7 @@ public class OverviewAnalysisAction extends BaseAction {
         OutputStream out = null;
         try
         {
-            out = new FileOutputStream("../webapps/jiatingkuandai/pdf/"+pinYinStr+".pdf");
+            out = new FileOutputStream("../webapps/quality_map/pdf/"+pinYinStr+".pdf");
         }
         catch(FileNotFoundException e)
         {
@@ -122,7 +122,7 @@ public class OverviewAnalysisAction extends BaseAction {
         try
         {
             //fontResolver.addFont("C:/Windows/Fonts/SimSun.ttc", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            fontResolver.addFont("../webapps/jiatingkuandai/pdf/simsun.ttc", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            fontResolver.addFont("../webapps/quality_map/pdf/simsun.ttc", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
         }
         catch(DocumentException e)
         {
