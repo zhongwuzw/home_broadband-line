@@ -43,5 +43,7 @@ def executeResultInsertDatabase(province,totalSum):
 
 calculateImeiNum()
 
+print "done"
+
 # n = os.system('/Users/zhongwu/Documents/workspace/test.sh 2014')
 # print n
