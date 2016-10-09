@@ -46,6 +46,9 @@ def calculateImeiNum():
             for element in result:
                 (valid_phone,imei_num) = getImeiValid(element['imei'])
                 isValid = 0
+                if imei_num == 0:   #fix:修复找不到手机号的情况
+                    imei_num = 1
+                    isValid = 1
                 if valid_phone == element['phoneno']:
                     isValid = 1
                 sql = "update hefen_app_table set imei_num = '" + str(imei_num) + "',phone_flag = '" + str(isValid) +"' where phoneno = '" + element['phoneno'] + "' and imei = '" + element['imei'] + "'"
@@ -135,7 +138,7 @@ def calculateIndicatorSum(indicatorName,threshold):
 
     try:
         with SourcePhoneconnection.cursor() as cursor:
-            sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios from " + indicatorName + " WHERE UNIX_TIMESTAMP(time) > 1469980800 and UNIX_TIMESTAMP(time) < 1472659199 GROUP BY file_path"
+            sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios from " + indicatorName + " WHERE UNIX_TIMESTAMP(time) > 1472659200 and UNIX_TIMESTAMP(time) < 1475251199 GROUP BY file_path"
             # sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone from " + indicatorName + " WHERE bandwidth_flag = 1 AND phone_number_flag = 1 AND openBroadband_flag = 1 AND signal_flag = 1 and UNIX_TIMESTAMP(time) < 1469980800 GROUP BY file_path"
             cursor.execute(sql)
             result = cursor.fetchall()
@@ -161,9 +164,9 @@ def calculateIndicatorSum(indicatorName,threshold):
 
 
 # 执行主函数
-(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('gps_http_test_new_201608',2)
-(videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_new_201608',1)
-(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_new_201608',5)
+(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('gps_http_test_analyse_201608',2)
+(videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_analyse_201608',1)
+(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_analyse_201608',5)
 
 #计算http下载
 for key in httpDownloadResultDic.keys():
