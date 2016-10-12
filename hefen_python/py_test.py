@@ -8,3 +8,8 @@ time_converted = time_osx.strftime("%a, %d %b %Y %H:%M:%S")
 
 print time_converted
 
+dic = {"sss":112,"dsdsd":32}
+list = []
+for value in dic.values():
+    list.append(value)
+print tuple(list)

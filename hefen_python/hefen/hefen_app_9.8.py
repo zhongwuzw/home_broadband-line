@@ -164,9 +164,9 @@ def calculateIndicatorSum(indicatorName,threshold):
 
 
 # 执行主函数
-(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('gps_http_test_analyse_201608',2)
-(videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_analyse_201608',1)
-(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_analyse_201608',5)
+(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('gps_http_test_new_201609',2)
+(videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_new_201609',1)
+(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_new_201609',5)
 
 #计算http下载
 for key in httpDownloadResultDic.keys():
