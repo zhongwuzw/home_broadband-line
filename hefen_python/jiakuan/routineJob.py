@@ -28,12 +28,20 @@ def insertDataIntoDstDatabase(table_name,dic):
             for i in range(59):
                 coloum_str += "%s,"
             coloum_str += "%s)"
-        sql = "insert into " + table_name + " values " + coloum_str;
-        list = []
-        for value in dic.values():
-            list.append(value)
-        tu = tuple(list)
-        d_cursor.execute(sql,tu)
+
+        src_name = "("
+        src_value = "("
+        for key in dic.keys():
+            src_name = src_name + key + ","
+            src_value = src_value + "'" + str(dic[key]) + "',"
+        src_name = src_name[:-1]
+        src_value = src_value[:-1]
+
+        src_name += ")"
+        src_value += ")"
+
+        sql = "insert into " + table_name + src_name + " values " + src_value;
+        d_cursor.execute(sql)
         dst_database.commit()
 
 yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
