@@ -5,6 +5,7 @@ import datetime
 import time
 import pymysql.cursors
 
+#数据库更新
 def insertDataIntoDstDatabase(table_name,dic):
     with dst_database.cursor() as d_cursor:
         coloum_str = "("
@@ -33,22 +34,27 @@ def insertDataIntoDstDatabase(table_name,dic):
         src_value = "("
         for key in dic.keys():
             src_name = src_name + key + ","
-            src_value = src_value + "'" + str(dic[key]) + "',"
+            #判断编码,对于int、NoneType等类型不能使用encode来进行编码
+            if isinstance(dic[key],unicode):
+                src_value = src_value + "'" + dic[key].encode('utf-8') + "',"
+            else:
+                src_value = src_value + "'" + str(dic[key]) + "',"
         src_name = src_name[:-1]
         src_value = src_value[:-1]
 
         src_name += ")"
         src_value += ")"
 
-        sql = "insert into " + table_name + src_name + " values " + src_value;
+        sql = "insert into " + table_name + src_name.encode('utf-8') + " values " + src_value;
         d_cursor.execute(sql)
         dst_database.commit()
 
 yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
 yesterday_month = time.strftime("%Y%m", yesterday.timetuple())
 
+#pc端相关数据表
 pc_src_table_list = ["pc_http_test_" + yesterday_month,"pc_web_browsing_" + yesterday_month]
-
+#app端相关数据表
 app_src_table_list = ["http_test_new_" + yesterday_month,"video_test_new_" + yesterday_month,"web_browsing_new_" + yesterday_month]
 
 src_pc_database = pymysql.connect(host='192.168.39.51', port=5151, user='zhongwu', password='zhongwu',
@@ -71,6 +77,7 @@ try:
         cursor.execute(sql)
         result = cursor.fetchall()
 
+        #查询表是否存在,不存在则创建新表
         for pc_table in all_table:
             is_existed = 0
             for element in result:
@@ -361,9 +368,6 @@ try:
                         dst_result = dst_cursor.fetchone()
                         if dst_result['num'] == 0:
                             insertDataIntoDstDatabase(src_table,element)
-
-
-
         finally:
             print
 finally:
