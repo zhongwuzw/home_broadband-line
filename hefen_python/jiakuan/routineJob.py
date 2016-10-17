@@ -60,11 +60,11 @@ app_src_table_list = ["http_test_new_" + yesterday_month,"video_test_new_" + yes
 
 src_pc_database = pymysql.connect(host='192.168.39.51', port=5151, user='zhongwu', password='zhongwu',
                                db='testdataanalyse',
-                               charset='utf8mb4', cursorclass=pymysql.cursors.SSDictCursor)
+                               charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
 src_app_database = pymysql.connect(host='192.168.39.51', port=5151, user='zhongwu', password='zhongwu',
                                db='appreportdata',
-                               charset='utf8mb4', cursorclass=pymysql.cursors.SSDictCursor)
+                               charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
 dst_database = pymysql.connect(host='192.168.16.97', port=5050, user='gbase', password='gbase20110531',
                                db='jiatingkuandai_src',
@@ -361,20 +361,21 @@ try:
                 for src_table in pc_src_table_list:
                     sql = "select * from " + src_table
                     src_cursor.execute(sql)
-                    result = src_cursor.fetchone()
+                    result_list = src_cursor.fetchall()
 
                     # 查找是否已经存在该数据,以file_index为区分
-                    while result is not None:
+                    for result in result_list:
                         sql = "select count(*) as num from " + src_table + " where file_index = '" + result['file_index'] + "'"
                         dst_cursor.execute(sql)
                         dst_result = dst_cursor.fetchone()
                         if dst_result['num'] == 0:
                             insertDataIntoDstDatabase(src_table,result)
-                        result = src_cursor.fetchone()
         finally:
             print
 finally:
     print
+
+print "完成pc表同步"
 
 #app端数据同步
 try:
@@ -384,24 +385,27 @@ try:
                 for src_table in app_src_table_list:
                     sql = "select * from " + src_table
                     src_cursor.execute(sql)
-                    result = src_cursor.fetchone()
+                    result_list = src_cursor.fetchall()
 
                     # 查找是否已经存在该数据,以file_index为区分
-                    while result is not None:
+                    for result in result_list:
                         sql = "select count(*) as num from " + src_table + " where file_index = '" + result['file_index'] + "'"
                         dst_cursor.execute(sql)
                         dst_result = dst_cursor.fetchone()
                         if dst_result['num'] == 0:
                             insertDataIntoDstDatabase(src_table,result)
-                        result = src_cursor.fetchone()
         finally:
             print
 finally:
     print
 
+print "完成app表同步"
+
 #执行中间表脚本
 os.system('/opt/Script/jiakuandata_online/total.sh ' + yesterday_month)
 time.sleep(4 * 60 * 60)
+
+print "执行完中间表脚本"
 
 #执行结果脚本
 os.system('/opt/Script/jiakuandata_online/jiakuandata/jiakuandata.sh ' + yesterday_month)
@@ -411,6 +415,9 @@ os.system('sed -i "s#^testtime=.*#testtime=' + yesterday_month + '#g" /home/prob
 
 #执行累计用户数指标脚本
 time.sleep(4 * 60 * 60)
+
+print "执行完结果脚本"
+
 os.system('/home/probeStatistical_online/AgregateData.sh')
 
 src_pc_database.close()
