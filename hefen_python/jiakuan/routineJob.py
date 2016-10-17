@@ -82,7 +82,7 @@ try:
         for pc_table in all_table:
             is_existed = 0
             for element in result:
-                if element['Tables_in_zw_test'] == pc_table:
+                if element['Tables_in_jiatingkuandai_src'] == pc_table:
                     is_existed = 1
                     break
 
