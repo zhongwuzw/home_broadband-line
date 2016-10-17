@@ -4,6 +4,7 @@
 import datetime
 import time
 import pymysql.cursors
+import os
 
 #数据库更新
 def insertDataIntoDstDatabase(table_name,dic):
@@ -66,7 +67,7 @@ src_app_database = pymysql.connect(host='192.168.39.51', port=5151, user='zhongw
                                charset='utf8mb4', cursorclass=pymysql.cursors.SSDictCursor)
 
 dst_database = pymysql.connect(host='192.168.16.97', port=5050, user='gbase', password='gbase20110531',
-                               db='zw_test',
+                               db='jiatingkuandai_src',
                                charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
 all_table = pc_src_table_list + app_src_table_list
@@ -352,6 +353,7 @@ try:
 finally:
     print
 
+#pc端数据同步
 try:
     with src_pc_database.cursor() as src_cursor:
         try:
@@ -374,7 +376,7 @@ try:
 finally:
     print
 
-
+#app端数据同步
 try:
     with src_app_database.cursor() as src_cursor:
         try:
@@ -397,7 +399,19 @@ try:
 finally:
     print
 
+#执行中间表脚本
+os.system('/opt/Script/jiakuandata_online/total.sh ' + yesterday_month)
+time.sleep(4 * 60 * 60)
 
+#执行结果脚本
+os.system('/opt/Script/jiakuandata_online/jiakuandata/jiakuandata.sh ' + yesterday_month)
+
+#替换累计用户数指标配置的日期
+os.system('sed -i "s#^testtime=.*#testtime=' + yesterday_month + '#g" /home/probeStatistical_online/res/conf/monitor.ini')
+
+#执行累计用户数指标脚本
+time.sleep(4 * 60 * 60)
+os.system('/home/probeStatistical_online/AgregateData.sh')
 
 src_pc_database.close()
 src_app_database.close()
