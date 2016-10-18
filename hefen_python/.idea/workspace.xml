@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab18a2ca-bdb7-4c01-b279-2567a4c9b768" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/multiProcess_test.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/py_test.py" afterPath="$PROJECT_DIR$/test/py_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jiakuan/routineJob.py" afterPath="$PROJECT_DIR$/jiakuan/routineJob.py" />
     </list>
     <ignored path="hefen_python.iws" />
@@ -25,9 +29,10 @@
     <SUITE FILE_PATH="coverage/hefen_python$alterKeyToCode.coverage" NAME="alterKeyToCode Coverage Results" MODIFIED="1468993733520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$New_Hefen_App.coverage" NAME="New_Hefen_App Coverage Results" MODIFIED="1471587260949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="PyCharm2016.1/coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1465899765907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hefen_python$multiProcess_test.coverage" NAME="multiProcess_test Coverage Results" MODIFIED="1476779709275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1476340698335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="PyCharm2016.1/coverage/hefen_python$hefen.coverage" NAME="hefen Coverage Results" MODIFIED="1466387396253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hefen_python$routineJob.coverage" NAME="routineJob Coverage Results" MODIFIED="1476341015471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jiakuan" />
+    <SUITE FILE_PATH="coverage/hefen_python$routineJob.coverage" NAME="routineJob Coverage Results" MODIFIED="1476697054959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jiakuan" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -41,7 +46,7 @@
       <file leaf-file-name="hefen_App.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hefen/hefen_App.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2451">
+            <state relative-caret-position="2394">
               <caret line="129" column="66" selection-start-line="129" selection-start-column="6" selection-end-line="129" selection-end-column="66" />
               <folding>
                 <element signature="e#42#64#0" expanded="true" />
@@ -60,10 +65,10 @@
         </entry>
       </file>
       <file leaf-file-name="py_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/py_test.py">
+        <entry file="file://$PROJECT_DIR$/test/py_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="76">
+              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
               <folding>
                 <element signature="e#25#40#0" expanded="true" />
                 <marker date="1476340698000" expanded="true" signature="707:727" ph="select * fro... t_user" />
@@ -72,97 +77,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hefen_PC.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hefen/hefen_PC.py">
+      <file leaf-file-name="multiProcess_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/multiProcess_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="63" />
+            <state relative-caret-position="109">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
               <folding>
-                <element signature="e#42#64#0" expanded="true" />
-                <marker date="1466480416000" expanded="true" signature="1798:1867" ph="..." />
-                <marker date="1466480416000" expanded="true" signature="1798:1869" ph="..." />
-                <marker date="1466480416000" expanded="true" signature="1798:1905" ph="..." />
-                <marker date="1466480416000" expanded="true" signature="1798:1965" ph="..." />
-                <marker date="1466480416000" expanded="true" signature="1798:2018" ph="..." />
-                <marker date="1466480416000" expanded="true" signature="1798:2019" ph="..." />
-                <marker date="1466480416000" expanded="true" signature="2039:2255" ph="..." />
-                <marker date="1466480416000" expanded="true" signature="2502:2612" ph="..." />
-                <marker date="1466480416000" expanded="true" signature="2502:2704" ph="..." />
-                <marker date="1466480416000" expanded="true" signature="3649:3807" ph="..." />
-                <marker date="1466480416000" expanded="true" signature="4597:4656" ph="..." />
+                <element signature="e#25#47#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="New_Hefen_App.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hefen/New_Hefen_App.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4313">
-              <caret line="230" column="25" selection-start-line="230" selection-start-column="25" selection-end-line="230" selection-end-column="25" />
-              <folding>
-                <marker date="1473301300000" expanded="true" signature="791:884" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="1472:1512" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="1829:1868" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="1829:1890" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="1829:1905" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="1829:1925" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="1829:1943" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="1829:1970" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="1829:1983" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="1829:2007" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="1829:2008" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="3701:3917" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="4164:4366" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="5281:5542" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="6468:6576" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="6468:6694" ph="..." />
-                <marker date="1473301300000" expanded="true" signature="6717:6989" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hefen_app_9.8.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.8.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-              <folding>
-                <element signature="e#42#64#0" expanded="true" />
-                <marker date="1476237845000" expanded="true" signature="791:884" ph="select phone... phone_imei_time" />
-                <marker date="1476237845000" expanded="true" signature="1472:1512" ph="select phone... hefen_app_table" />
-                <marker date="1476237845000" expanded="true" signature="1947:2125" ph="update hefen... " />
-                <marker date="1476237845000" expanded="true" signature="3819:4035" ph="SELECT COUNT... pc_http_test" />
-                <marker date="1476237845000" expanded="true" signature="4282:4484" ph="SELECT COUNT... pc_web_browsing" />
-                <marker date="1476237845000" expanded="true" signature="5407:5682" ph="INSERT INTO `hefen_app_table`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hefen_app_9.7.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.7.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1330">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="74" selection-end-column="38" />
-              <folding>
-                <element signature="e#42#64#0" expanded="true" />
-                <marker date="1473231785000" expanded="true" signature="403:496" ph="..." />
-                <marker date="1473231785000" expanded="true" signature="1084:1124" ph="..." />
-                <marker date="1473231785000" expanded="true" signature="1441:1619" ph="..." />
-                <marker date="1473231785000" expanded="true" signature="2220:2481" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="treakRank.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/other/treakRank.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -170,8 +92,8 @@
       <file leaf-file-name="routineJob.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jiakuan/routineJob.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="409" column="7" selection-start-line="409" selection-start-column="7" selection-end-line="409" selection-end-column="7" />
+            <state relative-caret-position="-1107">
+              <caret line="360" column="17" selection-start-line="360" selection-start-column="17" selection-end-line="360" selection-end-column="17" />
               <folding>
                 <element signature="e#43#58#0" expanded="true" />
               </folding>
@@ -184,6 +106,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="treakRank.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/other/treakRank.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -227,6 +159,7 @@
         <option value="$PROJECT_DIR$/hefen_by_province.py" />
         <option value="$PROJECT_DIR$/hefen/hefen_app_9.8.py" />
         <option value="$PROJECT_DIR$/py_test.py" />
+        <option value="$PROJECT_DIR$/test/multiProcess_test.py" />
         <option value="$PROJECT_DIR$/jiakuan/routineJob.py" />
       </list>
     </option>
@@ -238,6 +171,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-5" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="735" />
@@ -267,6 +201,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -299,7 +235,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="jiakuan" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -313,14 +249,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="hefen" />
+              <option name="myItemId" value="jiakuan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -348,12 +282,13 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/transformJson" />
       <recent name="$PROJECT_DIR$/other" />
       <recent name="$PROJECT_DIR$/hefen" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.routineJob">
+  <component name="RunManager" selected="Python.multiProcess_test">
     <configuration default="false" name="py_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -367,7 +302,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="hefen_python" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/py_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/py_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -422,6 +357,24 @@
       <module name="hefen_python" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/other/treakRank.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="multiProcess_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="hefen_python" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/multiProcess_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -670,20 +623,22 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="6">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Python.hefen_app_9.7" />
       <item index="1" class="java.lang.String" itemvalue="Python.routineJob" />
       <item index="2" class="java.lang.String" itemvalue="Python.py_test" />
       <item index="3" class="java.lang.String" itemvalue="Python.hefen_by_province" />
       <item index="4" class="java.lang.String" itemvalue="Python.hefen_app_9.8" />
       <item index="5" class="java.lang.String" itemvalue="Python.treakRank" />
+      <item index="6" class="java.lang.String" itemvalue="Python.multiProcess_test" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.py_test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.hefen_by_province" />
-        <item index="2" class="java.lang.String" itemvalue="Python.hefen_app_9.8" />
-        <item index="3" class="java.lang.String" itemvalue="Python.treakRank" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.multiProcess_test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.py_test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.hefen_by_province" />
+        <item index="3" class="java.lang.String" itemvalue="Python.hefen_app_9.8" />
+        <item index="4" class="java.lang.String" itemvalue="Python.treakRank" />
       </list>
     </recent_temporary>
   </component>
@@ -704,28 +659,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="735" extended-state="6" />
+    <frame x="-5" y="23" width="1280" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2807808" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2837838" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25075075" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2837838" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -743,7 +698,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/py_test.py</url>
+          <url>file://$PROJECT_DIR$/test/py_test.py</url>
           <line>24</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
@@ -755,18 +710,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="110" />
+      <option name="time" value="111" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/other/treakRank.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hefen/New_Hefen_App.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -812,7 +760,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/py_test.py">
+    <entry file="file://$PROJECT_DIR$/test/py_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
@@ -870,7 +818,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/py_test.py">
+    <entry file="file://$PROJECT_DIR$/test/py_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
@@ -928,7 +876,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/py_test.py">
+    <entry file="file://$PROJECT_DIR$/test/py_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
@@ -979,7 +927,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/py_test.py">
+    <entry file="file://$PROJECT_DIR$/test/py_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
@@ -1030,7 +978,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/py_test.py">
+    <entry file="file://$PROJECT_DIR$/test/py_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
@@ -1081,7 +1029,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/py_test.py">
+    <entry file="file://$PROJECT_DIR$/test/py_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
@@ -1132,7 +1080,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/py_test.py">
+    <entry file="file://$PROJECT_DIR$/test/py_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1183,7 +1131,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/py_test.py">
+    <entry file="file://$PROJECT_DIR$/test/py_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
@@ -1393,17 +1341,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding>
-            <element signature="e#43#52#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/other/treakRank.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1442,19 +1379,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.8.py">
+    <entry file="file:///Library/Python/2.7/site-packages/pymysql/cursors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        <state relative-caret-position="9253">
+          <caret line="494" column="0" selection-start-line="494" selection-start-column="0" selection-end-line="494" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hefen/hefen_App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2394">
+          <caret line="129" column="66" selection-start-line="129" selection-start-column="6" selection-end-line="129" selection-end-column="66" />
           <folding>
             <element signature="e#42#64#0" expanded="true" />
-            <marker date="1476237845000" expanded="true" signature="791:884" ph="select phone... phone_imei_time" />
-            <marker date="1476237845000" expanded="true" signature="1472:1512" ph="select phone... hefen_app_table" />
-            <marker date="1476237845000" expanded="true" signature="1947:2125" ph="update hefen... " />
-            <marker date="1476237845000" expanded="true" signature="3819:4035" ph="SELECT COUNT... pc_http_test" />
-            <marker date="1476237845000" expanded="true" signature="4282:4484" ph="SELECT COUNT... pc_web_browsing" />
-            <marker date="1476237845000" expanded="true" signature="5407:5682" ph="INSERT INTO `hefen_app_table`... " />
+            <marker date="1466387354000" expanded="true" signature="811:904" ph="..." />
+            <marker date="1466387354000" expanded="true" signature="811:906" ph="..." />
+            <marker date="1466387354000" expanded="true" signature="811:929" ph="..." />
+            <marker date="1466387354000" expanded="true" signature="3124:3173" ph="..." />
+            <marker date="1466387354000" expanded="true" signature="3124:3231" ph="..." />
+            <marker date="1466387354000" expanded="true" signature="3124:3310" ph="..." />
+            <marker date="1466387354000" expanded="true" signature="4221:4398" ph="..." />
+            <marker date="1466387354000" expanded="true" signature="4528:4678" ph="..." />
+            <marker date="1466387354000" expanded="true" signature="5198:5258" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="141" column="195" selection-start-line="141" selection-start-column="195" selection-end-line="141" selection-end-column="195" />
         </state>
       </provider>
     </entry>
@@ -1484,18 +1447,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/pymysql/cursors.py">
+    <entry file="file://$PROJECT_DIR$/test/py_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9253">
-          <caret line="494" column="0" selection-start-line="494" selection-start-column="0" selection-end-line="494" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="76">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
           <folding>
             <element signature="e#25#40#0" expanded="true" />
             <marker date="1476340698000" expanded="true" signature="707:727" ph="select * fro... t_user" />
@@ -1503,37 +1458,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hefen/hefen_App.py">
+    <entry file="file://$PROJECT_DIR$/other/treakRank.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2451">
-          <caret line="129" column="66" selection-start-line="129" selection-start-column="6" selection-end-line="129" selection-end-column="66" />
-          <folding>
-            <element signature="e#42#64#0" expanded="true" />
-            <marker date="1466387354000" expanded="true" signature="811:904" ph="..." />
-            <marker date="1466387354000" expanded="true" signature="811:906" ph="..." />
-            <marker date="1466387354000" expanded="true" signature="811:929" ph="..." />
-            <marker date="1466387354000" expanded="true" signature="3124:3173" ph="..." />
-            <marker date="1466387354000" expanded="true" signature="3124:3231" ph="..." />
-            <marker date="1466387354000" expanded="true" signature="3124:3310" ph="..." />
-            <marker date="1466387354000" expanded="true" signature="4221:4398" ph="..." />
-            <marker date="1466387354000" expanded="true" signature="4528:4678" ph="..." />
-            <marker date="1466387354000" expanded="true" signature="5198:5258" ph="..." />
-          </folding>
+        <state relative-caret-position="304">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py">
+    <entry file="file://$PROJECT_DIR$/test/multiProcess_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="109">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="e#25#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jiakuan/routineJob.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="409" column="7" selection-start-line="409" selection-start-column="7" selection-end-line="409" selection-end-column="7" />
+        <state relative-caret-position="-1107">
+          <caret line="360" column="17" selection-start-line="360" selection-start-column="17" selection-end-line="360" selection-end-column="17" />
           <folding>
             <element signature="e#43#58#0" expanded="true" />
           </folding>

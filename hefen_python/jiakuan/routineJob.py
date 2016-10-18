@@ -38,6 +38,8 @@ def insertDataIntoDstDatabase(table_name,dic):
             #判断编码,对于int、NoneType等类型不能使用encode来进行编码
             if isinstance(dic[key],unicode):
                 src_value = src_value + "'" + dic[key].encode('utf-8') + "',"
+            elif dic[key] is None:
+                src_value = src_value + "'',"
             else:
                 src_value = src_value + "'" + str(dic[key]) + "',"
         src_name = src_name[:-1]
@@ -55,6 +57,7 @@ yesterday_month = time.strftime("%Y%m", yesterday.timetuple())
 
 #pc端相关数据表
 pc_src_table_list = ["pc_http_test_" + yesterday_month,"pc_web_browsing_" + yesterday_month]
+
 #app端相关数据表
 app_src_table_list = ["http_test_new_" + yesterday_month,"video_test_new_" + yesterday_month,"web_browsing_new_" + yesterday_month]
 
@@ -358,6 +361,10 @@ try:
     with src_pc_database.cursor() as src_cursor:
         try:
             with dst_database.cursor() as dst_cursor:
+                sql_mode = "SET SESSION sql_mode = ''"
+                dst_cursor.execute(sql_mode)
+                dst_database.commit()
+
                 for src_table in pc_src_table_list:
                     sql = "select * from " + src_table
                     src_cursor.execute(sql)
@@ -382,6 +389,10 @@ try:
     with src_app_database.cursor() as src_cursor:
         try:
             with dst_database.cursor() as dst_cursor:
+                sql_mode = "SET SESSION sql_mode = ''"
+                dst_cursor.execute(sql_mode)
+                dst_database.commit()
+
                 for src_table in app_src_table_list:
                     sql = "select * from " + src_table
                     src_cursor.execute(sql)
