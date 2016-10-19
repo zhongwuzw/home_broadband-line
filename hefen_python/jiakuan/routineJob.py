@@ -5,9 +5,10 @@ import datetime
 import time
 import pymysql.cursors
 import os
+from multiprocessing import Pool
 
 #数据库更新
-def insertDataIntoDstDatabase(table_name,dic):
+def insertDataIntoDstDatabase(table_name,dic,dst_database):
     with dst_database.cursor() as d_cursor:
         coloum_str = "("
         if table_name.find("pc_http_test") >= 0:
@@ -356,61 +357,100 @@ try:
 finally:
     print
 
-#pc端数据同步
-try:
-    with src_pc_database.cursor() as src_cursor:
-        try:
-            with dst_database.cursor() as dst_cursor:
-                sql_mode = "SET SESSION sql_mode = ''"
-                dst_cursor.execute(sql_mode)
-                dst_database.commit()
+def handlePCData(src_table):
+    # pc端数据同步
+    src_pc_database = pymysql.connect(host='192.168.39.51', port=5151, user='zhongwu', password='zhongwu',
+                                      db='testdataanalyse',
+                                      charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
-                for src_table in pc_src_table_list:
+    dst_database = pymysql.connect(host='192.168.16.97', port=5050, user='gbase', password='gbase20110531',
+                                   db='jiatingkuandai_src',
+                                   charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+    try:
+        with src_pc_database.cursor() as src_cursor:
+            try:
+                with dst_database.cursor() as dst_cursor:
+                    print src_table + "开始数据同步"
+                    sql_mode = "SET SESSION sql_mode = ''"
+                    dst_cursor.execute(sql_mode)
+                    dst_database.commit()
+
                     sql = "select * from " + src_table
                     src_cursor.execute(sql)
                     result_list = src_cursor.fetchall()
 
                     # 查找是否已经存在该数据,以file_index为区分
                     for result in result_list:
-                        sql = "select count(*) as num from " + src_table + " where file_index = '" + result['file_index'] + "'"
+                        sql = "select count(*) as num from " + src_table + " where file_index = '" + result[
+                            'file_index'] + "'"
                         dst_cursor.execute(sql)
                         dst_result = dst_cursor.fetchone()
                         if dst_result['num'] == 0:
-                            insertDataIntoDstDatabase(src_table,result)
-        finally:
-            print
-finally:
-    print
+                            insertDataIntoDstDatabase(src_table, result, dst_database)
 
-print "完成pc表同步"
+            finally:
+                print
+    finally:
+        print
 
-#app端数据同步
-try:
-    with src_app_database.cursor() as src_cursor:
-        try:
-            with dst_database.cursor() as dst_cursor:
-                sql_mode = "SET SESSION sql_mode = ''"
-                dst_cursor.execute(sql_mode)
-                dst_database.commit()
+    src_pc_database.close()
+    dst_database.close()
 
-                for src_table in app_src_table_list:
+    print "完成pc表同步"
+
+def handleAppData(src_table):
+    # app端数据同步
+    src_app_database = pymysql.connect(host='192.168.39.51', port=5151, user='zhongwu', password='zhongwu',
+                                       db='appreportdata',
+                                       charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+
+    dst_database = pymysql.connect(host='192.168.16.97', port=5050, user='gbase', password='gbase20110531',
+                                   db='jiatingkuandai_src',
+                                   charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+    try:
+        with src_app_database.cursor() as src_cursor:
+            try:
+                with dst_database.cursor() as dst_cursor:
+                    print src_table + "开始数据同步"
+                    sql_mode = "SET SESSION sql_mode = ''"
+                    dst_cursor.execute(sql_mode)
+                    dst_database.commit()
+
                     sql = "select * from " + src_table
                     src_cursor.execute(sql)
                     result_list = src_cursor.fetchall()
 
                     # 查找是否已经存在该数据,以file_index为区分
                     for result in result_list:
-                        sql = "select count(*) as num from " + src_table + " where file_index = '" + result['file_index'] + "'"
+                        sql = "select count(*) as num from " + src_table + " where file_index = '" + result[
+                            'file_index'] + "'"
                         dst_cursor.execute(sql)
                         dst_result = dst_cursor.fetchone()
                         if dst_result['num'] == 0:
-                            insertDataIntoDstDatabase(src_table,result)
-        finally:
-            print
-finally:
-    print
+                            insertDataIntoDstDatabase(src_table, result, dst_database)
 
-print "完成app表同步"
+            finally:
+                print
+    finally:
+        print
+
+    src_app_database.close()
+    dst_database.close()
+    print "完成app表同步"
+
+pool = Pool(5)
+for table in pc_src_table_list:
+    pool.apply_async(handlePCData,args=(table,))
+
+for table in app_src_table_list:
+    pool.apply_async(handleAppData,args=(table,))
+
+print "启动所有数据同步进程"
+
+pool.close()
+pool.join()
+
+print "完成数据同步"
 
 #执行中间表脚本
 os.system('/opt/Script/jiakuandata_online/total.sh ' + yesterday_month)
