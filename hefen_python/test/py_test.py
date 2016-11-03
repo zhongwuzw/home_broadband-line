@@ -10,4 +10,8 @@ time_converted = time_osx.strftime("%a, %d %b %Y %H:%M:%S")
 
 print time_converted
 
+os.system('/Users/zhongwu/Documents/workspace/test.sh')
+
+print "Finish"
+
 
