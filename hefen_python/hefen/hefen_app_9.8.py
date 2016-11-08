@@ -131,6 +131,18 @@ def executeResultInsertDatabase(phone_num,province,city,totalSum,imei,openBroadb
     finally:
         destDatabase.close()
 
+def translateStr(key):
+    new_key = ''
+    # 判断编码,对于int、NoneType等类型不能使用encode来进行编码
+    if isinstance(key, unicode):
+        new_key = key.encode('utf-8')
+    elif key is None:
+        new_key = '-'
+    else:
+        new_key = str(key)
+
+    return new_key
+
 def calculateIndicatorSum(indicatorName,threshold):
     SourcePhoneconnection = pymysql.connect(host='192.168.39.51', port=5151, user='gbase', password='gbase20110531',
                                                 db='appreportdata',
@@ -138,7 +150,7 @@ def calculateIndicatorSum(indicatorName,threshold):
 
     try:
         with SourcePhoneconnection.cursor() as cursor:
-            sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios from " + indicatorName + " WHERE UNIX_TIMESTAMP(time) > 1472659200 and UNIX_TIMESTAMP(time) < 1475251199 GROUP BY file_path"
+            sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios from " + indicatorName + " WHERE UNIX_TIMESTAMP(time) > 1475251200 and UNIX_TIMESTAMP(time) < 1477929599 GROUP BY file_path"
             # sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone from " + indicatorName + " WHERE bandwidth_flag = 1 AND phone_number_flag = 1 AND openBroadband_flag = 1 AND signal_flag = 1 and UNIX_TIMESTAMP(time) < 1469980800 GROUP BY file_path"
             cursor.execute(sql)
             result = cursor.fetchall()
@@ -147,7 +159,9 @@ def calculateIndicatorSum(indicatorName,threshold):
             testSucSet = set()
 
             for element in result:
-                key = str(element['phoneno']) + '_' + element['imei']
+                phoneno = translateStr(element['phoneno'])
+                imei = translateStr(element['imei'])
+                key = phoneno + '_' + imei
                 resultDic.setdefault(key, {})
                 resultDic[key].setdefault('testCount', 0)
                 resultDic[key]['testCount'] += element['countSum']
@@ -164,9 +178,9 @@ def calculateIndicatorSum(indicatorName,threshold):
 
 
 # 执行主函数
-(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('gps_http_test_new_201609',2)
-(videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_new_201609',1)
-(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_new_201609',5)
+(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('gps_http_test_new_201610',2)
+(videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_new_201610',1)
+(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_new_201610',5)
 
 #计算http下载
 for key in httpDownloadResultDic.keys():
