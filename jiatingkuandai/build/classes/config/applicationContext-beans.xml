@@ -48,6 +48,8 @@
 		scope="prototype"></bean>
 		<bean name="groupidHttpUploadAction" class="com.qualitymap.action.ServicequalityGroupidHttpUploadAction"
 		scope="prototype"></bean>
+		<bean name="servicequalityPeriodAction" class="com.qualitymap.action.ServicequalityperiodAction"
+		scope="prototype"></bean>
 		
 	<!-- Spring管理Struts2的Interceptor -->
 
@@ -86,6 +88,8 @@
 	<bean name="groupidHttpDownloadService" class="com.qualitymap.service.impl.ServicequalityGroupidHttpDownloadServiceImpl"
 		scope="prototype"></bean>
 	<bean name="groupidHttpUploadService" class="com.qualitymap.service.impl.ServicequalityGroupidHttpUploadServiceImpl"
+		scope="prototype"></bean>
+	<bean name="servicequalityperiodService" class="com.qualitymap.service.impl.ServicequalityperiodServiceImpl"
 		scope="prototype"></bean>
 
 	<!-- dao管理 -->
@@ -137,6 +141,9 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	<bean name="groupidHttpUploadDao" class="com.qualitymap.dao.impl.ServicequalityGroupidHttpUploadDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean name="servicequalityperiodDao" class="com.qualitymap.dao.impl.ServicequalityperiodDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 </beans>

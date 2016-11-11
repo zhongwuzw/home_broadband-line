@@ -376,4 +376,11 @@
 			method="downloadPDF">
 	    </action>
 	</package> 
+	<!-- 分时段统计 -->
+	<package name="servicequalityPeriodAction" namespace="/servicequalityperiod" 
+		extends="abstract_struts"> 
+		 <action name="getDownloadRateOrder" class="com.qualitymap.action.ServicequalityperiodAction"
+			method="getDownloadRateOrder">
+	    </action>
+	</package> 
 </struts>
