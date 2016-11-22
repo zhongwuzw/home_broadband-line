@@ -20,8 +20,7 @@ def datetime_timestamp(dt):
 
 def getImeiValid(imei):
     with imeiDatabase.cursor() as cursor:
-        #调整表phone_imei_time为phone_imei_time_http_10
-        sql = "select phone_number as phoneno FROM phone_imei_time_http_10 where imei = '" + imei + "' order by time"
+        sql = "select phone_number as phoneno FROM phone_imei_time where imei = '" + imei + "' order by time"
         cursor.execute(sql)
         result = cursor.fetchall()
 
