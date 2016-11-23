@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Open Testing System</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body id="top">
+	<!-- Header -->
+	<header id="header">
+		<div class="content">
+			<h1>
+				<a id="taskName" href="javaScript:;">您将执行全国任务</a>
+			</h1>
+			<p>
+				<br />请您确认以下信息正确后开始测试<br /> 手机号：<span id="taskPhone">1388888888</span><br />
+				宽带运营商：<span id="taskOperator">中国移动</span><br /> 签约带宽：<span
+					id="taskBandwidth">100M</span><br /> 位置：<span id="taskAddress">辽宁/沈阳
+				</span><br /> 网络连接：<span id="taskConnection">CMCC</span><br /> 信号强度：<span
+					id="taskSignal">-34dBm</span>
+			</p>
+			<ul class="actions">
+				<li><a
+					href="ots:{'functionName':'onEvent','arguments':{'EVENT_TAG':'EXECUTETEST','EVENT_NAME':''}}"
+					class="button special icon fa-download">确认开始</a></li>
+				<li><a href="#one" class="button icon fa-chevron-down scrolly">了解更多</a></li>
+			</ul>
+		</div>
+		<!--<div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="" /></div></div>-->
+	</header>
+
+	<!-- One -->
+	<section id="one" class="wrapper style2 special">
+		<header class="major">
+			<h2>
+				请您确认收到了由中国移动和粉俱乐部发送的本测试任务短信邀请，阅读并了解本活动积分奖励的规则，否则您可能无法获取测试奖励。<br />
+				请您确认已开启如下服务
+			</h2>
+		</header>
+		<ul class="icons major">
+			<li><img class="" src="images/gps.png" height="48" width="50.74"></li>
+			<li><img src="images/wifi.png" height="48" width="50.74"></li>
+			<!-- <li><span class="icon fa-cloud"></span></li> -->
+		</ul>
+	</section>
+
+	<!-- Two -->
+	<section id="two" class="wrapper">
+		<div class="inner alt">
+			<div id="download" style="display:none;">
+				<section class="spotlight">
+					<div class="image">
+						<img src="images/pic01.png" alt="" />
+					</div>
+					<div class="content">
+						<h3>互联网资源下载</h3>
+						<p>
+							用户经常使用互联网下载热门应用，互联网资源下载体验是用户上网体验的重要方面。<br />
+							本测试通过模拟用户发起热门资源下载请求，获得真实的互联网资源下载体验，参与该项测试将有助于提升该项业务的用户体验。<br />
+						</p>
+					</div>
+				</section>
+			</div>
+			<div id="webpage" style="display:none;">
+				<section class="spotlight">
+					<div class="image">
+						<img src="images/pic02.png" alt="" />
+					</div>
+					<div class="content">
+						<h3>网页浏览</h3>
+						<p>
+							用户经常使用互联网访问热门网站，网页浏览体验是用户上网体验的重要方面。<br />
+							本测试通过模拟用户访问热门网站，获得真实的网页浏览体验，参与该项测试将有助于提升该项业务的用户体验。
+						</p>
+					</div>
+				</section>
+			</div>
+			<div id="h5" style="display:none;">
+				<section class="spotlight">
+					<div class="image">
+						<img src="images/pic03.png" alt="" />
+					</div>
+					<div class="content">
+						<h3>H5视频播放</h3>
+						<p>
+							用户经常使用互联网观看视频，视频播放体验是用户上网体验的重要方面。<br />
+							本测试通过模拟用户发起播放视频请求，获得真实的视频播放体验，参该项测试将有助于提升该项业务的用户体验。
+						</p>
+					</div>
+				</section>
+			</div>
+			<div id="network" style="display:none;">
+				<section class="spotlight">
+					<div class="image">
+						<img src="images/pic04.png" alt="" />
+					</div>
+					<div class="content">
+						<h3>网络测试</h3>
+						<p>
+							网络性能是影响用户上网体验的重要因素。<br />
+							本测试可评估当前网络的性能，参与该项测试将有助于中国移动公司提升网络性能，为用户提供更好的上网体验。
+						</p>
+					</div>
+				</section>
+			</div>
+			<section class="special" style="font-size: 20px;">
+				<ul id="taskTail" class="icons labeled">
+				</ul>
+			</section>
+		</div>
+	</section>
+	<!-- Scripts -->
+	<script src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script type="text/javascript">
+		var tag = "{";
+		tag = tag + "    \"time\": \"xxxxxx\",";
+		tag = tag + "    \"sim\": {";
+		tag = tag + "        \"phoneno\": \"18500738594\",";
+		tag = tag + "        \"imsi\": \"11111111111\",";
+		tag = tag + "        \"operator\": \"中国联通\"";
+		tag = tag + "    },";
+		tag = tag + "    \"network\": {";
+		tag = tag + "        \"networktype\": \"lte\",";
+		tag = tag + "        \"mobilesignal\": \"\",";
+		tag = tag + "        \"cellid\": \"414118334733\",";
+		tag = tag + "        \"4G\": \"TAC/PCI\",";
+		tag = tag + "        \"2G/3G\": \"LAC/CID\",";
+		tag = tag + "        \"wifisignal\": \"-35dBm\",";
+		tag = tag + "        \"wifissid\": \"CMCC\",";
+		tag = tag + "        \"wifibssid\": \"\"";
+		tag = tag + "    },";
+		tag = tag + "    \"location\": {";
+		tag = tag + "        \"street\": \"廊坊\",";
+		tag = tag + "        \"city\": \"\",";
+		tag = tag + "        \"province\": \"河北\",";
+		tag = tag + "        \"country\": \"\",";
+		tag = tag + "        \"latitude\": \"\",";
+		tag = tag + "        \"longitude\": \"\"";
+		tag = tag + "    },";
+		tag = tag + "    \"device\": {";
+		tag = tag + "        \"mfr\": \"\",";
+		tag = tag + "        \"model\": \"\",";
+		tag = tag + "        \"os\": \"\",";
+		tag = tag + "        \"osver\": \"\",";
+		tag = tag + "        \"imei\": \"\"";
+		tag = tag + "    },";
+		tag = tag + "    \"testinfo\": {";
+		tag = tag + "        \"testcategory\": \"全国任务\",";
+		tag = tag + "        \"testtype\": \"H5视频, 网页浏览, 互联网资源下载, 网络性能\"";
+		tag = tag + "    }";
+		tag = tag + "}";
+		var param = "{";
+		param = param + "    \"testresult\": [";
+		param = param + "        {";
+		param = param + "            \"taskid\": \"12312a\", ";
+		param = param + "            \"taskname\": \"家宽众测一键测试\", ";
+		param = param + "            \"descrip\": \"test\", ";
+		param = param + "            \"executetime\": \"2016-08-10 10:46\", ";
+		param = param + "            \"longitude\": \"0000\", ";
+		param = param + "            \"latitude\": \"0000\", ";
+		param = param + "            \"addr\": \"北京市西城区莲花池东路\", ";
+		param = param + "            \"starttime\": \"20160805170730\", ";
+		param = param + "            \"endtime\": \"20160805171457\", ";
+		param = param + "            \"caseamount\": \"2\", ";
+		param = param + "            \"caseresultlist\": [";
+		param = param + "                {";
+		param = param
+				+ "                    \"casenumber\": \"OSQ.V1.0-02011.F17023\", ";
+		param = param + "                    \"casename\": \"视频测试\", ";
+		param = param
+				+ "                    \"caseexecutetime\": \"2016-08-10 10:46\", ";
+		param = param + "                    \"testtypename\": \"video\", ";
+		param = param + "                    \"testtypeid\": \"02011\", ";
+		param = param + "                    \"testduration\": \"360s\", ";
+		param = param + "                    \"teststatus\": \"success\", ";
+		param = param + "                    \"kpiresult\": \"1220\", ";
+		param = param + "                    \"detailresult\": \"xxxxxxxx\", ";
+		param = param + "                    \"summaryresult\": \"xxxxxxxx\", ";
+		param = param
+				+ "                    \"reportpath\": \"/storage/emulated/0/cmri.ots/2.5.2/detail_report/TestCase_Report/00000000/互联网下载测试/2016_07_26/00000000_03001.F19858_0-2016_07_26_09_39_02_226/00000000_03001.F19858_0-2016_07_26_09_39_02_226.summary.csv\"";
+		param = param + "                }, ";
+		param = param + "                {";
+		param = param
+				+ "                    \"casenumber\": \"OSQ.V1.0-02011.F17023\", ";
+		param = param + "                    \"casename\": \"视频测试\", ";
+		param = param
+				+ "                    \"caseexecutetime\": \"2016-08-10 10:46\", ";
+		param = param + "                    \"testtypename\": \"video\", ";
+		param = param + "                    \"testtypeid\": \"02011\", ";
+		param = param + "                    \"testduration\": \"360s\", ";
+		param = param + "                    \"teststatus\": \"success\", ";
+		param = param + "                    \"kpiresult\": \"1220\", ";
+		param = param + "                    \"detailresult\": \"xxxxxxxx\", ";
+		param = param + "                    \"summaryresult\": \"xxxxxxxx\", ";
+		param = param
+				+ "                    \"reportpath\": \"/storage/emulated/0/cmri.ots/2.5.2/detail_report/TestCase_Report/00000000/互联网下载测试/2016_07_26/00000000_03001.F19858_0-2016_07_26_09_39_02_226/00000000_03001.F19858_0-2016_07_26_09_39_02_226.summary.csv\"";
+		param = param + "                }, ";
+		param = param + "                {";
+		param = param
+				+ "                    \"casenumber\": \"OSQ.V1.0-02011.F17023\", ";
+		param = param + "                    \"casename\": \"视频测试\", ";
+		param = param
+				+ "                    \"caseexecutetime\": \"2016-08-10 10:46\", ";
+		param = param + "                    \"testtypename\": \"video\", ";
+		param = param + "                    \"testtypeid\": \"02011\", ";
+		param = param + "                    \"testduration\": \"360s\", ";
+		param = param + "                    \"teststatus\": \"success\", ";
+		param = param + "                    \"kpiresult\": \"1220\", ";
+		param = param + "                    \"detailresult\": \"xxxxxxxx\", ";
+		param = param + "                    \"summaryresult\": \"xxxxxxxx\", ";
+		param = param
+				+ "                    \"reportpath\": \"/storage/emulated/0/cmri.ots/2.5.2/detail_report/TestCase_Report/00000000/互联网下载测试/2016_07_26/00000000_03001.F19858_0-2016_07_26_09_39_02_226/00000000_03001.F19858_0-2016_07_26_09_39_02_226.summary.csv\"";
+		param = param + "                }, ";
+		param = param + "                {";
+		param = param
+				+ "                    \"casenumber\": \"OSQ.V1.0-03001.8002\", ";
+		param = param + "                    \"casename\": \"网页浏览\", ";
+		param = param
+				+ "                    \"caseexecutetime\": \"2016-08-10 10:46\", ";
+		param = param + "                    \"testtypename\": \"browse\", ";
+		param = param + "                    \"testtypeid\": \"03010\", ";
+		param = param + "                    \"testduration\": \"360s\", ";
+		param = param + "                    \"teststatus\": \"success\", ";
+		param = param + "                    \"kpiresult\": \"240\", ";
+		param = param + "                    \"detailresult\": \"xxxxxxxx\", ";
+		param = param + "                    \"summaryresult\": \"xxxxxxxx\", ";
+		param = param
+				+ "                    \"reportpath\": \"/storage/emulated/0/cmri.ots/2.5.2/detail_report/TestCase_Report/00000000/互联网下载测试/2016_07_26/00000000_03001.F19858_0-2016_07_26_09_39_02_226/00000000_03001.F19858_0-2016_07_26_09_39_02_226.summary.csv\"";
+		param = param + "                }";
+		param = param + "            ]";
+		param = param + "        }";
+		param = param + "    ]";
+		param = param + "}";
+		$(function() {
+			JSEvent(tag, param);
+		});
+		function JSEvent(TAG, param) {
+			try {
+				var tagJson = JSON.parse(TAG);
+				var taskName = tagJson.testinfo.testcategory;
+				if (taskName == "N/A") {
+					taskName = "暂未获取";
+				}
+				$("#taskName").html("您将执行" + taskName);
+				var taskPhone = tagJson.sim.phoneno;
+				if (taskPhone == "N/A") {
+					taskPhone = "暂未获取";
+				}
+				$("#taskPhone").html(taskPhone);
+				var taskOperator = tagJson.sim.operator;
+				if (taskOperator == "N/A") {
+					taskOperator = "暂未获取";
+				}
+				$("#taskOperator").html(taskOperator);
+
+				var taskBandwidth = tagJson.testinfo.bandwidth;
+				if (taskBandwidth == "N/A") {
+					taskBandwidth = "暂未获取";
+				}
+				$("#taskBandwidth").html(taskBandwidth);
+				var taskAddress = "";
+				var street = tagJson.location.street;
+				var city = tagJson.location.city;
+				var province = tagJson.location.province;
+				if (province == "" && city != "") {
+					taskAddress = city + "/" + street;
+				} else if (city == "" && province != "") {
+					taskAddress = province + "/" + street;
+				} else if (province != "" && city != "") {
+					taskAddress = province + "/" + street;
+				}
+				$("#taskAddress").html(taskAddress.replace("N/A", "暂未获取"));
+				var taskConnection = tagJson.network.wifissid;
+				if (taskConnection == "N/A") {
+					taskConnection = "暂未获取";
+				}
+				$("#taskConnection").html(taskConnection);
+				var taskSignal = tagJson.network.wifisignal;
+				if (taskSignal == "N/A") {
+					taskSignal = "暂未获取";
+				}
+				$("#taskSignal").html(taskSignal);
+				var testType = (tagJson.testinfo.testtype).split(",");
+				for (var int = 0; int < testType.length; int++) {
+					if (testType[int].indexOf("互联网资源下载") > 0) {
+						$("#download").show();
+					} else if (testType[int].indexOf("网页浏览") > 0) {
+						$("#webpage").show();
+					} else if (testType[int].indexOf("H5视频播放") > 0) {
+						alert(1);
+						$("#h5").show();
+					} else if (testType[int].indexOf("网络测试") > 0) {
+						$("#network").show();
+					}
+				}
+			} catch (e) {
+				console.log(e);
+			}
+			try {
+				var paramJson = JSON.parse(param);
+				var taskTail = "";
+				for (var int2 = 0; int2 < paramJson.testresult.length; int2++) {
+					for (var int3 = 0; int3 < paramJson.testresult[int2].caseresultlist.length; int3++) {
+						var teststatus = paramJson.testresult[int2].caseresultlist[int3].teststatus;
+						if (paramJson.testresult[int2].caseresultlist[int3].testtypename == "video") {
+							if (teststatus == "success") {
+								teststatus = "完成";
+							} else {
+								teststatus = "未完成";
+							}
+							taskTail += "<li><img src=\"images/h5.png\" height=\"35\" width=\"37.74\"><span>"
+									+ paramJson.testresult[int2].caseresultlist[int3].casename
+									+ "，"
+									+ teststatus
+									+ "，耗时"
+									+ paramJson.testresult[int2].caseresultlist[int3].testduration
+									+ "。</span></li>";
+						} else if (paramJson.testresult[int2].caseresultlist[int3].testtypename == "httpdownload") {
+							if (teststatus == "success") {
+								teststatus = "完成";
+							} else {
+								teststatus = "未完成";
+							}
+							taskTail += "<li><img src=\"images/download.png\" height=\"35\" width=\"37.74\"><span>"
+									+ paramJson.testresult[int2].caseresultlist[int3].casename
+									+ "，"
+									+ teststatus
+									+ "，耗时"
+									+ paramJson.testresult[int2].caseresultlist[int3].testduration
+									+ "。</span></li>";
+						} else if (paramJson.testresult[int2].caseresultlist[int3].testtypename == "browse") {
+							if (teststatus == "success") {
+								teststatus = "完成";
+							} else {
+								teststatus = "未完成";
+							}
+							taskTail += "<li><img src=\"images/webpage.png\" height=\"35\" width=\"37.74\"><span>"
+									+ paramJson.testresult[int2].caseresultlist[int3].casename
+									+ "，"
+									+ teststatus
+									+ "，耗时"
+									+ paramJson.testresult[int2].caseresultlist[int3].testduration
+									+ "。</span></li>";
+						} else if (paramJson.testresult[int2].caseresultlist[int3].testtypename == "networkperformance") {
+							if (teststatus == "success") {
+								teststatus = "完成";
+							} else if (teststatus == "fail") {
+								teststatus = "未完成";
+							}
+							taskTail += "<li><img src=\"images/network.png\" height=\"35\" width=\"37.74\"><span>"
+									+ paramJson.testresult[int2].caseresultlist[int3].casename
+									+ "，"
+									+ teststatus
+									+ "，耗时"
+									+ paramJson.testresult[int2].caseresultlist[int3].testduration
+									+ "。</span></li>";
+						}
+					}
+				}
+				$("#taskTail").append(taskTail);
+			} catch (e) {
+				alert(e);
+			}
+		}
+	</script>
+</body>
+</html>
