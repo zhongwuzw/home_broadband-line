@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yesterday="$(date -d -1day +%Y%m%d)"
+yesterday="$(date -d -1day +%Y%m)"
 
 sh /opt/Script/jiakuandata_online/total.sh $yesterday
 
