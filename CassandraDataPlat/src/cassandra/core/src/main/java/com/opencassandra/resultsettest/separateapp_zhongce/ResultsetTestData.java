@@ -86,7 +86,7 @@ public class ResultsetTestData {
 	
 	static public void main(String[] args) {
 		String testtime = "";
-		if (!ConfParser.time.equals("") && ConfParser.time != null
+		if (ConfParser.time != null && !ConfParser.time.equals("")
 				&& ConfParser.time != "") {
 			testtime = ConfParser.time;
 		} else {
@@ -382,6 +382,7 @@ public class ResultsetTestData {
 				}
 			}
 		}
+		//将sql插入数据库
 		if (desc.sqlList.size() > 1) {
 			desc.dealData();
 			desc.sqlList.clear();
@@ -436,6 +437,7 @@ public class ResultsetTestData {
 		}
 	}
 
+	//进行文件搜索
 	public void findFile(String rootDirectory, String org,String testtime) {
 		System.out.println("开始findFile************：" + new Date().toLocaleString() + "   毫秒：" + new Date().getTime());
 		File rootFile = new File(rootDirectory);
@@ -456,6 +458,7 @@ public class ResultsetTestData {
 		// long nums = list.length;
 		StringBuffer errStr = new StringBuffer();
 		try {
+			//fileList数组包含目录，以及csv文件
 			for (int i = 0; i < fileList.length; i++) {
 				File myFile = fileList[i];
 				System.out.println(myFile.getAbsolutePath() + "  ::::::");

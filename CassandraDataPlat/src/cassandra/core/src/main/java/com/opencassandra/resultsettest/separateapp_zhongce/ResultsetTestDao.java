@@ -3758,6 +3758,7 @@ public class ResultsetTestDao{
 		return appendSql(map, numType, file_index, testtime);
 	}
 	
+	//进行sql的拼串，以便插入数据库
 	private Map<StringBuffer, Boolean> appendSql (Map map,String numType,String fileIndex,String testtime){
 		StringBuffer sql = new StringBuffer("");
 		StringBuffer columnStr = new StringBuffer("(");
