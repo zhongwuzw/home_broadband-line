@@ -56,7 +56,7 @@ public class ResultsetTestData {
 	int errors = 0;
 	public static int count = 0;
 	private static ResultsetTestDao insertMysqlDao = new ResultsetTestDao();
-	private List appid = new ArrayList();
+	private List appid = new ArrayList();	//Appid
 	private List sqlList = new ArrayList();
 	static String basename = "";
 	static Statement statement;
@@ -209,6 +209,7 @@ public class ResultsetTestData {
 					if (ConfParser.issubmeter.equals("no")) {
 						basename = dataname;
 					} else {
+						//不同的code入不同的库
 						basename = insertMysqlDao.getBaseName(code2);
 
 						if (basename.isEmpty()) {
@@ -397,6 +398,7 @@ public class ResultsetTestData {
 		map.put("存储路径", mapCount++);
 	}
 
+	//通过app中文名查找APPID
 	public List getAppids() {
 		List appids = new ArrayList();
 		String[] appnames = ConfParser.appname;
@@ -572,7 +574,7 @@ public class ResultsetTestData {
 					} else {
 						dataEreaIndex++;
 					}
-				}
+				}//每次强制走01001
 			} else if (ServiceId == 01001) {
 				if (csvList == null || csvList.size() == 0) {
 					return false;
