@@ -76,6 +76,21 @@ public class ResultsetTestData {
 	public static int successCount = 0;
 	public static int failCount = 0;
 	private ExecutorService analyzeThreadPool;
+	
+	//拼接自然维路径
+	static public List<String> getPaths(String[] path){
+		List pathList = new ArrayList<String>();
+		String prefix = ConfParser.org_prefix;
+		if((path!=null && path.length>0)){
+			for (int i = 0; i < path.length; i++) {
+				String org_keyString = path[i].toString();
+				if(!org_keyString.isEmpty()){
+					pathList.add(prefix+org_keyString);
+				}
+			}
+		}
+		return pathList;
+	}
 
 	/**
 	 * @override
@@ -94,27 +109,6 @@ public class ResultsetTestData {
 				testtime = args[0];
 			}
 		}
-//		if(args.length>0){
-//			testtime=args[0];
-//				 /*Date dBefore = new Date();
-//			     SimpleDateFormat sdf =new SimpleDateFormat("yyyyMMddHH");
-//			    	Date date;
-//					try {
-//						date = sdf.parse(newTimes);
-//						Calendar calendar = Calendar.getInstance();
-//				    	calendar.setTime(date);
-//				    	calendar.add(Calendar.HOUR, -1);  //设置为前一个小时
-//				    	dBefore = calendar.getTime();   //得到前一个小时的时间
-//					    String testtime2=sdf.format(dBefore);
-//				    	System.out.println("testtime2"+testtime2);
-//				    	testtime=newTimes+","+testtime2;
-//					} catch (ParseException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}*/
-//			}else{
-//				testtime = ConfParser.time;
-//			}
 
 		ResultsetTestData desc = new ResultsetTestData();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -122,267 +116,20 @@ public class ResultsetTestData {
 		System.out.println(dateString + ">>> Start!");
 		desc.setChange(true);
 		desc.appid = desc.getAppids();
-		String file[] = new String[] {};
-		file = ConfParser.srcReportPath;
 		System.out.println("开始获取路径进行遍历" + new Date().toLocaleString() + "   毫秒：" + new Date().getTime());
 		String code1 = (ConfParser.code != null && ConfParser.code.length > 0) ? ConfParser.code[0] : "";
-		String dataname = ConfParser.subdatabase;
-		if ("all".equals(code1)) {
-		} else {
-			if (pathType.equals("default")) {
-				for (int i = 0; i < file.length; i++) {
-					String filePath = file[i];
-					System.out.println(filePath);
-					if (filePath == null || filePath.isEmpty()) {
-						continue;
-					}
-					String org = "";
-					String filePathOrg = "";
-					if (filePath.endsWith("Default")) {
-						filePathOrg = filePath.replace(File.separator + "Default", "");
-					}else{
-						filePathOrg = filePath;
-					}
-					if (filePathOrg.contains(File.separator)) {
-						org = filePathOrg.substring(filePathOrg.lastIndexOf(File.separator) + 1, filePathOrg.length());
-					} else {
-						continue;
-					}
-					desc.findFile(filePath, org,testtime);
-				}
-			} else {
-				for (int i = 0; i < file.length; i++) {
-					String filePath = file[i];
-					System.out.println(filePath);
-					if (filePath == null || filePath.isEmpty()) {
-						continue;
-					}
-					String org = "";
-					while (filePath.endsWith(File.separator)) {
-						filePath = filePath.substring(0, filePath.length() - 1);
-					}
-					org = filePath.substring(filePath.lastIndexOf(File.separator) + 1, filePath.length());
-					desc.findFile(filePath, org,testtime);
-				}
+		
+		String[] prjcode = ConfParser.prjcode;
+		if (prjcode != null) {
+			List<String> pathList = ResultsetTestData.getPaths(prjcode);
+			for (int i = 0; i < pathList.size(); i++) {
+				String filePath = pathList.get(i);
+				System.out.println(filePath);
+				String org = prjcode[i];
+				desc.findFile(filePath, org,testtime);
 			}
 		}
-		GetPostTest getPostTest = new GetPostTest();
-		String codeUrl = ConfParser.getCodePath;
-		if (pathType.equals("default")) {
-			/**
-			 * 层级结构的路径 ： 需调用带有Default逻辑的方法
-			 */
-			if (codeUrl.isEmpty()) {
-				String[] paths = getPostTest.getPathsDefault(desc.appid);
-				for (int i = paths.length - 1; i >= 0; i--) {
-					String filePath = paths[i];
-					if (filePath == null || filePath.isEmpty()) {
-						continue;
-					}
-					System.out.println(filePath);
-					String org = "";
-					String filePathOrg = "";
-					if (filePath.endsWith("Default")) {
-						filePathOrg = filePath.replace(File.separator + "Default", "");
-					}else{
-						filePathOrg = filePath;
-					}
-					if (filePathOrg.contains(File.separator)) {
-						org = filePathOrg.substring(filePathOrg.lastIndexOf(File.separator) + 1, filePathOrg.length());
-					}
-					desc.findFile(filePath, org,testtime);
-				}
-			} else {
-				for (int j = 0; j < ConfParser.code.length; j++) {
-					ArrayList keyList = new ArrayList();
-					String code2 = ConfParser.code[j];
-					if (code2 == null || code2.isEmpty()) {
-						continue;
-					}
-					String codeStr = "code=" + code2;
-					//System.out.println(ConfParser.url);
 
-					/**
-					 * 2015年12月11日 16:01:39修改 添加是否分表开关 若issubmeter=no
-					 * 则不分表，其他情况都视为分表情况
-					 */
-					if (ConfParser.issubmeter.equals("no")) {
-						basename = dataname;
-					} else {
-						//不同的code入不同的库
-						basename = insertMysqlDao.getBaseName(code2);
-
-						if (basename.isEmpty()) {
-							basename = dataname;
-						}
-
-					}
-					insertMysqlDao.startOrCreateDB(basename);
-
-					if (code2.equals("all")) {
-						String paths = "";
-						if (ConfParser.org_prefix != null && !ConfParser.org_prefix.isEmpty()) {
-							paths = ConfParser.org_prefix;
-						} else {
-							if (ConfParser.srcReportPath != null && ConfParser.srcReportPath.length > 0 && ConfParser.srcReportPath[0] != null) {
-								paths = ConfParser.srcReportPath[0];
-							}
-						}
-						File filePaths = new File(paths);
-						File files[] = filePaths.listFiles(new FilenameFilter() {
-							public boolean accept(File dir, String name) {
-								if (dir.isDirectory()) {
-									return true;
-								}
-								return false;
-							}
-						});
-						for (int i = 0; i < files.length; i++) {
-							File rootFile = files[i];
-							String rootFileOrg = rootFile.getAbsolutePath().replace(ConfParser.org_prefix, "");
-							System.out.println(rootFileOrg + "  ::::::");
-							if (rootFileOrg.endsWith(File.separator)) {
-								rootFileOrg = rootFileOrg.substring(0, rootFileOrg.lastIndexOf(File.separator));
-							}
-							desc.findFile(rootFile.getAbsolutePath(), rootFileOrg,testtime);
-						}
-					} else {
-						String sr = GetPostTest.sendGet(codeUrl, codeStr);
-						System.out.println(sr);
-						JSONObject json = JSONObject.fromObject(sr);
-						try {
-							JSONObject thisOrgInfo = json.getJSONObject("thisOrgInfo");
-							String keySelf = thisOrgInfo.getString("key");
-							String storePathSelf = thisOrgInfo.getString("storepath");
-							if (keySelf == null) {
-								keySelf = "";
-							}
-							if (!keySelf.isEmpty()) {
-								keyList.add(keySelf);
-							}
-							if (storePathSelf != null && !storePathSelf.isEmpty()) {
-								storePathSelf = storePathSelf.replace("/", File.separator).replace("\\", File.separator);
-								if (storePathSelf.endsWith("Default")) {
-									storePathSelf = storePathSelf.replace(File.separator + "Default", "");
-								}
-								keyList.add(storePathSelf);
-							}
-						} catch (Exception e) {
-							e.printStackTrace();
-							continue;
-						}
-						String[] paths = getPostTest.getPaths(desc.appid, keyList,testtime);
-						for (int i = paths.length - 1; i >= 0; i--) {
-							String filePath = paths[i];
-							if (filePath == null || filePath.isEmpty()) {
-								continue;
-							}
-							System.out.println(filePath);
-							String org = "";
-							String filePathOrg = "";
-							System.out.println(File.separator);
-							if (filePath.endsWith("Default")) {
-								filePathOrg = filePath.replace(File.separator + "Default", "");
-							}else{
-								filePathOrg = filePath;
-							}
-							if (filePathOrg.contains(File.separator)) {
-								org = filePathOrg.substring(filePathOrg.lastIndexOf(File.separator) + 1, filePathOrg.length());
-							}
-							// org =
-							// filePath.substring(filePath.lastIndexOf(File.separator)+1,
-							// filePath.length());
-							desc.findFile(filePath, org,testtime);
-							System.out.println(org+"   findFiledevice_org 的值");
-						}
-					}
-
-				}
-			}
-		} else {
-			/**
-			 * 不带Default的解析路径获取
-			 */
-			if (codeUrl.isEmpty()) {
-				String[] paths = getPostTest.getPaths(desc.appid);
-				for (int i = paths.length - 1; i >= 0; i--) {
-					String filePath = paths[i];
-					if (filePath == null || filePath.isEmpty()) {
-						continue;
-					}
-					System.out.println(filePath);
-					String org = "";
-					while (filePath.endsWith(File.separator)) {
-						filePath = filePath.substring(0, filePath.length() - 1);
-					}
-					org = filePath.substring(filePath.lastIndexOf(File.separator) + 1, filePath.length());
-					desc.findFile(filePath, org,testtime);
-				}
-			} else {
-				if (code1.equals("all")) {
-					/**
-					 * 2015年12月9日 15:02:06 修改 添加有关数据分库分表程序中的根据code获取到相应的数据库名
-					 * 并根据数据库名创建相应的数据库
-					 * 
-					 * 2015年12月11日 16:01:39修改 添加是否分表开关 若issubmeter=no
-					 * 则不分表，其他情况都视为分表情况
-					 */
-					if (ConfParser.issubmeter.equals("no")) {
-						basename = dataname;
-					} else {
-						basename = insertMysqlDao.getBaseName(code1);
-
-						if (basename.isEmpty()) {
-							basename = dataname;
-						}
-
-					}
-					insertMysqlDao.startOrCreateDB(basename);
-
-
-					String paths = "";
-					if (ConfParser.org_prefix != null && !ConfParser.org_prefix.isEmpty()) {
-						paths = ConfParser.org_prefix;
-					} else {
-						if (ConfParser.srcReportPath != null && ConfParser.srcReportPath.length > 0 && ConfParser.srcReportPath[0] != null) {
-							paths = ConfParser.srcReportPath[0];
-						}
-					}
-					File filePaths = new File(paths);
-					File files[] = filePaths.listFiles(new FilenameFilter() {
-						public boolean accept(File dir, String name) {
-							if (dir.isDirectory()) {
-								return true;
-							}
-							return false;
-						}
-					});
-					for (int i = 0; i < files.length; i++) {
-						File rootFile = files[i];
-						String rootFileOrg = rootFile.getAbsolutePath().replace(ConfParser.org_prefix, "");
-						if (rootFileOrg.endsWith(File.separator)) {
-							rootFileOrg = rootFileOrg.substring(0, rootFileOrg.lastIndexOf(File.separator));
-						}
-						desc.findFile(rootFile.getAbsolutePath(), rootFileOrg,testtime);
-					}
-				} else {
-					String[] paths = getPostTest.getPaths(desc.appid);
-					for (int i = paths.length - 1; i >= 0; i--) {
-						String filePath = paths[i];
-						if (filePath == null || filePath.isEmpty()) {
-							continue;
-						}
-						System.out.println(filePath);
-						String org = "";
-						while (filePath.endsWith(File.separator)) {
-							filePath = filePath.substring(0, filePath.length() - 1);
-						}
-						org = filePath.substring(filePath.lastIndexOf(File.separator) + 1, filePath.length());
-						desc.findFile(filePath, org,testtime);
-					}
-				}
-			}
-		}
 		//将sql插入数据库
 		if (desc.sqlList.size() > 1) {
 			desc.dealData();
@@ -449,7 +196,8 @@ public class ResultsetTestData {
 		}
 		File[] fileList = rootFile.listFiles(new FilenameFilter() {
 			public boolean accept(File dir, String name) {
-				if (dir.isDirectory() || name.indexOf(".summary.csv") >= 0 || name.indexOf(".abstract.csv") >= 0) {
+				File file = new File(dir,name);
+				if (file.isDirectory() || name.indexOf(".summary.csv") >= 0 || name.indexOf(".abstract.csv") >= 0) {
 					return true;
 				}
 				return false;

@@ -3,6 +3,8 @@ package com.opencassandra.descfile;
 import java.io.File;
 import java.io.IOException;
 
+import com.google.common.util.concurrent.Monitor;
+
 public class ConfParser {
 	static String paraPath = "res/conf/monitor.ini";
 	public static String[] srcReportPath = null;
@@ -29,6 +31,7 @@ public class ConfParser {
 	public static String dataStart = "201401";
 //	public static String apikey = "97";
 	public static String code[] = null;
+	public static String prjcode[] = null;
 	public static String getCodePath = "http://192.168.16.72/ctp/orginfo/v3/query/getSecondOrgsByCode.do";
 	public static String[] appname = null;
 	public static String[] tableType = null;
@@ -155,7 +158,13 @@ public class ConfParser {
 				code = new String[]{codeStr};
 			}
 			
-			
+			String prjcodeStr = IniReader.getValue("MonitorPath", "prjcode", myFile.getAbsolutePath());
+			if (prjcodeStr!=null && prjcodeStr.contains(",")) {
+				prjcode = prjcodeStr.split(",");
+			}
+			else {
+				prjcode = new String[]{prjcodeStr};
+			}
 			
 			getCodePath = IniReader.getValue("MonitorPath", "getCodePath", myFile.getAbsolutePath());
 			if(getCodePath==null){
