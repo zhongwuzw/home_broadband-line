@@ -25,16 +25,15 @@ public class JedisCilent {
  static {
 	try {
 		 pool = JedisPoolManage.getPool();
-		 resource = pool.getResource();
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
  }
  
   public static String insertObj(String sessionid,int timeout,Serializable  obj){
-	  
+	  	resource = pool.getResource();
 	  	 String setex = resource.setex(sessionid.getBytes(), timeout, serialize(obj));
-	  	 
+	  	 pool.returnResource(resource);
 	  	 return setex ;
   }
   
@@ -42,18 +41,19 @@ public class JedisCilent {
 	  if(sessionid==null||"".equals(sessionid)){
 		  return null;
 	  }
+	  resource = pool.getResource();
 	  byte[] setex = resource.get(sessionid.getBytes());
+	  pool.returnResource(resource);
 	  Object  obj = unserialize(setex);
 	  return obj ;
   }
   
   public static Long delObj(String sessionid){
-	  
+	  	 resource = pool.getResource();
 	  	 Long setex = resource.del(sessionid.getBytes());
-	  	 
+	  	pool.returnResource(resource);
 	  	 return setex ;
 }
-  
   
   public static Object unserialize(byte[] bytes) {
       ByteArrayInputStream bais = null;

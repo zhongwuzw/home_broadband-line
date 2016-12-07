@@ -139,7 +139,12 @@ public class SysuserAction extends BaseAction  {
 			}
 		}
 		String uuid =session.get("key").toString();
-		JedisCilent.delObj(uuid);
+		try {
+			JedisCilent.delObj(uuid);
+		} finally {
+			
+		}
+		
 		session.put("key", null);
 		session.put("userInfo", null);
 	}
