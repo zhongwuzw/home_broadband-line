@@ -3,6 +3,7 @@
 .gitignore
 .svn/
 build/
+bin/
 
 # class file
 *.class
