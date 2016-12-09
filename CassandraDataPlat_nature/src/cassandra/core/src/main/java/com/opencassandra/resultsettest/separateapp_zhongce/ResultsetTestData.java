@@ -185,6 +185,35 @@ public class ResultsetTestData {
 			return appids;
 		}
 	}
+	
+    public String readFileByLines(String fileName) {
+        File file = new File(fileName);
+        BufferedReader reader = null;
+        StringBuffer sb = new StringBuffer();
+        try {
+           // reader = new BufferedReader(new FileReader(file));
+            reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),"GB2312"));
+            String tempString = null;
+            // 一次读入一行，直到读入null为文件结束
+            while ((tempString = reader.readLine()) != null) {
+                // 显示行号
+                //System.out.println("line " + line + ": " + tempString);
+                sb.append(tempString);
+                sb.append("\r");
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e1) {
+                }
+            }
+        }
+		return sb.toString();
+    }
 
 	//进行文件搜索
 	public void findFile(String rootDirectory, String org,String testtime) {
@@ -228,7 +257,8 @@ public class ResultsetTestData {
 						filepathList.add(myFile.getAbsolutePath());
 						try {
 							try {
-								this.deal(myFile, 01001, org, testtime);
+//								this.deal(myFile, 01001, org, testtime);
+								String fileContent = this.readFileByLines(myFile.toString());
 //								System.out.println(org
 //										+ "   findFile device_org 的值");
 							} catch (Exception e) {
