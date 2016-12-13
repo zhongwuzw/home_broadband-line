@@ -150,7 +150,7 @@ def calculateIndicatorSum(indicatorName,threshold):
 
     try:
         with SourcePhoneconnection.cursor() as cursor:
-            sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios from " + indicatorName + " WHERE UNIX_TIMESTAMP(time) > 1477929600 and UNIX_TIMESTAMP(time) < 1480521599 GROUP BY file_path"
+            sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios from " + indicatorName + " GROUP BY file_path"
             # sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone from " + indicatorName + " WHERE bandwidth_flag = 1 AND phone_number_flag = 1 AND openBroadband_flag = 1 AND signal_flag = 1 and UNIX_TIMESTAMP(time) < 1469980800 GROUP BY file_path"
             cursor.execute(sql)
             result = cursor.fetchall()
@@ -187,15 +187,15 @@ for key in httpDownloadResultDic.keys():
     phone = key
     province = httpDownloadResultDic[key]['province']
     city = httpDownloadResultDic[key]['city']
-    httpDownload = httpDownloadResultDic[key]['testCount']/2
-    videoPlay = videoResultDic.get(key,{}).get('testCount',0)/2
-    webBrowsing = webBrowsingResultDic.get(key,{}).get('testCount',0)/5
+    httpDownload = httpDownloadResultDic[key]['testCount']
+    videoPlay = videoResultDic.get(key,{}).get('testCount',0)
+    webBrowsing = webBrowsingResultDic.get(key,{}).get('testCount',0)
     openBroadband_phone = httpDownloadResultDic[key]['openBroadband_phone']
     android_ios = httpDownloadResultDic[key]['android_ios']
 
-    totalTest = min(httpDownload,videoPlay,webBrowsing)
+    totalTest = min(httpDownload/2,videoPlay/2,webBrowsing/5)
 
-    isValid = (httpDownload*2 + videoPlay*2 + webBrowsing*5 >= 5)
+    isValid = (httpDownload + videoPlay + webBrowsing >= 5)
 
     key_sep = str(key).split('_')
     if len(key_sep) > 1:
@@ -211,14 +211,14 @@ for key in videoResultSet:
     province = videoResultDic[key]['province']
     city = videoResultDic[key]['city']
     httpDownload = 0
-    videoPlay = videoResultDic.get(key, {}).get('testCount', 0)/2
-    webBrowsing = webBrowsingResultDic.get(key, {}).get('testCount', 0)/5
+    videoPlay = videoResultDic.get(key, {}).get('testCount', 0)
+    webBrowsing = webBrowsingResultDic.get(key, {}).get('testCount', 0)
     openBroadband_phone = videoResultDic[key]['openBroadband_phone']
     android_ios = videoResultDic[key]['android_ios']
 
-    totalTest = min(httpDownload, videoPlay, webBrowsing)
+    totalTest = min(httpDownload / 2, videoPlay / 2, webBrowsing / 5)
 
-    isValid = (httpDownload * 2 + videoPlay * 2 + webBrowsing * 5 >= 5)
+    isValid = (httpDownload + videoPlay + webBrowsing >= 5)
 
     key_sep = str(key).split('_')
     if len(key_sep) > 1:
@@ -236,13 +236,13 @@ for key in webBrowsingResultSet:
     city = webBrowsingResultDic[key]['city']
     httpDownload = 0
     videoPlay = 0
-    webBrowsing = webBrowsingResultDic.get(key, {}).get('testCount', 0)/5
+    webBrowsing = webBrowsingResultDic.get(key, {}).get('testCount', 0)
     openBroadband_phone = webBrowsingResultDic[key]['openBroadband_phone']
     android_ios = webBrowsingResultDic[key]['android_ios']
 
-    totalTest = min(httpDownload, videoPlay, webBrowsing)
+    totalTest = min(httpDownload / 2, videoPlay / 2, webBrowsing / 5)
 
-    isValid = (httpDownload * 2 + videoPlay * 2 + webBrowsing * 5 >= 5)
+    isValid = (httpDownload + videoPlay + webBrowsing >= 5)
 
     key_sep = str(key).split('_')
     if len(key_sep) > 1:
