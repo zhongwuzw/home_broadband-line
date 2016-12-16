@@ -246,6 +246,16 @@ public class ResultsetTestData {
 					findFile(myFile.getAbsolutePath(), org,testtime);
 					
 				} else {
+					String[] fileComponents = myFile.toString().split("/");
+					
+					if (fileComponents.length - 4 >= 0) {
+						if (!((String)fileComponents[fileComponents.length - 4]).equals(testtime)) {
+							continue;
+						}
+					}
+					else {
+						continue;
+					}
 					boolean judge = true;
 					for (String filePath : filepathList) {
 						if (filePath.equals(myFile.getAbsolutePath().toString())) {
@@ -257,6 +267,7 @@ public class ResultsetTestData {
 						filepathList.add(myFile.getAbsolutePath());
 						try {
 							try {
+								FileLog.writeToLogFile(myFile.toString());
 //								this.deal(myFile, 01001, org, testtime);
 								String fileContent = this.readFileByLines(myFile.toString());
 //								System.out.println(org
