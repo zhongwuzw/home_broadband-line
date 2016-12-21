@@ -126,7 +126,7 @@ public class ResultsetTestData {
 				String filePath = pathList.get(i);
 				System.out.println(filePath);
 				String org = prjcode[i];
-				desc.findFile(filePath, org,testtime);
+				desc.findFile(filePath, org, testtime, ConfParser.code);
 			}
 		}
 
@@ -216,7 +216,7 @@ public class ResultsetTestData {
     }
 
 	//进行文件搜索
-	public void findFile(String rootDirectory, String org,String testtime) {
+	public void findFile(String rootDirectory, String org,String testtime, String[] code) {
 		System.out.println("开始findFile************：" + new Date().toLocaleString() + "   毫秒：" + new Date().getTime());
 		File rootFile = new File(rootDirectory);
 		if (!rootFile.exists()) {
@@ -243,14 +243,26 @@ public class ResultsetTestData {
 				System.out.println(myFile.getAbsolutePath() + "  ::::::");
 				if (myFile.isDirectory()) {
 					length = length + myFile.listFiles().length;
-					findFile(myFile.getAbsolutePath(), org,testtime);
+					findFile(myFile.getAbsolutePath(), org,testtime, code);
 					
 				} else {
 					String[] fileComponents = myFile.toString().split("/");
 					
-					if (fileComponents.length - 4 >= 0) {
+					if (fileComponents.length - 5 >= 0) {
 						if (!((String)fileComponents[fileComponents.length - 4]).equals(testtime)) {
 							continue;
+						}
+						if (code != null) {
+							boolean isContinue = true;
+							for (int j = 0; j < code.length; j++) {
+								if (code[j].equals(fileComponents[fileComponents.length - 5])) {
+									isContinue = false;
+									break;
+								}
+							}
+							if (isContinue) {
+								continue;
+							}
 						}
 					}
 					else {
