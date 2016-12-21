@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileLog {
-	static String fileLogPath = "logs/file.log";
+	static String fileLogPath = "logs" + File.separator + "file.log";
 	static File file = new File(fileLogPath);
 	static{
 		if (!file.getParentFile().exists()) {

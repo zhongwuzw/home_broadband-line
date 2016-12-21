@@ -29,6 +29,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import net.sf.json.JSONObject;
@@ -246,8 +247,7 @@ public class ResultsetTestData {
 					findFile(myFile.getAbsolutePath(), org,testtime, code);
 					
 				} else {
-					String[] fileComponents = myFile.toString().split("/");
-					
+					String[] fileComponents = myFile.toString().split(Matcher.quoteReplacement(System.getProperty("file.separator")));
 					if (fileComponents.length - 5 >= 0) {
 						if (!((String)fileComponents[fileComponents.length - 4]).equals(testtime)) {
 							continue;
