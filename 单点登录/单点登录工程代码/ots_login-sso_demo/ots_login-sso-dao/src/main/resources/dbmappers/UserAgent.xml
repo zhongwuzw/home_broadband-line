@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="agentdao">
+
+	<resultMap type="com.cmri.ots.sso.bean.UserAgent" id="user_agent">
+		<result property="id" column="id"/>
+		<result property="message" column="message"/>
+	</resultMap>
+
+	<insert id="saveUserAgent" parameterType="com.cmri.ots.sso.bean.UserAgent" keyProperty="id" useGeneratedKeys="true">
+		insert into  auth.t_user_agent (message) value('${message}') 
+	</insert>
+	<select id="getuseragent" parameterType="com.cmri.ots.sso.bean.UserAgent" resultMap="user_agent">
+		select * from auth.t_user_agent where 1=1 
+		<if test="message != null"> and message=#{message}</if>
+		<if test="id != null"> and id=#{id}</if>
+	</select>
+</mapper>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="userDao">
+
+	<resultMap type="com.cmri.ots.sso.bean.Org" id="t_org">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="desction" column="desction"/>
+		<result property="whole_org_id" column="whole_org_id"/>
+		<result property="whole_org_name" column="whole_org_name"/>
+		<result property="rightgroupid" column="rightgroupid"/>
+		<result property="api_key" column="api_key"/>
+		<result property="list_order" column="list_order"/>
+		<result property="is_prj" column="is_prj"/>
+		<result property="code" column="code"/>
+		<result property="org_key" column="org_key"/>
+		<result property="icon" column="icon"/>
+		<result property="parent_id" column="parent_id"/>
+	</resultMap>
+
+	<resultMap type="com.cmri.ots.sso.bean.User" id="t_user">
+		<result property="id" column="id"/>
+		<result property="username" column="username"/>
+		<result property="password" column="password"/>
+		<result property="createTime" column="create_time"/>
+		<result property="name" column="name"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="count" column="count"/>
+		<result property="user_agent_id" column="user_agent_id"/>
+		<result property="api_key" column="api_key"/>
+	</resultMap>
+	
+	<resultMap type="com.cmri.ots.sso.bean.UserStatues" id="t_user_statues">
+		<result property="id" column="id"/>
+		<result property="user_id" column="user_id"/>
+		<result property="create_id" column="create_id"/>
+		<result property="create_time" column="create_time"/>
+		<result property="name" column="name"/>
+		<result property="update_time" column="update_time"/>
+		<result property="count" column="count"/>
+		<result property="user_agent_id" column="user_agent_id"/>
+		<result property="last_time" column="last_time"/>
+		<result property="last_ip" column="last_ip"/>
+		<result property="last_login_host" column="last_login_host"/>
+		<result property="username" column="username"/>
+		<result property="description" column="description"/>
+	</resultMap>
+	
+	<insert id="save_user_statues" parameterType="com.cmri.ots.sso.bean.UserStatues" keyProperty="id" useGeneratedKeys="true">
+		insert into auth.t_user_status 
+		
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="user_id != null"> user_id,</if>
+			<if test="name != null">name,</if>
+			<if test="create_id != null">create_id,</if>
+			<if test="create_time != null">create_time,</if>
+			<if test="update_id != null">update_id,</if>
+			<if test="update_time != null">update_time,</if>
+			<if test="username != null">username,</if>
+			<if test="last_time != null">last_time,</if>
+			<if test="last_ip != null">last_ip,</if>
+			<if test="count != null">count,</if>
+			<if test="user_agent_id != null">user_agent_id,</if>
+			<if test="description != null">description,</if>
+			<if test="last_login_host != null">last_login_host,</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="user_id != null"> #{user_id},</if>
+			<if test="name != null">#{name},</if>
+			<if test="create_id != null">#{create_id},</if>
+			<if test="create_time != null">#{create_time},</if>
+			<if test="update_id != null">#{update_id},</if>
+			<if test="update_time != null">#{update_time},</if>
+			<if test="username != null">#{username},</if>
+			<if test="last_time != null">#{last_time},</if>
+			<if test="last_ip != null">#{last_ip},</if>
+			<if test="count != null">#{count},</if>
+			<if test="user_agent_id != null">#{user_agent_id},</if>
+			<if test="description != null">#{description},</if>
+			<if test="last_login_host != null">#{last_login_host},</if>
+		</trim>
+	</insert>
+	
+	
+	<select id="doLogin" parameterType="java.lang.String" resultMap="t_user">
+		select * from auth.t_user where username='${username}' and `password` = '${password}' and is_del = 0
+	</select>
+	<update id="updateUser" parameterType="com.cmri.ots.sso.bean.User">
+		UPDATE auth.t_user  
+		<set>
+			<if test="username != null"> username=#{username},</if>
+			<if test="password != null"> password=#{password},</if>
+			<if test="createTime != null"> create_time=#{createTime},</if>
+			<if test="name != null"> name=#{name},</if>
+			<if test="updateTime != null"> update_time=#{updateTime},</if>
+			<if test="count != null"> count=#{count},</if>
+			<if test="user_agent_id != null"> user_agent_id=#{user_agent_id},</if>
+			<if test="api_key != null"> api_key=#{api_key},</if>
+		</set>
+		WHERE 
+        <if test="id != null ">  
+           id = #{id}
+        </if>
+	</update>
+
+	<select id="getUserByid" parameterType="java.lang.String" resultMap="t_user">
+		select * from auth.t_user where id=${userId}
+	</select>
+	<select id="getUserByApiKey" parameterType="java.lang.String" resultMap="t_user">
+		select * from auth.t_user where api_key = #{key}
+	</select>
+	
+	<insert id="saveUserAgent" parameterType="com.cmri.ots.sso.bean.UserAgent" keyProperty="id" useGeneratedKeys="true">
+		insert into  auth.t_user_agent (message) value('${message}') 
+	</insert>
+	<select id="getRolesByuser" parameterType="com.cmri.ots.sso.bean.User" resultType="java.util.HashMap">
+		select role_id from auth.t_user_role where user_id = ${id}
+	</select>
+	
+	<select id="getResource" parameterType="java.lang.String" resultType="java.util.HashMap">
+		 select distinct r.resource_tag,r.resource_Type  from  auth.t_resource r left join
+ 		auth.t_role_resource tr on r.id = tr.resource_id  where tr.role_id in (${roleId}) 
+	</select>
+	
+	<select id="searchUserTeam" parameterType="java.lang.Integer" resultMap="t_org">
+		SELECT o.id id,case when oc.name is null then o.name else concat(oc.name,'-',o.name)   end  name,o.*  
+   		from auth.t_org o left join  
+ 		auth.t_user_org uo on o.id = uo.ORG_ID left join auth.t_org oc  on oc.id = o.parent_id 
+  		where  uo.USER_ID=${uid}
+	</select>
+	
+	<select id="listUserResourceType" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		SELECT DISTINCT tre.resource_tag as resourceTag FROM auth.t_user tu,auth.t_user_role tur,auth.t_role tr,
+		auth.t_role_resource trr,auth.t_resource tre WHERE tu.id = tur.USER_ID AND tur.ROLE_ID = tr.id 
+		AND tr.id = trr.ROLE_ID AND trr.RESOURCE_ID = tre.id AND tre.resource_Type = 4 AND tu.id = ${id}
+	</select>
+	<select id="listUserResource" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		SELECT tre.resource_tag FROM auth.t_user tu,auth.t_user_role tur,auth.t_role tr,auth.t_role_resource trr,
+		auth.t_resource tre WHERE tu.id = tur.USER_ID AND tur.ROLE_ID = tr.id AND tr.id = trr.ROLE_ID AND 
+		trr.RESOURCE_ID = tre.id AND tre.resource_Type = 5 AND tu.id = ${id}
+	</select>
+	<select id="getOrgInfo" parameterType="java.lang.Integer" resultMap="t_org">
+		select o.id,o.name  from  auth.t_user_org tmp, auth.t_org o  where  tmp.ORG_ID = o.id and tmp.USER_ID = ${id}
+	</select>
+	<select id="getorgNamebyid" parameterType="java.lang.String" resultMap="t_org">
+		select * from auth.t_org where id=${id}
+	</select>
+	
+	<select id="getUserGroup" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		select group_org_id from auth.t_user_group_mapping where user_id =${id}
+	</select>
+	
+	<select id="queryByUserId" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		select g.*,o.* from auth.t_group_org_mapping g left join auth.t_org o on g.org_id=o.id and g.type=1 
+		where g.parent_org_id in(select u.group_org_id from auth.t_user_group_mapping u where u.user_id=#{userId}
+		) and g.group_id in(select u.group_org_id from auth.t_user_group_mapping 
+		u where u.user_id=#{userId})
+	</select>
+	<select id="queryByParentOrgId" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		select g.*,o.* from auth.t_group_org_mapping g left join auth.t_org o on g.org_id=o.id and g.type=1 where 
+		g.parent_org_id=#{org_id} and g.group_id=#{group_id}
+		<if test="id != null"> and g.id != #{id} </if>
+	</select>
+	<select id="getGrouById" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		SELECT group_org_id from auth.t_user_group_mapping where user_id =#{id}
+	</select>
+	<select id="getgroup_Org" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		SELECT name,org_id,group_id from auth.t_group_org_mapping where group_id in(
+select  group_org_id from auth.t_user_group_mapping  where user_id =#{id})
+	</select>
+	<select id="queryByUserGroup" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		SELECT tg.id,tg.group_name FROM auth.t_user_group_mapping tug,auth.t_group tg WHERE tug.group_org_id = tg.group_id AND tug.user_id=${userId}
+	</select>
+	<select id="getInfo" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		select * from  auth.t_person p where user_id = ${userId}
+	</select>
+	<select id="getRolesInfoByUserId" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		select role.* from auth.t_role role,auth.t_user_role ur where role.id=ur.ROLE_ID and ur.USER_ID= ${userId}
+	</select>
+	<select id="getOrgByOrgId" parameterType="java.lang.Integer" resultMap="t_org">
+		select * from auth.t_org where id= ${orgId}
+	</select>
+</mapper>

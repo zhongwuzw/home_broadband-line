@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+<!--   <parent> -->
+<!--     <groupId>com.cmri</groupId> -->
+<!--     <artifactId>ots_login-sso</artifactId> -->
+<!--     <version>0.0.1-SNAPSHOT</version> -->
+<!--   </parent> -->
+  <groupId>com.cmri</groupId>
+  <artifactId>ots_login-sso-export</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+ <distributionManagement>
+		<repository>
+			<id>Releases</id>
+			<name>Demo Release Repository</name>
+			<url>http://192.168.204.12:9123/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>Snapshots</id>
+			<name>Demo Snapshot Repository</name>
+			<url>http://192.168.204.12:9123/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
