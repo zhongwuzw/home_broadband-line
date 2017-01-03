@@ -249,7 +249,7 @@ public class ResultsetTestData {
 				} else {
 					String[] fileComponents = myFile.toString().split(Matcher.quoteReplacement(System.getProperty("file.separator")));
 					if (fileComponents.length - 5 >= 0) {
-						if (!((String)fileComponents[fileComponents.length - 4]).equals(testtime)) {
+						if (!testtime.equals("") && !((String)fileComponents[fileComponents.length - 4]).equals(testtime)) {
 							continue;
 						}
 						if (code != null) {
