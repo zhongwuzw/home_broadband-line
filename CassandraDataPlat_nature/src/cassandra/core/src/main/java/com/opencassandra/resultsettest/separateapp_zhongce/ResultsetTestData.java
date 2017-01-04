@@ -221,7 +221,6 @@ public class ResultsetTestData {
 		System.out.println("开始findFile************：" + new Date().toLocaleString() + "   毫秒：" + new Date().getTime());
 		File rootFile = new File(rootDirectory);
 		if (!rootFile.exists()) {
-			// rootFile.mkdir();
 			return;
 		}
 		File[] fileList = rootFile.listFiles(new FilenameFilter() {
@@ -235,7 +234,6 @@ public class ResultsetTestData {
 		});
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String dateString = dateFormat.format(new Date());
-		// long nums = list.length;
 		StringBuffer errStr = new StringBuffer();
 		try {
 			//fileList数组包含目录，以及csv文件
@@ -245,10 +243,9 @@ public class ResultsetTestData {
 				if (myFile.isDirectory()) {
 					length = length + myFile.listFiles().length;
 					findFile(myFile.getAbsolutePath(), org,testtime, code);
-					
 				} else {
 					String[] fileComponents = myFile.toString().split(Matcher.quoteReplacement(System.getProperty("file.separator")));
-					if (fileComponents.length - 5 >= 0) {
+					if (fileComponents.length >= 5) {
 						if (!testtime.equals("") && !((String)fileComponents[fileComponents.length - 4]).equals(testtime)) {
 							continue;
 						}
@@ -268,42 +265,34 @@ public class ResultsetTestData {
 					else {
 						continue;
 					}
-					boolean judge = true;
 					for (String filePath : filepathList) {
 						if (filePath.equals(myFile.getAbsolutePath().toString())) {
-							judge = false;
 							return;
 						}
 					}
-					if (judge) {
-						filepathList.add(myFile.getAbsolutePath());
+					filepathList.add(myFile.getAbsolutePath());
+					try {
 						try {
-							try {
-								FileLog.writeToLogFile(myFile.toString());
-//								this.deal(myFile, 01001, org, testtime);
-								String fileContent = this.readFileByLines(myFile.toString());
-//								System.out.println(org
-//										+ "   findFile device_org 的值");
-							} catch (Exception e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-								errStr.append(myFile.getAbsolutePath()
-										+ ":\r\n");
-								errStr.append(e.toString() + "\r\n");
-								errors++;
-								System.out.println("文件处理异常>>>"
-										+ Paths.get(myFile.getAbsolutePath()));
-								System.out.println("异常报告数为>>>" + errors);
-							}
-							counts++;
-							if ((counts % 100) == 0) {
-								System.out.println("已处理报告数为：" + length);
-							}
+							FileLog.writeToLogFile(myFile.toString());
+							String fileContent = this.readFileByLines(myFile.toString());
 						} catch (Exception e) {
 							e.printStackTrace();
-							errStr.append(myFile.getAbsolutePath() + ":\r\n");
-							errStr.append(e.getMessage() + "\r\n");
+							errStr.append(myFile.getAbsolutePath()
+									+ ":\r\n");
+							errStr.append(e.toString() + "\r\n");
+							errors++;
+							System.out.println("文件处理异常>>>"
+									+ Paths.get(myFile.getAbsolutePath()));
+							System.out.println("异常报告数为>>>" + errors);
 						}
+						counts++;
+						if ((counts % 100) == 0) {
+							System.out.println("已处理报告数为：" + length);
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+						errStr.append(myFile.getAbsolutePath() + ":\r\n");
+						errStr.append(e.getMessage() + "\r\n");
 					}
 				}
 			}

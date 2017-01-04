@@ -15,7 +15,6 @@ public class PCFileLog {
 		try {
 			file.createNewFile();
 		} catch (IOException e) {
-			// TODO: handle exception
 		}
 	}
 	
