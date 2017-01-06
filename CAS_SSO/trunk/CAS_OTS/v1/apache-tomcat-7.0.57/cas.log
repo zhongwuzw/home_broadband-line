@@ -1,0 +1,696 @@
+2016-12-23 12:06:32,848 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:06:34,531 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Starting Quartz Scheduler now
+2016-12-23 12:06:53,084 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2016-12-23 12:06:53,089 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2016-12-23 12:06:53,090 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2016-12-23 12:08:33,602 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-23 12:08:33,603 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:08:37,757 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Shutting down Quartz Scheduler
+2016-12-23 12:09:08,414 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:09:10,146 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Starting Quartz Scheduler now
+2016-12-23 12:09:28,658 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2016-12-23 12:09:28,664 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2016-12-23 12:09:28,664 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2016-12-23 12:11:09,198 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-23 12:11:09,199 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:13:09,174 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-23 12:13:09,175 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:15:09,174 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-23 12:15:09,175 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:16:25,264 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Shutting down Quartz Scheduler
+2016-12-23 12:16:37,648 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:16:39,297 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Starting Quartz Scheduler now
+2016-12-23 12:16:57,889 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2016-12-23 12:16:57,895 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2016-12-23 12:16:57,895 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2016-12-23 12:18:03,333 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Shutting down Quartz Scheduler
+2016-12-23 12:18:35,108 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:18:36,676 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Starting Quartz Scheduler now
+2016-12-23 12:18:55,345 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2016-12-23 12:18:55,350 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2016-12-23 12:18:55,351 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2016-12-23 12:19:05,475 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas-server/
+2016-12-23 12:19:05,475 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas-server/
+2016-12-23 12:20:35,755 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-23 12:20:35,756 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:22:35,755 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-23 12:22:35,755 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:24:35,754 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-23 12:24:35,755 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:26:35,755 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-23 12:26:35,755 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-23 12:27:17,087 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Shutting down Quartz Scheduler
+2016-12-27 13:40:23,909 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 13:40:25,324 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Starting Quartz Scheduler now
+2016-12-27 13:40:43,245 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2016-12-27 13:40:43,248 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2016-12-27 13:40:43,248 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2016-12-27 13:42:23,989 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 13:42:23,990 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 13:44:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 13:44:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 13:46:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 13:46:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 13:48:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 13:48:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 13:50:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 13:50:23,970 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 13:52:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 13:52:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 13:54:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 13:54:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 13:56:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 13:56:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 13:58:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 13:58:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:00:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:00:23,970 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:02:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:02:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:04:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:04:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:06:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:06:23,970 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:08:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:08:23,970 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:10:23,975 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:10:23,975 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:12:23,971 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:12:23,971 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:14:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:14:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:16:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:16:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:18:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:18:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:20:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:20:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:22:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:22:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:24:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:24:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:26:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:26:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:28:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:28:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:30:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:30:23,970 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:32:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:32:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:34:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:34:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:36:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:36:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:38:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:38:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:40:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:40:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:42:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:42:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:44:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:44:23,970 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:46:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:46:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:48:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:48:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:50:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:50:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:52:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:52:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:54:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:54:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:56:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:56:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 14:58:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 14:58:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:00:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:00:23,970 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:02:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:02:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:04:03,209 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2016-12-27 15:04:03,210 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2016-12-27 15:04:03,211 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2016-12-27 15:04:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:04:23,970 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:06:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:06:23,970 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:08:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:08:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:09:20,073 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas-server/
+2016-12-27 15:09:20,073 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas-server/
+2016-12-27 15:10:04,480 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:10:04,492 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:10:04 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:10:04,495 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:10:04 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:10:11,556 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:10:11,557 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:10:11 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:10:11,558 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:10:11 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:10:23,968 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:10:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:10:28,528 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: causer]
+2016-12-27 15:10:28,529 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: causer]
+WHAT: supplied credentials: [username: causer]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:10:28 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:10:28,531 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: causer]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:10:28 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:10:37,291 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:10:37,292 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:10:37 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:10:37,293 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:10:37 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:10:50,005 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:10:50,007 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:10:50 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:10:50,008 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:10:50 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:11:41,420 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:11:41,422 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:11:41 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:11:41,423 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:11:41 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:11:59,206 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: jhon]
+2016-12-27 15:11:59,207 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: jhon]
+WHAT: supplied credentials: [username: jhon]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:11:59 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:11:59,209 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: jhon]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:11:59 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:12:10,233 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:12:10,235 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:12:10 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:12:10,236 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:12:10 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:12:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:12:23,969 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:13:06,097 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: Root]
+2016-12-27 15:13:06,099 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: Root]
+WHAT: supplied credentials: [username: Root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:13:06 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:13:06,100 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: Root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:13:06 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:13:11,894 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:13:11,896 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:13:11 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:13:11,897 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:13:11 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:13:16,819 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:13:16,820 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:13:16 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:13:16,821 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:13:16 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:13:37,799 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:13:37,801 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:13:37 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:13:37,802 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:13:37 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:14:14,133 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Shutting down Quartz Scheduler
+2016-12-27 15:14:24,687 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:14:26,129 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Starting Quartz Scheduler now
+2016-12-27 15:14:30,303 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas-server/
+2016-12-27 15:14:30,303 INFO [org.jasig.cas.web.flow.InitialFlowSetupAction] - Setting path for cookies to: /cas-server/
+2016-12-27 15:14:38,460 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:14:38,472 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:14:38 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:14:38,474 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:14:38 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:14:44,032 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Beginning ticket cleanup.
+2016-12-27 15:14:44,033 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - 0 tickets found to be removed.
+2016-12-27 15:14:44,033 INFO [org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner] - Finished ticket cleanup.
+2016-12-27 15:15:26,371 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:15:26,372 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:15:26 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:15:26,374 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:15:26 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:16:24,746 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:16:24,747 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:18:24,746 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:18:24,747 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:20:24,745 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:20:24,746 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:22:24,748 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:22:24,748 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:24:24,749 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:24:24,750 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:26:24,747 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:26:24,747 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:28:24,768 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:28:24,769 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:30:24,763 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:30:24,764 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:32:24,751 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:32:24,752 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:34:24,745 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:34:24,746 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:36:24,746 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:36:24,747 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:38:24,749 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:38:24,750 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:40:24,782 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:40:24,782 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:42:24,749 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:42:24,750 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:42:57,406 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: demo]
+2016-12-27 15:42:57,408 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: demo]
+WHAT: supplied credentials: [username: demo]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:42:57 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:42:57,409 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: demo]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:42:57 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:43:06,112 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:43:06,113 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:43:06 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:43:06,114 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:43:06 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:43:12,476 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:43:12,478 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:43:12 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:43:12,479 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:43:12 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:43:16,523 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 15:43:16,524 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:43:16 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:43:16,525 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 15:43:16 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 15:44:24,754 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:44:24,755 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:46:24,748 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:46:24,749 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:48:24,745 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:48:24,746 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:50:24,746 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:50:24,747 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:52:24,778 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:52:24,779 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:54:24,779 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:54:24,780 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:56:24,748 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:56:24,749 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 15:58:24,771 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 15:58:24,772 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:00:24,761 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:00:24,762 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:02:24,752 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:02:24,752 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:04:24,756 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:04:24,757 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:06:03,611 INFO [org.jasig.cas.authentication.AuthenticationManagerImpl] - org.gatein.sso.cas.plugin.AuthenticationPlugin failed to authenticate [username: root]
+2016-12-27 16:06:03,612 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: supplied credentials: [username: root]
+ACTION: AUTHENTICATION_FAILED
+APPLICATION: CAS
+WHEN: Tue Dec 27 16:06:03 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 16:06:03,613 INFO [com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - Audit trail record BEGIN
+=============================================================
+WHO: [username: root]
+WHAT: error.authentication.credentials.bad
+ACTION: TICKET_GRANTING_TICKET_NOT_CREATED
+APPLICATION: CAS
+WHEN: Tue Dec 27 16:06:03 CST 2016
+CLIENT IP ADDRESS: 218.206.178.114
+SERVER IP ADDRESS: 192.168.85.233
+=============================================================
+
+
+2016-12-27 16:06:24,762 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:06:24,763 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:08:24,746 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:08:24,747 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:10:24,751 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:10:24,751 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:12:24,750 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:12:24,751 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:14:24,756 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:14:24,756 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:16:24,747 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:16:24,747 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:18:24,746 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:18:24,747 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:20:24,754 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:20:24,754 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:22:24,749 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Reloading registered services.
+2016-12-27 16:22:24,749 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - Loaded 1 services.
+2016-12-27 16:22:54,888 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Shutting down Quartz Scheduler

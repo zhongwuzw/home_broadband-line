@@ -1,0 +1,24 @@
+Dec 28, 2016 11:07:57 AM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google-analytics.com/urchin.js Exception: java.net.UnknownHostException - www.google-analytics.com: Name or service not known - 160ms
+Dec 28, 2016 11:07:57 AM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google-analytics.com/urchin.js
+Dec 28, 2016 11:08:17 AM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: java.net.UnknownHostException - www.google.com: Name or service not known - 20029ms
+Dec 28, 2016 11:08:17 AM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+Dec 28, 2016 11:08:17 AM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libga.js Exception: java.net.UnknownHostException - www.google.com - 1ms
+Dec 28, 2016 11:08:17 AM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+Dec 28, 2016 2:33:22 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google-analytics.com/urchin.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google-analytics.com refused - 166ms
+Dec 28, 2016 2:33:22 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google-analytics.com/urchin.js
+Dec 28, 2016 2:33:22 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 28ms
+Dec 28, 2016 2:33:22 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+Dec 28, 2016 2:33:22 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 1ms
+Dec 28, 2016 2:33:22 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js

@@ -1,0 +1,144 @@
+Dec 30, 2016 11:46:51 AM org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+INFO: Loading resources from: containers/default/container.js
+Dec 30, 2016 11:46:51 AM org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+INFO: Reading container config: containers/default/container.js
+Dec 30, 2016 11:46:51 AM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@5056e587
+Dec 30, 2016 11:46:52 AM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:gatein-features/features.txt
+Dec 30, 2016 11:46:52 AM org.apache.shindig.common.xml.XmlUtil <clinit>
+INFO: Not using secure XML processing.
+Dec 30, 2016 11:46:52 AM org.apache.shindig.common.xml.XmlUtil <clinit>
+INFO: Reusing document builders
+Dec 30, 2016 11:46:52 AM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:features/default-features.txt
+Dec 30, 2016 11:46:52 AM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:features/online-features.txt
+Dec 30, 2016 11:47:02 AM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google-analytics.com/urchin.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google-analytics.com refused - 10092ms
+Dec 30, 2016 11:47:03 AM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google-analytics.com/urchin.js
+Dec 30, 2016 11:47:03 AM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 3ms
+Dec 30, 2016 11:47:03 AM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+Dec 30, 2016 11:47:03 AM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 1ms
+Dec 30, 2016 11:47:03 AM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+Dec 30, 2016 11:47:03 AM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@5056e587
+Dec 30, 2016 11:47:03 AM org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+INFO: Using random key for OAuth client-side state encryption
+Dec 30, 2016 11:47:27 AM org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+INFO: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api
+Dec 30, 2016 12:41:17 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google-analytics.com/urchin.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google-analytics.com refused - 171ms
+Dec 30, 2016 12:41:17 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google-analytics.com/urchin.js
+Dec 30, 2016 12:41:17 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 129ms
+Dec 30, 2016 12:41:17 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+Dec 30, 2016 12:41:17 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 1ms
+Dec 30, 2016 12:41:17 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+Dec 30, 2016 3:07:09 PM org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+INFO: Loading resources from: containers/default/container.js
+Dec 30, 2016 3:07:09 PM org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+INFO: Reading container config: containers/default/container.js
+Dec 30, 2016 3:07:09 PM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:gatein-features/features.txt
+Dec 30, 2016 3:07:09 PM org.apache.shindig.common.xml.XmlUtil <clinit>
+INFO: Not using secure XML processing.
+Dec 30, 2016 3:07:09 PM org.apache.shindig.common.xml.XmlUtil <clinit>
+INFO: Reusing document builders
+Dec 30, 2016 3:07:09 PM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:features/default-features.txt
+Dec 30, 2016 3:07:10 PM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:features/online-features.txt
+Dec 30, 2016 3:07:10 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google-analytics.com/urchin.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google-analytics.com refused - 306ms
+Dec 30, 2016 3:07:10 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google-analytics.com/urchin.js
+Dec 30, 2016 3:07:10 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 14ms
+Dec 30, 2016 3:07:10 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+Dec 30, 2016 3:07:10 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 1ms
+Dec 30, 2016 3:07:10 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+Dec 30, 2016 3:07:10 PM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@48152ddd
+Dec 30, 2016 3:07:11 PM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@48152ddd
+Dec 30, 2016 3:07:11 PM org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+INFO: Using random key for OAuth client-side state encryption
+Dec 30, 2016 3:07:42 PM org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+INFO: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api
+Dec 30, 2016 4:59:31 PM org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+INFO: Loading resources from: containers/default/container.js
+Dec 30, 2016 4:59:31 PM org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+INFO: Reading container config: containers/default/container.js
+Dec 30, 2016 4:59:31 PM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@f9bca3f
+Dec 30, 2016 4:59:31 PM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:gatein-features/features.txt
+Dec 30, 2016 4:59:31 PM org.apache.shindig.common.xml.XmlUtil <clinit>
+INFO: Not using secure XML processing.
+Dec 30, 2016 4:59:31 PM org.apache.shindig.common.xml.XmlUtil <clinit>
+INFO: Reusing document builders
+Dec 30, 2016 4:59:31 PM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:features/features.txt
+Dec 30, 2016 4:59:31 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google-analytics.com/urchin.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google-analytics.com refused - 268ms
+Dec 30, 2016 4:59:32 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google-analytics.com/urchin.js
+Dec 30, 2016 4:59:32 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 119ms
+Dec 30, 2016 4:59:32 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+Dec 30, 2016 4:59:32 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 1ms
+Dec 30, 2016 4:59:32 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+Dec 30, 2016 4:59:32 PM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@f9bca3f
+Dec 30, 2016 4:59:32 PM org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+INFO: Using random key for OAuth client-side state encryption
+Dec 30, 2016 5:01:43 PM org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+INFO: Loading resources from: containers/default/container.js
+Dec 30, 2016 5:01:43 PM org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+INFO: Reading container config: containers/default/container.js
+Dec 30, 2016 5:01:43 PM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:gatein-features/features.txt
+Dec 30, 2016 5:01:43 PM org.apache.shindig.common.xml.XmlUtil <clinit>
+INFO: Not using secure XML processing.
+Dec 30, 2016 5:01:43 PM org.apache.shindig.common.xml.XmlUtil <clinit>
+INFO: Reusing document builders
+Dec 30, 2016 5:01:43 PM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:features/default-features.txt
+Dec 30, 2016 5:01:43 PM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:features/online-features.txt
+Dec 30, 2016 5:01:43 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google-analytics.com/urchin.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google-analytics.com refused - 63ms
+Dec 30, 2016 5:01:44 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google-analytics.com/urchin.js
+Dec 30, 2016 5:01:59 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 15014ms
+Dec 30, 2016 5:01:59 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+Dec 30, 2016 5:01:59 PM org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+INFO: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.conn.HttpHostConnectException - Connection to http://www.google.com refused - 1ms
+Dec 30, 2016 5:01:59 PM org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+WARNING: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+Dec 30, 2016 5:01:59 PM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@74bebc01
+Dec 30, 2016 5:01:59 PM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@74bebc01
+Dec 30, 2016 5:01:59 PM org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+INFO: Using random key for OAuth client-side state encryption
+Dec 30, 2016 5:02:23 PM org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+INFO: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api

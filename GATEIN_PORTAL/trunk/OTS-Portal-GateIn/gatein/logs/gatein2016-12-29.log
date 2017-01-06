@@ -1,0 +1,332 @@
+十二月 29, 2016 11:24:10 上午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+信息: Loading resources from: containers/default/container.js
+十二月 29, 2016 11:24:10 上午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+信息: Reading container config: containers/default/container.js
+十二月 29, 2016 11:24:10 上午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:gatein-features/features.txt
+十二月 29, 2016 11:24:10 上午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Not using secure XML processing.
+十二月 29, 2016 11:24:10 上午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Reusing document builders
+十二月 29, 2016 11:24:10 上午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/default-features.txt
+十二月 29, 2016 11:24:10 上午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/online-features.txt
+十二月 29, 2016 11:24:27 上午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16307ms
+十二月 29, 2016 11:24:27 上午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+十二月 29, 2016 11:24:43 上午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16209ms
+十二月 29, 2016 11:24:43 上午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+十二月 29, 2016 11:24:43 上午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@47718028
+十二月 29, 2016 11:24:43 上午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@47718028
+十二月 29, 2016 11:24:43 上午 org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+信息: Using random key for OAuth client-side state encryption
+十二月 29, 2016 11:28:00 上午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+信息: Loading resources from: containers/default/container.js
+十二月 29, 2016 11:28:00 上午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+信息: Reading container config: containers/default/container.js
+十二月 29, 2016 11:28:00 上午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:gatein-features/features.txt
+十二月 29, 2016 11:28:00 上午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Not using secure XML processing.
+十二月 29, 2016 11:28:00 上午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Reusing document builders
+十二月 29, 2016 11:28:00 上午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/default-features.txt
+十二月 29, 2016 11:28:01 上午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/online-features.txt
+十二月 29, 2016 11:28:17 上午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16296ms
+十二月 29, 2016 11:28:17 上午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+十二月 29, 2016 11:28:34 上午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16293ms
+十二月 29, 2016 11:28:34 上午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+十二月 29, 2016 11:28:34 上午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@57f67dbb
+十二月 29, 2016 11:28:34 上午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@57f67dbb
+十二月 29, 2016 11:28:34 上午 org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+信息: Using random key for OAuth client-side state encryption
+十二月 29, 2016 11:28:54 上午 org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+信息: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api
+十二月 29, 2016 12:06:41 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+信息: Loading resources from: containers/default/container.js
+十二月 29, 2016 12:06:41 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+信息: Reading container config: containers/default/container.js
+十二月 29, 2016 12:06:41 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:gatein-features/features.txt
+十二月 29, 2016 12:06:41 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Not using secure XML processing.
+十二月 29, 2016 12:06:41 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Reusing document builders
+十二月 29, 2016 12:06:42 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/default-features.txt
+十二月 29, 2016 12:06:42 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/online-features.txt
+十二月 29, 2016 12:06:58 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16230ms
+十二月 29, 2016 12:06:58 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+十二月 29, 2016 12:07:15 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16446ms
+十二月 29, 2016 12:07:15 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+十二月 29, 2016 12:07:15 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@644a0345
+十二月 29, 2016 12:07:15 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@644a0345
+十二月 29, 2016 12:07:15 下午 org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+信息: Using random key for OAuth client-side state encryption
+十二月 29, 2016 12:07:32 下午 org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+信息: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api
+十二月 29, 2016 12:20:12 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+信息: Loading resources from: containers/default/container.js
+十二月 29, 2016 12:20:12 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+信息: Reading container config: containers/default/container.js
+十二月 29, 2016 12:20:12 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:gatein-features/features.txt
+十二月 29, 2016 12:20:12 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Not using secure XML processing.
+十二月 29, 2016 12:20:12 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Reusing document builders
+十二月 29, 2016 12:20:12 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/default-features.txt
+十二月 29, 2016 12:20:13 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/online-features.txt
+十二月 29, 2016 12:20:29 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16229ms
+十二月 29, 2016 12:20:29 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+十二月 29, 2016 12:20:45 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16221ms
+十二月 29, 2016 12:20:45 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+十二月 29, 2016 12:20:45 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@4c1d190a
+十二月 29, 2016 12:20:46 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@4c1d190a
+十二月 29, 2016 12:20:46 下午 org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+信息: Using random key for OAuth client-side state encryption
+十二月 29, 2016 12:21:08 下午 org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+信息: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api
+十二月 29, 2016 12:22:01 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+信息: Loading resources from: containers/default/container.js
+十二月 29, 2016 12:22:01 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+信息: Reading container config: containers/default/container.js
+十二月 29, 2016 12:22:01 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@60ba6470
+十二月 29, 2016 12:22:01 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:gatein-features/features.txt
+十二月 29, 2016 12:22:01 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Not using secure XML processing.
+十二月 29, 2016 12:22:01 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Reusing document builders
+十二月 29, 2016 12:22:01 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/default-features.txt
+十二月 29, 2016 12:22:01 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/online-features.txt
+十二月 29, 2016 12:22:18 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16185ms
+十二月 29, 2016 12:22:18 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+十二月 29, 2016 12:22:34 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16087ms
+十二月 29, 2016 12:22:34 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+十二月 29, 2016 12:22:34 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@60ba6470
+十二月 29, 2016 12:22:34 下午 org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+信息: Using random key for OAuth client-side state encryption
+十二月 29, 2016 12:22:58 下午 org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+信息: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api
+十二月 29, 2016 12:30:32 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+信息: Loading resources from: containers/default/container.js
+十二月 29, 2016 12:30:32 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+信息: Reading container config: containers/default/container.js
+十二月 29, 2016 12:30:32 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@6b4f5a44
+十二月 29, 2016 12:30:32 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:gatein-features/features.txt
+十二月 29, 2016 12:30:32 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Not using secure XML processing.
+十二月 29, 2016 12:30:32 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Reusing document builders
+十二月 29, 2016 12:30:32 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/default-features.txt
+十二月 29, 2016 12:30:33 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/online-features.txt
+十二月 29, 2016 12:30:49 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16298ms
+十二月 29, 2016 12:30:49 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+十二月 29, 2016 12:31:06 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16298ms
+十二月 29, 2016 12:31:06 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+十二月 29, 2016 12:31:06 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@6b4f5a44
+十二月 29, 2016 12:31:06 下午 org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+信息: Using random key for OAuth client-side state encryption
+十二月 29, 2016 12:31:28 下午 org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+信息: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api
+十二月 29, 2016 3:00:16 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+信息: Loading resources from: containers/default/container.js
+十二月 29, 2016 3:00:16 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+信息: Reading container config: containers/default/container.js
+十二月 29, 2016 3:00:16 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:gatein-features/features.txt
+十二月 29, 2016 3:00:16 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Not using secure XML processing.
+十二月 29, 2016 3:00:16 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Reusing document builders
+十二月 29, 2016 3:00:16 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/default-features.txt
+十二月 29, 2016 3:00:17 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/online-features.txt
+十二月 29, 2016 3:00:33 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16088ms
+十二月 29, 2016 3:00:33 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+十二月 29, 2016 3:00:50 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16228ms
+十二月 29, 2016 3:00:50 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+十二月 29, 2016 3:00:50 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@2ad62f01
+十二月 29, 2016 3:00:50 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@2ad62f01
+十二月 29, 2016 3:00:50 下午 org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+信息: Using random key for OAuth client-side state encryption
+十二月 29, 2016 3:01:14 下午 org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+信息: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api
+十二月 29, 2016 3:16:58 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+信息: Loading resources from: containers/default/container.js
+十二月 29, 2016 3:16:58 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+信息: Reading container config: containers/default/container.js
+十二月 29, 2016 3:16:58 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:gatein-features/features.txt
+十二月 29, 2016 3:16:58 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Not using secure XML processing.
+十二月 29, 2016 3:16:58 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Reusing document builders
+十二月 29, 2016 3:16:58 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/default-features.txt
+十二月 29, 2016 3:16:59 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/online-features.txt
+十二月 29, 2016 3:17:15 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16294ms
+十二月 29, 2016 3:17:15 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+十二月 29, 2016 3:17:32 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16222ms
+十二月 29, 2016 3:17:32 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+十二月 29, 2016 3:17:32 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@48f249c5
+十二月 29, 2016 3:17:32 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@48f249c5
+十二月 29, 2016 3:17:32 下午 org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+信息: Using random key for OAuth client-side state encryption
+十二月 29, 2016 3:17:50 下午 org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+信息: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api
+十二月 29, 2016 3:25:34 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+信息: Loading resources from: containers/default/container.js
+十二月 29, 2016 3:25:34 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+信息: Reading container config: containers/default/container.js
+十二月 29, 2016 3:25:34 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:gatein-features/features.txt
+十二月 29, 2016 3:25:34 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Not using secure XML processing.
+十二月 29, 2016 3:25:34 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Reusing document builders
+十二月 29, 2016 3:25:34 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/default-features.txt
+十二月 29, 2016 3:25:34 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/online-features.txt
+十二月 29, 2016 3:25:51 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16299ms
+十二月 29, 2016 3:25:51 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+十二月 29, 2016 3:26:07 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16295ms
+十二月 29, 2016 3:26:07 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+十二月 29, 2016 3:26:07 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@84dbb9c
+十二月 29, 2016 3:26:07 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@84dbb9c
+十二月 29, 2016 3:26:07 下午 org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+信息: Using random key for OAuth client-side state encryption
+十二月 29, 2016 3:26:25 下午 org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+信息: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api
+十二月 29, 2016 4:25:57 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+信息: Loading resources from: containers/default/container.js
+十二月 29, 2016 4:25:57 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+信息: Reading container config: containers/default/container.js
+十二月 29, 2016 4:25:57 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:gatein-features/features.txt
+十二月 29, 2016 4:25:57 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Not using secure XML processing.
+十二月 29, 2016 4:25:57 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Reusing document builders
+十二月 29, 2016 4:25:57 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/default-features.txt
+十二月 29, 2016 4:25:57 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/online-features.txt
+十二月 29, 2016 4:26:14 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16228ms
+十二月 29, 2016 4:26:14 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+十二月 29, 2016 4:26:30 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16296ms
+十二月 29, 2016 4:26:30 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+十二月 29, 2016 4:26:30 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@4bcc2c03
+十二月 29, 2016 4:26:31 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@4bcc2c03
+十二月 29, 2016 4:26:31 下午 org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+信息: Using random key for OAuth client-side state encryption
+十二月 29, 2016 4:26:52 下午 org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+信息: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api
+十二月 29, 2016 5:12:05 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadContainers
+信息: Loading resources from: containers/default/container.js
+十二月 29, 2016 5:12:05 下午 org.exoplatform.portal.gadget.core.GateInJsonContainerConfig loadResources
+信息: Reading container config: containers/default/container.js
+十二月 29, 2016 5:12:05 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:gatein-features/features.txt
+十二月 29, 2016 5:12:05 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Not using secure XML processing.
+十二月 29, 2016 5:12:05 下午 org.apache.shindig.common.xml.XmlUtil <clinit>
+信息: Reusing document builders
+十二月 29, 2016 5:12:05 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/default-features.txt
+十二月 29, 2016 5:12:05 下午 org.apache.shindig.gadgets.features.FeatureRegistry register
+信息: Loading resources from: res:features/online-features.txt
+十二月 29, 2016 5:12:22 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google-analytics.com/urchin.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16388ms
+十二月 29, 2016 5:12:22 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google-analytics.com/urchin.js
+十二月 29, 2016 5:12:38 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libanalytics.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16225ms
+十二月 29, 2016 5:12:38 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libanalytics.js
+十二月 29, 2016 5:12:54 下午 org.apache.shindig.gadgets.http.BasicHttpFetcher fetch
+信息: Timeout for http://www.google.com/ig/lib/libga.js Exception: org.apache.http.NoHttpResponseException - The target server failed to respond - 16230ms
+十二月 29, 2016 5:12:54 下午 org.apache.shindig.gadgets.features.FeatureResourceLoader$UriResource getContent
+警告: Unable to retrieve remote library from http://www.google.com/ig/lib/libga.js
+十二月 29, 2016 5:12:54 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@8272e31
+十二月 29, 2016 5:12:54 下午 org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+信息: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@8272e31
+十二月 29, 2016 5:12:54 下午 org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+信息: Using random key for OAuth client-side state encryption
+十二月 29, 2016 5:13:12 下午 org.picketlink.idm.impl.cache.AbstractInfinispanCacheProvider initialize
+信息: Infinispan cache for Picketlink IDM created successfuly. cache name: idm-portal-api

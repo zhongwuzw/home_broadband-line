@@ -1,0 +1,15 @@
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /portal HTTP/1.1" 302 -
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /portal HTTP/1.1" 302 -
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /portal HTTP/1.1" 302 -
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /jboss_community.png HTTP/1.1" 404 989
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /bkg.gif HTTP/1.1" 404 965
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /portal/ HTTP/1.1" 302 -
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /portal/ HTTP/1.1" 302 -
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /portal/finacials/ HTTP/1.1" 302 -
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /portal/finacials/ HTTP/1.1" 302 -
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /portal/finacials/ HTTP/1.1" 302 -
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /portal/login?initialURI=%2Fportal%2Ffinacials%2F HTTP/1.1" 200 2124
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /portal/login?initialURI=%2Fportal%2Ffinacials%2F HTTP/1.1" 200 2124
+127.0.0.1 - - [19/Dec/2016:18:50:51 +0800] "GET /gatein-mobile-login/login/js/login.js HTTP/1.1" 200 554
+127.0.0.1 - - [19/Dec/2016:18:50:52 +0800] "GET /favicon.ico HTTP/1.1" 404 973
+127.0.0.1 - - [19/Dec/2016:18:50:52 +0800] "GET /favicon.ico HTTP/1.1" 404 973

@@ -1,0 +1,18 @@
+/*C4*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+alter table jbid_io drop constraint id
+alter table jbid_io add constraint id unique (IDENTITY_TYPE, NAME, REALM)
+alter table jbid_io_attr drop constraint id
+alter table jbid_io_attr add constraint id unique (IDENTITY_OBJECT_ID, NAME)
+alter table jbid_io_creden drop constraint id
+alter table jbid_io_creden add constraint id unique (IDENTITY_OBJECT_ID, CREDENTIAL_TYPE)
+alter table jbid_io_rel drop constraint id
+alter table jbid_io_rel add constraint id unique (FROM_IDENTITY, NAME, TO_IDENTITY, REL_TYPE)
+alter table jbid_io_rel_name drop constraint id
+alter table jbid_io_rel_name add constraint id unique (NAME, REALM)
+alter table jbid_realm drop constraint id
+alter table jbid_realm add constraint id unique (NAME)
+DELETE FROM JBID_IO_ATTR_TEXT_VALUES WHERE TEXT_ATTR_VALUE_ID=37 AND ATTR_VALUE='1482734467863'
+INSERT INTO JBID_IO_ATTR_TEXT_VALUES VALUES(37,'1482803834994')
+COMMIT

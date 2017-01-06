@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="description" content="Open Testing System">
+        <meta name="China Mobile" content="China Mobile">
+		
+        <title>Open Testing System</title>
+		<!-- Mobile Specific Meta
+		================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+		
+		<!-- CSS
+		================================================== -->
+		<!-- Fontawesome Icon font -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- bootstrap.min css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+		<!-- Owl Carousel -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+		<!-- Grid Component css -->
+        <link rel="stylesheet" href="css/component.css">
+		<!-- Slit Slider css -->
+        <link rel="stylesheet" href="css/slit-slider.css">
+		<!-- Main Stylesheet -->
+        <link rel="stylesheet" href="css/main.css">
+		<!-- Media Queries -->
+        <link rel="stylesheet" href="css/media-queries.css">
+		<!-- 页面特殊样式表 -->
+        <link rel="stylesheet" href="css/page.css">	
+		<!--红版样式modify_red.css-->
+		<!--湖水蓝版样式modify_blue.css-->
+		<!--灰版样式modify_gray.css-->
+		<!--link rel="stylesheet" href="css/modify_gray.css"-->
+		<!-- Modernizer Script for old Browsers -->		
+		
+        <script src="js/modernizr-2.6.2.min.js"></script>
+    </head>
+	
+    <body id="body">
+	    <!--
+	    Start 加载图标
+	    ==================================== -->
+		<div id="loading-mask">
+			<div class="loading-img">
+				<img alt="Meghna Preloader" src="img/preloader.gif"  />
+			</div>
+		</div>
+        <!--
+        End 加载图标
+        ==================================== -->
+
+
+		<!--/#首页 section-->
+		
+        <!-- 
+        start 头导航
+        ==================================== -->
+		
+        <header id="navigation" class="navbar navbar-inverse">
+			<div class="container">
+                <div class="navbar-header col-sm-5">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+					<!-- /responsive nav button -->
+					
+					<!-- logo -->
+                    <a class="navbar-brand col-md-8 col-xs-9" href="#body">
+						<h1 id="logo">
+							<img src="img/logo.png" width="100%" alt="Meghna" />
+						</h1>
+					</a>
+					<!-- /logo -->
+                </div>
+				
+				<!-- main nav -->
+				
+                <nav class="collapse navbar-collapse navbar-right" role="Navigation">
+                    <ul id="nav" class="nav navbar-nav J_otsNav">
+						<li class="current" onClick="headerNav(this,'index_con.html')"><a href="#">首 页</a></li>
+                        <li onClick="headerNav(this,'project.html')"><a href="#">方 案</a></li>
+                        <li onClick="headerNav(this,'production.html')"><a href="#">产 品</a></li>
+                        <li onClick="headerNav(this,'download.html')"><a href="#">下 载</a></li>
+						<li onClick="headerNav(this,'support.html')"><a href="#">支 持</a></li>
+                        <li onClick="headerNav(this,'aboutus.html')"><a href="#">关 于</a></li>
+                    </ul>
+                </nav>
+				
+				<!-- /main nav -->
+				
+            </div>
+        </header>
+		<!-- 
+        end 头导航
+        ==================================== -->
+		<!--start 主体页面-->
+		<div class="J_mainWrap">
+		</div>
+		<!--end 主体页面-->
+		<!--start 底-->
+		<footer id="footer" class="bg-one">
+			<div class="container">
+			    <div class="row wow fadeInUp" data-wow-duration="500ms">
+					<div class="col-lg-12">
+						
+						<!-- Footer 友情链接 -->
+						<div class="social-icon">
+							<!--ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							</ul-->
+						</div>
+						<!--/. End Footer 友情链接 -->
+
+						<!-- copyright -->
+						<div class="copyright text-center">
+							<p> Copyright &copy; 2009-2017 中国移动通信研究院 All Rights Reserved.</p>
+						</div>
+						<!-- /copyright -->
+						
+					</div> <!-- end col lg 12 -->
+				</div> <!-- end row -->
+			</div> <!-- end container -->
+		</footer> <!-- end 底 -->
+		
+		<!-- 返回顶部
+		============================== -->
+		<a href="javascript:;" id="scrollUp">
+			<i class="fa fa-angle-up fa-2x"></i>
+		</a>
+
+		
+		<!-- 
+		javascript引用
+		=====================================-->
+		<!-- Main jQuery -->
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script>
+		$(function(){
+		//默认加载首页
+			$(".J_mainWrap").load("index_con.html");	
+		});
+		</script>
+		<!--ots附加 主导航-->
+		<!--script src="js/otsModi.js"></script-->
+		<!-- Bootstrap 3.1 -->
+		<script src="js/bootstrap.min.js"></script>
+		<!--home Slitslider -->
+		<script src="js/jquery.slitslider.js"></script>
+		<!--script src="js/jquery.ba-cond.min.js"></script-->
+		<!--home Parallax -->
+		<script src="js/jquery.parallax-1.1.3.js"></script>
+		<!--home Owl Carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!--home Portfolio Filtering -->
+		<script src="js/jquery.mixitup.min.js"></script>
+		<!--home Custom Scrollbar 鼠标滚轮特效-->
+		<script src="js/jquery.nicescroll.min.js"></script>
+		<!--home Jappear js -->
+		<script src="js/jquery.appear.js"></script>
+		<!-- Pie Chart 产品特点-->
+		<!--script src="js/easyPieChart.js"></script-->
+		<!--home jQuery Easing 返回顶部和这里有关-->
+		<script src="js/jquery.easing-1.3.pack.js"></script>
+		<!--home Highlight menu item -->
+		<script src="js/jquery.nav.js"></script>
+		<!--home Sticky Nav -->
+		<script src="js/jquery.sticky.js"></script>
+		<!--home Number Counter Script -->
+		<script src="js/jquery.countTo.js"></script>
+		<!--home wow.min Script -->
+		<script src="js/wow.min.js"></script>
+		<!--home For video responsive -->
+		<script src="js/jquery.fitvids.js"></script>
+		<!--home Grid js -->
+		<script src="js/grid.js"></script>
+		<!--home Custom js -->
+		<script src="js/custom.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,11 @@
+@import url(/web/skin/portal/webui/component/UIIFramePortlet/DefaultStylesheet.css);
+
+.UIIFramePortlet {
+    -webkit-overflow-scrolling:touch;
+    overflow: auto;
+    height: 800px !important;
+}
+
+.UIIFramePortlet iframe{
+    height: 800px !important;
+}

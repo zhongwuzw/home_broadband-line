@@ -1,0 +1,91 @@
+<%
+import org.gatein.common.text.EntityEncoder;
+import org.exoplatform.commons.utils.HTMLEntityEncoder;
+def categories = uicomponent.getCategories();
+def selectedCategory = uicomponent.getSelectedCategory();
+def apps = uicomponent.getApplications();
+def selectedApp = uicomponent.getSelectedApplication();
+%>
+<div class="UIOrganizerManagement" id="$uicomponent.id">
+	<div class="UIControlbar ClearFix">
+		<div class="IconControl AddCategoryIcon" ><a href="javascript:;" onclick="<%= uicomponent.event("AddCategory") %>"><%=_ctx.appRes("UIOrganizer.label.addCategory")%></a></div>
+		<% if(uicomponent.isShowImport()) { %>
+			<div class="IconControl ImportIcon"><a href="javascript:;" onclick="<%= uicomponent.event("ImportAllApplications") %>"><%=_ctx.appRes("UIOrganizer.label.autoImport")%></a></div> 
+		<% } %>	
+	</div>
+	
+	<div class="AppRegistryContainer ClearFix">
+		<div class="AppRegistryControl">
+			<div class="ControlArea">
+				<div class="CategoryContent">
+					<div class="TitleCategory"><%=_ctx.appRes("UIOrganizer.label.categories")%></div>
+		 			<div class="ListContent">	
+		 				
+		 				<div class="UIVerticalSlideTabs">
+			 			<% 
+			 				String cTab, cName, description, displayName;
+			 				boolean isSelected = false;
+							for(category in categories) { 					 
+								cName	= category.getName();
+								displayName =category.getDisplayName(true);
+								EntityEncoder encoder = HTMLEntityEncoder.getInstance();
+								displayName = encoder.encode(displayName);
+								if(selectedCategory != null && cName == selectedCategory.getName()) {
+									isSelected = true;
+									cTab = "SelectedTab";
+								}else {
+									isSelected = false;
+									cTab = "NormalTab";
+								}
+						%>				 				
+		 					<div class="UIVTab VTabSimpleStyle">
+								<div class="$cTab">
+									<div class="TabLeft">
+										<div class="TabRight">
+											<div class="TabRepeat ClearFix">
+												<a class="TabLabel" href="javascript:;" onclick="<%= uicomponent.event("ShowCategory", cName) %>" title="<%= displayName %>">
+													<%= displayName %>
+												</a>
+												<% if(isSelected) { %>
+												<a class="ControlIcon DeleteIcon" title="<%=_ctx.appRes("UIOrganizer.title.deleteCategory")%>" href="javascript:;" onclick="<%= uicomponent.event("RemoveCategory", "$cName") %>"><span class="skipHidden"><%=_ctx.appRes("UIOrganizer.title.deleteCategory")%></span></a>
+												<a class="ControlIcon CreateNewIcon" title="<%=_ctx.appRes("UIOrganizer.title.addApplication")%>" href="javascript:;" onclick="<%= uicomponent.event("AddApplication") %>"><span class="skipHidden"><%=_ctx.appRes("UIOrganizer.title.addApplication")%></span></a>
+												<a class="ControlIcon EditIcon" title="<%=_ctx.appRes("UIOrganizer.title.editCategory")%>" href="javascript:;" onclick="<%= uicomponent.event("EditCategory", "$cName") %>"><span class="skipHidden"><%=_ctx.appRes("UIOrganizer.title.editCategory")%></span></a>
+												<% } %>
+											 </div>
+										</div>
+									</div>
+								</div>
+							<% if(isSelected) { %>
+								<div class="UIVTabContent" style="display: block">
+								<%
+								String cssClass = "NormalItem";
+								for(application in apps) {
+									if(application.getApplicationName().equals(selectedApp.getApplicationName())) cssClass = "SelectedItem";
+									else cssClass = "NormalItem";
+									String appName= application.getApplicationName();
+								%>
+									<div class="ItemContent $cssClass ClearFix">
+									<% def applicationLabel = application.getDisplayName() 
+									String displayApplicationName = (applicationLabel.length() <= 30) ? applicationLabel : applicationLabel.substring(0, 27)+"...";
+                                                                        displayApplicationName = encoder.encode(displayApplicationName);
+									%>
+										<a href="javascript:;" onclick="<%= uicomponent.event("SelectApplication", "$appName") %>" class="ItemLabel" title="<%= application.getDisplayName() %>"><%= displayApplicationName %><span></span></a>
+										<a class="ControlIcon DeletePortalIcon" title="<%=_ctx.appRes("UIOrganizer.title.deleteApplication")%>" href="javascript:;" onclick="<%= uicomponent.event("RemoveApplication", appName) %>"><span class="skipHidden"><%=_ctx.appRes("UIOrganizer.title.deleteApplication")%></span></a>
+									</div>
+								<% } %>	
+								</div>
+							<% } %>
+							</div>
+						<% } %>									
+		 				</div>	
+		 									
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="AppWorkingArea">
+		<% uicomponent.renderChildren() %>
+		</div>
+	</div>	
+	
+</div>

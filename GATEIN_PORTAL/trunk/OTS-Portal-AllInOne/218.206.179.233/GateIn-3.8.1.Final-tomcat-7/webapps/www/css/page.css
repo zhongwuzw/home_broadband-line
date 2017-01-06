@@ -1,0 +1,70 @@
+
+/* 
+页面特殊样式表 ph 2016/12/12
+*/
+#body .homeH2{ font-weight:400;	font-family:DINCond-Bold;}
+.homeCity{font-size:12px; position:absolute; bottom: 0; left: 50%; margin-left:-24px;}
+#body .member-info{ height:120px;}
+#body .service-block{ height:350px;}
+#body .skill-chart{ height:320px;}
+.pro_intro_title > p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#body .pricing li{ text-align:left; padding:10px 20px;}
+/*下载*/
+.dloading {
+    height:auto;
+    overflow: hidden;
+    zoom:0;
+    background-color: #2b2c30;
+    margin-bottom:20px;
+    margin-top:10px;
+	padding-bottom:10px;
+}
+.dloading .col-md-7{padding-left: 15%; margin-left:10px;}
+.dloading .col-md-7.icon-android{
+    background:url("../img/download_icon/icon9.png") left center no-repeat;
+}
+.dloading .col-md-7.icon-mac{
+    background:url("../img/download_icon/mac_icon.png") left center no-repeat;
+}
+.dloading .col-md-7.icon-windows{
+    background:url("../img/download_icon/wp_icon.png") left center no-repeat;
+}
+.dloading .col-md-7.icon-wlxfzs{
+    background:url("../img/download_icon/icon3.png") left center no-repeat;
+}
+.dloading .col-md-7.icon-zxbc{
+    background:url("../img/download_icon/icon7.png") left center no-repeat;
+}
+.dloading .col-md-7.icon-otssdk{
+    background:url("../img/download_icon/icon4.png") left center no-repeat;
+}
+.dloading .col-md-7.icon-spec-tools{
+    background:url("../img/download_icon/icon8.png") left center no-repeat;
+}
+
+
+.dloading a.btn {
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+.dloading em{font-style:normal; margin-left: 10px; font-size: 12px;}
+#body .dloading a.ml_10{ margin-left: 10px;}
+.dloading_more{
+    height:auto;
+    overflow: hidden;
+    zoom:1;
+    margin-bottom:20px;
+    margin-top:10px;
+}
+.dloading p{ margin:0 0 0px 0;}
+.dloading_more .col-md-7{ padding:0px;}
+.line_title{ border-bottom: 1px solid #eee; padding-bottom: 10px;}
+.download_panel{ text-align: left; z-index: 9999; padding:10px 20px; border:1px solid #eee; hepight: 100px; top:70px; left:15px; background-color: #ccc; color:#555;}
+/*文档下载*/
+ul.document_download_list{ padding:0 10px 0 10px;}
+ul.document_download_list li{ margin-top:10px;}
+/*==方案==*/
