@@ -18,12 +18,14 @@
         <filter-name>CAS Filter</filter-name>
         <filter-class>org.jasig.cas.client.authentication.AuthenticationFilter</filter-class>
         <init-param>
+            <!--cas server 的登陆URL -->
             <param-name>casServerLoginUrl</param-name>
             <param-value>http://localhost:8086/cas-server/login</param-value>
         </init-param>
         <init-param>
+            <!--serverName是应用项目的域名 -->
             <param-name>serverName</param-name>
-            <param-value>http://localhost:8080</param-value>
+            <param-value>http://localhost:8086</param-value>
         </init-param>
     </filter>
     <filter-mapping>
@@ -42,7 +44,7 @@
         </init-param>
         <init-param>
             <param-name>serverName</param-name>
-            <param-value>http://localhost:8080</param-value>
+            <param-value>http://localhost:8086</param-value>
         </init-param>
     </filter>
     <filter-mapping>
