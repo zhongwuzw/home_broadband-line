@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="description" content="Open Testing System">
+        <meta name="China Mobile" content="China Mobile">
+		
+        <title>Open Testing System</title>
+		<!-- Mobile Specific Meta
+		================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+		
+		<!-- CSS
+		================================================== -->
+		<!-- Fontawesome Icon font -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- bootstrap.min css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+		<!-- Owl Carousel -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+		<!-- Grid Component css -->
+        <link rel="stylesheet" href="css/component.css">
+		<!-- Slit Slider css -->
+        <link rel="stylesheet" href="css/slit-slider.css">
+		<!-- Main Stylesheet -->
+        <link rel="stylesheet" href="css/main.css">
+		<!-- Media Queries -->
+        <link rel="stylesheet" href="css/media-queries.css">
+		<!-- 页面特殊样式表 -->
+        <link rel="stylesheet" href="css/page.css">	
+		<!--红版样式modify_red.css-->
+		<!--湖水蓝版样式modify_blue.css-->
+		<!--灰版样式modify_gray.css-->
+		<!--link rel="stylesheet" href="css/modify_gray.css"-->
+		<!-- Modernizer Script for old Browsers -->		
+		
+        <script src="js/modernizr-2.6.2.min.js"></script>
+    </head>
+	
+    <body id="body">
+	    <!--
+	    Start 加载图标
+	    ==================================== -->
+		<div id="loading-mask">
+			<div class="loading-img">
+				<img alt="Meghna Preloader" src="img/preloader.gif"  />
+			</div>
+		</div>
+        <!--
+        End 加载图标
+        ==================================== -->
+
+
+		<!--/#首页 section-->
+		
+        <!-- 
+        start 头导航
+        ==================================== -->
+		
+        <header id="navigation" class="navbar navbar-inverse">
+			<div class="container">
+                <div class="navbar-header col-sm-5">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+					<!-- /responsive nav button -->
+					
+					<!-- logo -->
+                    <a class="navbar-brand col-md-8 col-xs-9" href="#body">
+						<h1 id="logo">
+							<img src="img/logo.png" width="100%" alt="Meghna" />
+						</h1>
+					</a>
+					<!-- /logo -->
+                </div>
+				
+				<!-- main nav -->
+				
+                <nav class="collapse navbar-collapse navbar-right" role="Navigation">
+                    <ul id="nav" class="nav navbar-nav J_otsNav">
+						<li class="current" onClick="headerNavDtl(this,'index_con.html')"><a href="#">首 页</a></li>
+                        <li onClick="headerNav(this,'project.html')"><a href="#">方 案</a></li>
+                        <li onClick="headerNav(this,'production.html')"><a href="#">产 品</a></li>
+                        <li onClick="headerNav(this,'download.html')"><a href="#">下 载</a></li>
+						<li onClick="headerNav(this,'support.html')"><a href="#">支 持</a></li>
+                        <li onClick="headerNav(this,'aboutus.html')"><a href="#">关 于</a></li>
+                    </ul>
+                </nav>
+				
+				<!-- /main nav -->
+				
+            </div>
+        </header>
+		<!-- 
+        end 头导航
+        ==================================== -->
+		<!--start 主体页面-->
+		<div class="J_mainWrap">
+			<!-- Srart 方案详情
+			=========================================== -->		
+			<section class="detailBox">
+				<div class="container">
+						<!--您所在的位置-->
+						<nav class="navPosBox J_navPosBox">
+							<span>您当前的位置：</span><a href="javascript:void(0)">方案</a><span> > </span><span>4G</span>
+						</nav>
+					<div class="row">
+						<!-- Contact Details -->
+						<div class="col-md-2 col-sm-3 col-xs-12 wow fadeInUp" data-wow-duration="500ms">
+							<ul class="nav_left_list J_nav_left_list_case">
+								<li>
+									<h4>4G</h4>
+									<div class="J_sub_nav_list sub_nav_list hide">
+										<p><a id="tab_business_con" href="#business_con">4G业务解决方案</a></p>
+									</div>
+								</li>
+								<li>
+									<h4>宽带</h4>
+									<div class="J_sub_nav_list sub_nav_list hide">
+										<p><a id="tab_fami_con" href="#fami_con">家庭宽带解决方案</a></p>
+										<p><a id="tab_group_con" href="#group_con">集团专线解决方案</a></p>
+									</div>
+								</li><li>
+									<h4>业务平台</h4>
+									<div class="J_sub_nav_list sub_nav_list hide">
+										<p><a id="tab_platform_con" href="#platform_con">业务平台性能测试解决方案</a></p>
+										<p><a id="tab_data_ctr_con" href="#data_ctr_con">数据中心性能评测解决方案</a></p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- / End Contact Details -->
+							
+						<!-- Contact Form -->
+						<div class="detail_form col-md-10 col-sm-9 col-xs-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+							<!--家宽详情-->
+							<article id="fami_con" class="J_art_con hide">
+								<h3 class="art_right_h3">家庭宽带解决方案</h3>
+								<h5 class="art_right_h5">方案概述</h5>
+								<div>
+									<p>
+									家庭宽带业务端到端质量诊断/监测系统，采用OTS业务质量测试工具（OTS SQI），可实现对家庭宽带业务质量进行实时、按需、客观的监测和分析，支持对用户感知质量主动监测，可先于用户发现问题，能够有效解决现网用户投诉缺乏评测指标、监测和分析手段的问题。
+									</p>
+								</div>
+								<h5 class="art_right_h5">应用场景</h5>
+								<div>
+									<p>
+									家庭宽带解决方案宽带业务端到端质量诊断/监测系统对用户感知质量进行主动监测，适合业务开通、远程监测、问题定位、周期性业务巡检等。宽带伴侣产品支持PC客户端/APP/机顶盒/智能路由器/ONU等多种用户接入设备，已经具备完善的智能监测工具和监测技术方案。
+									</p>
+								</div>
+								<h5 class="art_right_h5">典型案例</h5>
+								<div>
+									<p>
+									集团市场部全国家庭宽带众测活动
+									</p>
+								</div>
+							</article>
+							<!--家宽详情 完-->
+							<!--集团专线详情-->
+							<article id="group_con" class="hide J_art_con">
+								<h3 class="art_right_h3">集团专线解决方案</h3>
+								<h5 class="art_right_h5">方案概述</h5>
+								<div>
+									<p>
+									集团专线端到端业务质量拨测系统，采用定制化的集团专线拨测工具，可实现对互联网专线和数据专线的业务指标按需采集，能针对用户投诉集中的专线中断以及网络慢的问题进行有效的分析、诊断，为解决问题，提升网络质量提供技术支撑。
+									</p>
+								</div>
+								<h5 class="art_right_h5">应用场景</h5>
+								<div>
+									<p>
+									集团专线解决方案可实现专线业务端到端质量诊断/监测，对用户感知质量进行主动监测，适合业务开通、远程监测、问题定位、周期性业务巡检等。
+									</p>
+								</div>
+								<h5 class="art_right_h5">典型案例</h5>
+								<div>
+									<p>
+									集团市场部集团集团专线全国拨测
+									</p>
+								</div>
+							</article>
+							<!--集团专线详情 完-->
+							<!--4G业务详情-->
+							<article id="business_con" class="J_art_con">
+								<h3 class="art_right_h3">4G业务解决方案</h3>
+								<h5 class="art_right_h5">方案概述</h5>
+								<div>
+									<p>
+									4G业务解决方案采用OTS业务质量测试工具（OTS SQI）， 通过模拟用户发起真实的话音、数据业务，实现以“真实用户体验”为中心的端到端业务质量评测，具备基础通信、网络性能、用户体验、终端性能等测试能力，能够从用户的角度反应4G业务和网络的运行情况和性能质量。
+									</p>
+								</div>
+								<h5 class="art_right_h5">应用场景</h5>
+								<div>
+									<p>
+									适用于4G用户体验评测、终端综合性能评估
+									</p>
+								</div>
+								<h5 class="art_right_h5">典型案例</h5>
+								<div>
+									<p>总部全网LTE客户感知评测工作（31个省公司）</p> 
+									<p>LTE用户体验测试（上海、内蒙古、广西等）</p> 
+									<p>4G网络满意度提升测试（江苏、山西）</p> 
+									<p>LTE终端评测（山东）</p>
+									<p>4G现网高带宽数据业务测试（北京）</p> 
+									<p>LTE载波聚合吞吐量测试（浙江）</p>
+								</div>
+							</article>
+							<!--4G业务详情 完-->
+							<!--业务平台性能方案详情-->
+							<article id="platform_con" class="J_art_con hide">
+								<h3 class="art_right_h3">业务平台性能测试解决方案</h3>
+								<h5 class="art_right_h5">方案概述</h5>
+								<div>
+									<p>业务平台性能测试解决方案采用OTS大容量性能测试工具（Performance Tester），主要面向中国移动各类大容量业务平台及设备的性能测试需求。OTS大容量性能测试工具采用纯软件的系统架构，能够充分使用各种计算资源，快速构建由数十台至上百台PC服务器组成的在线分布式测试系统，具备业务平台性能测试、可靠性测试、稳定性测试及过负荷测试能力</p>
+								</div>
+								<h5 class="art_right_h5">应用场景</h5>
+								<div>
+									<p>
+									适用于平台上线前性能验收测试，上线后的性能拨测
+									</p>
+								</div>
+								<h5 class="art_right_h5">典型案例</h5>
+								<div>
+									<p>WebCache系统二期集采选型测试(华为、中兴、网宿等12家)</p>
+									<p>1.	MAS3.0产品集采测试(诺西、嘉讯、若雅、思特奇等8家)</p>
+									<p>2.	AGPS二期集采测试(诺西、爱立信、中兴)</p>
+									<p>3.	彩信P项目集采测试(中兴、华为)</p>
+									<p>4.	诺西短信中心入网测试(诺西)</p>
+									<p>5.	改号业务平台一期性能验收测试(东信北邮)</p>
+									<p>6.	行业网关五期入网测试(华为)</p>
+									<p>7.	垃圾短信监控系统性能验收测试(中兴)</p>
+									<p>8.	垃圾彩信监控系统性能验收测试(中兴)</p>
+									<p>9.	骚扰电话监控系统性能验收测试(诺西东软)</p>
+									<p>10.	WAP网关双业务云资源池性能验收测试(华为)</p> 
+									<p>11.	彩信中心双业务云资源池性能验收测试(中兴)</p> 
+									<p>12.	不良信息监控系统性能验收测试(微智)</p>
+									<p>13.	虚假主叫监控系统性能验收测试(华为)</p>
+									<p>14.	短信P项目入网测试(华为、中兴、诺西东软)</p>
+									<p>15.	彩信P项目入网测试(华为)</p>
+									<p>16.	行业网关流量控制等功能入网测试(华为、中兴、东软)</p>
+								</div>
+							</article>
+							<!--业务平台性能方案详情 完-->
+							<!--数据中心性方案详情 -->
+							<article id="data_ctr_con" class="J_art_con hide">
+								<h3 class="art_right_h3">数据中心性能评测解决方案</h3>
+								<h5 class="art_right_h5">方案概述</h5>
+								<div>
+									<p>数据中心性能评测解决方案依托于OTS系列测试工具，通过模拟多种真实业务场景对数据中心性能进行评估 ，提供业务性能测试、用户体验测试、竞品对标测试、服务健康度监测等服务，已支撑完成集团委托的CDN、流媒体、Web网站、消息类等各项业务测试。</p>
+								</div>
+								<h5 class="art_right_h5">应用场景</h5>
+								<div>
+									<p>
+									数据中心竞品对标、服务器租赁、日常业务健康度监测等场景。
+									</p>
+								</div>
+								<h5 class="art_right_h5">典型案例</h5>
+								<div>
+									<p>已支撑完成集团委托的CDN、流媒体、Web网站、消息类等各项业务测试</p>
+								</div>
+							</article>
+							<!--数据中心性方案详情 完-->
+						</div>
+						<!-- ./End Contact Form -->
+					
+					</div> <!-- end row -->
+				</div> <!-- end container -->
+				
+			</section> <!-- end section -->
+		</div>
+		<!--end 主体页面-->
+		<!--start 底-->
+		<footer id="footer" class="bg-one">
+			<div class="container">
+			    <div class="row wow fadeInUp" data-wow-duration="500ms">
+					<div class="col-lg-12">
+						
+						<!-- Footer 友情链接 -->
+						<div class="social-icon">
+							<!--ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							</ul-->
+						</div>
+						<!--/. End Footer 友情链接 -->
+
+						<!-- copyright -->
+						<div class="copyright text-center">
+							<p> Copyright &copy; 2009-2017 中国移动通信研究院 All Rights Reserved.</p>
+						</div>
+						<!-- /copyright -->
+						
+					</div> <!-- end col lg 12 -->
+				</div> <!-- end row -->
+			</div> <!-- end container -->
+		</footer> <!-- end 底 -->
+		
+		<!-- 返回顶部
+		============================== -->
+		<a href="javascript:;" id="scrollUp">
+			<i class="fa fa-angle-up fa-2x"></i>
+		</a>
+
+		
+		<!-- 
+		javascript引用
+		=====================================-->
+		<!--公共 Main jQuery -->
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script>
+		$(function(){
+			//详情顶导航
+			navTopCur(1);
+		});
+		</script>
+		<!--公共 ots附加 主导航-->
+		<script src="js/otsModi.js"></script>
+		<!--公共 Bootstrap 3.1 -->
+		<script src="js/bootstrap.min.js"></script>
+		<!--home project Slitslider -->
+		<script src="js/jquery.slitslider.js"></script>
+		<!--home Parallax -->
+		<script src="js/jquery.parallax-1.1.3.js"></script>
+		<!--home project Owl Carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!--home project Filtering -->
+		<script src="js/jquery.mixitup.min.js"></script>
+		<!--home project Scrollbar 鼠标滚轮特效-->
+		<script src="js/jquery.nicescroll.min.js"></script>
+		<!--home project Jappear js -->
+		<script src="js/jquery.appear.js"></script>
+		<!--home project jQuery Easing 返回顶部和这里有关-->
+		<script src="js/jquery.easing-1.3.pack.js"></script>
+		<!--home project Highlight menu item -->
+		<script src="js/jquery.nav.js"></script>
+		<!--home project Sticky Nav -->
+		<script src="js/jquery.sticky.js"></script>
+		<!--home Number Counter Script -->	
+		<script src="js/jquery.countTo.js"></script>
+		<!--home wow.min Script -->
+		<script src="js/wow.min.js"></script>
+		<!--home project For video responsive -->
+		<script src="js/jquery.fitvids.js"></script>
+		<!--home project Grid js -->
+		<script src="js/grid.js"></script>
+		<!--home project production 分区块加载 -->
+		<script src="js/custom.js"></script>
+    </body>
+</html>

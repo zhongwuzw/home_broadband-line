@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="description" content="Open Testing System">
+        <meta name="China Mobile" content="China Mobile">
+		
+        <title>Open Testing System</title>
+		<!-- Mobile Specific Meta
+		================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+		
+		<!-- CSS
+		================================================== -->
+		<!-- Fontawesome Icon font -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- bootstrap.min css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+		<!-- Owl Carousel -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+		<!-- Grid Component css -->
+        <link rel="stylesheet" href="css/component.css">
+		<!-- Slit Slider css -->
+        <link rel="stylesheet" href="css/slit-slider.css">
+		<!-- Main Stylesheet -->
+        <link rel="stylesheet" href="css/main.css">
+		<!-- Media Queries -->
+        <link rel="stylesheet" href="css/media-queries.css">
+		<!-- 页面特殊样式表 -->
+        <link rel="stylesheet" href="css/page.css">	
+		<!--红版样式modify_red.css-->
+		<!--湖水蓝版样式modify_blue.css-->
+		<!--灰版样式modify_gray.css-->
+		<!--link rel="stylesheet" href="css/modify_gray.css"-->
+		<!-- Modernizer Script for old Browsers -->		
+		
+        <script src="js/modernizr-2.6.2.min.js"></script>
+    </head>
+	
+    <body id="body">
+	    <!--
+	    Start 加载图标
+	    ==================================== -->
+		<div id="loading-mask">
+			<div class="loading-img">
+				<img alt="Meghna Preloader" src="img/preloader.gif"  />
+			</div>
+		</div>
+        <!--
+        End 加载图标
+        ==================================== -->
+
+
+		<!--/#首页 section-->
+		
+        <!-- 
+        start 头导航
+        ==================================== -->
+		
+        <header id="navigation" class="navbar navbar-inverse">
+			<div class="container">
+                <div class="navbar-header col-sm-5">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+					<!-- /responsive nav button -->
+					
+					<!-- logo -->
+                    <a class="navbar-brand col-md-8 col-xs-9" href="#body">
+						<h1 id="logo">
+							<img src="img/logo.png" width="100%" alt="Meghna" />
+						</h1>
+					</a>
+					<!-- /logo -->
+                </div>
+				
+				<!-- main nav -->
+				
+                <nav class="collapse navbar-collapse navbar-right" role="Navigation">
+                    <ul id="nav" class="nav navbar-nav J_otsNav">
+						<li class="current" onClick="headerNavDtl(this,'index_con.html')"><a href="#">首 页</a></li>
+                        <li onClick="headerNav(this,'project.html')"><a href="#">方 案</a></li>
+                        <li onClick="headerNav(this,'production.html')"><a href="#">产 品</a></li>
+                        <li onClick="headerNav(this,'download.html')"><a href="#">下 载</a></li>
+						<li onClick="headerNav(this,'support.html')"><a href="#">支 持</a></li>
+                        <li onClick="headerNav(this,'aboutus.html')"><a href="#">关 于</a></li>
+                    </ul>
+                </nav>
+				
+				<!-- /main nav -->
+				
+            </div>
+        </header>
+		<!-- 
+        end 头导航
+        ==================================== -->
+		<!--start 主体页面-->
+		<div class="J_mainWrap">
+			<!-- Srart 方案详情
+			=========================================== -->		
+			<section class="detailBox">
+				<div class="container">
+						<!--您所在的位置-->
+						<nav class="navPosBox J_navPosBox">
+							<span>您当前的位置：</span><a href="javascript:void(0)">产品</a><span> > </span><span>4G</span>
+						</nav>
+					<div class="row">
+						<!-- Contact Details -->
+						<div class="col-md-2 col-sm-3 col-xs-12 wow fadeInUp" data-wow-duration="500ms">
+							<ul class="nav_left_list J_nav_left_list_pro">
+								<li>
+									<h4>产品介绍</h4>
+									<div class="J_sub_nav_list sub_nav_list hide">
+										<p><a id="tab_sqi_con" href="#sqi_con">业务质量测试工具（SQI Tools）</a></p>
+										<p><a id="tab_sqi_con" href="#sqi_con">业务质量测试开发套件（SQI SDK）</a></p>
+										<p><a id="tab_sqi_con" href="#sqi_con">业务质量测试插件（SQI Plug-in）</a></p>
+										<p><a id="tab_pt_con" href="#pt_con">大容量性能测试工具（PT Tool）</a></p>
+										<p><a id="tab_tdlc_con" href="#tdlc_con">可信数据连接云（T-DLC Service）</a></p>
+										<p><a id="tab_dvot_con" href="#dvot_con">测试大数据可视化（DVoT Service）</a></p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- / End Contact Details -->
+							
+						<!-- Contact Form -->
+						<div class="detail_form col-md-10 col-sm-9 col-xs-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+							<!--业务质量测试工具详情-->
+							<article id="sqi_con" class="J_art_con hide">
+								<h3 class="art_right_h3">业务质量测试工具（SQI Tools）</h3>
+								<h5 class="art_right_h5">什么是SQI</h5>
+								<div>
+									<p>
+									SQI是新一代OTS 工具产品族，以客户端、SDK、组件多种形式为业务质量测试和网络测试提供质量数据采集手段。
+									</p>
+									<p>
+									1）SQI-Tools是面向业务质量、网络测试的系列工具，实现以“用户”为中心的端到端业务质量评测，具备基础通信网络性能、用户体验、终端性能、业务质量评测等功能，支持Android、iOS、windows、linux多个平台。
+									</p>
+									<p>
+									2）SQI-SDK是面向互联网应用开发商提供的轻量级SDK开发包，能够在用户无感知状态下实现业务质量及用户行为等多维度的信息采集。支持Android、iOS操作系统。
+									</p>
+									<p>
+									3）SQI Plug-in 为基于HTML5页面的第三方应用提供标准化接口, 实现HTML5页面与SQI SDK之间的交互，能够在用户无感知状态下实现业务质量及用户行为等多维度的信息采集。
+									</p>
+								</div>
+								<h5 class="art_right_h5">主要功能</h5>
+								<div>
+									<p>
+									网速测试、网站测试、切换分析、CSFB测试、终端测试、DNS测试、路由测试等
+									</p>
+								</div>
+								<h5 class="art_right_h5">采集数据</h5>
+								<div>
+									<p>
+									<img src="img/detail/pro_1.png"/>
+									</p>
+								</div>
+								<h5 class="art_right_h5">适用场景</h5>
+								<div>
+									<p>
+									可用于4G用户体验评测、终端综合性能评估；以及满足互联网应用业务质量评测、日常运营数据采集等监测需求
+									</p>
+								</div>
+								<h5 class="art_right_h5">部署方式</h5>
+								<div>
+									<p>
+									<img src="img/detail/pro_2.png"/>
+									</p>
+								</div>
+								<h5 class="art_right_h5">服务策略</h5>
+								<div>
+									<p>
+									……
+									</p>
+								</div>
+							</article>
+							<!--业务质量测试工具 完-->
+							<!--大容量性能测试工具详情-->
+							<article id="pt_con" class="hide J_art_con">
+								<h3 class="art_right_h3">大容量性能测试工具（PT Tool）</h3>
+								<h5 class="art_right_h5">什么是PT</h5>
+								<div>
+									<p>面向中国移动各类大容量业务平台及设备的性能测试工具，采用先进的分布式软件架构，充分利用各种计算资源，可快速构建由数十台至数百台服务器组成的在线分布式测试系统，实现测试能力的动态线性扩展。</p>
+								</div>
+								<h5 class="art_right_h5">主要功能</h5>
+								<div>
+									<p>
+									纯软件的系统架构，能够充分使用各种服务器资源，包括：刀片服务器、小型机、机架式服务器、虚拟机、PC等；
+									</p>
+									<p>
+									提供分布式远程自动部署，RPM安装包，自启动光盘/U盘 ，绿色免安装多种安装部署方式；
+									</p>
+									<p>
+									具备互联网通用协议、中国移动业务平台、开源平台等测试能力50余项，满足现网各类业务性能测试的需求
+									</p>
+								</div>
+								<h5 class="art_right_h5">协议支持</h5>
+								<div>
+									<p><img src="img/detail/pro_3.png"/></p>
+								</div>
+								<h5 class="art_right_h5">部署方式</h5>
+								<div>
+									<p>……
+									</p>
+								</div>
+								<h5 class="art_right_h5">服务策略</h5>
+								<div>
+									<p>……
+									</p>
+								</div>
+							</article>
+							<!--大容量性能测试工具 完-->
+							<!--可信数据连接云详情-->
+							<article id="tdlc_con" class="J_art_con">
+								<h3 class="art_right_h3">可信数据连接云（T-DLC Service）</h3>
+								<h5 class="art_right_h5">什么是T-DLC</h5>
+								<div>
+									<p>
+									以信息数据链为驱动，开放和智能为特征的基础通信服务，通过软件构建价值网络（数据通道），并在价值网络内实现终端用户和平台用户间双向无缝信息传输，通过端到端的数据整合消除信息不对称的沟通壁垒自有数据的连接。
+									</p>
+								</div>
+								<h5 class="art_right_h5">存储要求</h5>
+								<div>
+									<p>
+									……
+									</p>
+								</div>
+								<h5 class="art_right_h5">数据安全</h5>
+								<div>
+									<p>
+									……
+									</p>
+								</div>
+								<h5 class="art_right_h5">部署方式</h5>
+								<div>
+									<p>……</p> 
+								</div>
+								<h5 class="art_right_h5">服务策略</h5>
+								<div>
+									<p>……</p> 
+								</div>
+							</article>
+							<!--可信数据连接云 完-->
+							<!--测试大数据可视化详情-->
+							<article id="dvot_con" class="J_art_con hide">
+								<h3 class="art_right_h3">测试大数据可视化（DVoT Service）</h3>
+								<h5 class="art_right_h5">什么是DVoT</h5>
+								<div>
+									<p>通过一套基于数据特征对海量业务质量数据进行实时清洗、统计、可视化呈现的大数据处理系统，形成整体覆盖质量、重点区域分析、准确地点诊断的一体化解决方案。</p>
+								</div>
+								<h5 class="art_right_h5">数据类型</h5>
+								<div>
+									<p>
+									……
+									</p>
+								</div>
+								<h5 class="art_right_h5">展示维度</h5>
+								<div>
+									<p>……</p>
+								</div>
+								<h5 class="art_right_h5">部署方式</h5>
+								<div>
+									<p>……
+									</p>
+								</div>
+								<h5 class="art_right_h5">服务策略</h5>
+								<div>
+									<p>……
+									</p>
+								</div>
+								<h5 class="art_right_h5">数据是如何计算的</h5>
+								<div>
+									<p>……
+									</p>
+								</div>
+								<h5 class="art_right_h5">能查看那些区域的数据</h5>
+								<div>
+									<p>……
+									</p>
+								</div>
+								<h5 class="art_right_h5">能展示哪些数据</h5>
+								<div>
+									<p>……
+									</p>
+								</div>
+							</article>
+							<!--测试大数据可视化 完-->
+						</div>
+						<!-- ./End Contact Form -->
+					
+					</div> <!-- end row -->
+				</div> <!-- end container -->
+				
+			</section> <!-- end section -->
+		</div>
+		<!--end 主体页面-->
+		<!--start 底-->
+		<footer id="footer" class="bg-one">
+			<div class="container">
+			    <div class="row wow fadeInUp" data-wow-duration="500ms">
+					<div class="col-lg-12">
+						
+						<!-- Footer 友情链接 -->
+						<div class="social-icon">
+							<!--ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							</ul-->
+						</div>
+						<!--/. End Footer 友情链接 -->
+
+						<!-- copyright -->
+						<div class="copyright text-center">
+							<p> Copyright &copy; 2009-2017 中国移动通信研究院 All Rights Reserved.</p>
+						</div>
+						<!-- /copyright -->
+						
+					</div> <!-- end col lg 12 -->
+				</div> <!-- end row -->
+			</div> <!-- end container -->
+		</footer> <!-- end 底 -->
+		
+		<!-- 返回顶部
+		============================== -->
+		<a href="javascript:;" id="scrollUp">
+			<i class="fa fa-angle-up fa-2x"></i>
+		</a>
+
+		
+		<!-- 
+		javascript引用
+		=====================================-->
+		<!-- Main jQuery -->
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script>
+		$(function(){
+			//详情顶导航
+			navTopCur(2);
+		});
+		</script>
+		<!--公共 ots附加 主导航-->
+		<script src="js/otsModi.js"></script>
+		<!--公共 Bootstrap 3.1 -->
+		<script src="js/bootstrap.min.js"></script>
+		<!--home project Slitslider -->
+		<script src="js/jquery.slitslider.js"></script>
+		<!--home Parallax -->
+		<script src="js/jquery.parallax-1.1.3.js"></script>
+		<!--home project Owl Carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!--home project Filtering -->
+		<script src="js/jquery.mixitup.min.js"></script>
+		<!--home project Scrollbar 鼠标滚轮特效-->
+		<script src="js/jquery.nicescroll.min.js"></script>
+		<!--home project Jappear js -->
+		<script src="js/jquery.appear.js"></script>
+		<!--home project jQuery Easing 返回顶部和这里有关-->
+		<script src="js/jquery.easing-1.3.pack.js"></script>
+		<!--home project Highlight menu item -->
+		<script src="js/jquery.nav.js"></script>
+		<!--home project Sticky Nav -->
+		<script src="js/jquery.sticky.js"></script>
+		<!--home Number Counter Script -->	
+		<script src="js/jquery.countTo.js"></script>
+		<!--home wow.min Script -->
+		<script src="js/wow.min.js"></script>
+		<!--home project For video responsive -->
+		<script src="js/jquery.fitvids.js"></script>
+		<!--home project Grid js -->
+		<script src="js/grid.js"></script>
+		<!--home project production 分区块加载 -->
+		<script src="js/custom.js"></script>
+
+    </body>
+</html>
