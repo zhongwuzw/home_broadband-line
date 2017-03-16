@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab18a2ca-bdb7-4c01-b279-2567a4c9b768" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hefen/bak/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/other/ip_update.py" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../CAS_SSO/trunk/CAS_OTS/v1/apache-tomcat-7.0.57/webapps/cas-server.war" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../CAS_SSO/trunk/CAS_OTS/v1/apache-tomcat-7.0.57/webapps/cas-server/META-INF/MANIFEST.MF" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../CAS_SSO/trunk/CAS_OTS/v1/apache-tomcat-7.0.57/webapps/cas-server/META-INF/maven/org.jasig.cas/cas-server-webapp/pom.properties" afterPath="" />
@@ -3249,15 +3249,14 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../GATEIN_PORTAL/trunk/OTS-Portal-AllInOne/218.206.179.233/GateIn-3.8.1.Final-tomcat-7/work/Catalina/localhost/responsive-navigation-portlet/org/apache/jsp/jsp/navigation_jsp.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../GATEIN_PORTAL/trunk/OTS-Portal-AllInOne/218.206.179.233/GateIn-3.8.1.Final-tomcat-7/work/Catalina/localhost/responsive-navigation-portlet/org/apache/jsp/jsp/node_jsp.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../GateInbk/webapps/portal.war" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hefen/New_Hefen_App.py" afterPath="$PROJECT_DIR$/hefen/bak/New_Hefen_App.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hefen/hefen_App.py" afterPath="$PROJECT_DIR$/hefen/bak/hefen_App.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hefen/hefen_PC.py" afterPath="$PROJECT_DIR$/hefen/bak/hefen_PC.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hefen/hefen_app_9.7.py" afterPath="$PROJECT_DIR$/hefen/bak/hefen_app_9.7.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GateInbk/gatein/data/jcr/lucene/portal-system_portal/indexes" afterPath="$PROJECT_DIR$/../GateInbk/gatein/data/jcr/lucene/portal-system_portal/indexes" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GateInbk/gatein/data/jcr/lucene/portal-work_portal/indexes" afterPath="$PROJECT_DIR$/../GateInbk/gatein/data/jcr/lucene/portal-work_portal/indexes" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GateInbk/gatein/data/jcr/lucene/system_portal_system/indexes" afterPath="$PROJECT_DIR$/../GateInbk/gatein/data/jcr/lucene/system_portal_system/indexes" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CAS_SSO/trunk/CAS_OTS/v1/apache-tomcat-7.0.57/conf/server.xml" afterPath="$PROJECT_DIR$/../CAS_SSO/trunk/CAS_OTS/v1/apache-tomcat-7.0.57/conf/server.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GateInbk/gatein/conf/configuration.xml" afterPath="$PROJECT_DIR$/../GateInbk/gatein/conf/configuration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectA/.classpath" afterPath="$PROJECT_DIR$/../ProjectA/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectA/WebContent/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../ProjectA/WebContent/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectA/src/test/Hello.java" afterPath="$PROJECT_DIR$/../ProjectA/src/test/Hello.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hefen/hefen_app_9.8.py" afterPath="$PROJECT_DIR$/hefen/hefen_app_9.8.py" />
     </list>
@@ -3273,9 +3272,10 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/hefen_python$alterJsonFile.coverage" NAME="alterJsonFile Coverage Results" MODIFIED="1468508526350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hefen_python$hefen_app_9_8.coverage" NAME="hefen_app_9.8 Coverage Results" MODIFIED="1486722989527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hefen_python$hefen_app_9_8.coverage" NAME="hefen_app_9.8 Coverage Results" MODIFIED="1489139559084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$handleJsonFile.coverage" NAME="handleJsonFile Coverage Results" MODIFIED="1468508530741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hefen_python$hefen_by_province.coverage" NAME="hefen_by_province Coverage Results" MODIFIED="1486720667163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hefen_python$hefen_by_province.coverage" NAME="hefen_by_province Coverage Results" MODIFIED="1489552099669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hefen_python$ip_update.coverage" NAME="ip_update Coverage Results" MODIFIED="1489646645766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other" />
     <SUITE FILE_PATH="coverage/hefen_python$hefen_app_9_7.coverage" NAME="hefen_app_9.7 Coverage Results" MODIFIED="1473230454302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="PyCharm2016.1/coverage/hefen_python$hefen_PC.coverage" NAME="hefen_PC Coverage Results" MODIFIED="1466480427483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hefen_python$treakRank.coverage" NAME="treakRank Coverage Results" MODIFIED="1476065234909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other" />
@@ -3296,25 +3296,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="py_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/py_test.py">
+      <file leaf-file-name="hefen_app_9.8.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.8.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state relative-caret-position="190">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="19" selection-end-column="41" />
               <folding>
-                <element signature="e#25#40#0" expanded="true" />
+                <element signature="e#42#64#0" expanded="true" />
+                <marker date="1489139526000" expanded="true" signature="407:500" ph="select phone... phone_imei_time" />
+                <marker date="1489139526000" expanded="true" signature="1088:1128" ph="select phone... hefen_app_table" />
+                <marker date="1489139526000" expanded="true" signature="1563:1741" ph="update hefen... " />
+                <marker date="1489139526000" expanded="true" signature="2349:2624" ph="INSERT INTO `hefen_app_table`... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="multiProcess_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/multiProcess_test.py">
+      <file leaf-file-name="hefen_by_province.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hefen/hefen_by_province.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+            <state relative-caret-position="38">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="5" selection-end-column="11" />
               <folding>
-                <element signature="e#25#47#0" expanded="true" />
+                <element signature="e#42#64#0" expanded="true" />
+                <marker date="1476003951000" expanded="true" signature="453:566" ph="select provi... hefen_app_table" />
+                <marker date="1476003951000" expanded="true" signature="1198:1277" ph="INSERT INTO `hefen_by_province`... " />
               </folding>
             </state>
           </provider>
@@ -3332,31 +3338,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hefen_app_9.8.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.8.py">
+      <file leaf-file-name="ip_update.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/other/ip_update.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="342">
+              <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
               <folding>
-                <element signature="e#42#64#0" expanded="true" />
-                <marker date="1486722913000" expanded="true" signature="407:500" ph="select phone... phone_imei_time" />
-                <marker date="1486722913000" expanded="true" signature="1088:1128" ph="select phone... hefen_app_table" />
-                <marker date="1486722913000" expanded="true" signature="1563:1741" ph="update hefen... " />
-                <marker date="1486722913000" expanded="true" signature="2349:2624" ph="INSERT INTO `hefen_app_table`... " />
+                <element signature="e#42#53#0" expanded="true" />
+                <marker date="1489646632000" expanded="true" signature="1168:1206" ph="INSERT INTO `ip_all_province_test`... " />
+                <marker date="1489646632000" expanded="true" signature="1168:1425" ph="INSERT INTO `ip_all_province_test`... " />
+                <marker date="1489646632000" expanded="true" signature="1820:1941" ph="select ip_st... ip_all_province_test" />
+                <marker date="1489646632000" expanded="true" signature="1820:1956" ph="select ip_st... ip_all_province_test" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hefen_by_province.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hefen/hefen_by_province.py">
+      <file leaf-file-name="err.py" pinned="false" current-in-tab="false">
+        <entry file="file:///Library/Python/2.7/site-packages/pymysql/err.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <marker date="1476003951000" expanded="true" signature="453:566" ph="select provi... hefen_app_table" />
-                <marker date="1476003951000" expanded="true" signature="1198:1277" ph="INSERT INTO `hefen_by_province`... " />
-              </folding>
+            <state relative-caret-position="228">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -3364,8 +3367,8 @@
       <file leaf-file-name="routine_not_data_sync.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jiakuan/routine_not_data_sync.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="114">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="62" />
               <folding>
                 <element signature="e#43#58#0" expanded="true" />
               </folding>
@@ -3406,9 +3409,12 @@
       <file leaf-file-name="cursors.py" pinned="false" current-in-tab="false">
         <entry file="file:///Library/Python/2.7/site-packages/pymysql/cursors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9253">
-              <caret line="494" column="0" selection-start-line="494" selection-start-column="0" selection-end-line="494" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="9690">
+              <caret line="516" column="0" selection-start-line="516" selection-start-column="0" selection-end-line="516" selection-end-column="0" />
+              <folding>
+                <marker date="1489556098000" expanded="false" signature="24:184" ph="import ..." />
+                <marker date="1489556098000" expanded="true" signature="16782:16785" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -3445,6 +3451,7 @@
         <option value="$PROJECT_DIR$/jiakuan/routine_not_data_sync.py" />
         <option value="$PROJECT_DIR$/test/py_test.py" />
         <option value="$PROJECT_DIR$/hefen/hefen_app_9.8.py" />
+        <option value="$PROJECT_DIR$/other/ip_update.py" />
       </list>
     </option>
   </component>
@@ -3455,7 +3462,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
+    <option name="x" value="-5" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="733" />
@@ -3492,10 +3499,6 @@
               <option name="myItemId" value="hefen_python" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -3531,6 +3534,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="other" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hefen_python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hefen_python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="jiakuan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -3551,8 +3568,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3588,7 +3605,7 @@
       <recent name="$PROJECT_DIR$/hefen" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.hefen_app_9.8">
+  <component name="RunManager" selected="Python.ip_update">
     <configuration default="false" name="py_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -3643,24 +3660,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="treakRank" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/other" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="hefen_python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/other/treakRank.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="multiProcess_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -3675,6 +3674,24 @@
       <module name="hefen_python" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/multiProcess_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ip_update" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/other" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="hefen_python" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/other/ip_update.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -3929,16 +3946,16 @@
       <item index="2" class="java.lang.String" itemvalue="Python.py_test" />
       <item index="3" class="java.lang.String" itemvalue="Python.hefen_by_province" />
       <item index="4" class="java.lang.String" itemvalue="Python.hefen_app_9.8" />
-      <item index="5" class="java.lang.String" itemvalue="Python.treakRank" />
-      <item index="6" class="java.lang.String" itemvalue="Python.multiProcess_test" />
+      <item index="5" class="java.lang.String" itemvalue="Python.multiProcess_test" />
+      <item index="6" class="java.lang.String" itemvalue="Python.ip_update" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.hefen_app_9.8" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ip_update" />
         <item index="1" class="java.lang.String" itemvalue="Python.hefen_by_province" />
-        <item index="2" class="java.lang.String" itemvalue="Python.py_test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.multiProcess_test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.treakRank" />
+        <item index="2" class="java.lang.String" itemvalue="Python.hefen_app_9.8" />
+        <item index="3" class="java.lang.String" itemvalue="Python.py_test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.multiProcess_test" />
       </list>
     </recent_temporary>
   </component>
@@ -3958,30 +3975,57 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1280" height="733" extended-state="6" />
-    <editor active="true" />
+    <frame x="-5" y="23" width="1280" height="733" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2584814" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23042169" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761312" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17784712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28313252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27925116" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -4003,11 +4047,18 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="112" />
+      <option name="time" value="119" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/py_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hefen/bak/hefen_PC.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -4033,40 +4084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hefen/bak/hefen_PC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/other/treakRank.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hefen/bak/hefen_App.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1178">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/py_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4088,9 +4105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4112,9 +4126,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4136,9 +4147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4160,9 +4168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4184,9 +4189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4243,13 +4245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/pymysql/err.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -4313,9 +4308,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding>
-            <element signature="e#25#47#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4323,9 +4315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4333,6 +4322,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.2/python_stubs/-2125986627/__builtin__.py" />
+    <entry file="file:///Library/Python/2.7/site-packages/xlrd-1.0.0-py2.7.egg/xlrd/sheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="412" column="8" selection-start-line="412" selection-start-column="8" selection-end-line="412" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hefen/hefen_by_province.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="5" selection-end-column="11" />
+          <folding>
+            <element signature="e#42#64#0" expanded="true" />
+            <marker date="1476003951000" expanded="true" signature="453:566" ph="select provi... hefen_app_table" />
+            <marker date="1476003951000" expanded="true" signature="1198:1277" ph="INSERT INTO `hefen_by_province`... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -4346,10 +4356,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="19" selection-end-column="41" />
+          <folding>
+            <element signature="e#42#64#0" expanded="true" />
+            <marker date="1489139526000" expanded="true" signature="407:500" ph="select phone... phone_imei_time" />
+            <marker date="1489139526000" expanded="true" signature="1088:1128" ph="select phone... hefen_app_table" />
+            <marker date="1489139526000" expanded="true" signature="1563:1741" ph="update hefen... " />
+            <marker date="1489139526000" expanded="true" signature="2349:2624" ph="INSERT INTO `hefen_app_table`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/ip_update.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+          <folding>
+            <element signature="e#42#53#0" expanded="true" />
+            <marker date="1489646632000" expanded="true" signature="1168:1206" ph="INSERT INTO `ip_all_province_test`... " />
+            <marker date="1489646632000" expanded="true" signature="1168:1425" ph="INSERT INTO `ip_all_province_test`... " />
+            <marker date="1489646632000" expanded="true" signature="1820:1941" ph="select ip_st... ip_all_province_test" />
+            <marker date="1489646632000" expanded="true" signature="1820:1956" ph="select ip_st... ip_all_province_test" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/pymysql/err.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jiakuan/routine_not_data_sync.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="114">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="62" />
           <folding>
             <element signature="e#43#58#0" expanded="true" />
           </folding>
@@ -4382,33 +4428,11 @@
     </entry>
     <entry file="file:///Library/Python/2.7/site-packages/pymysql/cursors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9253">
-          <caret line="494" column="0" selection-start-line="494" selection-start-column="0" selection-end-line="494" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hefen/hefen_by_province.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="9690">
+          <caret line="516" column="0" selection-start-line="516" selection-start-column="0" selection-end-line="516" selection-end-column="0" />
           <folding>
-            <marker date="1476003951000" expanded="true" signature="453:566" ph="select provi... hefen_app_table" />
-            <marker date="1476003951000" expanded="true" signature="1198:1277" ph="INSERT INTO `hefen_by_province`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.8.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#42#64#0" expanded="true" />
-            <marker date="1486722913000" expanded="true" signature="407:500" ph="select phone... phone_imei_time" />
-            <marker date="1486722913000" expanded="true" signature="1088:1128" ph="select phone... hefen_app_table" />
-            <marker date="1486722913000" expanded="true" signature="1563:1741" ph="update hefen... " />
-            <marker date="1486722913000" expanded="true" signature="2349:2624" ph="INSERT INTO `hefen_app_table`... " />
+            <marker date="1489556098000" expanded="false" signature="24:184" ph="import ..." />
+            <marker date="1489556098000" expanded="true" signature="16782:16785" ph="..." />
           </folding>
         </state>
       </provider>

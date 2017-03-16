@@ -83,7 +83,7 @@ def calculateIndicatorSum(indicatorName,threshold):
 
     try:
         with SourcePhoneconnection.cursor() as cursor:
-            sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios from " + indicatorName + " GROUP BY file_path"
+            sql = "select count(*) as countSum,UID as imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios from " + indicatorName + " GROUP BY file_path"
             # sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone from " + indicatorName + " WHERE bandwidth_flag = 1 AND phone_number_flag = 1 AND openBroadband_flag = 1 AND signal_flag = 1 and UNIX_TIMESTAMP(time) < 1469980800 GROUP BY file_path"
             cursor.execute(sql)
             result = cursor.fetchall()
@@ -111,9 +111,9 @@ def calculateIndicatorSum(indicatorName,threshold):
 
 
 # 执行主函数
-(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('gps_http_test_new_201701',2)
-(videoResultDic,videoResultSet) = calculateIndicatorSum('gps_video_test_new_201701',1)
-(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('gps_web_browsing_new_201701',5)
+(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('http_test_new_201702',2)
+(videoResultDic,videoResultSet) = calculateIndicatorSum('video_test_new_201702',1)
+(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('web_browsing_new_201702',5)
 
 #计算http下载
 for key in httpDownloadResultDic.keys():
