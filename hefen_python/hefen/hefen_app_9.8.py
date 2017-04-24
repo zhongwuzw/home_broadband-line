@@ -46,6 +46,20 @@ def calculateImeiNum():
     finally:
         destDatabase.close()
 
+# 格式化省的名字
+def formatProvinceInfo():
+    destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
+                                   db='test',
+                                   charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+
+    try:
+        with destDatabase.cursor() as cursor:
+            sql = "update hefen_app_table  set province=left(province,char_length(province)-1) where province like '%省%';update hefen_app_table  set province=left(province,char_length(province)-1) where province like '%市%';update hefen_app_table  set city=left(city,char_length(city)-1) where city like '%市%';update hefen_app_table  set province='内蒙古'where province='内蒙古自治区';update hefen_app_table  set province='广西'where province='广西壮族自治区';update hefen_app_table  set province='西藏'where province='西藏自治区';update hefen_app_table  set province='新疆'where province='新疆维吾尔自治区';update hefen_app_table  set province='宁夏'where province='宁夏回族自治区';"
+            cursor.execute(sql)
+            destDatabase.commit()
+    finally:
+        destDatabase.close()
+
 #将最终结果写入库中
 def executeResultInsertDatabase(phone_num,province,city,totalSum,imei,openBroadband_phone,android_ios,httpDownload,webBrowse,videoPlay,isValid):
     destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
@@ -111,9 +125,9 @@ def calculateIndicatorSum(indicatorName,threshold):
 
 
 # 执行主函数
-(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('http_test_new_201702',2)
-(videoResultDic,videoResultSet) = calculateIndicatorSum('video_test_new_201702',1)
-(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('web_browsing_new_201702',5)
+(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('http_test_new_201703',2)
+(videoResultDic,videoResultSet) = calculateIndicatorSum('video_test_new_201703',1)
+(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('web_browsing_new_201703',5)
 
 #计算http下载
 for key in httpDownloadResultDic.keys():
@@ -184,6 +198,8 @@ for key in webBrowsingResultSet:
         executeResultInsertDatabase(phone_final, province, city, totalTest, imei, openBroadband_phone, android_ios, httpDownload, webBrowsing, videoPlay, isValid)
 
 calculateImeiNum()
+
+formatProvinceInfo()
 
 imeiDatabase.close()
 

@@ -4,11 +4,22 @@
 import datetime
 import time
 import os
+import sys
 
-yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
-yesterday_time = time.strftime("%Y%m%d", yesterday.timetuple())
-yesterday_time_sql = time.strftime("%Y_%m_%d", yesterday.timetuple())
-fake_yesterday_time = time.strftime("%Y%m%d")
+# 执行示例：python log_count_realtime.py 20170420 或 python log_count_realtime.py
+
+if len(sys.argv) == 2 :
+    start_date_str = sys.argv[1]
+    yesterday_time_date = datetime.datetime.strptime(start_date_str,"%Y%m%d")
+    yesterday = yesterday_time_date - datetime.timedelta(days=1)
+    yesterday_time = time.strftime("%Y%m%d", yesterday.timetuple())
+    yesterday_time_sql = time.strftime("%Y_%m_%d", yesterday.timetuple())
+    fake_yesterday_time = start_date_str
+else:
+    yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
+    yesterday_time = time.strftime("%Y%m%d", yesterday.timetuple())
+    yesterday_time_sql = time.strftime("%Y_%m_%d", yesterday.timetuple())
+    fake_yesterday_time = time.strftime("%Y%m%d")
 
 print "---------------------------"
 print yesterday_time
