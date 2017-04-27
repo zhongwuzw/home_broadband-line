@@ -1,0 +1,116 @@
+select province,city,test_location,operator_manual,bandwidth,phone_number,
+openBroadband_phone,from_unixtime(time/1000),model,address,UID,android_ios,longitude,latitude,region,connect_operator,success_rate,
+avg_rate,avg_latency,firstpack_delay,SSID,bssid,signal_strength,wifi_connect_rate,
+dns_ip,dns_ip_flag,dns_target_ip,dns_target_operator,dns_target_province,dns_server,server_operator,server_province,hop,route_list,avg_rtt,ping_success_rate,
+service_status,test_status,
+#端到端有效样本
+case when 
+connect_operator=operator_manual
+AND android_ios='android'
+AND SSID not in ('CMCC','CMCC-WEB','CMCC-EDU')
+AND test_status  NOT in ('2100','2101','2102','2103','2104','2111','2112') 
+AND cast(signal_strength as SIGNED INTEGER) >= -60
+AND address NOT LIKE '%云平台%'
+AND address IS NOT NULL
+AND CAST(avg_rate AS DECIMAL) <150
+and address NOT LIKE 'http://--%' and address!='http://'
+and success_rate=100
+then 1 else 0 end as port2port_flag,
+#本网率有效样本
+case when 
+connect_operator=operator_manual
+AND android_ios='android'
+AND SSID not in ('CMCC','CMCC-WEB','CMCC-EDU')
+AND test_status  NOT in ('2100','2101','2102','2103','2104','2111','2112') 
+AND address NOT LIKE '%云平台%'
+AND address IS NOT NULL
+AND CAST(avg_rate AS DECIMAL) <150
+and address NOT LIKE 'http://--%' and address!='http://'
+and success_rate=100
+and dns_ip!='NA' and dns_ip is not null
+then 1 else 0 end as local_rate_flag,
+#成功率有效样本
+case when 
+connect_operator=operator_manual
+AND android_ios='android'
+AND SSID not in ('CMCC','CMCC-WEB','CMCC-EDU')
+AND test_status  NOT in ('2100','2101','2102','2103','2104','2111','2112') 
+AND cast(signal_strength as SIGNED INTEGER) >= -60
+AND address NOT LIKE '%云平台%'
+AND address IS NOT NULL
+AND CAST(avg_rate AS DECIMAL) <150
+and address NOT LIKE 'http://--%' and address!='http://'
+then 1 else 0 end as success_rate_flag,
+#跳数统计
+case when 
+connect_operator=operator_manual
+AND android_ios='android'
+AND SSID not in ('CMCC','CMCC-WEB','CMCC-EDU')
+AND test_status  NOT in ('2100','2101','2102','2103','2104','2111','2112') 
+AND cast(signal_strength as SIGNED INTEGER) >= -60
+AND address NOT LIKE '%云平台%'
+AND address IS NOT NULL
+AND CAST(avg_rate AS DECIMAL) <150
+and address NOT LIKE 'http://--%' and address!='http://'
+and hop is not null and hop <=30
+then 1 else 0 end as hop_flag
+from http_combine_700010_201704 
+where province='四川' and net_type='WIFI'
+union all
+select province,city,test_location,operator_manual,bandwidth,phone_number,
+openBroadband_phone,from_unixtime(time/1000),model,address,UID,android_ios,longitude,latitude,region,connect_operator,success_rate,
+avg_rate,avg_latency,firstpack_delay,SSID,bssid,signal_strength,wifi_connect_rate,
+dns_ip,dns_ip_flag,dns_target_ip,dns_target_operator,dns_target_province,dns_server,server_operator,server_province,hop,route_list,avg_rtt,ping_success_rate,
+service_status,test_status,
+#端到端有效样本
+case when 
+connect_operator=operator_manual
+AND android_ios='ios'
+AND SSID not in ('CMCC','CMCC-WEB','CMCC-EDU')
+AND test_status  NOT in ('2100','2101','2102','2103','2104','2111','2112') 
+AND address NOT LIKE '%云平台%'
+AND address IS NOT NULL
+AND CAST(avg_rate AS DECIMAL) <150
+and address NOT LIKE 'http://--%' and address!='http://'
+and success_rate=100
+then 1 else 0 end as port2port_flag,
+#本网率有效样本
+case when 
+connect_operator=operator_manual
+AND android_ios='ios'
+AND SSID not in ('CMCC','CMCC-WEB','CMCC-EDU')
+AND test_status  NOT in ('2100','2101','2102','2103','2104','2111','2112') 
+AND address NOT LIKE '%云平台%'
+AND address IS NOT NULL
+AND CAST(avg_rate AS DECIMAL) <150
+and address NOT LIKE 'http://--%' and address!='http://'
+and success_rate=100
+and dns_ip!='NA' and dns_ip is not null
+then 1 else 0 end as local_rate_flag,
+#成功率有效样本
+case when 
+connect_operator=operator_manual
+AND android_ios='ios'
+AND SSID not in ('CMCC','CMCC-WEB','CMCC-EDU')
+AND test_status  NOT in ('2100','2101','2102','2103','2104','2111','2112') 
+AND cast(signal_strength as SIGNED INTEGER) >= -60
+AND address NOT LIKE '%云平台%'
+AND address IS NOT NULL
+AND CAST(avg_rate AS DECIMAL) <150
+and address NOT LIKE 'http://--%' and address!='http://'
+then 1 else 0 end as success_rate_flag,
+#跳数统计
+case when 
+connect_operator=operator_manual
+AND android_ios='ios'
+AND SSID not in ('CMCC','CMCC-WEB','CMCC-EDU')
+AND test_status  NOT in ('2100','2101','2102','2103','2104','2111','2112') 
+AND cast(signal_strength as SIGNED INTEGER) >= -60
+AND address NOT LIKE '%云平台%'
+AND address IS NOT NULL
+AND CAST(avg_rate AS DECIMAL) <150
+and address NOT LIKE 'http://--%' and address!='http://'
+and hop is not null and hop <=30
+then 1 else 0 end as hop_flag
+from http_combine_700010_201704 
+where province='四川' and net_type='WIFI';
