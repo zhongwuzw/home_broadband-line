@@ -24,20 +24,20 @@ else:
 print "---------------------------"
 print yesterday_time
 
-#实时自然维
+# 实时自然维
 print "实时自然维summary:"
-real_time_nature_summary = os.popen('cat /opt/ots/log/' + yesterday_time + 'unzip.log | grep ZIRANWEI_REPORTS|grep .summary.csv| grep ' + yesterday_time + ' |wc -l').readline()
-real_time_nature_summary_1 = os.popen('cat /opt/ots/log/' + fake_yesterday_time + 'unzip.log | grep ZIRANWEI_REPORTS|grep .summary.csv| grep ' + yesterday_time + ' |wc -l').readline()
+real_time_nature_summary = os.popen('cat /opt/ots/log/' + yesterday_time + 'unzip.log | grep ZIRANWEI_REPORTS|grep .summary.csv| grep ' + yesterday_time + '|sort -u |wc -l').readline()
+real_time_nature_summary_1 = os.popen('cat /opt/ots/log/' + fake_yesterday_time + 'unzip.log | grep ZIRANWEI_REPORTS|grep .summary.csv| grep ' + yesterday_time + '|sort -u |wc -l').readline()
 print int(real_time_nature_summary) + int(real_time_nature_summary_1)
 
 print "实时自然维总zip:"
-real_time_nature_zip = os.popen('cat /opt/ots/log/' + yesterday_time + 'unzip.log |grep ziranwei| grep Archive | grep .zip  | grep ' + yesterday_time + '| wc -l').readline()
-real_time_nature_zip_1 = os.popen('cat /opt/ots/log/' + fake_yesterday_time + 'unzip.log |grep ziranwei| grep Archive | grep .zip  | grep ' + yesterday_time + '| wc -l').readline()
+real_time_nature_zip = os.popen('cat /opt/ots/log/' + yesterday_time + 'unzip.log |grep ziranwei| grep Archive | grep .zip  | grep ' + yesterday_time + '|sort -u| wc -l').readline()
+real_time_nature_zip_1 = os.popen('cat /opt/ots/log/' + fake_yesterday_time + 'unzip.log |grep ziranwei| grep Archive | grep .zip  | grep ' + yesterday_time + '|sort -u| wc -l').readline()
 print int(real_time_nature_zip) + int(real_time_nature_zip_1)
 
 print "实时自然维失败zip:"
-real_time_nature_failure_zip = os.popen('cat /opt/ots/log/' + yesterday_time + 'unzip.log | grep error|grep ziranwei | grep ' + yesterday_time + '| wc -l').readline()
-real_time_nature_failure_zip_1 = os.popen('cat /opt/ots/log/' + fake_yesterday_time + 'unzip.log | grep error|grep ziranwei | grep ' + yesterday_time + '| wc -l').readline()
+real_time_nature_failure_zip = os.popen('cat /opt/ots/log/' + yesterday_time + 'unzip.log | grep error|grep ziranwei | grep ' + yesterday_time + '|sort -u| wc -l').readline()
+real_time_nature_failure_zip_1 = os.popen('cat /opt/ots/log/' + fake_yesterday_time + 'unzip.log | grep error|grep ziranwei | grep ' + yesterday_time + '|sort -u| wc -l').readline()
 print int(real_time_nature_failure_zip) + int(real_time_nature_failure_zip_1)
 
 print "实时自然维zip分时:"
@@ -46,9 +46,9 @@ for i in range(0,24) :
         time_str = "0" + str(i)
     else:
         time_str = str(i)
-    real_time_nature_num = os.popen("cat /opt/ots/log/" + yesterday_time + "unzip.log|grep Archive|grep ziranwei|awk '{print $2}'|grep '" + yesterday_time + time_str + "'| wc -l").readline()
+    real_time_nature_num = os.popen("cat /opt/ots/log/" + yesterday_time + "unzip.log|grep Archive|grep ziranwei|awk '{print $2}'|grep '" + yesterday_time + time_str + "'|sort -u| wc -l").readline()
     real_time_nature_num_1 = os.popen(
-        "cat /opt/ots/log/" + fake_yesterday_time + "unzip.log|grep Archive|grep ziranwei|awk '{print $2}'|grep '" + yesterday_time + time_str + "' | wc -l").readline()
+        "cat /opt/ots/log/" + fake_yesterday_time + "unzip.log|grep Archive|grep ziranwei|awk '{print $2}'|grep '" + yesterday_time + time_str + "' |sort -u| wc -l").readline()
 
     print int(real_time_nature_num) + int(real_time_nature_num_1)
 
@@ -58,9 +58,9 @@ for i in range(0,24) :
         time_str = "0" + str(i)
     else:
         time_str = str(i)
-    real_time_nature_num = os.popen("cat /opt/ots/log/" + yesterday_time + "unzip.log|grep error|grep ziranwei|grep '" + yesterday_time + "/" + time_str + "' | wc -l").readline()
+    real_time_nature_num = os.popen("cat /opt/ots/log/" + yesterday_time + "unzip.log|grep error|grep ziranwei|grep '" + yesterday_time + "/" + time_str + "'|sort -u | wc -l").readline()
     real_time_nature_num_1 = os.popen(
-        "cat /opt/ots/log/" + fake_yesterday_time + "unzip.log|grep error|grep ziranwei|grep '" + yesterday_time + "/" + time_str + "' | wc -l").readline()
+        "cat /opt/ots/log/" + fake_yesterday_time + "unzip.log|grep error|grep ziranwei|grep '" + yesterday_time + "/" + time_str + "' |sort -u| wc -l").readline()
     print int(real_time_nature_num) + int(real_time_nature_num_1)
 
 print "实时自然维summary分时:"
@@ -69,9 +69,9 @@ for i in range(0,24) :
         time_str = "0" + str(i)
     else:
         time_str = str(i)
-    real_time_nature_num = os.popen("cat /opt/ots/log/" + yesterday_time + "unzip.log|grep ZIRANWEI_REPORTS|grep .summary.csv|grep '" + yesterday_time + time_str + "'| wc -l").readline()
+    real_time_nature_num = os.popen("cat /opt/ots/log/" + yesterday_time + "unzip.log|grep ZIRANWEI_REPORTS|grep .summary.csv|grep '" + yesterday_time + time_str + "'|sort -u| wc -l").readline()
     real_time_nature_num_1 = os.popen(
-        "cat /opt/ots/log/" + fake_yesterday_time + "unzip.log|grep ZIRANWEI_REPORTS|grep .summary.csv|grep '" + yesterday_time + time_str + "'| wc -l").readline()
+        "cat /opt/ots/log/" + fake_yesterday_time + "unzip.log|grep ZIRANWEI_REPORTS|grep .summary.csv|grep '" + yesterday_time + time_str + "'|sort -u| wc -l").readline()
     print int(real_time_nature_num) + int(real_time_nature_num_1)
 
 # print "入库csv文件数:"

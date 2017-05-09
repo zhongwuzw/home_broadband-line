@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab18a2ca-bdb7-4c01-b279-2567a4c9b768" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/result/__init__.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../shell/172数据库同步/delete.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../shell/172数据库同步/zw_mysql_copy_table.sh" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ProjectA/src/test/Hello.java" afterPath="$PROJECT_DIR$/../ProjectA/src/test/Hello.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hefen/hefen_app_9.8.py" afterPath="$PROJECT_DIR$/hefen/hefen_app_9.8.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/other/ip_update.py" afterPath="$PROJECT_DIR$/other/ip_update.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/log_count_realtime.py" afterPath="$PROJECT_DIR$/result/log_count_realtime.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/result_statistic.py" afterPath="$PROJECT_DIR$/result/result_statistic.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/result_statistic_all.py" afterPath="$PROJECT_DIR$/result/result_statistic_all.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result/result_statistic_map.py" afterPath="$PROJECT_DIR$/result/result_statistic_map.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/py_test.py" afterPath="$PROJECT_DIR$/test/py_test.py" />
     </list>
     <ignored path="hefen_python.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,33 +24,36 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="PyCharm2017.1/coverage/hefen_python$sims.coverage" NAME="sims Coverage Results" MODIFIED="1492397839413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$temp.coverage" NAME="temp Coverage Results" MODIFIED="1490019038924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other/io_excel_analyze" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2016.1/coverage/hefen_python$hefen.coverage" NAME="hefen Coverage Results" MODIFIED="1466387396253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$multiProcess_test.coverage" NAME="multiProcess_test Coverage Results" MODIFIED="1476780186871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$New_Hefen_App.coverage" NAME="New_Hefen_App Coverage Results" MODIFIED="1471587260949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hefen_python$hefen_app_9_8.coverage" NAME="hefen_app_9.8 Coverage Results" MODIFIED="1493023026625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hefen" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$hefen_app_9_8.coverage" NAME="hefen_app_9.8 Coverage Results" MODIFIED="1489139559084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="PyCharm2017.1/coverage/hefen_python$result_statistic_contab_hour.coverage" NAME="result_statistic_contab_hour Coverage Results" MODIFIED="1492419457170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/result" />
-    <SUITE FILE_PATH="PyCharm2017.1/coverage/hefen_python$result_statistic_all.coverage" NAME="result_statistic_all Coverage Results" MODIFIED="1492498688826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/result" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$hefen_app_9_7.coverage" NAME="hefen_app_9.7 Coverage Results" MODIFIED="1473230454302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$alterKeyToCode.coverage" NAME="alterKeyToCode Coverage Results" MODIFIED="1468993733520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2016.1/coverage/hefen_python$hefen_PC.coverage" NAME="hefen_PC Coverage Results" MODIFIED="1466480427483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2016.1/coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1465899765907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$file_io_analyze.coverage" NAME="file_io_analyze Coverage Results" MODIFIED="1490019189184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$hefen_by_province.coverage" NAME="hefen_by_province Coverage Results" MODIFIED="1489552099669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$ip_update.coverage" NAME="ip_update Coverage Results" MODIFIED="1489646645766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$hefen_org_key.coverage" NAME="hefen_org_key Coverage Results" MODIFIED="1491917343818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hefen" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$routineJob.coverage" NAME="routineJob Coverage Results" MODIFIED="1476841252401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jiakuan" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$sims.coverage" NAME="sims Coverage Results" MODIFIED="1491983553299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="PyCharm2017.1/coverage/hefen_python$result_statistic_crontab.coverage" NAME="result_statistic_crontab Coverage Results" MODIFIED="1492418811206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/result" />
-    <SUITE FILE_PATH="coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1493010764527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$result_statistic.coverage" NAME="result_statistic Coverage Results" MODIFIED="1492138290401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/result" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$treakRank.coverage" NAME="treakRank Coverage Results" MODIFIED="1476065234909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1489993823749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$alterJsonFile.coverage" NAME="alterJsonFile Coverage Results" MODIFIED="1468508526350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$handleJsonFile.coverage" NAME="handleJsonFile Coverage Results" MODIFIED="1468508530741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hefen_python$result_statistic_all.coverage" NAME="result_statistic_all Coverage Results" MODIFIED="1493000848826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/result" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$hefen_org_key.coverage" NAME="hefen_org_key Coverage Results" MODIFIED="1491917343818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hefen" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$alterJsonFile.coverage" NAME="alterJsonFile Coverage Results" MODIFIED="1468508526350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$hefen_app_9_8.coverage" NAME="hefen_app_9.8 Coverage Results" MODIFIED="1489139559084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$file_io_analyze.coverage" NAME="file_io_analyze Coverage Results" MODIFIED="1490019189184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other" />
+    <SUITE FILE_PATH="PyCharm2017.1/coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1493010764527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/PyCharm2016.1/coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1465899765907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$hefen_app_9_7.coverage" NAME="hefen_app_9.7 Coverage Results" MODIFIED="1473230454302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hefen_python$hefen_app_9_8.coverage" NAME="hefen_app_9.8 Coverage Results" MODIFIED="1494318566684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hefen" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$alterKeyToCode.coverage" NAME="alterKeyToCode Coverage Results" MODIFIED="1468993733520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$multiProcess_test.coverage" NAME="multiProcess_test Coverage Results" MODIFIED="1476780186871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="PyCharm2017.1/coverage/hefen_python$result_statistic_all.coverage" NAME="result_statistic_all Coverage Results" MODIFIED="1493000848826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/result" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$ip_update.coverage" NAME="ip_update Coverage Results" MODIFIED="1489646645766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$sims.coverage" NAME="sims Coverage Results" MODIFIED="1491983553299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$result_statistic_crontab.coverage" NAME="result_statistic_crontab Coverage Results" MODIFIED="1492418811206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/result" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$result_statistic_all.coverage" NAME="result_statistic_all Coverage Results" MODIFIED="1492498688826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/result" />
+    <SUITE FILE_PATH="coverage/hefen_python$ip_update.coverage" NAME="ip_update Coverage Results" MODIFIED="1494228055123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$temp.coverage" NAME="temp Coverage Results" MODIFIED="1490019038924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other/io_excel_analyze" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$result_statistic_contab_hour.coverage" NAME="result_statistic_contab_hour Coverage Results" MODIFIED="1492419457170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/result" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$hefen_by_province.coverage" NAME="hefen_by_province Coverage Results" MODIFIED="1489552099669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/PyCharm2016.1/coverage/hefen_python$hefen.coverage" NAME="hefen Coverage Results" MODIFIED="1466387396253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$sims.coverage" NAME="sims Coverage Results" MODIFIED="1492397839413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$treakRank.coverage" NAME="treakRank Coverage Results" MODIFIED="1476065234909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$handleJsonFile.coverage" NAME="handleJsonFile Coverage Results" MODIFIED="1468508530741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/PyCharm2016.1/coverage/hefen_python$hefen_PC.coverage" NAME="hefen_PC Coverage Results" MODIFIED="1466480427483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$py_test.coverage" NAME="py_test Coverage Results" MODIFIED="1489993823749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$routineJob.coverage" NAME="routineJob Coverage Results" MODIFIED="1476841252401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jiakuan" />
+    <SUITE FILE_PATH="coverage/hefen_python$hefen_by_province.coverage" NAME="hefen_by_province Coverage Results" MODIFIED="1494321165135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hefen" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$result_statistic.coverage" NAME="result_statistic Coverage Results" MODIFIED="1492138290401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/result" />
+    <SUITE FILE_PATH="PyCharm2017.1/PyCharm2017.1/PyCharm2017.1/coverage/hefen_python$New_Hefen_App.coverage" NAME="New_Hefen_App Coverage Results" MODIFIED="1471587260949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="PyCharm2017.1/coverage/hefen_python$hefen_app_9_8.coverage" NAME="hefen_app_9.8 Coverage Results" MODIFIED="1493023026625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hefen" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -62,56 +67,34 @@
       <file leaf-file-name="result_statistic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/result/result_statistic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="931">
-              <caret line="51" column="23" lean-forward="false" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="23" />
+            <state relative-caret-position="171">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
-                <marker date="1492583047000" expanded="true" signature="649:810" ph="INSERT INTO `receive_stastics`... " />
+                <marker date="1493863382000" expanded="true" signature="649:803" ph="INSERT INTO `receive_stastics`... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log_count_realtime.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/result/log_count_realtime.py">
+      <file leaf-file-name="ip_update.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/other/ip_update.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="950">
-              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="57">
+              <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
               <folding>
-                <element signature="e#43#58#0" expanded="true" />
+                <marker date="1494301439000" expanded="true" signature="1170:1431" ph="INSERT INTO `ip_all_province`... " />
+                <marker date="1494301439000" expanded="true" signature="1826:1966" ph="select ip_st... ip_all_province" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hefen_by_province.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hefen/hefen_by_province.py">
+      <file leaf-file-name="treakRank.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/other/treakRank.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="5" selection-end-column="11" />
+            <state relative-caret-position="304">
+              <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hefen_app_9.8.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.8.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-              <folding>
-                <marker date="1493022987000" expanded="true" signature="407:500" ph="select phone... phone_imei_time" />
-                <marker date="1493022987000" expanded="true" signature="1088:1128" ph="select phone... hefen_app_table" />
-                <marker date="1493022987000" expanded="true" signature="1563:1741" ph="update hefen... " />
-                <marker date="1493022987000" expanded="true" signature="2211:2312" ph="update hefen... " />
-                <marker date="1493022987000" expanded="true" signature="2313:2414" ph="update hefen... " />
-                <marker date="1493022987000" expanded="true" signature="2415:2500" ph="update hefen... " />
-                <marker date="1493022987000" expanded="true" signature="2501:2566" ph="update hefen... " />
-                <marker date="1493022987000" expanded="true" signature="2567:2632" ph="update hefen... " />
-                <marker date="1493022987000" expanded="true" signature="2633:2696" ph="update hefen... " />
-                <marker date="1493022987000" expanded="true" signature="2697:2763" ph="update hefen... " />
-                <marker date="1493022987000" expanded="true" signature="2764:2829" ph="update hefen... " />
-                <marker date="1493022987000" expanded="true" signature="3430:3705" ph="INSERT INTO `hefen_app_table`... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -119,7 +102,7 @@
       <file leaf-file-name="py_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/py_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
+            <state relative-caret-position="76">
               <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
               <folding>
                 <element signature="e#25#40#0" expanded="true" />
@@ -128,15 +111,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="result_statistic_map.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="result_statistic_map.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/result/result_statistic_map.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="269">
+              <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding>
                 <element signature="e#43#52#0" expanded="true" />
-                <marker date="1493010907000" expanded="true" signature="657:817" ph="INSERT INTO `parse_success_stastics`... " />
+                <marker date="1493280187000" expanded="true" signature="657:817" ph="INSERT INTO `parse_success_stastics`... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log_count_realtime.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/result/log_count_realtime.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="882">
+              <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,8 +137,8 @@
       <file leaf-file-name="result_statistic_crontab_day.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/result/result_statistic_crontab_day.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="171">
+              <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding>
                 <element signature="e#43#58#0" expanded="true" />
               </folding>
@@ -156,11 +149,34 @@
       <file leaf-file-name="result_statistic_all.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/result/result_statistic_all.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="456">
+              <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
               <folding>
                 <element signature="e#43#58#0" expanded="true" />
-                <marker date="1493011105000" expanded="true" signature="187:296" ph="..." />
+                <marker date="1493891952000" expanded="true" signature="187:296" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hefen_app_9.8.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.8.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="203" column="18" lean-forward="true" selection-start-line="203" selection-start-column="18" selection-end-line="203" selection-end-column="18" />
+              <folding>
+                <marker date="1494318525000" expanded="true" signature="407:500" ph="select phone... phone_imei_time" />
+                <marker date="1494318525000" expanded="true" signature="1088:1128" ph="select phone... hefen_app_table" />
+                <marker date="1494318525000" expanded="true" signature="1563:1741" ph="update hefen... " />
+                <marker date="1494318525000" expanded="true" signature="2211:2312" ph="update hefen... " />
+                <marker date="1494318525000" expanded="true" signature="2313:2414" ph="update hefen... " />
+                <marker date="1494318525000" expanded="true" signature="2415:2500" ph="update hefen... " />
+                <marker date="1494318525000" expanded="true" signature="2501:2566" ph="update hefen... " />
+                <marker date="1494318525000" expanded="true" signature="2567:2632" ph="update hefen... " />
+                <marker date="1494318525000" expanded="true" signature="2633:2696" ph="update hefen... " />
+                <marker date="1494318525000" expanded="true" signature="2697:2763" ph="update hefen... " />
+                <marker date="1494318525000" expanded="true" signature="2764:2829" ph="update hefen... " />
+                <marker date="1494318525000" expanded="true" signature="3430:3705" ph="INSERT INTO `hefen_app_table`... " />
               </folding>
             </state>
           </provider>
@@ -169,8 +185,8 @@
       <file leaf-file-name="result_statistic_contab_hour.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/result/result_statistic_contab_hour.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="11" column="67" lean-forward="false" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+            <state relative-caret-position="247">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#43#58#0" expanded="true" />
               </folding>
@@ -209,20 +225,20 @@
         <option value="$PROJECT_DIR$/jiakuan/routineJob.py" />
         <option value="$PROJECT_DIR$/jiakuan/routine_not_data_sync.py" />
         <option value="$PROJECT_DIR$/other/file_io_analyze.py" />
-        <option value="$PROJECT_DIR$/other/ip_update.py" />
         <option value="$PROJECT_DIR$/other/io_excel_analyze/io_test.py" />
         <option value="$PROJECT_DIR$/other/io_excel_analyze/temp.py" />
         <option value="$PROJECT_DIR$/other/io_excel_analyze/file_io_analyze.py" />
         <option value="$PROJECT_DIR$/hefen/hefen_org_key.py" />
         <option value="$PROJECT_DIR$/test/sims.py" />
         <option value="$PROJECT_DIR$/result/result_statistic_crontab.py" />
-        <option value="$PROJECT_DIR$/result/result_statistic.py" />
         <option value="$PROJECT_DIR$/result/result_statistic_contab_hour.py" />
         <option value="$PROJECT_DIR$/result/result_statistic_crontab_day.py" />
         <option value="$PROJECT_DIR$/test/test.py" />
         <option value="$PROJECT_DIR$/test/py_test.py" />
         <option value="$PROJECT_DIR$/result/result_statistic_map.py" />
+        <option value="$PROJECT_DIR$/result/result_statistic.py" />
         <option value="$PROJECT_DIR$/result/result_statistic_all.py" />
+        <option value="$PROJECT_DIR$/other/ip_update.py" />
         <option value="$PROJECT_DIR$/result/log_count_realtime.py" />
         <option value="$PROJECT_DIR$/hefen/hefen_app_9.8.py" />
       </list>
@@ -235,6 +251,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="2" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="731" />
@@ -257,7 +274,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -323,24 +339,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="other" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="io_excel_analyze" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hefen_python" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hefen_python" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="jiakuan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -361,6 +359,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,45 +407,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.hefen_app_9.8">
-    <configuration default="false" name="result_statistic_crontab" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/result" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="hefen_python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/result/result_statistic_crontab_day.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="result_statistic_contab_hour" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/result" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="hefen_python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/result/result_statistic_contab_hour.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.hefen_by_province">
     <configuration default="false" name="result_statistic_all" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -499,6 +460,44 @@
       <module name="hefen_python" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hefen/hefen_app_9.8.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ip_update" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/other" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="hefen_python" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/other/ip_update.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="hefen_by_province" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hefen" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="hefen_python" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hefen/hefen_by_province.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -727,19 +726,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Python.hefen_app_9.7" />
       <item index="1" class="java.lang.String" itemvalue="Python.routineJob" />
-      <item index="2" class="java.lang.String" itemvalue="Python.result_statistic_crontab" />
-      <item index="3" class="java.lang.String" itemvalue="Python.result_statistic_contab_hour" />
-      <item index="4" class="java.lang.String" itemvalue="Python.result_statistic_all" />
-      <item index="5" class="java.lang.String" itemvalue="Python.py_test" />
-      <item index="6" class="java.lang.String" itemvalue="Python.hefen_app_9.8" />
+      <item index="2" class="java.lang.String" itemvalue="Python.result_statistic_all" />
+      <item index="3" class="java.lang.String" itemvalue="Python.py_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.hefen_app_9.8" />
+      <item index="5" class="java.lang.String" itemvalue="Python.ip_update" />
+      <item index="6" class="java.lang.String" itemvalue="Python.hefen_by_province" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.hefen_app_9.8" />
-        <item index="1" class="java.lang.String" itemvalue="Python.py_test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.result_statistic_all" />
-        <item index="3" class="java.lang.String" itemvalue="Python.result_statistic_contab_hour" />
-        <item index="4" class="java.lang.String" itemvalue="Python.result_statistic_crontab" />
+        <item index="0" class="java.lang.String" itemvalue="Python.hefen_by_province" />
+        <item index="1" class="java.lang.String" itemvalue="Python.hefen_app_9.8" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ip_update" />
+        <item index="3" class="java.lang.String" itemvalue="Python.py_test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.result_statistic_all" />
       </list>
     </recent_temporary>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -789,19 +788,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="731" extended-state="6" />
+    <frame x="2" y="23" width="1280" height="731" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2641357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30775446" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26917058" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22065727" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26917058" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29577464" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29577464" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -861,18 +861,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="145" />
+      <option name="time" value="146" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hefen/bak/hefen_PC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1824">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hefen/bak/hefen_App.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1049,13 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/other/treakRank.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Python/2.7/site-packages/pymysql/cursors.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9690">
@@ -1107,13 +1093,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/other/ip_update.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/result/log_count_realtime_copy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1135,101 +1114,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/result/result_statistic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="51" column="23" lean-forward="false" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="23" />
-          <folding>
-            <marker date="1492583047000" expanded="true" signature="649:810" ph="INSERT INTO `receive_stastics`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/result_statistic_contab_hour.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="67" lean-forward="false" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
-          <folding>
-            <element signature="e#43#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/result_statistic_crontab_day.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#43#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/time.py" />
-    <entry file="file://$PROJECT_DIR$/result/result_statistic_map.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#43#52#0" expanded="true" />
-            <marker date="1493010907000" expanded="true" signature="657:817" ph="INSERT INTO `parse_success_stastics`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/result_statistic_all.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#43#58#0" expanded="true" />
-            <marker date="1493011105000" expanded="true" signature="187:296" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/log_count_realtime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="e#43#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hefen/hefen_by_province.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="5" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.8.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-          <folding>
-            <marker date="1493022987000" expanded="true" signature="407:500" ph="select phone... phone_imei_time" />
-            <marker date="1493022987000" expanded="true" signature="1088:1128" ph="select phone... hefen_app_table" />
-            <marker date="1493022987000" expanded="true" signature="1563:1741" ph="update hefen... " />
-            <marker date="1493022987000" expanded="true" signature="2211:2312" ph="update hefen... " />
-            <marker date="1493022987000" expanded="true" signature="2313:2414" ph="update hefen... " />
-            <marker date="1493022987000" expanded="true" signature="2415:2500" ph="update hefen... " />
-            <marker date="1493022987000" expanded="true" signature="2501:2566" ph="update hefen... " />
-            <marker date="1493022987000" expanded="true" signature="2567:2632" ph="update hefen... " />
-            <marker date="1493022987000" expanded="true" signature="2633:2696" ph="update hefen... " />
-            <marker date="1493022987000" expanded="true" signature="2697:2763" ph="update hefen... " />
-            <marker date="1493022987000" expanded="true" signature="2764:2829" ph="update hefen... " />
-            <marker date="1493022987000" expanded="true" signature="3430:3705" ph="INSERT INTO `hefen_app_table`... " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/py_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
+        <state relative-caret-position="76">
           <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
           <folding>
             <element signature="e#25#40#0" expanded="true" />
@@ -1237,10 +1132,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.py">
+    <entry file="file://$PROJECT_DIR$/test/test.py" />
+    <entry file="file://$PROJECT_DIR$/result/result_statistic_crontab_day.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="43" column="40" lean-forward="false" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+        <state relative-caret-position="171">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="e#43#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/treakRank.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/result_statistic_contab_hour.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#43#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/result_statistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <marker date="1493863382000" expanded="true" signature="649:803" ph="INSERT INTO `receive_stastics`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/_socket.py" />
+    <entry file="file://$PROJECT_DIR$/other/ip_update.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding>
+            <marker date="1494301439000" expanded="true" signature="1170:1431" ph="INSERT INTO `ip_all_province`... " />
+            <marker date="1494301439000" expanded="true" signature="1826:1966" ph="select ip_st... ip_all_province" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/result_statistic_all.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding>
+            <element signature="e#43#58#0" expanded="true" />
+            <marker date="1493891952000" expanded="true" signature="187:296" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/result_statistic_map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#43#52#0" expanded="true" />
+            <marker date="1493280187000" expanded="true" signature="657:817" ph="INSERT INTO `parse_success_stastics`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hefen/hefen_app_9.8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="203" column="18" lean-forward="true" selection-start-line="203" selection-start-column="18" selection-end-line="203" selection-end-column="18" />
+          <folding>
+            <marker date="1494318525000" expanded="true" signature="407:500" ph="select phone... phone_imei_time" />
+            <marker date="1494318525000" expanded="true" signature="1088:1128" ph="select phone... hefen_app_table" />
+            <marker date="1494318525000" expanded="true" signature="1563:1741" ph="update hefen... " />
+            <marker date="1494318525000" expanded="true" signature="2211:2312" ph="update hefen... " />
+            <marker date="1494318525000" expanded="true" signature="2313:2414" ph="update hefen... " />
+            <marker date="1494318525000" expanded="true" signature="2415:2500" ph="update hefen... " />
+            <marker date="1494318525000" expanded="true" signature="2501:2566" ph="update hefen... " />
+            <marker date="1494318525000" expanded="true" signature="2567:2632" ph="update hefen... " />
+            <marker date="1494318525000" expanded="true" signature="2633:2696" ph="update hefen... " />
+            <marker date="1494318525000" expanded="true" signature="2697:2763" ph="update hefen... " />
+            <marker date="1494318525000" expanded="true" signature="2764:2829" ph="update hefen... " />
+            <marker date="1494318525000" expanded="true" signature="3430:3705" ph="INSERT INTO `hefen_app_table`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/log_count_realtime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
       </provider>

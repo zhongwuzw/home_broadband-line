@@ -16,7 +16,7 @@ def insertListToMysqlDB(year_month, day, num, kind, isDay, org = "", projectID =
                                          charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
     try:
         with statisticsDatabase.cursor() as cursor:
-            sql = "INSERT IGNORE INTO `receive_stastics` (`id`, `year_month`, `day`, `org`, `projectID`,`appID`, `num`, `kind`, `isDay`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            sql = "INSERT INTO `receive_stastics` (`id`, `year_month`, `day`, `org`, `projectID`,`appID`, `num`, `kind`, `isDay`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
             cursor.execute(sql,("0",year_month,day,org,projectID,appID,num,kind,isDay))
 
             statisticsDatabase.commit()
