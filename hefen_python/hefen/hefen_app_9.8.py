@@ -1,23 +1,20 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import pymysql.cursors
-import decimal
+import datetime
 
-imeiDatabase = pymysql.connect(host='192.168.39.51', port=5151, user='gbase', password='gbase20110531',
-                               db='data_analyse',
-                               charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+# 通过IMEI来获取最早使用该IMEI的手机号
+def getImeiValid(imei, cursor):
+    sql = "select phoneno FROM hefen_app_table where imei = '" + imei + "' order by time"
+    cursor.execute(sql)
+    result = cursor.fetchall()
 
-def getImeiValid(imei):
-    with imeiDatabase.cursor() as cursor:
-        sql = "select phone_number as phoneno FROM phone_imei_time where imei = '" + imei + "' order by time"
-        cursor.execute(sql)
-        result = cursor.fetchall()
+    valid_phone = ''
+    if len(result) > 0:
+        element = result[0]
+        valid_phone = element['phoneno']
+    return (valid_phone, len(result))
 
-        valid_phone = ''
-        if len(result) > 0:
-            element = result[0]
-            valid_phone = element['phoneno']
-        return (valid_phone, len(result))
 
 #计算Imei号
 def calculateImeiNum():
@@ -33,7 +30,7 @@ def calculateImeiNum():
             result = cursor.fetchall()
 
             for element in result:
-                (valid_phone,imei_num) = getImeiValid(element['imei'])
+                (valid_phone,imei_num) = getImeiValid(element['imei'], cursor)
                 isValid = 0
                 if imei_num == 0:   #fix:修复找不到手机号的情况
                     imei_num = 1
@@ -61,15 +58,15 @@ def formatProvinceInfo():
         destDatabase.close()
 
 #将最终结果写入库中
-def executeResultInsertDatabase(phone_num,province,city,totalSum,imei,openBroadband_phone,android_ios,httpDownload,webBrowse,videoPlay,isValid):
+def executeResultInsertDatabase(phone_num,province,city,totalSum,imei,openBroadband_phone,android_ios,httpDownload,webBrowse,videoPlay,isValid, time):
     destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
                                             db='test',
                                             charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
     try:
         with destDatabase.cursor() as cursor:
-            sql = "INSERT INTO `hefen_app_table` (`id`, `phoneno`, `province`, `city`, `imei`,`imei_num`,`phone_flag`, `test_times`,`openBroadband_phone`,`android_ios`,`video_test`,`web_browse_test`,`http_download_test`,`isValid`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            cursor.execute(sql,("0",phone_num,province,city,imei,"0","0",totalSum,openBroadband_phone,android_ios,videoPlay,webBrowse,httpDownload,isValid))
+            sql = "INSERT INTO `hefen_app_table` (`id`, `phoneno`, `province`, `city`, `imei`,`imei_num`,`phone_flag`, `test_times`,`openBroadband_phone`,`android_ios`,`video_test`,`web_browse_test`,`http_download_test`,`isValid`, `time`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            cursor.execute(sql,("0",phone_num,province,city,imei,"0","0",totalSum,openBroadband_phone,android_ios,videoPlay,webBrowse,httpDownload,isValid, time))
             # sql = "INSERT INTO `app_temporary` (`id`, `phone_no`, `date`, `valid_times`, `http_times`, `video_times`, `browse_times`) VALUES (%s, %s, %s, %s, %s, %s, %s)"
             # cursor.execute(sql,("0",phone_num,array[4],array[0],array[1],array[2],array[3]))
 
@@ -91,13 +88,17 @@ def translateStr(key):
     return new_key
 
 def calculateIndicatorSum(indicatorName,threshold):
-    SourcePhoneconnection = pymysql.connect(host='192.168.39.51', port=5151, user='gbase', password='gbase20110531',
-                                                db='data_analyse',
+    # SourcePhoneconnection = pymysql.connect(host='192.168.39.53', port=4040, user='gbase', password='gbase20110531',
+    #                                             db='appreportdata_700010',
+    #                                             charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+    SourcePhoneconnection = pymysql.connect(host='192.168.39.50', port=5050, user='gbase', password='ots_analyse_gbase',
+                                                db='appreportdata_700021',
                                                 charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
     try:
         with SourcePhoneconnection.cursor() as cursor:
-            sql = "select count(*) as countSum,UID as imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios from " + indicatorName + " GROUP BY file_path"
+            # 以file_path作为group
+            sql = "select count(*) as countSum,UID as imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios,FROM_UNIXTIME(time/1000) as time from " + indicatorName + " GROUP BY file_path"
             # sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone from " + indicatorName + " WHERE bandwidth_flag = 1 AND phone_number_flag = 1 AND openBroadband_flag = 1 AND signal_flag = 1 and UNIX_TIMESTAMP(time) < 1469980800 GROUP BY file_path"
             cursor.execute(sql)
             result = cursor.fetchall()
@@ -116,6 +117,7 @@ def calculateIndicatorSum(indicatorName,threshold):
                 resultDic[key]['city'] = element['city']
                 resultDic[key]['openBroadband_phone'] = element['openBroadband_phone']
                 resultDic[key]['android_ios'] = element['android_ios']
+                resultDic[key]['time'] = element['time']
                 testSucSet.add(key)
 
             return (resultDic,testSucSet)
@@ -125,9 +127,9 @@ def calculateIndicatorSum(indicatorName,threshold):
 
 
 # 执行主函数
-(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('http_test_new_201704',2)
-(videoResultDic,videoResultSet) = calculateIndicatorSum('video_test_new_201704',1)
-(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('web_browsing_new_201704',5)
+(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('http_test_new_201706',2)
+(videoResultDic,videoResultSet) = calculateIndicatorSum('video_test_new_201706',1)
+(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('web_browsing_new_201706',5)
 
 #计算http下载
 for key in httpDownloadResultDic.keys():
@@ -142,13 +144,18 @@ for key in httpDownloadResultDic.keys():
 
     totalTest = min(httpDownload/2,videoPlay/2,webBrowsing/5)
 
+    httpMinTime = httpDownloadResultDic.get(key, {}).get('time',datetime.datetime.now())
+    videoMinTime = videoResultDic.get(key, {}).get('time',datetime.datetime.now())
+    webMinTime = webBrowsingResultDic.get(key, {}).get('time',datetime.datetime.now())
+    minTime = min(httpMinTime, videoMinTime, webMinTime)
+
     isValid = (httpDownload + videoPlay + webBrowsing >= 5)
 
     key_sep = str(key).split('_')
     if len(key_sep) > 1:
         phone_final = key_sep[0]
         imei = key_sep[1]
-        executeResultInsertDatabase(phone_final,province,city,totalTest,imei,openBroadband_phone,android_ios, httpDownload, webBrowsing, videoPlay, isValid)
+        executeResultInsertDatabase(phone_final,province,city,totalTest,imei,openBroadband_phone,android_ios, httpDownload, webBrowsing, videoPlay, isValid, minTime)
 
 videoResultSet -= httpDownloadSet
 
@@ -165,13 +172,18 @@ for key in videoResultSet:
 
     totalTest = min(httpDownload / 2, videoPlay / 2, webBrowsing / 5)
 
+    httpMinTime = httpDownloadResultDic.get(key, {}).get('time',datetime.datetime.now())
+    videoMinTime = videoResultDic.get(key, {}).get('time',datetime.datetime.now())
+    webMinTime = webBrowsingResultDic.get(key, {}).get('time',datetime.datetime.now())
+    minTime = min(httpMinTime, videoMinTime, webMinTime)
+
     isValid = (httpDownload + videoPlay + webBrowsing >= 5)
 
     key_sep = str(key).split('_')
     if len(key_sep) > 1:
         phone_final = key_sep[0]
         imei = key_sep[1]
-        executeResultInsertDatabase(phone_final, province, city, totalTest, imei, openBroadband_phone, android_ios, httpDownload, webBrowsing, videoPlay, isValid)
+        executeResultInsertDatabase(phone_final, province, city, totalTest, imei, openBroadband_phone, android_ios, httpDownload, webBrowsing, videoPlay, isValid, minTime)
 
 webBrowsingResultSet -= videoResultSet
 webBrowsingResultSet -= httpDownloadSet
@@ -189,18 +201,21 @@ for key in webBrowsingResultSet:
 
     totalTest = min(httpDownload / 2, videoPlay / 2, webBrowsing / 5)
 
+    httpMinTime = httpDownloadResultDic.get(key, {}).get('time',datetime.datetime.now())
+    videoMinTime = videoResultDic.get(key, {}).get('time',datetime.datetime.now())
+    webMinTime = webBrowsingResultDic.get(key, {}).get('time',datetime.datetime.now())
+    minTime = min(httpMinTime, videoMinTime, webMinTime)
+
     isValid = (httpDownload + videoPlay + webBrowsing >= 5)
 
     key_sep = str(key).split('_')
     if len(key_sep) > 1:
         phone_final = key_sep[0]
         imei = key_sep[1]
-        executeResultInsertDatabase(phone_final, province, city, totalTest, imei, openBroadband_phone, android_ios, httpDownload, webBrowsing, videoPlay, isValid)
+        executeResultInsertDatabase(phone_final, province, city, totalTest, imei, openBroadband_phone, android_ios, httpDownload, webBrowsing, videoPlay, isValid, minTime)
 
 calculateImeiNum()
 
 formatProvinceInfo()
-
-imeiDatabase.close()
 
 print "done"

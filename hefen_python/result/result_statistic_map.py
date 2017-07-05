@@ -68,7 +68,7 @@ def handle_shell_result(list, dimension, is_nature):
                                     org=(name if org else ""), projectID=(name if projectID else ""),
                                     appID=(name if appID else ""))
 
-ziranwei_map_list_dir = ['/opt/script/report_insertdb/logs/map_logpath/','/opt/script/report_insertdb_700010_1047/logs/map_logpath/','/opt/script/report_insertdb_700010_1048/logs/map_logpath/','/opt/script/pcreport_analyse/logs/map_logpath/','/opt/script/qrsreport_insertdb/logs/map_logpath/']
+ziranwei_map_list_dir = ['/opt/script/report_insertdb/logs/map_logpath/','/opt/script/report_insertdb_700010_1047/logs/map_logpath/','/opt/script/report_insertdb_700010_1048/logs/map_logpath/','/opt/script/pcreport_analyse/logs/map_logpath/','/opt/script/qrsreport_insertdb/logs/map_logpath/','/opt/script/report_insertdb_700021_999999/logs/map_logpath/']
 non_ziranwei_map_list_dir = ['/home/script/reportanalyse/reportanalyse_app/logs/map_logpath/','/home/script/reportanalyse/reportanalyse_app_20000/logs/map_logpath/','/home/script/reportanalyse/reportanalyse_app_38171/logs/map_logpath/','/home/script/reportanalyse/reportanalyse_app_hf/logs/map_logpath/','/home/script/reportanalyse_pc/logs/map_logpath/','/home/script/reportanalyse_qrs/logs/map_logpath/','/home/script/reportanalyse_dtb/logs/map_logpath/']
 
 for dir_path in ziranwei_map_list_dir:
