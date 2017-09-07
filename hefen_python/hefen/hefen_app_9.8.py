@@ -18,9 +18,9 @@ def getImeiValid(imei, cursor):
 
 #计算Imei号
 def calculateImeiNum():
-    destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
-                                   db='test',
-                                   charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+    destDatabase = pymysql.connect(host='192.168.39.50', port=5050, user='gbase', password='ots_analyse_gbase',
+                                                db='test',
+                                                charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
 
     try:
@@ -45,9 +45,9 @@ def calculateImeiNum():
 
 # 格式化省的名字
 def formatProvinceInfo():
-    destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
-                                   db='test',
-                                   charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+    destDatabase = pymysql.connect(host='192.168.39.50', port=5050, user='gbase', password='ots_analyse_gbase',
+                                                db='test',
+                                                charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
     try:
         with destDatabase.cursor() as cursor:
@@ -59,9 +59,9 @@ def formatProvinceInfo():
 
 #将最终结果写入库中
 def executeResultInsertDatabase(phone_num,province,city,totalSum,imei,openBroadband_phone,android_ios,httpDownload,webBrowse,videoPlay,isValid, time):
-    destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
-                                            db='test',
-                                            charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+    destDatabase = pymysql.connect(host='192.168.39.50', port=5050, user='gbase', password='ots_analyse_gbase',
+                                                db='test',
+                                                charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
     try:
         with destDatabase.cursor() as cursor:
@@ -88,17 +88,18 @@ def translateStr(key):
     return new_key
 
 def calculateIndicatorSum(indicatorName,threshold):
-    # SourcePhoneconnection = pymysql.connect(host='192.168.39.53', port=4040, user='gbase', password='gbase20110531',
-    #                                             db='appreportdata_700010',
-    #                                             charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
-    SourcePhoneconnection = pymysql.connect(host='192.168.39.50', port=5050, user='gbase', password='ots_analyse_gbase',
-                                                db='appreportdata_700021',
+    # 数据库切换操作
+    SourcePhoneconnection = pymysql.connect(host='192.168.39.53', port=4040, user='gbase', password='gbase20110531',
+                                                db='appreportdata_700010',
                                                 charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+    # SourcePhoneconnection = pymysql.connect(host='192.168.39.50', port=5050, user='gbase', password='ots_analyse_gbase',
+    #                                             db='appreportdata_700021',
+    #                                             charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
     try:
         with SourcePhoneconnection.cursor() as cursor:
             # 以file_path作为group
-            sql = "select count(*) as countSum,UID as imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios,FROM_UNIXTIME(time/1000) as time from " + indicatorName + " GROUP BY file_path"
+            sql = "select count(*) as countSum,upper_imei as imei,phone_number as phoneno,province,city,openBroadband_phone,android_ios,FROM_UNIXTIME(time/1000) as time from " + indicatorName + " GROUP BY file_path"
             # sql = "select count(*) as countSum,imei,phone_number as phoneno,province,city,openBroadband_phone from " + indicatorName + " WHERE bandwidth_flag = 1 AND phone_number_flag = 1 AND openBroadband_flag = 1 AND signal_flag = 1 and UNIX_TIMESTAMP(time) < 1469980800 GROUP BY file_path"
             cursor.execute(sql)
             result = cursor.fetchall()
@@ -125,11 +126,21 @@ def calculateIndicatorSum(indicatorName,threshold):
     finally:
         SourcePhoneconnection.close()
 
+def month_get(d):
+    dayscount = datetime.timedelta(days=d.day)
+    dayto = d - dayscount
+    date_from = datetime.datetime(dayto.year, dayto.month, 1, 0, 0, 0)
+    str_time = datetime.datetime.strftime(date_from, "%Y%m")
+    print str_time
+    return str_time
+
+
+last_month = month_get(datetime.datetime.now())
 
 # 执行主函数
-(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('http_test_new_201706',2)
-(videoResultDic,videoResultSet) = calculateIndicatorSum('video_test_new_201706',1)
-(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('web_browsing_new_201706',5)
+(httpDownloadResultDic,httpDownloadSet) = calculateIndicatorSum('http_test_new_' + last_month,2)
+(videoResultDic,videoResultSet) = calculateIndicatorSum('video_test_new_' + last_month,1)
+(webBrowsingResultDic,webBrowsingResultSet) = calculateIndicatorSum('web_browsing_new_' + last_month,5)
 
 #计算http下载
 for key in httpDownloadResultDic.keys():
@@ -214,8 +225,8 @@ for key in webBrowsingResultSet:
         imei = key_sep[1]
         executeResultInsertDatabase(phone_final, province, city, totalTest, imei, openBroadband_phone, android_ios, httpDownload, webBrowsing, videoPlay, isValid, minTime)
 
-calculateImeiNum()
-
-formatProvinceInfo()
+# 第二次执行时启用如下函数执行
+# calculateImeiNum()
+# formatProvinceInfo()
 
 print "done"

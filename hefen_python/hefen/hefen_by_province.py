@@ -7,9 +7,9 @@ import time
 
 #计算Imei号
 def calculateImeiNum():
-    destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
-                                   db='test',
-                                   charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+    destDatabase = pymysql.connect(host='192.168.39.50', port=5050, user='gbase', password='ots_analyse_gbase',
+                                                db='test',
+                                                charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
 
     try:
@@ -27,9 +27,9 @@ def calculateImeiNum():
 
 #将最终结果写入库中
 def executeResultInsertDatabase(province,totalSum):
-    destDatabase = pymysql.connect(host='192.168.92.111', port=3306, user='root', password='gbase',
-                                            db='test',
-                                            charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+    destDatabase = pymysql.connect(host='192.168.39.50', port=5050, user='gbase', password='ots_analyse_gbase',
+                                                db='test',
+                                                charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 
     try:
         with destDatabase.cursor() as cursor:
