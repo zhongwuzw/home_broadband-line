@@ -11,9 +11,11 @@ def get_file_lines(file,separator):
     zip_set = set()
     for line in file:
         line = line.split(separator)[1]
-        line = "/opt/script/report_insertdb/backReportPath" + line
+        line = "/opt/script/report_insertdb_700021_999999/backReportPath" + line
         line = line.replace("\r\n","")
-        line = line.replace("detail","summary")
+        line = line.replace("\r", "")
+        line = line.replace("\n", "")
+        # line = line.replace("detail","summary")
         zip_set.add(line)
     return zip_set
 
@@ -23,4 +25,4 @@ print "-----"
 
 for item in zip1_set:
     print item
-    os.system('cp -f ' + item + ' /opt/zhongwu/test')
+    os.system('cp ' + item + ' /opt/zhongwu/test/')
