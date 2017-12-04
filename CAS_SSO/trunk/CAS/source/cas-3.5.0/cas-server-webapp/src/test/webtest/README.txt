@@ -1,15 +1,3 @@
-See http://www.ja-sig.org/wiki/display/CAS/CAS+Functional+Tests for the descrition of these tests.
-
-DEPENDENCIES :
-- Canoo Webtest 2.5
-- The application proxyCallBackTest should be deployed twice an on a trusted Application Server
- over HTTPS
-
-CONFIGURATION FILES : 
-- properties\canoo.properties
-- properties\local.properties : proxyCallBackURL1 and proxyCallBackURL2 should be mapped to
- proxyCallBackTest applications.
-
-USAGE : 
-- launch build.xml with ANT
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:eae6690a59fa200e8f3e36e1c66bde9e0d9ded6a6fd4a5dbc0301bf1cee6ff1d
+size 476

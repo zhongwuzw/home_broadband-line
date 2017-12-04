@@ -1,6 +1,3 @@
-These are the automated compatibility tests.
-
-Andrew's environment:
-They run for me in Eclipse under 
-JDK 1.5 with xercesImpl.jar 
-(from uPortal) also on the classpath.
+version https://git-lfs.github.com/spec/v1
+oid sha256:b4e9095d0b0ff663fff9f19e267d071ee8b14fc95c3b62672e524097312a2547
+size 168

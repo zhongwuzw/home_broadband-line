@@ -1,1 +1,3 @@
-V	321214182539Z		0CA5	unknown	/C=US/ST=Colorado/L=Westminster/O=Jasig/OU=CAS/CN=CAS Test User CA
+version https://git-lfs.github.com/spec/v1
+oid sha256:33d289f1b30b9c85e348860bc706935c2df2e2f5ca6ce2261fd79e454d61c952
+size 97

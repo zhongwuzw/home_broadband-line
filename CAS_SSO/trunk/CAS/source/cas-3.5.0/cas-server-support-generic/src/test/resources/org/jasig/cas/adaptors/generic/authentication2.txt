@@ -1,3 +1,3 @@
-scott,rutgers
-bart,hello
-bill,YES
+version https://git-lfs.github.com/spec/v1
+oid sha256:753f90c0994febf4d1ae5de1b7e12d098b4596eb1ac90680235edab243c6c5f5
+size 33
