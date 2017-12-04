@@ -95,7 +95,7 @@ def calculateIndicatorSum(indicatorName, threshold, is700021):
                                                 db='appreportdata_700021',
                                                 charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
     else:
-        SourcePhoneconnection = pymysql.connect(host='192.168.39.53', port=4040, user='gbase', password='gbase20110531',
+        SourcePhoneconnection = pymysql.connect(host='192.168.39.50', port=5050, user='gbase', password='ots_analyse_gbase',
                                                 db='appreportdata_700010',
                                                 charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
 

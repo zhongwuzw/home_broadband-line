@@ -5,7 +5,7 @@ import pymysql.cursors
 import time
 import socket,struct
 
-xls_path = u"/Users/zhongwu/Documents/移动研究院/北京公司家宽网络IP地址反馈样表.xlsx"
+xls_path = u"/Users/zhongwu/Downloads/ip整理.xlsx"
 
 destDatabase = pymysql.connect(host='192.168.39.50', port=5050, user='gbase', password='ots_analyse_gbase',
                                db='ip_database',
@@ -39,7 +39,7 @@ def executeResultInsertDatabase(ip_start, ip_end, operator_manual, province, cit
             # operator_manual = u"移动"
             # province = province
 
-            sql = "INSERT INTO `ip_all_province` (`id`, `ip_start`, `ip_end`, `operator_manual`, `province`, `city`, `description`, `update_time`, `ip2long_start`, `ip2long_end`, `ip_1_2_start`, `ip_1_2_end`, `flag`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            sql = "INSERT INTO `ip_all_province_group` (`id`, `ip_start`, `ip_end`, `operator_manual`, `province`, `city`, `description`, `update_time`, `ip2long_start`, `ip2long_end`, `ip_1_2_start`, `ip_1_2_end`, `flag`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             cursor.execute(sql,("0", ip_start, ip_end, operator_manual, province, city, description, update_time, ip2long_start, ip2long_end, ip_1_2_start, ip_1_2_end, str(flag)))
 
             destDatabase.commit()
@@ -48,7 +48,7 @@ def executeResultInsertDatabase(ip_start, ip_end, operator_manual, province, cit
             print ip_start, ip_end, operator_manual, province
 
             with destDatabase.cursor() as cursor:
-                sql = "select ip_start, ip_end, operator_manual, province FROM ip_all_province where ip_start = '" + ip_start + "' or ip_end = '" + ip_end + "'"
+                sql = "select ip_start, ip_end, operator_manual, province FROM ip_all_province_group where ip_start = '" + ip_start + "' or ip_end = '" + ip_end + "'"
                 cursor.execute(sql)
                 result = cursor.fetchall()
                 if len(result) > 0:
